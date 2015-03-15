@@ -1,0 +1,218 @@
+﻿<?xml version="1.0"?>
+<mission title = "A Personal Matter">
+	<tier type="target" description="The Stationmaster has asked to speak to you in Agartha." targetName="The Stationmaster" isOffensiveTarget="false" />
+	<tier type="dialog" description="Listen to The Stationmaster." >
+		<dialog type="dialog" line="----------------------------------&#13;A Personal Matter&#13;----------------------------------" duration="5" />
+		<dialog type="dialog" line="Good day. Is there something I can..." />
+		<dialog type="dialog" line="Ah... it's you. You have arrived. I am most grateful for your punctuality." />
+		<dialog type="dialog" line="I am in need of your assistance on something of a personal matter." />
+		<dialog type="dialog" line="I assure you it is of utmost importance. Utmost importance, indeed." />
+		<dialog type="dialog" line="For if we don't address those matters that are most personal..." />
+		<dialog type="dialog" line="If we don't hold close those things that are most dear..." />
+		<dialog type="dialog" line="Er, uhm... Pardon me, I will prattle on for ages if permitted." />
+		<dialog type="dialog" line="Allow me to get straight to the point..." />
+		<dialog type="dialog" line="From time to time, I look in on a certain special young lady." />
+		<dialog type="dialog" line="Not personally, of course. It has been many years since I've been topside." />
+		<dialog type="dialog" line="I rely on the eyes and ears of others to keep me informed." />
+		<dialog type="dialog" line="It has been reported to me that she... Luella... is in distress." />
+		<dialog type="dialog" line="The young have such tender hearts, but I am assured this is no fleeting matter." />
+		<dialog type="dialog" line="At times like these the burden of duty weighs heavy, but I must attend my post." />
+		<dialog type="dialog" line="Would you be so kind as to pay her a visit in my stead?" />
+		<dialog type="dialog" line="Luella tends bar in London.&#13;You will likely find her there." duration="8"/>
+	</tier>
+	<tier type="target" description="Find Luella in London." targetName="Luella" isOffensiveTarget="false" />
+	<tier type="dialog" description="Buy a drink." >
+		<dialog type="dialog" line="Hello, love. What'll ya have?" />
+	</tier>
+	<tier type="additem" description="Buy a drink." itemName="Lengstereisen,Myrrh Ale,Mercurius,Uisge Beatha,Brewed Ergot,Silver Twilight,Ergot &amp; Orange,Londinium Mint,Azadi Blonde,Azadi Red,Misha &amp; Cola, Azadi Brown,Misha &amp; Cranberry,St. Swithin's,Bingo! Cola,Misha Black" autoUseItem="true" />
+	<tier type="dialog" description="Learn what's troubling Luella." >
+		<dialog type="dialog" line="Here ya go." duration="3" />
+		<dialog type="dialog" line="Now love, tell me your problems, so I can forget about mine." />
+		<dialog type="dialog" line="" duration="1" />
+		<dialog type="dialog" line="No problems, then? I wish I could say the same." />
+		<dialog type="dialog" line="It's my boyfriend, Geoffrey. He's gone and got himself in a bit of trouble." />
+		<dialog type="dialog" line="He fancies himself a reporter, writin' on his blog that nary a soul reads." />
+		<dialog type="dialog" line="He's always on about 'conspiracy theory this' and 'supernatural that'." />
+		<dialog type="dialog" line="It's all a load of bollocks I tell him, but he doesn't listen." />
+		<dialog type="dialog" line="Before you know it, he's off on one of his grand investigations without a moments notice." />
+		<dialog type="dialog" line="This time he's gone clear across the pond! Something about a small coastal town." />
+		<dialog type="dialog" line="The way he tells it there are 'extraordinary events' happening there." />
+		<dialog type="dialog" line="They've got the place locked down, but he was determined to get in." />
+		<dialog type="dialog" line="Oh, he got in alright, but I haven't heard from him since." />
+		<dialog type="dialog" line="He was supposed to be back weeks ago, but not a word!" />
+		<dialog type="dialog" line="That Geoffrey is a pain in my arse, I tell you..." />
+		<dialog type="dialog" line="...but I love him." duration="3" />
+	</tier>
+	<tier type="location" description="Find Geoffrey." playField="3030" x="189" y="147" z="324" distance="8" yDistance="1" />
+	<tier type="location" description="Approach the doctor." playField="3030" x="190" y="147" z="318" distance="2" yDistance="1" />
+	<tier type="dialog" description="Listen to Doctor Bannerman." >
+		<dialog type="dialog" line="These creatures... these abnormalities that surround us..." />
+		<dialog type="dialog" line="I often wonder, as they rush towards human flesh to satisfy that which is insatiable..." />
+		<dialog type="dialog" line="Is there any fraction of their former selves that remains?" />
+		<dialog type="dialog" line="Any remnant that turns away in disgust as they are compelled to dine?" />
+		<dialog type="dialog" line="And what of the rest of us? We hunger. We lust." />
+		<dialog type="dialog" line="Yet, there are those who resist." />
+		<dialog type="dialog" line="Perhaps that is why some did not answer the call out to sea." />
+		<dialog type="dialog" line="Perhaps that is why some will not rise from their graves." />
+		<dialog type="dialog" line="Perhaps... that is why WE survive." />
+		<dialog type="dialog" line="Resistance is NOT futile." />
+		<dialog type="dialog" line="Take this young man, for instance." />
+		<dialog type="dialog" line="Geoffrey Richardson of London, England, according to his identification." />
+		<dialog type="dialog" line="He has clearly been wounded and infected by one of these creatures," />
+		<dialog type="dialog" line="yet his body resists the transformation." />
+		<dialog type="dialog" line="Under the microscope, I can see the war that rages within his cells," />
+		<dialog type="dialog" line="but it is a mystery to me how he endures." />
+		<dialog type="dialog" line="Samples of the surrounding 'wildlife' could provide some exposition." duration="5" />
+	</tier>
+	<tier type="kill" description="Gather samples from surrounding zombies." targetName="Ravenous Horde,Returned Townie,Alerted Zombie,Fresh Zombie" targetKills="15" />
+	<tier type="location" description="Give samples to the doctor." playField="3030" x="190" y="147" z="318" distance="2" yDistance="1" />
+	<tier type="dialog" description="Await results from the doctor." >
+		<dialog type="dialog" line="At last, some samples to inspect! I will return shortly." />
+		<dialog type="fadeout" duration="1" />
+		<dialog type="dialog" line="" duration="1" />
+		<dialog type="fadein" duration="1" />
+		<dialog type="dialog" line="I appreciate your efforts, but I'm afraid these samples have not been very helpful." />
+		<dialog type="dialog" line="They are not unlike examining a lifeless mound of dirt." />
+		<dialog type="dialog" line="It appears to me that the attacking cells are more acquatic or amphibian in nature." />
+	</tier>
+	<tier type="kill" description="Gather samples from the shore." targetName="Draug Warmonger,Feigr Impaler,Drowned Mariner,Incubator,Feigr Mauler,Drowned Mariner Carrier,Feigr Broodwitch,Feigr Seacaller,Feigr Lord" targetKills="12" />
+	<tier type="location" description="Return samples to the doctor." playField="3030" x="190" y="147" z="318" distance="2" yDistance="1" />
+	<tier type="dialog" description="Await results from the doctor." >
+		<dialog type="dialog" line="Ah, more samples, I see. Please remain with the patient until I return." />
+		<dialog type="fadeout" duration="1" />
+		<dialog type="dialog" line="" duration="1" />
+		<dialog type="fadein" duration="1" />
+		<dialog type="dialog" line="Now, we are getting somewhere. These samples are very similar." />
+		<dialog type="dialog" line="If anything, I'd say the strain inside this young man is even more vicious than those you collected." />
+		<dialog type="dialog" line="I will continue to investigate..." />
+		<dialog type="dialog" line="Geoffrey: Loo..." />
+		<dialog type="dialog" line="Doctor: There, there, young man. You need to rest." />
+		<dialog type="dialog" line="Geoffrey: Loo..." />
+		<dialog type="dialog" line="...dah..." />
+		<dialog type="dialog" line="...fisk." />
+		<dialog type="dialog" line="Doctor: Lutefisk? This man is clearly delirious. No one would request such a rancid dish." />
+		<dialog type="dialog" line="Sheriff: 'Lutefisk', heh, heh." />
+		<dialog type="dialog" line="Doctor: Ellen, do you have something to add?" />
+	</tier>
+	<tier type="target" description="Listen to the Sheriff." targetName="Helen Bannerman" isOffensiveTarget="false" />
+	<tier type="dialog" description="Listen to the Sheriff." >
+		<dialog type="dialog" line="It's funny. There are some words you come across only a few times in a lifetime, " />
+		<dialog type="dialog" line="but they have a way of sticking with you." />
+		<dialog type="dialog" line="'Lutefisk'. Now there's a word you don't hear everyday." />
+		<dialog type="dialog" line="The last time I heard it was a couple of years ago." />
+		<dialog type="dialog" line="The youths liked to have their parties on an island off the coast of Journey's End." />
+		<dialog type="dialog" line="I was young once. I know what goes on out there." />
+		<dialog type="dialog" line="One of the girls shows up here in the middle of the night, as white as a sheet." />
+		<dialog type="dialog" line="She went on and on about 'Lutefisk' and sea monsters, before I finally calmed her down." />
+		<dialog type="dialog" line="Old Larry Creed - God rest his soul - used to tell stories that wound the kids up." />
+		<dialog type="dialog" line="Mix substance abuse with a little imagination, and you can predict the results." />
+		<dialog type="dialog" line="'Don't do drugs, kids. There's no such thing as sea monsters.'" />
+		<dialog type="dialog" line="That's what I used to say..." duration="5" />
+	</tier>
+	<tier type="location" description="Learn the Lutefisk legend." playField="3030" x="358" y="136" z="106" distance="4" yDistance="1" />
+	<tier type="dialog" description="Learn the Lutefisk legend." speed="2.5" >
+		<dialog type="dialog" line="Larry used to love telling sea stories. I remember them all." />
+		<dialog type="dialog" line="He'd have the men and their families over, and everyone would gather around after supper." />
+		<dialog type="dialog" line="'It was a grand voyage across treacherous seas...'" />
+		<dialog type="dialog" line="That's how he'd start all his stories, in his best seamen's voice." />
+		<dialog type="dialog" line="'...a grand voyage across treacherous seas, when suddenly the winds died down and the waters calmed.'" />
+		<dialog type="dialog" line="'It was peaceful, the sky reflecting off the glassy surface...'" />
+		<dialog type="dialog" line="'until a thick fog rolled in and brought with it a foul stench.'" />
+		<dialog type="dialog" line="'The men began to gag and cough, covering their noses while looking for the source of the smell,'" />
+		<dialog type="dialog" line="'except for a Norwegian mate who uttered one word:'" />
+		<dialog type="dialog" line="'Lutefisk?'" />
+		<dialog type="dialog" line="'No sooner had he got the word out of his mouth, than he was pulled over by a giant tentacle.'" />
+		<dialog type="dialog" line="'One by one the other men suffered the same fate,'" />
+		<dialog type="dialog" line="'save for one young man, huddled in the middle of the boat in his own desperation,'" />
+		<dialog type="dialog" line="'praying to his god that he might live another day.'" />
+		<dialog type="dialog" line="'He could hear the others screaming and drowning, but he remained hidden, praying.'" />
+		<dialog type="dialog" line="'After an eternity... the screams stopped.'" />
+		<dialog type="dialog" line="'The boat stopped rocking.'" />
+		<dialog type="dialog" line="'The fog receded.'" />
+		<dialog type="dialog" line="'The man had been spared, rewarded with an immediate field promotion to captain,&#13;on account of the virtues of fear and cowardice.'" />
+		<dialog type="dialog" line="'So, if you ever see a fog roll in accompanied by a foul stench...'" />
+		<dialog type="dialog" line="'you don't cover your nose.'" />
+		<dialog type="dialog" line="'You don't look overboard.'" />
+		<dialog type="dialog" line="'And you sure as hell don't say 'Lutefisk'!'" />
+		<dialog type="dialog" line="'You run. You hide. You pray.'" />
+		<dialog type="dialog" line="'Or else the Lutefisk monster will take your very life!'" />
+		<dialog type="dialog" line="It was about then that the others realized Larry had let out a foul stench of his own, ha!" />
+		<dialog type="dialog" line="He'd laugh hard for a bit, then he'd get quiet and just stare off into space, lost in a memory, I suppose." />
+		<dialog type="dialog" line="If I didn't know better, I'd say that was fear in his eyes." duration="6" />
+	</tier>
+	<tier type="target" description="Find Lutefisk." targetName="Lutefisk" isOffensiveTarget="true" />
+	<tier type="kill" description="Kill Lutefisk and gather a sample." targetName="Lutefisk" targetKills="1" />
+	<tier type="location" description="Return to the doctor with the sample." playField="3030" x="190" y="147" z="318" distance="2" yDistance="1" />
+	<tier type="dialog" description="Await results from the doctor." >
+		<dialog type="dialog" line="Another sample? Very well, I will return shortly." />
+		<dialog type="fadeout" duration="1" />
+		<dialog type="dialog" line="" duration="1" />
+		<dialog type="fadein" duration="1" />
+		<dialog type="dialog" line="Remarkable! This is an exact match for the strain." />
+		<dialog type="dialog" line="It immediately overwhelms every human cell I test. It is absolutely vicious!" />
+		<dialog type="dialog" line="How this young man can resist is extraordinary! I must continue..." />
+		<dialog type="dialog" line="Geoffrey: Huh..." />
+		<dialog type="dialog" line="...nee." />
+		<dialog type="dialog" line="Doctor: Honey? That's certainly preferable to lutefisk, but I'm afraid we're all out." />
+		<dialog type="dialog" line="Obviously, he is still delirious, but I will continue my research." />
+	</tier>
+	<tier type="location" description="Find some honey." playField="3030" x="19" y="165" z="160" distance="5" yDistance="5" />
+	<tier type="location" description="Give the honey to Geoffrey." playField="3030" x="190" y="147" z="318" distance="2" yDistance="1" />
+	<tier type="dialog" description="Give the honey to Geoffrey." >
+		<dialog type="dialog" line="Doctor: What are you doing? What is that you're giving him? Hold on just a..." />
+		<dialog type="dialog" line="Geoffrey: Uhhh..." />
+		<dialog type="dialog" line="Doctor: Oh! He's waking up." />
+		<dialog type="dialog" line="Geoffrey: My head... Where am I?" />
+		<dialog type="dialog" line="Doctor: You've suffered a serious injury, young man." />
+		<dialog type="dialog" line="Geoffrey: Oh... the Illuminati, the monsters, the magic honey..." />
+		<dialog type="dialog" line="I can't believe it. Everything is... Luella!" />
+		<dialog type="dialog" line="Doctor: Hold on there! You're not ready to get up just yet. You need more rest." />
+		<dialog type="dialog" line="Geoffrey: Yes, of course... but Luella. She must be worried sick." />
+		<dialog type="dialog" line="Please, I must write a letter, then I will rest." />
+		<dialog type="dialog" line="Doctor: Very well, but be brief." />
+		<dialog type="fadeout" duration="1" />
+		<dialog type="dialog" line="" duration="1" />
+		<dialog type="fadein" duration="1" />
+		<dialog type="dialog" line="Geoffrey: Thank you. You have been very kind to me. If I could impose on you once more..." />
+		<dialog type="dialog" line="Please make sure this letter is delivered to my girlfriend in London. She must know that I am safe." />
+	</tier>
+	<tier type="browser" description="Deliver Geoffrey's letter to Luella." url="http://www.mbs-intl.com/tsw/personal/geoffrey_letter.htm" browserTitle="Geoffrey's Letter" hideAddress="true" />
+	<tier type="target" description="Deliver Geoffrey's letter to Luella." targetName="Luella" isOffensiveTarget="false" />
+	<tier type="dialog" description="Give the letter to Luella." >
+		<dialog type="dialog" line="Welcome back, love... What's this?" />
+		<dialog type="dialog" line="It's a letter from Geoffrey. How did you...?" />
+		<dialog type="dialog" line="Oh my! He's alive! Geoffrey's alive!" />
+		<dialog type="dialog" line="And he's coming home!" />
+		<dialog type="dialog" line="Oh, I could just kiss you! But I have a boyfriend! A real live..." />
+		<dialog type="dialog" line="Oh, sod it!" />
+		<dialog type="fadeout" duration="1" />
+		<dialog type="dialog" line="" duration="2" />
+		<dialog type="fadein" duration="1" />
+		<dialog type="dialog" line="Mmmm... tastes like honey." />
+		<dialog type="dialog" line="I could get used to that. I'd better not have more." />
+		<dialog type="dialog" line="My Geoffrey will be home soon." />
+		<dialog type="dialog" line="Know that I am truly grateful. From the bottom of my heart..." />
+		<dialog type="dialog" line="Thank you." duration="3" />
+	</tier>
+	<tier type="target" description="Report to The Stationmaster." targetName="The Stationmaster" isOffensiveTarget="false" />
+	<tier type="dialog" description="Report to The Stationmaster." speed="2.5" >
+		<dialog type="dialog" line="I see that everything has been set aright once again." />
+		<dialog type="dialog" line="Eyes and ears, you know." />
+		<dialog type="dialog" line="Ah, young love... it is both inspiring and nostalgia inducing." />
+		<dialog type="dialog" line="Those days are long past for me, but there was a time..." />
+		<dialog type="dialog" line="I found love, a wife, children. A family." />
+		<dialog type="dialog" line="Grandchildren eventually, and so on, and so on..." />
+		<dialog type="dialog" line="Of course, my descendants wouldn't understand all of... this." />
+		<dialog type="dialog" line="Regrettably, I must remain undisclosed to those I watch over," />
+		<dialog type="dialog" line="a surreptitious benefactor in times of need." />
+		<dialog type="dialog" line="Your kind assistance has been essential in this endeavor." />
+		<dialog type="dialog" line="You have my eternal gratitude." duration="5" />
+	</tier>
+	<tier type="dialog" description="Thank your for playing! Please provide feedback in the TSW forums." >
+		<dialog type="dialog" line="----------------------------------&#13;A Personal Matter&#13;----------------------------------" duration="4" />
+		<dialog type="dialog" line="----------------------------------&#13;Written &amp; Scripted&#13;by&#13;SuperJenius&#13;----------------------------------" duration="4" />
+		<dialog type="dialog" line="----------------------------------&#13;Untold Stories Mission System&#13;developed by&#13;SuperJenius&#13;----------------------------------" duration="4" />
+		<dialog type="dialog" line="----------------------------------&#13;Thank you for playing!&#13;Please provide feedback in the TSW forums.&#13;----------------------------------" duration="4" />
+	</tier>
+	<tier type="browser" description="Thank your for playing! Please provide feedback in the TSW forums." url="http://forums.thesecretworld.com/showthread.php?t=82855" />
+</mission>

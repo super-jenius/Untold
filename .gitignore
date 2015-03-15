@@ -1,3 +1,11 @@
+# Untold Stories exclusions
+dist/*
+lore/*
+Mission Art/*
+missions/*
+old/*
+*.bxml
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db

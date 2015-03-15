@@ -1,0 +1,5 @@
+Untold Stories of the Secret World is open source and uses two licenses:
+
+1. Portions of this source code are modified versions of code provided by FUNCOM, and are therefore subject to the FUNCOM User Interface Source Code License.  This sections will be marked clearly in the source code.  You can find the FUNCOM license in The Secret World\Data\Gui\Customized folder of your game directory.
+
+2. The rest of the source code uses the Creative Commons Attribution license.  This basically means that if you use the source code in your project, as-is or modified, please include credit for Super Jenius.  More details on the license are at http://creativecommons.org/licenses/by/4.0/.

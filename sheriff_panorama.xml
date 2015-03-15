@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<tier type="cinematic" description="Sheriff Station Panorama" playField="3030" >
+  <cinematic type="audio" url="http://untoldworld.azurewebsites.net/01-02-_March_On_Templars.ogg" volume="40" />
+  <cinematic type="fadeout" duration="2" />
+  <cinematic type="camera" duration="0" posX="185.1" posY="148" posZ="318" targetX="185.2" targetY="148" targetZ="318.9" />
+  <!--<cinematic type="camera" duration="12000" posX="185" posY="147.5" posZ="315.5" targetX="190.5" targetY="155" targetZ="328.7" />-->
+  <!--<cinematic type="dialog" line="" duration="10" />-->
+  <cinematic type="camera" duration="20000" posX="193" posY="147.5" posZ="297" targetX="190.5" targetY="155" targetZ="328.7" />
+  <cinematic type="dialog" line="" duration="0.5" />
+  <cinematic type="fadein" duration="10" />
+  <cinematic type="dialog" line="" duration="5" />
+  <cinematic type="camera" duration="8000" posX="192" posY="147.5" posZ="303" targetX="178.4" targetY="155" targetZ="291.1" />
+  <cinematic type="dialog" line="" duration="6.5" />
+  <cinematic type="camera" duration="12000" posX="212" posY="146" posZ="324" targetX="178.4" targetY="148" targetZ="291.1" />
+  <!--<cinematic type="camera" duration="18000" posX="210" posY="147" posZ="323" targetX="188" targetY="147.5" targetZ="301" />-->
+  <cinematic type="dialog" line="" duration="11" />
+  <cinematic type="camera" duration="12000" posX="194" posY="147" posZ="353.5" targetX="217" targetY="146.8" targetZ="323.5" />
+  <!--<cinematic type="camera" duration="18000" posX="194" posY="149" posZ="353.5" targetX="197" targetY="146.8" targetZ="346.3" />-->
+  <cinematic type="dialog" line="" duration="11" />
+  <!--<cinematic type="camera" duration="13000" posX="167" posY="155" posZ="340" targetX="220" targetY="155" targetZ="368" />-->
+  <!--<cinematic type="camera" duration="11000" posX="167" posY="155" posZ="340" targetX="190.5" targetY="160" targetZ="328.7" />-->
+  <cinematic type="camera" duration="12000" posX="165" posY="155" posZ="335" targetX="190.5" targetY="160" targetZ="328.7" ease="Regular.easeOut" />
+  <cinematic type="dialog" line="" duration="12" />
+  <!--<cinematic type="camera" duration="15000" posX="178" posY="160" posZ="315" targetX="190.5" targetY="155" targetZ="328.7" />-->
+  <cinematic type="camera" duration="15000" posX="185" posY="160" posZ="310" targetX="190.5" targetY="155" targetZ="328.7" ease="Regular.easeInOut" />
+  <cinematic type="dialog" line="" duration="15" />
+  <!--<cinematic type="camera" duration="10000" posX="199" posY="160" posZ="320" targetX="190.5" targetY="160" targetZ="328.7"  />-->
+  <cinematic type="camera" duration="27000" posX="214" posY="155" posZ="330" targetX="190.5" targetY="160" targetZ="328.7" ease="Regular.easeInOut" />
+  <!--<cinematic type="camera" duration="0" posX="199" posY="160" posZ="320" targetX="190.5" targetY="155" targetZ="328.7" />-->
+  <!--<cinematic type="camera" duration="10000" posX="203" posY="160" posZ="330" targetX="190.5" targetY="160" targetZ="328.7"  />-->
+  <!--<cinematic type="dialog" line="" duration="1" />-->
+  <cinematic type="dialog" line="" duration="24" />
+  <cinematic type="fadeout" duration="3" />
+</tier>

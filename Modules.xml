@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Root>
+  <Module name="Untold"
+    movie             = "Untold\Untold.swf"
+    flags             = "GMF_DONT_UNLOAD"
+    depth_layer       = "Middle"
+    sub_depth         = "0"
+    variable          = "comm_miss"
+    criteria          = "comm_miss &amp;&amp; (guimode &amp; GUIMODEFLAGS_INPLAY)"
+  />
+</Root>

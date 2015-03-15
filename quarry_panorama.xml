@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<tier type="cinematic" description="The Quarry Panorama" playField="3050" >
+  <cinematic type="audio" url="http://untoldworld.azurewebsites.net/01-09-_The_Age_Is_Ending.ogg" volume="40" />
+  <cinematic type="fadeout" duration="2" />
+  <cinematic type="camera" duration="0" posX="622" posY="203" posZ="427" targetX="590" targetY="180" targetZ="340" />
+  <cinematic type="camera" duration="15000" posX="611" posY="205" posZ="419" targetX="530" targetY="210" targetZ="410" ease="Regular.easeInOut" />
+  <cinematic type="dialog" line="" duration="0.5" />
+  <cinematic type="fadein" duration="10" />
+  <cinematic type="dialog" line="" duration="13.5" />
+  <cinematic type="camera" duration="15000" posX="555" posY="185" posZ="455" targetX="605" targetY="180" targetZ="498" ease="Regular.easeInOut" />
+  <cinematic type="dialog" line="" duration="15" />
+  <cinematic type="camera" duration="15000" posX="615" posY="170" posZ="528" targetX="605" targetY="175" targetZ="498" ease="Regular.easeInOut" />
+  <cinematic type="dialog" line="" duration="15" />
+  <cinematic type="camera" duration="12000" posX="628" posY="172" posZ="465" targetX="631" targetY="171.5" targetZ="461" ease="Regular.easeInOut" />
+  <cinematic type="dialog" line="" duration="12" />
+  <cinematic type="camera" duration="15000" posX="605.6" posY="205.1" posZ="498.1" targetX="600" targetY="175" targetZ="440" ease="Regular.easeInOut" />
+  <cinematic type="dialog" line="" duration="15" />
+  <cinematic type="camera" duration="5000" posX="605.5" posY="205" posZ="498" targetX="610" targetY="180" targetZ="495" ease="Regular.easeInOut" />
+  <cinematic type="dialog" line="" duration="5" />
+  <cinematic type="camera" duration="5000" posX="607" posY="166" posZ="497" targetX="607.1" targetY="165" targetZ="497.1" ease="Strong.easeIn" />
+  <cinematic type="dialog" line="" duration="4.9" />
+  <cinematic type="fadeout" duration=".5" />
+  <cinematic type="dialog" line="" duration="1" />
+</tier>
+

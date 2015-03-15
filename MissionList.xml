@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<missionList>
+  <mission title="Audio Test" id="AudioTest" file="AudioTest.xml" author="Super Jenius" />
+  <mission title="Basic Training" id="BasicTraining" file="BasicTraining.xml" author="Super Jenius" />
+	<mission title="A Personal Matter" id="APersonalMatter" file="APersonalMatter.xml" author="Super Jenius" />
+	<mission title="The Scroll" id="TheScroll" file="TheScroll.xml" author="Super Jenius" />
+	<mission title="Echo Squad" id="EchoSquad" file="EchoSquad.xml" author="bluemoon" />
+  <mission title="The Shadow Out of Time" id="TheShadowOutofTime" file="TheShadowOutofTime.xml" author="Tremerion" />
+</missionList>

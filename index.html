@@ -1,0 +1,263 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Untold Stories of The Secret World</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <!-- Custom styles for this template -->
+    <link href="untold.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">UNTOLD STORIES OF THE SECRET WORLD</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>MISSION</th>
+                    <th>STATUS</th>
+                    <th>LORE-FRIENDLY*</th>
+                    <th>AUTHOR</th>
+                </tr>
+            </thead>
+            <tbody id="missionList"></tbody>
+        </table>
+
+        *Lore-Friendly: "Yes" indicates the author intended not to contradict the official lore of The Secret World. "No" means no such attempt was made, or that the content otherwise falls outside the official lore.
+
+        <div id="newVersion" class="alert alert-danger" role="alert" style="display: none;">
+            <ul><li>Version 2.2 is now available for download using the Curse Client or from SecretUI. This is a RECOMMENDED update and adds the following features:
+            <ul>
+                <li>Panoramas/Cinematics have been added as types of Untold Stories Lore.  When you are near a panorama, click on the Lore icon to play it. Yes, this is a blatant ripoff of the Panorama feature in Age of Conan, but I figure the devs won't add it to TSW for a long time. I have placed three panoramas in Solomon Island, one in each zone (Kingsmouth, The Savage Coast, Blue Mountain). See if you can find them!</li>
+                <li>Audio files, including voiceover, can now be played during missions, dialog, and cinematics. Refer to the documentation for more details.</li>
+                <li>Cinematic camera paths now support "ease" functions for more natural movement. Refer to the documentation for more details.</li>
+            </ul>
+            </li>
+            <li>Version 2.1 fixes the 20 FPS lag issue introduced in 2.0.</li>
+            <li>Version 2.0 introduces a major new feature: <b>Untold Stories Lore</b>.
+            Untold Stories Lore highlights fan fiction, art, music, and video creations from the TSW community.  When you are near a designated location or character, a red US icon will appear in the notification area.
+            Click the icon to open the lore.</li></ul>
+        </div>
+        <div id="worldWell" class="alert alert-success" role="alert" style="display: none;">
+            <p>Untold Stories Lore highlights fan fiction, art, music, and video creations from the TSW community.  When you are near a designated location or character, a red US icon will appear in the notification area. Click the icon to open the lore.</p>
+            <p id="disableWorld" style="display: none;"><a href="data:,worldStories=false">Disable Untold Stories Lore</a></p>
+            <p id="enableWorld" style="display: none;"><a href="data:,worldStories=true">Enable Untold Stories Lore</a></p>
+            <p>To submit lore for inclusion, please refer to threads in the Fanpages &amp; Fanart section of the TSW forums.</p>
+            <p><a href="https://forums.thesecretworld.com/showthread.php?84123-Get-your-creation-in-the-game!-%28Solomon-Island%29">Solomon Island</a></p>
+        </div>
+        <div id="newsWell" class="alert alert-info" role="alert">
+            <h4>Content News</h4>
+            <p>Added content does NOT require a new version of this MOD to be downloaded, unless you also see a new version announced above.</p>
+            <p>
+                <ul>
+                    <li><b>Mar 7 2015:</b> Creating missions just got a whole lot easier! Solon has developed a very nice mission editor GUI (more info below). Thanks, Solon!</li>
+                    <li><b>Mar 6 2015:</b> New mission "The Shadow Out of Time" by Tremerion.</li>
+                    <li><b>Feb 28 2015:</b> Added artwork lore to Kingsmouth and The Savage Coast.</li>
+                    <li><b>Feb 21 2015:</b> Version 2.2 added support for Panorama/Cinematic lore. I have placed three panoramas in Solomon Island, one in each zone (Kingsmouth, The Savage Coast, Blue Mountain). See if you can find them!</li>
+                    <li><b>Feb 14 2015:</b> Untold Stories Lore was added with version 2.0. Kingsmouth was seeded with fan fiction.</li>
+                </ul>
+            </p>
+        </div>
+        <div class="well well-lg">
+            <p>If you create a mission, please send <a href="http://forums.thesecretworld.com/member.php?u=10486">Super Jenius</a> a private message on the TSW forums, and I will post your mission.</p>
+            <p>You can now create missions using <a href="https://forums.thesecretworld.com/showthread.php?82855-MOD-Untold-Stories-of-The-Secret-World&p=1839764&viewfull=1#post1839764">Solon's mission editor</a> (outside the game) or with XML files. Documentation is included in \Data\Gui\Customized\Flash\Untold\Untold_Docs.pdf, located in the root of your The Secret World directory.</p>
+            <p>Loading mission files from your local computer requires the Local Mission Launcher.  <a href="data:,localMissions">Click here to start it.</a></p>
+        </div>
+        <div>
+            Current Coordinates: 
+            <ul>
+                <li>Playfield: <span id="playfield"></span></li>
+                <li>X: <span id="x-coords"></span></li>
+                <li>Y (height): <span id="y-coords"></span></li>
+                <li>Z: <span id="z-coords"></span></li>
+            </ul>
+        </div>
+
+        <!--
+                <form id="formtest" name="formtest" action="" method="get">
+                    XML:
+                    <br>
+                    <textarea id="xml" name="xml" rows="30" cols="100"></textarea>
+                </form>
+         -->
+
+    </div>
+    <!-- /.container -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <!-- Bootbox message box -->
+    <script src="bootbox.min.js"></script>
+
+    <script type='text/javascript'>
+        $(document).ready(function () {
+            listMissions();
+            checkVersion();
+            worldStories();
+            showCoords();
+            document.formtest.xml.value = qs["statusXML"];
+        })
+
+        var qs = (function (a) {
+            if (a == "") return {};
+            var b = {};
+            for (var i = 0; i < a.length; ++i) {
+                var p = a[i].split('=', 2);
+                if (p.length == 1)
+                    b[p[0]] = "";
+                else
+                    b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+            }
+            return b;
+        })(window.location.search.substr(1).split('&'));
+
+        function checkVersion()
+        {
+            if (qs["version"] != "2.2") {
+                $("#newVersion").show();
+            }
+        }
+
+        function worldStories()
+        {
+            if (qs["worldStories"]) {
+                $("#worldWell").show();
+                if (qs["worldStories"] == "true") {
+                    $("#disableWorld").show();
+                } else {
+                    $("#enableWorld").show();
+                }
+            }
+
+        }
+
+        function loadMission(missionID, missionFile)
+        {
+            try {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.open("GET", missionFile, false);
+                xmlhttp.send();
+
+                var dataURL = 'data:,missionID=' + escape(missionID) + escape(xmlhttp.responseText);
+                window.location = dataURL;
+            } catch (err) {
+                alert(err.message);
+            }
+        }
+
+        function listMissions()
+        {
+            // Make sure launched within game
+            if (qs["statusXML"]) {
+                var missionList = new Array();
+                missionList.push(["Basic Training", "BasicTraining", "BasicTraining.xml", "Status", "No", "Super Jenius"]);
+                missionList.push(["A Personal Matter", "APersonalMatter", "APersonalMatter.xml", "Status", "Yes", "Super Jenius"]);
+                missionList.push(["The Scroll", "TheScroll", "TheScroll.xml", "Status", "Yes", "Super Jenius"]);
+                missionList.push(["Undead Gratefulness", "UndeadGratefulness", "UndeadGratefulness.xml", "Status", "Yes", "Tremerion"]);
+                missionList.push(["Extraordinary Merchandise", "ExtraordinaryMerchandise", "ExtraordinaryMerchandise.xml", "Status", "Yes", "Tremerion"]);
+                missionList.push(["Echo Squad", "EchoSquad", "EchoSquad.xml", "Status", "Yes", "bluemoon"]);
+                missionList.push(["The Shadow Out of Time", "TheShadowOutofTime", "TheShadowOutofTime.xml", "Status", "Yes", "Tremerion"]);
+                var missionHTML = "";
+                for (var i = 0; i < missionList.length; i++) {
+                    var mission = missionList[i];
+                    missionHTML += '<tr>\n';
+                    missionHTML += '<td>' +
+                        '<a href="#" onClick="loadMission(' + "'" + mission[1] + "','" +
+                        mission[2] + "');" + '">' + mission[0] + '</a></td>\n';
+                    missionHTML += '<td>' + getStatus(mission[1]) + '</td>\n';
+                    missionHTML += '<td>' + mission[4] + '</td>\n';
+                    missionHTML += '<td>' + mission[5] + '</td>\n';
+                    //missionHTML += '<tr><td colspan="4" style="border-top: none">Mission Description will be listed here.</td></tr>\n';
+                    missionHTML += '</tr>\n';
+                }
+            } else {
+                // Launched outside of game
+                missionHTML = "Mission list is only available from within The Secret World game.";
+            }
+            document.getElementById("missionList").innerHTML = missionHTML;
+        }
+
+        var missionStatus = null;
+
+        function getStatus(missionID)
+        {
+            // Parse XML first time called
+            if (missionStatus == null && qs["statusXML"]) {
+                var parser = new DOMParser();
+                missionStatus = parser.parseFromString(qs["statusXML"], "text/xml");
+                status = "First parse";
+            }
+
+            var tier = "";
+            if (missionStatus) {
+                var missions = missionStatus.getElementsByTagName("mission");
+                for (var i = 0; i < missions.length; i++) {
+                    if (missions[i].attributes.id.value.toUpperCase() == missionID.toUpperCase()) {
+                        tier = missions[i].attributes.tier.value;
+                        break;
+                    }
+                }
+            }
+
+            var status = "";
+            switch (tier) {
+                case "-99":
+                    status = "Complete";
+                    break;
+                case "-1":
+                case "":
+                case undefined:
+                    status = "";
+                    break;
+                default:
+                    status = "In Progress";
+                    break;
+            }
+            if (status != "") {
+                status += ' <a href="#" onClick="resetMission(' + "'" + escape(missionID) + "'" + ')">(Reset)</a>';
+            }
+            return status;
+        }
+
+        function resetMission(missionID)
+        {
+            bootbox.confirm("Do you want to reset your progress on the selected mission?", function (result) {
+                if (result == true) {
+                    window.location = "data:,resetMission=" + escape(missionID);
+                }
+            });
+        }
+
+        function showCoords()
+        {
+            document.getElementById("playfield").innerHTML = qs["playfield"];
+            document.getElementById("x-coords").innerHTML = qs["x"];
+            document.getElementById("y-coords").innerHTML = qs["y"];
+            document.getElementById("z-coords").innerHTML = qs["z"];
+        }
+    </script>
+
+</body>
+
+</html>

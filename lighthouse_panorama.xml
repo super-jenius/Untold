@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<tier type="cinematic" description="Kingsmouth Lighthouse Panorama" playField="3040" >
+  <cinematic type="audio" url="http://untoldworld.azurewebsites.net/siren_song.ogg" volume="50" />
+  <cinematic type="fadeout" duration="2" />
+  <!--<cinematic type="camera" duration="0" posX="898" posY="234" posZ="103" targetX="904.7" targetY="232.5" targetZ="102.3" />-->
+  <cinematic type="camera" duration="0" posX="1048" posY="131" posZ="410" targetX="1024" targetY="135" targetZ="20" />
+  <!--<cinematic type="camera" duration="12000" posX="185" posY="147.5" posZ="315.5" targetX="190.5" targetY="155" targetZ="328.7" />-->
+  <!--<cinematic type="dialog" line="" duration="10" />-->
+  <!--<cinematic type="camera" duration="15000" posX="908" posY="234" posZ="86" targetX="904.7" targetY="232.5" targetZ="102.3" ease="Regular.easeInOut" />-->
+  <cinematic type="camera" duration="15000" posX="1024" posY="150" posZ="20" targetX="904.7" targetY="232.5" targetZ="102.3" ease="Regular.easeInOut" />
+  <cinematic type="dialog" line="" duration="0.5" />
+  <cinematic type="fadein" duration="10" />
+  <cinematic type="dialog" line="" duration="13.5" />
+  <cinematic type="camera" duration="10000" posX="800" posY="200" posZ="50" targetX="904.7" targetY="232.5" targetZ="102.3" ease="Regular.easeInOut" />
+  <cinematic type="dialog" line="" duration="10" />
+  <!--<cinematic type="camera" duration="15000" posX="950" posY="250" posZ="135" targetX="904.7" targetY="232.5" targetZ="102.3" ease="Regular.easeInOut" />-->
+  <cinematic type="camera" duration="15000" posX="1000" posY="270" posZ="180" targetX="904.7" targetY="232.5" targetZ="102.3" ease="Regular.easeInOut" />
+  <cinematic type="dialog" line="" duration="15" />
+  <cinematic type="camera" duration="20000" posX="1024" posY="240" posZ="0" targetX="904.7" targetY="232.5" targetZ="102.3" ease="Regular.easeInOut" />
+  <cinematic type="dialog" line="" duration="17" />
+  <cinematic type="fadeout" duration="3" />
+</tier>

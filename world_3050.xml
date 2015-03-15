@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<world playfield="3050" name="Blue Mountain" >
+  <story type="Story" id="EnemyLongForgotton" title="An Enemy Long Forgotton" subtitle="by Dinick" playField="3050" x="850" y="156" z="49" distance="6" yDistance="3" url="https://docs.google.com/document/d/1kdEdWUITuEtgKV7HYxBAeIp_4lkmrFjsaQpx9-ukI5s/edit?pli=1&amp;rm=minimal" width="900" height="768" />
+  <story type="Panorama" id="Quarry" title="The Quarry" subtitle="by Super Jenius" playField="3050" x="610" y="203" z="418" distance="10" yDistance="5" url="quarry_panorama.xml" />
+</world>

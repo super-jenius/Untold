@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Untold Stories of The Secret World Image Viewer</title>
+</head>
+
+<body style="padding:0; margin:0; position: relative">
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+    <script type='text/javascript'>
+
+        $(document).ready(function () {
+            loadImage();
+        })
+
+        var qs = (function (a) {
+            if (a == "") return {};
+            var b = {};
+            for (var i = 0; i < a.length; ++i) {
+                var p = a[i].split('=', 2);
+                if (p.length == 1)
+                    b[p[0]] = "";
+                else
+                    b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+            }
+            return b;
+        })(window.location.search.substr(1).split('&'));
+
+        function loadImage() {
+            $('body').height($(window).height());
+            var src = unescape(qs["src"]);
+            var viewer = document.getElementById("imgViewer");
+            viewer.src = src;
+        }
+
+    </script>
+
+    <img id="imgViewer" style="max-height:100%; max-width:100%; margin:0; position: absolute; top: 50%; left: 50%; margin-right: -50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%);" />
+
+</body>
+
+</html>

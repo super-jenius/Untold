@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Untold Stories of The Secret World Audio Player</title>
+</head>
+
+<body>
+    Untold Stories of The Secret World Audio Player
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+    <script type='text/javascript'>
+
+        $(document).ready(function () {
+            loadAudio();
+        })
+
+        var qs = (function (a) {
+            if (a == "") return {};
+            var b = {};
+            for (var i = 0; i < a.length; ++i) {
+                var p = a[i].split('=', 2);
+                if (p.length == 1)
+                    b[p[0]] = "";
+                else
+                    b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+            }
+            return b;
+        })(window.location.search.substr(1).split('&'));
+
+        // Play or preload audio file
+        // Preload puts audio in browser cache, so it will start/play with predictable timing later.
+        // Only one file can be preloaded at a time.
+        function loadAudio() {
+
+            var src = unescape(qs["src"]);
+            var preload = qs["preload"];
+            var volume = qs["volume"];
+            var loop = qs["loop"];
+
+            var player = document.getElementById("audioPlayer");
+            player.src = src;
+            if (volume) {
+                player.volume = volume;
+            }
+            if (preload == "true") {
+                // Preload audio
+                player.preload = true;
+                player.load();
+            } else {
+                // Loop
+                if (loop == "true") {
+                    player.loop = true;
+                }
+                // Play audio
+                player.play();
+            }
+        }
+    </script>
+
+    <audio id="audioPlayer"/>
+
+</body>
+
+</html>
