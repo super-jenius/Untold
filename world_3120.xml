@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<world playfield="3120" name="The Besieged Farmlands" >
+  <story type="Art" id="CarmenPreda" title="Carmen Preda" subtitle="by Whitequeen" playField="3120" x="1201" y="162" z="1244" distance="3" yDistance="2" url="http://untoldworld.azurewebsites.net/imageviewer.html?src=http://wordpress.tswguides.com/wp-content/uploads/2012/09/TSW_day26.jpg" width="773" height="1000" />
+  <story type="Art" id="ForestGodSophie" title="Forest God and Sophie" subtitle="by Whitequeen" playField="3120" x="1045" y="123" z="1026" distance="3" yDistance="1" url="http://untoldworld.azurewebsites.net/imageviewer.html?src=http://wordpress.tswguides.com/wp-content/uploads/2012/09/TSW_day22.jpg" width="680" height="880" />
+  <story type="Art" id="Petru" title="Petru" subtitle="by Whitequeen" playField="3120" x="1089" y="122" z="1011" distance="3" yDistance="1" url="http://untoldworld.azurewebsites.net/imageviewer.html?src=http://wordpress.tswguides.com/wp-content/uploads/2012/09/TSW_day19.jpg" width="680" height="880" />
+  <story type="Art" id="Zaha" title="Zaha" subtitle="by Whitequeen" playField="3120" x="476" y="96" z="878" distance="3" yDistance="1" url="http://untoldworld.azurewebsites.net/imageviewer.html?src=http://wordpress.tswguides.com/wp-content/uploads/2012/09/TSW_day31.jpg" width="825" height="638" />
+</world>
+

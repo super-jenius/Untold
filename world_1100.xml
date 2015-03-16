@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<world playfield="1100" name="New York" >
+  <story type="Art" id="KirstenGeary" title="Kirsten Geary" subtitle="by Alyona" playField="1100" x="284" y="57" z="334" distance="3" yDistance="1" url="http://untoldworld.azurewebsites.net/imageviewer.html?src=http://25.media.tumblr.com/e8a3bbd700757f3a54a251eb9c84e23a/tumblr_mo1fc7zu7Y1rq74j2o2_r1_1280.jpg" width="530" height="750" />
+  <story type="Art" id="KirstenGeary2" title="Kirsten Geary" subtitle="by Whitequeen" playField="1100" x="284" y="57" z="334" distance="3" yDistance="1" url="http://untoldworld.azurewebsites.net/imageviewer.html?src=http://fc03.deviantart.net/fs71/f/2012/210/b/a/kirsten_geary___illuminati_by_drunkfu-d593a44.jpg" width="463" height="850" />
+</world>
