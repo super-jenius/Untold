@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<world playfield="7010" name="The Crucible" >
+  <story type="Concept Art" id="Crucible" title="The Crucible" subtitle="by Funcom" playField="7010" x="313" y="5" z="53" distance="3" yDistance="1" url="http://untoldworld.azurewebsites.net/imageviewer.html?src=http://www.mbs-intl.com/tsw/art/Crucible.jpg" width="1263" height="1000" />
+  <story type="Concept Art" id="Trainer" title="Brigadier Lethe" subtitle="by Funcom" playField="7010" x="312" y="3" z="75" distance="2" yDistance="1" url="http://untoldworld.azurewebsites.net/imageviewer.html?src=http://www.mbs-intl.com/tsw/art/TemplarTrainer.jpg" width="496" height="1000" />
+</world>
