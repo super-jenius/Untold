@@ -43,4 +43,10 @@
   <story type="Panorama" id="SheriffStation" title="Sheriff's Station" subtitle="by Super Jenius" playField="3030" x="190" y="153" z="328" distance="5" yDistance="1" url="sheriff_panorama.xml" />
   <!--<story type="Panorama" id="JourneysEnd" title="Journey's End" subtitle="by Super Jenius" playField="3030" x="687" y="152" z="176" distance="3" yDistance="1" url="sheriff_panorama.xml" />-->
   <story type="Art" id="NormaCreed" title="Norma Creed" subtitle="by Whitequeen" playField="3030" x="358" y="136" z="106" distance="5" yDistance="2" url="http://wordpress.tswguides.com/wp-content/uploads/2012/09/TSW_day6.jpg" width="600" height="692" />
+  <story type="Story" id="TheFirst" title="The First" subtitle="" playField="3030" x="507" y="133" z="29" distance="5" yDistance="3" url="http://untoldworld.azurewebsites.net/TheFirst.html"/>
 </world>
+
+Playfield: 3030
+X: 506.64151000977
+Y (height): 133.13140869141
+Z: 28.635194778442
