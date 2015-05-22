@@ -42,7 +42,8 @@ class BrowserTier extends BaseTier
 		// If size specified, defer loading until browser resized
         if (m_Width || m_Height)
 		{
-			url = "about:blank";
+			//url = "about:blank";
+			url = "data:,";
 		}
 		com.GameInterface.DistributedValueBase.SetDValue("WebBrowserStartURL", url);
         com.GameInterface.DistributedValueBase.SetDValue("web_browser", true);
@@ -54,7 +55,9 @@ class BrowserTier extends BaseTier
 	
 	public function AdjustBrowser(thisTier)
 	{
-		if (_root.webbrowser.m_Window)
+		_root.webbrowser.m_Window._visible = false;
+		
+		if (_root.webbrowser.m_Window.m_Content.m_History.length > 0)
 		{
 			ULog.Info("BrowserTier.AdjustBrowser()");
 			var browserWindow = _root.webbrowser.m_Window;
