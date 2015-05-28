@@ -35,6 +35,8 @@ class AddItemTier extends BaseTier
 				_root.backpack2.m_Inventory.UseItem(itemPos);
 			}
 			// Item added. End Tier.
+			_root.backpack2.m_Inventory.SignalItemAdded.Disconnect(SlotItemAdded, this);
+		    _root.backpack2.m_Inventory.SignalItemStatChanged.Disconnect(SlotItemStatChanged, this);
 			this.EndTier();
 		}
 	}
