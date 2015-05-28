@@ -11,8 +11,10 @@ class WorldStoryBase
 	public var m_Type;	// story, art, video, etc.
 	public var m_StoryTitle;
 	public var m_SubTitle = "";
+	public var m_AddlInfo = "";
 	public var m_Teaser; // Optional FIFO teaser message when player gets in range
 	public var m_LocationTier;
+	public var m_IconType = "BrokenItemsIcon";
 	public var m_USIcon;
 	public var m_AtLocation;
 	public var m_IntervalID;
@@ -42,6 +44,7 @@ class WorldStoryBase
 		//_root.fifo.SlotShowFIFOMessage("WorldStoryBase.SetLocation()");
 		m_LocationTier = new LocationTier();
 		m_LocationTier.m_Player = m_Player;
+		m_LocationTier.m_Lore = true;
 		m_LocationTier.SetLocation(playField, x, y, z, distance, yDistance);
 	}
 
@@ -102,7 +105,7 @@ class WorldStoryBase
 		// Create icon if it doesn't already exist
 		if (m_USIcon == undefined || link["m_USIcon_" + m_StoryID] == undefined)
 		{
-			m_USIcon = link.attachMovie("BrokenItemsIcon", "m_USIcon_" + m_StoryID, link.getNextHighestDepth());
+			m_USIcon = link.attachMovie(m_IconType, "m_USIcon_" + m_StoryID, link.getNextHighestDepth());
 			link.SetVisible(m_USIcon, false);
 			m_USIcon.createTextField("m_NotificationText", m_USIcon.getNextHighestDepth(), 0, 1, 35, 33.10);
 			m_USIcon.m_NotificationText.text = "US"; 
@@ -115,7 +118,7 @@ class WorldStoryBase
 			fmt.leading = 2;
 			m_USIcon.m_NotificationText.setTextFormat(fmt);
 			// m_USIcon.fmt = m_USIcon.m_NotificationText.getTextFormat();
-			link.CreateRealTooltip(m_USIcon, "Untold Stories\nof The Secret World", m_Type + ": " + m_StoryTitle + "\n" + m_SubTitle);
+			link.CreateRealTooltip(m_USIcon, "Untold Stories\nof The Secret World", m_Type + ": " + m_StoryTitle + "\n" + m_SubTitle + m_AddlInfo);
 			
 			// Single click opens URL. Double-click hides icon.
 			var intervalID = 0;

@@ -98,6 +98,16 @@ class WorldStories
 							m_Stories.push(story);
 						}
 						break;
+					case "mission" :
+						// Mission
+						if (storyNode.attributes.url) {
+							var story = new WorldStoryMission();
+							
+							story.LoadXML(storyNode);
+							story.StartTracking();
+							m_Stories.push(story);
+						}
+						break;
 					default :
 						// The rest of the types use the browser
 						if (storyNode.attributes.url) {
