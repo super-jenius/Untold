@@ -45,30 +45,43 @@
         *Lore-Friendly: "Yes" indicates the author intended not to contradict the official lore of The Secret World. "No" means no such attempt was made, or that the content otherwise falls outside the official lore.
 
         <div id="newVersion" class="alert alert-danger" role="alert" style="display: none;">
-            <ul><li>Version 2.2 is now available for download using the Curse Client or from SecretUI. This is a RECOMMENDED update and adds the following features:
             <ul>
-                <li>Panoramas/Cinematics have been added as types of Untold Stories Lore.  When you are near a panorama, click on the Lore icon to play it. Yes, this is a blatant ripoff of the Panorama feature in Age of Conan, but I figure the devs won't add it to TSW for a long time. I have placed three panoramas in Solomon Island, one in each zone (Kingsmouth, The Savage Coast, Blue Mountain). See if you can find them!</li>
-                <li>Audio files, including voiceover, can now be played during missions, dialog, and cinematics. Refer to the documentation for more details.</li>
-                <li>Cinematic camera paths now support "ease" functions for more natural movement. Refer to the documentation for more details.</li>
+                <li>
+                    Version 2.3 is now available for download using the Curse Client or from SecretUI. This is a RECOMMENDED update and adds the following features:
+                    <ul>
+                        <li>Missions can now be started from Untold Stories Lore. These missions can co-exist with the main mission list (started either way), or they can be "hidden" missions on lore only.</li>
+                        <li>Various fixes and performance improvements.</li>
+                        <li><b>Akma's Hand</b>, an all new mission, is now available to play. It requires some of the aforementioned fixes, so version 2.3 is required to play it.</li>
+                    </ul>
+                <li>
+                    Version 2.2 adds the following features:
+                    <ul>
+                        <li>Panoramas/Cinematics have been added as types of Untold Stories Lore.  When you are near a panorama, click on the Lore icon to play it. Yes, this is a blatant ripoff of the Panorama feature in Age of Conan, but I figure the devs won't add it to TSW for a long time. I have placed three panoramas in Solomon Island, one in each zone (Kingsmouth, The Savage Coast, Blue Mountain). See if you can find them!</li>
+                        <li>Audio files, including voiceover, can now be played during missions, dialog, and cinematics. Refer to the documentation for more details.</li>
+                        <li>Cinematic camera paths now support "ease" functions for more natural movement. Refer to the documentation for more details.</li>
+                    </ul>
+                </li>
+                <li>Version 2.1 fixes the 20 FPS lag issue introduced in 2.0.</li>
+                <li>
+                    Version 2.0 introduces a major new feature: <b>Untold Stories Lore</b>.
+                    Untold Stories Lore highlights fan fiction, art, music, and video creations from the TSW community.  When you are near a designated location or character, a red US icon will appear in the notification area.
+                    Click the icon to open the lore.
+                </li>
             </ul>
-            </li>
-            <li>Version 2.1 fixes the 20 FPS lag issue introduced in 2.0.</li>
-            <li>Version 2.0 introduces a major new feature: <b>Untold Stories Lore</b>.
-            Untold Stories Lore highlights fan fiction, art, music, and video creations from the TSW community.  When you are near a designated location or character, a red US icon will appear in the notification area.
-            Click the icon to open the lore.</li></ul>
         </div>
         <div id="worldWell" class="alert alert-success" role="alert" style="display: none;">
             <p>Untold Stories Lore highlights fan fiction, art, music, and video creations from the TSW community.  When you are near a designated location or character, a red US icon will appear in the notification area. Click the icon to open the lore.</p>
             <p id="disableWorld" style="display: none;"><a href="data:,worldStories=false">Disable Untold Stories Lore</a></p>
             <p id="enableWorld" style="display: none;"><a href="data:,worldStories=true">Enable Untold Stories Lore</a></p>
             <p>To submit lore for inclusion, please refer to threads in the Fanpages &amp; Fanart section of the TSW forums.</p>
-            <p><a href="https://forums.thesecretworld.com/showthread.php?84123-Get-your-creation-in-the-game!-%28Solomon-Island%29">Solomon Island</a></p>
+            <p><a href="https://forums.thesecretworld.com/showthread.php?84123-Get-your-creation-in-the-game!-%28Solomon-Island%29">Get your creation in the game!</a></p>
         </div>
         <div id="newsWell" class="alert alert-info" role="alert">
             <h4>Content News</h4>
             <p>Added content does NOT require a new version of this MOD to be downloaded, unless you also see a new version announced above.</p>
             <p>
                 <ul>
+                    <li><b>May 28 2015:</b> New mission "Akma's Hand" now available (requires 2.3 or higher).</li>
                     <li><b>Mar 21 2015:</b> Added FunCom Concept Art lore to London, New York, and Seoul.</li>
                     <li><b>Mar 15 2015:</b> Added more player artwork lore to all playfields.</li>
                     <li><b>Mar 7 2015:</b> Creating missions just got a whole lot easier! Solon has developed a very nice mission editor GUI (more info below). Thanks, Solon!</li>
@@ -85,7 +98,7 @@
             <p>Loading mission files from your local computer requires the Local Mission Launcher.  <a href="data:,localMissions">Click here to start it.</a></p>
         </div>
         <div>
-            Current Coordinates: 
+            Current Coordinates:
             <ul>
                 <li>Playfield: <span id="playfield"></span></li>
                 <li>X: <span id="x-coords"></span></li>
@@ -134,15 +147,13 @@
             return b;
         })(window.location.search.substr(1).split('&'));
 
-        function checkVersion()
-        {
-            if (qs["version"] != "2.2") {
+        function checkVersion() {
+            if (qs["version"] != "2.3") {
                 $("#newVersion").show();
             }
         }
 
-        function worldStories()
-        {
+        function worldStories() {
             if (qs["worldStories"]) {
                 $("#worldWell").show();
                 if (qs["worldStories"] == "true") {
@@ -154,8 +165,7 @@
 
         }
 
-        function loadMission(missionID, missionFile)
-        {
+        function loadMission(missionID, missionFile) {
             try {
                 var xmlhttp = new XMLHttpRequest();
                 xmlhttp.open("GET", missionFile, false);
@@ -168,8 +178,7 @@
             }
         }
 
-        function listMissions()
-        {
+        function listMissions() {
             // Make sure launched within game
             if (qs["statusXML"]) {
                 var missionList = new Array();
@@ -180,6 +189,10 @@
                 missionList.push(["Extraordinary Merchandise", "ExtraordinaryMerchandise", "ExtraordinaryMerchandise.xml", "Status", "Yes", "Tremerion"]);
                 missionList.push(["Echo Squad", "EchoSquad", "EchoSquad.xml", "Status", "Yes", "bluemoon"]);
                 missionList.push(["The Shadow Out of Time", "TheShadowOutofTime", "TheShadowOutofTime.xml", "Status", "Yes", "Tremerion"]);
+                if (qs["version"] >= "2.3") {
+                    // Version 2.3 or higher required
+                    missionList.push(["Akma's Hand", "AkmasHand", "AkmasHand.xml", "Status", "Yes", "Super Jenius"]);
+                }
                 var missionHTML = "";
                 for (var i = 0; i < missionList.length; i++) {
                     var mission = missionList[i];
@@ -202,8 +215,7 @@
 
         var missionStatus = null;
 
-        function getStatus(missionID)
-        {
+        function getStatus(missionID) {
             // Parse XML first time called
             if (missionStatus == null && qs["statusXML"]) {
                 var parser = new DOMParser();
@@ -242,8 +254,7 @@
             return status;
         }
 
-        function resetMission(missionID)
-        {
+        function resetMission(missionID) {
             bootbox.confirm("Do you want to reset your progress on the selected mission?", function (result) {
                 if (result == true) {
                     window.location = "data:,resetMission=" + escape(missionID);
@@ -251,8 +262,7 @@
             });
         }
 
-        function showCoords()
-        {
+        function showCoords() {
             document.getElementById("playfield").innerHTML = qs["playfield"];
             document.getElementById("x-coords").innerHTML = qs["x"];
             document.getElementById("y-coords").innerHTML = qs["y"];

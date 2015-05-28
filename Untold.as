@@ -18,7 +18,7 @@ function onLoad()
 {
 
 	// Set version here for each release
-	m_VerNo = "2.2";
+	m_VerNo = "2.3";
 	
 	// Turn on info logging?
 	ULog.m_LogInfo = false;
