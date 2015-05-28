@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <missionList>
-  <mission title="Audio Test" id="AudioTest" file="AudioTest.xml" author="Super Jenius" />
+  <mission title="Akma's Hand" id="AkmasHand" file="AkmasHand.xml" author="Super Jenius" />
   <mission title="Basic Training" id="BasicTraining" file="BasicTraining.xml" author="Super Jenius" />
 	<mission title="A Personal Matter" id="APersonalMatter" file="APersonalMatter.xml" author="Super Jenius" />
 	<mission title="The Scroll" id="TheScroll" file="TheScroll.xml" author="Super Jenius" />

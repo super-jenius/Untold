@@ -1,0 +1,443 @@
+<?xml version="1.0" ?>
+<mission title="Akma's Hand" debugMode = "false" debugTier = "0">
+  <tier type="browser" description="TIER 1/11&#13;You have received a text message." url="http://www.mbs-intl.com/tsw/akma/akma_phone1.png" browserTitle="Text Message" hideAddress="true" width="320" height="640" />
+  <tier type="location" description="TIER 1/11&#13;Go to the second floor of the Kumiho Hotel in Seoul." playField="1200" x="371" y="52.5" z="306" distance="3" yDistance="1" />
+  <tier type="cinematic" description="TIER 1/11&#13;Listen to Hana." playField="1200" >
+    <cinematic type="fadeout" duration="2" />
+    <cinematic type="dialog" line="" duration="0.5" />
+    <cinematic type="facecoords" x="376" z="306"/>
+    <cinematic type="camera" duration="0" posX="365" posY="55" posZ="276" targetX="374.3" targetY="52.2" targetZ="295.9"  />
+    <cinematic type="camera" duration="18000" posX="373.73" posY="52.2" posZ="295.18" targetX="374.3" targetY="52.2" targetZ="295.9" />
+    <cinematic type="fadein" duration="10" />
+
+    <cinematic type="dialog" line="" duration="7" />
+    <cinematic type="camera" duration="0" posX="374.5" posY="52" posZ="302.5" targetX="376" targetY="51.5" targetZ="303.1"  />
+    <cinematic type="camera" duration="13000" posX="375.5" posY="51.5" posZ="303.5" targetX="376" targetY="51.5" targetZ="303.1" ease="Regular.easeOut" />
+    <cinematic type="dialog" line="" duration="3" />
+    <cinematic type="dialog" line="----------------------------------&#13;Akma's Hand&#13;----------------------------------" duration="6" />
+    <cinematic type="dialog" line="" duration="3" />
+
+    <cinematic type="camera" duration="0" posX="376" posY="52.5" posZ="306" targetX="374.3" targetY="52.2" targetZ="295.9"  />
+    <cinematic type="camera" duration="250000" posX="373.73" posY="52.2" posZ="295.18" targetX="374.3" targetY="52.2" targetZ="295.9" />
+    <cinematic type="dialog" line="Please. Remain in the doorway. Listen." />
+    <cinematic type="dialog" faction="Dragon" line="There will be no clarity session today." />
+    <cinematic type="dialog" faction="Illuminati" line="Only those following the path of The Dragon may enter. You will receive no 'favors' today." />
+    <cinematic type="dialog" faction="Templar" line="Only those following the path of The Dragon may enter. It is a matter of honor. You understand." />
+    <cinematic type="dialog" line="I... we... have work that may interest you, but know this -- it requires complete discretion." />
+
+    <cinematic type="camera" duration="0" posX="375" posY="51.8" posZ="295.3" targetX="373.57" targetY="51.8" targetZ="295.9" />
+    <cinematic type="camera" duration="30000" posX="375" posY="52.2" posZ="295.3" targetX="373.57" targetY="52.2" targetZ="295.9" />
+    <cinematic type="dialog" line="What is learned is for us alone. No one else." />
+    <cinematic type="dialog" line="If you find these terms agreeable, then we shall begin." />
+    <cinematic type="camera" duration="0" posX="375.5" posY="52.2" posZ="306.5" targetX="-99"/>
+    <cinematic type="camera" duration="50000" posX="374.5" posY="52.2" posZ="306.5" targetX="-99"/>
+    <cinematic type="dialog" line="" duration="2.5" />
+    <cinematic type="camera" duration="0" posX="375" posY="52.2" posZ="295.3" targetX="373.57" targetY="52.2" targetZ="295.9" />
+    <cinematic type="dialog" line="" duration=".5" />
+    <cinematic type="dialog" line="Good."/>
+    <cinematic type="dialog" line="It is regarding Akma."/>
+    <cinematic type="camera" duration="0" posX="375.5" posY="51.5" posZ="303.5" targetX="376" targetY="51.5" targetZ="303.1" />
+    <cinematic type="camera" duration="50000" posX="371" posY="52.5" posZ="300" targetX="376" targetY="52.2" targetZ="303.1" ease="Regular.easeInOut" />
+    <cinematic type="dialog" line="His father was of the hell dimensions, his mother -- human.  That much is obvious." />
+    <cinematic type="dialog" line="He lost them at a very early age, victims of bigotry and hate." />
+    <cinematic type="dialog" line="Akma escaped into the wilderness alone, before coming across an old man." />
+    <cinematic type="dialog" line="The old man cared for Akma a short while, but then he was captured by slavers and sold to a Mongol warlord." />
+    <cinematic type="camera" duration="0" posX="376" posY="52" posZ="306"  targetX="376" targetY="51.5" targetZ="303.1" />
+    <cinematic type="camera" duration="250000" posX="373.73" posY="52.2" posZ="295.18" targetX="374.3" targetY="52.2" targetZ="295.9" />
+    <cinematic type="dialog" line="Akma is much older than you may realize." />
+    <cinematic type="dialog" line="His path eventually led him to The Dragon... and me.  He has served loyally." />
+    <cinematic type="dialog" line="He seeks to learn more about his parents." />
+    <cinematic type="dialog" line="He was very young and remembers little." />
+    <cinematic type="dialog" line="No names, only faded memories of a beautiful mother and a passionate father..." />
+    <cinematic type="dialog" line="and of love." duration="2.5"  />
+
+    <cinematic type="camera" duration="0" posX="373.27" posY="50.8" posZ="295.96" targetX="373.57" targetY="50.8" targetZ="295.9" />
+    <cinematic type="camera" duration="20000" posX="373.27" posY="52" posZ="295.96" targetX="373.57" targetY="52" targetZ="295.9" ease="Regular.easeInOut" />
+    <cinematic type="dialog" line="The Voice has fallen silent on this matter, so we are left to our own devices." />
+    <cinematic type="dialog" line="I have hired a reporter with some expertise in this field, Daniel Bach." />
+    <cinematic type="dialog" line="He has news for us, but he will only deliver it in person." />
+    <cinematic type="dialog" line="Please, go to him, and see what he has learned." />
+
+    <cinematic type="camera" duration="0" posX="375.5" posY="52.2" posZ="306.5" targetX="-99"/>
+    <cinematic type="camera" duration="50000" posX="374.5" posY="52.2" posZ="306.5" targetX="-99"/>
+    <cinematic type="dialog" line="You will find him on Solomon Island in America at the Overlook Motel." />
+    <cinematic type="dialog" line="Also, your phone... keep the line open, so we can monitor your activities." />
+    <cinematic type="fadeout" duration="3" />
+  </tier>
+
+  <tier type="location" description="TIER 2/11&#13;Go to the Overlook Motel in Solomon Island and find out what Daniel Bach has learned." playField="3040" x="724" y="152" z="845" distance="3" yDistance="1"/>
+
+  <tier type="cinematic" description="Listen to what Daniel Bach as learned." playField="3040" >
+    <cinematic type="fadeout" duration="2" />
+    <cinematic type="dialog" line="" duration="0.5" />
+    <cinematic type="facenpc" name="Daniel Bach"/>
+    <cinematic type="camera" duration="0" posX="697" posY="151" posZ="914.5" targetX="702.6" targetY="154" targetZ="911.6"  />
+    <cinematic type="camera" duration="18000" posX="713" posY="170" posZ="925" targetX="740" targetY="170" targetZ="845" ease="Regular.easeInOut" />
+    <cinematic type="fadein" duration="10" />
+    <cinematic type="dialog" line="" duration="11" />
+    <cinematic type="dialog" line="Humans and demons, eh?" />
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="camera" duration="0" posX="726" posY="152" posZ="843.5" targetX="725" targetY="152" targetZ="842"  />
+    <cinematic type="camera" duration="50000" posX="725" posY="152" posZ="842" targetX="725" targetY="152" targetZ="842"  />
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="dialog" line="Hey, I'm not judging. I get it." />
+    <cinematic type="dialog" line="The danger. The intrigue." />
+    <cinematic type="dialog" line="Tits and ass and a 16-foot wingspan." />
+    <cinematic type="dialog" line="The idea of it gets the senses tingling." />
+    <cinematic type="dialog" line="But having my nose buried in a mound of sulfur and piss ain't my idea of a good time." />
+    <cinematic type="camera" duration="0" posX="676" posY="155" posZ="866.5" targetX="680" targetY="157.5" targetZ="868"  />
+    <cinematic type="camera" duration="22000" posX="679.2" posY="157.1" posZ="867.2" targetX="679.7" targetY="157.5" targetZ="868" ease="Regular.easeOut"/>
+    <cinematic type="dialog" line="That's right, I'm talking about SucKubus with a capital K." />
+    <cinematic type="dialog" line="A devil with a cavernous smile. " />
+    <cinematic type="dialog" line="She comes on like a flame, but she's as cold as ice at the tip of your tongue." />
+    <cinematic type="dialog" line="Bad puns intended all around." />
+    <cinematic type="dialog" line="Only the most cunning linguist need apply." />
+    <cinematic type="dialog" line="" duration="2" />
+    <cinematic type="camera" duration="0" posX="714.4" posY="152.3" posZ="844.17" targetX="725" targetY="152.3" targetZ="842"  />
+    <cinematic type="camera" duration="26000" posX="720.8" posY="152.3" posZ="841.4" targetX="-99" />
+    <cinematic type="dialog" line="No thank you. I like my smiles warm and clean... and human." />
+    <cinematic type="dialog" line="Your demon agrees with me on that one, but before we get into the particulars..." />
+    <cinematic type="dialog" line="You sure you wanna go down this particular hell hole?" />
+    <cinematic type="dialog" line="I'm no role model, but the past is the past my friend." />
+    <cinematic type="dialog" line="No need to go opening old rifts." />
+    <cinematic type="dialog" line="" duration="2" />
+    <cinematic type="camera" duration="0" posX="726" posY="152" posZ="843.5" targetX="725" targetY="152" targetZ="842"  />
+    <cinematic type="camera" duration="50000" posX="728" posY="152" posZ="845" targetX="725" targetY="152" targetZ="842"  />
+    <cinematic type="dialog" line="That's what I thought." />
+    <cinematic type="dialog" line="We're gonna need some privacy then." />
+    <cinematic type="dialog" line="Demons got senses too.  Eyes, ears, and mouths, like the rest of us." />
+    <cinematic type="dialog" line="What say you clear the area before I deliver my shocking exposé?" />
+    <cinematic type="fadeout" duration="3" />
+  </tier>
+
+  <tier type="kill" description="TIER 3/11&#13;Daniel Bach wants to be sure there are no eavesdroppers before delivering his report. Kill nearby demons." targetName="Encroacher,Consecratrix" targetKills="8" />
+  <tier type="location" description="TIER 3/11&#13;Return to Daniel Bach." playField="3040" x="724" y="152" z="845" distance="3" yDistance="1"/>
+  <tier type="cinematic" description="TIER 3/11&#13;Listen to what Daniel Bach as learned." playField="3040" >
+    <cinematic type="fadeout" duration="2" />
+    <cinematic type="dialog" line="" duration="0.5" />
+    <cinematic type="facenpc" name="Daniel Bach"/>
+    <cinematic type="camera" duration="0" posX="727" posY="152" posZ="851.6" targetX="725" targetY="152" targetZ="842"  />
+    <cinematic type="camera" duration="50000" posX="721.8" posY="152" posZ="845.3" targetX="725" targetY="152" targetZ="842"  />
+    <cinematic type="fadein" duration="5" />
+    <cinematic type="dialog" line="" duration="2" />
+    <cinematic type="dialog" line="Doing what I do, you see a lot of things." />
+    <cinematic type="dialog" line="Shit that'll make your everyday S&amp;M'r look like a kindergarten teacher." />
+    <cinematic type="dialog" line="Soldiers raping soldiers," />
+    <cinematic type="dialog" line="coked-up gang bangers," />
+    <cinematic type="dialog" line="senior citizen acid-trips, " />
+    <cinematic type="dialog" line="bestiality on a bed of nails," />
+    <cinematic type="dialog" line="climax at 220 volts!" />
+    <cinematic type="dialog" line="But love?" duration = "3"/>
+    <cinematic type="dialog" line="Jesus." />
+    <cinematic type="camera" duration="0" posX="726" posY="152" posZ="843.5" targetX="725" targetY="152" targetZ="842"  />
+    <cinematic type="camera" duration="80000" posX="728" posY="152" posZ="845" targetX="725" targetY="152" targetZ="842"  />
+    <cinematic type="dialog" line="We're not talking Montagues and Capulets here." />
+    <cinematic type="dialog" line="No, no, no, it's Angels and Demons and Humans!" />
+    <cinematic type="dialog" line="There's an order of things, and as far as they're concerned, we're scraping the bottom of the barrel." />
+    <cinematic type="dialog" line="That doesn't keep 'em from slummin', the best of 'em coming down for a piece of homo sapien ass." />
+    <cinematic type="dialog" line="It makes you wonder... who's seducing who?" />
+    <cinematic type="dialog" line="Sure, transdimensional copulation is gonna ensue, but Mommy, Daddy, Baby, and a picket fence?" />
+    <cinematic type="dialog" line="No sir! Access denied! Get out of town! It's not happening!" />
+    <cinematic type="dialog" line="And from the looks of things, with a fuckin' Jinn, no less!" />
+    <cinematic type="camera" duration="0" posX="719" posY="152.3" posZ="842.7"  targetX="726.3" targetY="152.3" targetZ="843.1"/>
+    <cinematic type="camera" duration="100000" posX="714.4" posY="152.3" posZ="844.17" targetX="726.3" targetY="152.3" targetZ="843.1" />
+    <cinematic type="dialog" line="That's all I can tell you about the demon, but your girl..." />
+    <cinematic type="dialog" line="Rose Doherty, born and raised in Ireland, relocated to London on her 18th birthday," />
+    <cinematic type="dialog" line="then one day... poof! She disappears, never to be seen again." />
+    <cinematic type="dialog" line="You and I know the rest of the story..." />
+    <cinematic type="dialog" line="She moves to China to shack up with her demon boyfriend out of sight, but not hidden well enough," />
+    <cinematic type="dialog" line="because the locals bring out their pitchforks and burn the place down, extra-crispy lovers inside." />
+    <cinematic type="dialog" line="Case closed and shut, except for one thing..." />
+    <cinematic type="camera" duration="0" posX="726" posY="152" posZ="843.5" targetX="725" targetY="152" targetZ="842"  />
+    <cinematic type="camera" duration="80000" posX="725" posY="152" posZ="842" targetX="725" targetY="152" targetZ="842"  />
+    <cinematic type="dialog" line="It's total bullshit. I can smell it." />
+    <cinematic type="dialog" line="I've been doing this a long time, and I can see the signs a mile away." />
+    <cinematic type="dialog" line="That being said... tell your mistress this is where I get off." />
+    <cinematic type="dialog" line="This one's too hot, even for me." />
+    <cinematic type="dialog" line="An audience of one wins no Pulitzers." />
+    <cinematic type="dialog" line="Oh, and your girl? She's in the book. Look her up." />
+    <cinematic type="fadeout" duration="3" />
+  </tier>
+
+  <tier type="browser" description="TIER 4/11&#13;You have received a new text message from Hana." url="http://www.mbs-intl.com/tsw/akma/akma_phone2.png" browserTitle="Text Message" hideAddress="true" width="320" height="640" />
+  <tier type="location" description="TIER 4/11&#13;Seek out Amir in the City of the Sun God to learn more about Akma's father." playField="3100" x="983" y="91" z="687" distance="4" yDistance="2"/>
+  
+  <tier type="cinematic" description="TIER 4/11&#13;Learn about Akma's father from Amir." playField="3100" >
+    <cinematic type="fadeout" duration="2" />
+    <cinematic type="dialog" line="" duration="0.5" />
+    <cinematic type="facenpc" name="Amir"/>
+    <cinematic type="camera" duration="0" posX="979" posY="90" posZ="689" targetX="983" targetY="91" targetZ="687" />
+    <cinematic type="camera" duration="50000" posX="983" posY="91" posZ="687" targetX="983" targetY="91" targetZ="687" />
+    <cinematic type="fadein" duration="10" />
+    <cinematic type="dialog" line="" duration="2" />
+    <cinematic type="dialog" line="This memory... it is painful to recount." />
+    <cinematic type="dialog" line="Your species is drawn to treachery like flies to a dung pile." />
+    <cinematic type="dialog" line=" Si'lat, in the passion of youth, disregarded this truth and set his eyes upon one of your females." />
+    <cinematic type="camera" duration="0" posX="980.5" posY="91.5" posZ="686" targetX="982" targetY="91.5" targetZ="687" />
+    <cinematic type="camera" duration="50000" posX="979" posY="91.5" posZ="685" targetX="982" targetY="91.5" targetZ="687" />
+    <cinematic type="dialog" line="This news was brought to us by a monkey wearing blue, seeking permission to dispatch Si'lat." />
+    <cinematic type="dialog" line="Permission was NOT given." />
+    <cinematic type="dialog" line="It is not for your kind to deal with matters such as these." />
+    <cinematic type="fadeout" duration="2" />
+    <cinematic type="camera" duration="0" posX="842" posY="110" posZ="200" targetX="874" targetY="100" targetZ="118" />
+    <cinematic type="camera" duration="50000" posX="874" posY="100" posZ="118" targetX="874" targetY="100" targetZ="118" />
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="fadein" duration="5" />
+    <cinematic type="dialog" line="Sentencing was handed down by Adramelech, the Chancellor of Hell," duration="5" />
+    <cinematic type="dialog" line="and carried out by Carvanius the Gate Keeper of The Hollow." duration="5"/>
+    <cinematic type="dialog" line="These are no longer my brethren, but know this..." />
+    <cinematic type="fadeout" duration="2" />
+    <cinematic type="camera" duration="0" posX="985.5" posY="92" posZ="692.7" targetX="-99" />
+    <cinematic type="camera" duration="50000" posX="982" posY="91.5" posZ="687" targetX="-99" />
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="fadein" duration="5" />
+    <cinematic type="dialog" line="I would have killed Si'lat myself." />
+    <cinematic type="dialog" line="This union was detestable. There is no greater disgrace." />
+    <cinematic type="dialog" line="The sentence was just." />
+    <cinematic type="dialog" line="Now, leave me to purge my thoughts." />
+    <cinematic type="fadeout" duration="3" />
+  </tier>
+
+  <tier type="browser" description="TIER 5/11&#13;You have received a new text message from Hana." url="http://www.mbs-intl.com/tsw/akma/akma_phone3.png" browserTitle="Text Message" hideAddress="true" width="320" height="640" />
+  <tier type="kill" description="TIER 5/11&#13;Go to The Hollow and take revenge on Carvanius the Gate Keeper or Adramelech, the Chancellor of Hell" targetName="Adramelech, the Chancellor of Hell,Carvanius the Gate Keeper" targetKills="1" />
+
+  <tier type="browser" description="TIER 6/11&#13;You have received a new text message from Hana." url="http://www.mbs-intl.com/tsw/akma/akma_phone4.png" browserTitle="Text Message" hideAddress="true" width="320" height="640" />
+  <tier type="location" description="TIER 6/11&#13;Travel to the Scorched Desert. Meet with Hana's contact at the Cafe Giza in al-Merayah." playField="3090" x="549" y="73" z="447" distance="4" yDistance="1"/>
+
+  <tier type="cinematic" description="TIER 6/11&#13;Listen to Tanis." playField="3090" >
+    <cinematic type="fadeout" duration="2" />
+    <cinematic type="dialog" line="" duration="0.75" />
+    <cinematic type="facenpc" name="Tanis"/>
+    <cinematic type="camera" duration="0" posX="560" posY="76" posZ="441" targetX="558.8" targetY="76" targetZ="442.98" />
+    <cinematic type="camera" duration="20000" posX="563.47" posY="76" posZ="436.55" targetX="558.8" targetY="76" targetZ="442.98" />
+    <cinematic type="fadein" duration="5" />
+    <cinematic type="dialog" line="" duration="7" />
+    <!--<cinematic type="camera" duration="0" posX="571.6" posY="73.5" posZ="445.1" targetX="577.9" targetY="73.5" targetZ="446.3" />
+    <cinematic type="camera" duration="10000" posX="575.3" posY="73.5" posZ="440.2" targetX="577.9" targetY="73.5" targetZ="446.3" />
+    <cinematic type="dialog" line="" duration="10" />
+    <cinematic type="camera" duration="0" posX="553" posY="73.1" posZ="426.2" targetX="555.5" targetY="73.1" targetZ="423.3" />
+    <cinematic type="camera" duration="12000" posX="546.5" posY="73.1" posZ="421.1" targetX="550" targetY="73.1" targetZ="417.6" />
+    <cinematic type="dialog" line="" duration="10" />
+    <cinematic type="camera" duration="0" posX="551.8" posY="72.3" posZ="432.45" targetX="550.72" targetY="72.3" targetZ="433.39" />
+    <cinematic type="camera" duration="10000" posX="551.48" posY="72.3" posZ="433.86" targetX="550.72" targetY="72.3" targetZ="433.39"/>
+    <cinematic type="dialog" line="" duration="10" />-->
+    <cinematic type="camera" duration="0" posX="589.2" posY="76" posZ="437.6" targetX="558.8" targetY="76" targetZ="442.98" />
+    <cinematic type="camera" duration="15000" posX="594.5" posY="73.16" posZ="442.8" targetX="597.3" targetY="73.16" targetZ="435.37" ease="Regular.easeOut"/>
+    <cinematic type="dialog" line="" duration="7" />
+    <cinematic type="dialog" line="They say Red + Green + Blue = White." />
+    <cinematic type="dialog" line="But ask a painter or a child with crayons, and you will learn the truth." />
+    <cinematic type="camera" duration="0" posX="548.5" posY="72.5" posZ="446.36" targetX="-99"/>
+    <cinematic type="camera" duration="20000" posX="551.1" posY="74.5" posZ="450.36" targetX="-99" ease="Regular.easeIn"/>
+    <cinematic type="dialog" line="In the absence of light, there is only darkness, deception, betrayal." />
+    <cinematic type="dialog" line="Here you are, coloring outside the lines." />
+    <cinematic type="dialog" line="Are you truly prepared to walk these halls?" />
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="camera" duration="0" posX="550.5" posY="72.5" posZ="445.5" targetX="549.3" targetY="73" targetZ="447.3" />
+    <cinematic type="camera" duration="50000" posX="549.3" posY="73" posZ="447.3" targetX="549.3" targetY="73" targetZ="447.3" />
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="dialog" line="Venice... They don't respect me." />
+    <cinematic type="dialog" line="They don't respect us." />
+    <cinematic type="dialog" line="So, they do not notice when we infiltrate." />
+    <cinematic type="dialog" line="They do not notice when we take." />
+    <cinematic type="dialog" line="They do not notice when we..." />
+    <cinematic type="dialog" line="Still... what you ask is difficult.  There is a price." />
+    <cinematic type="fadeout" duration="3" />
+    <cinematic type="camera" duration="0" posX="740" posY="80" posZ="1000" targetX="840" targetY="60" targetZ="1000" />
+    <cinematic type="camera" duration="50000" posX="840" posY="80" posZ="1000" targetX="840" targetY="60" targetZ="1000" />
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="fadein" duration="5" />
+    <cinematic type="dialog" line="To the northwest, a great golem blocks passage through the Outer Complex." />
+    <cinematic type="dialog" line="It is disrupting shipments from the hidden city." />
+    <cinematic type="fadeout" duration="2" />
+    <cinematic type="camera" duration="0" posX="710" posY="70" posZ="1100" targetX="960" targetY="80" targetZ="1200" />
+    <cinematic type="camera" duration="30000" posX="960" posY="120" posZ="1100" targetX="850" targetY="80" targetZ="1220" />
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="fadein" duration="5" />
+    <cinematic type="dialog" line="Further north is a place called The Teeth of the Wind." />
+    <cinematic type="dialog" line="Our researchers want to dig, but it is overrun with those that cling to eternal life." />
+    <cinematic type="dialog" line="" duration="2" />
+    <cinematic type="fadeout" duration="2" />
+    <cinematic type="camera" duration="0" posX="553.6" posY="73.5" posZ="443.9" targetX="549.3" targetY="73" targetZ="447.3" />
+    <cinematic type="camera" duration="80000" posX="566.3" posY="76" posZ="438.7" targetX="549.3" targetY="73" targetZ="447.3" />
+    <cinematic type="dialog" line="" duration="1.5" />
+    <cinematic type="fadein" duration="5" />
+    <cinematic type="dialog" line="" duration="2" />
+    <cinematic type="dialog" line="Remove these impediments, and we will give what you have asked." />
+    <cinematic type="dialog" line="" duration="2" />
+    <cinematic type="fadeout" duration="3" />
+  </tier>
+
+  <tier type="kill" description="TIER 7/11&#13;Go to the Outer Complex and remove the golem blocking passage." targetName="Khenti, Dune Tyrant" targetKills="1" />
+  <tier type="kill" description="TIER 7/11&#13;Destroy the mummies that inhabit The Teeth of the Wind." targetName="Corrupted Ka,Little Red Death,Mouth of Ammut,Dessicated Priest" targetKills="15" />
+  
+  <tier type="location" description="TIER 8/11&#13;Return to Tanis." playField="3090" x="549" y="73" z="447" distance="4" yDistance="1"/>
+  <tier type="cinematic" description="TIER 8/11&#13;Listen to Tanis." playField="3090" >
+    <cinematic type="fadeout" duration="2" />
+    <cinematic type="dialog" line="" duration="0.5" />
+    <cinematic type="facenpc" name="Tanis"/>
+    <cinematic type="camera" duration="0" posX="566.3" posY="76" posZ="438.7" targetX="549.3" targetY="73" targetZ="447.3" />
+    <cinematic type="camera" duration="50000" posX="553.6" posY="73.5" posZ="443.9" targetX="549.3" targetY="73" targetZ="447.3" />
+    <cinematic type="fadein" duration="5" />
+    <cinematic type="dialog" line="" duration="2" />
+    <cinematic type="dialog" line="Venice... ever-vigilant in bureaucracy and documentation." />
+    <cinematic type="dialog" line="Century after century preserving the minutes of every meeting." />
+    <cinematic type="dialog" line="Their network firewalls aren't as fragile as we predicted, but it is only a matter of time." />
+    <cinematic type="camera" duration="0" posX="555" posY="73.5" posZ="450.2" targetX="549.3" targetY="73" targetZ="447.3" />
+    <cinematic type="camera" duration="60000" posX="549.3" posY="73" posZ="447.3" targetX="549.3" targetY="73" targetZ="447.3" />
+    <cinematic type="dialog" line="There is always a paper trail, in this case, literal paper." />
+    <cinematic type="dialog" line="Most of it redacted, of course, but sometimes old pages stick together." />
+    <cinematic type="dialog" line="We are in luck." />
+    <cinematic type="fadeout" duration="3" />
+  </tier>
+
+  <tier type="browser" description="TIER 8/11&#13;Tanis has acquired a partial transcript of a Venice meeting regarding Akma's parents." url="http://www.mbs-intl.com/tsw/akma/venice_typed.html" browserTitle="Council of Venice Meeting Transcript" hideAddress="true" />
+
+  <tier type="cinematic" description="TIER 8/11&#13;Listen to Tanis." playField="3090" >
+    <cinematic type="fadeout" duration="2" />
+    <cinematic type="dialog" line="" duration="0.5" />
+    <cinematic type="facenpc" name="Tanis"/>
+    <cinematic type="camera" duration="0" posX="550.5" posY="72.5" posZ="445.5" targetX="549.3" targetY="73" targetZ="447.3" />
+    <cinematic type="camera" duration="50000" posX="551.5" posY="73" posZ="443.3" targetX="549.3" targetY="73" targetZ="447.3" />
+    <cinematic type="fadein" duration="5" />
+    <cinematic type="dialog" line="" duration="0.5" />
+    <cinematic type="dialog" line="There's more. The ashes weren't just disposed of... they were sealed." />
+    <cinematic type="dialog" line="No doubt, you will want to unseal them, but these seals are not made of stone and mortar." />
+    <cinematic type="dialog" line="They are of blood and magic.  You will need help to break them." />
+    <cinematic type="camera" duration="0" posX="551.1" posY="74.5" posZ="450.36" targetX="-99" ease="Regular.easeIn"/>
+    <cinematic type="camera" duration="30000" posX="548.5" posY="72.5" posZ="446.36" targetX="-99"/>
+    <cinematic type="dialog" line="Travel to London.  Seek out Mama Abena at the House of Chalk." />
+    <cinematic type="dialog" line="She will have the information you require." />
+    <cinematic type="dialog" line="Here is a map with the locations of the ashes.&#13;Fair warning... you're not going to like it one bit." />
+    <cinematic type="fadeout" duration="3" />
+  </tier>
+
+  <tier type="browser" description="TIER 8/11&#13;Tanis has also provided a map showing the locations of the ashes." url="http://untoldworld.azurewebsites.net/imageviewer.html?src=http://www.mbs-intl.com/tsw/akma/akma_fusang.png" browserTitle="Fusang Projects Map" hideAddress="true" width="745" height="901" />
+
+  <tier type="target" description="TIER 9/11&#13;Go see Mama Abena at the House of Chalk in London." targetName="Mama Abena" isOffensiveTarget="false" />
+  <tier type="cinematic" description="Listen to Mama Abena." playField="1000" >
+    <cinematic type="fadeout" duration="2" />
+    <cinematic type="dialog" line="" duration="0.5" />
+    <cinematic type="facenpc" name="Mama Abena"/>
+    <cinematic type="camera" duration="0" posX="138" posY="28.5" posZ="152.1" targetX="135.6" targetY="28.5" targetZ="152.5" />
+    <cinematic type="camera" duration="10000" posX="139" posY="28.5" posZ="157.4" targetX="136.6" targetY="28.5" targetZ="157.8" />
+    <cinematic type="fadein" duration="5" />
+    <cinematic type="dialog" line="" duration="7" />
+    <cinematic type="camera" duration="0" posX="136.14" posY="26.4" posZ="157" targetX="136.7" targetY="25.8" targetZ="152.5" />
+    <cinematic type="camera" duration="80000" posX="136.7" posY="25.8" posZ="152.5" targetX="136.7" targetY="25.8" targetZ="152.5" />
+    <cinematic type="dialog" line="" duration="0.5" />
+    <cinematic type="dialog" line="It is true, child. The dead do not always stay dead. They transform." />
+    <cinematic type="dialog" line="To seal the ashes is not only to contain body and spirit. It is to contain an idea." />
+    <cinematic type="dialog" line="Ideas transcend death. Ideas spread. Some do not like this." />
+    <cinematic type="dialog" line="To trap the essence of a person -- of an idea -- is a torment to the dead." />
+    <cinematic type="camera" duration="0" posX="141.7" posY="26.5" posZ="150.8" targetX="136.14" targetY="26.4" targetZ="157" />
+    <cinematic type="camera" duration="40000" posX="141.7" posY="28.5" posZ="150.8" targetX="136.14" targetY="26.4" targetZ="157" />
+    <cinematic type="dialog" line="But an idea is not so easy to contain, child." />
+    <cinematic type="dialog" line="No, with simple ingredients this seal is easily broken." />
+    <cinematic type="dialog" line="A sprinkle of Five Finger Grass, a drop of Peppermint Oil, smoke of the Charon Clove." />
+    <cinematic type="dialog" line="These will release your dead, and they will be tormented no longer." />
+    <cinematic type="camera" duration="0" posX="131.2" posY="26.4" posZ="157.96" targetX="125.66" targetY="26.4" targetZ="160.98" />
+    <cinematic type="camera" duration="50000" posX="125.66" posY="26.4" posZ="160.98" targetX="125.66" targetY="26.4" targetZ="160.98" />
+    <cinematic type="dialog" line="Go inside. Mambo will have some of the things you need." />
+    <cinematic type="dialog" line="You will find the rest elsewhere in London." />
+    <cinematic type="fadeout" duration="3" />
+  </tier>
+
+  <tier type="target" description="TIER 9/11&#13;Go inside and buy ingredients from Mambo." targetName="Mambo" isOffensiveTarget="false" />
+  <tier type="additem" description="TIER 9/11&#13;Acquire Five Finger Grass." itemName="Five finger grass" />
+  <tier type="additem" description="TIER 9/11&#13;Acquire Peppermint Oil." itemName="Peppermint oil" />
+  <tier type="additem" description="TIER 9/11&#13;Acquire smoke of the Charon Clove." itemName="Charon Clove Smolder" />
+  <tier type="additem" description="TIER 9/11&#13;Buy two more Charon Clove Smolders." itemName="Charon Clove Smolder" />
+  <tier type="additem" description="TIER 9/11&#13;Buy one more Charon Clove Smolder." itemName="Charon Clove Smolder" />
+
+  <tier type="location" description="TIER 10/11&#13;Travel to Fusang Projects and retrieve the ashes." playField="34171" x="0" y="0" z="0" distance="10000" yDistance="10000"/>
+  <tier type="browser" description="TIER 10/11&#13;Locate and retrieve the mother's ashes." url="http://untoldworld.azurewebsites.net/imageviewer.html?src=http://www.mbs-intl.com/tsw/akma/akma_fusang.png" browserTitle="Fusang Projects Map" hideAddress="true" width="745" height="901" />
+  <tier type="location" description="TIER 10/11&#13;Locate and retrieve the mother's ashes." playField="34171" x="545" y="27.5" z="619.5" distance="6" yDistance="5"/>
+  <tier type="useitem" description="Sprinkle Five Finger Grass on the statue." itemName="Five finger grass" />
+  <tier type="useitem" description="Add a drop Peppermint Oil." itemName="Peppermint oil" />
+  <tier type="useitem" description="Smoke the Charon Clove Smolder." itemName="Charon Clove Smolder" />
+  <tier type="cinematic" description="Mother's ashes retrieved." playField="34171" >
+    <cinematic type="audio" url="http://www.mbs-intl.com/tsw/akma/Strange_Days-Mike_Koenig-176042049.ogg" volume="50" />
+    <cinematic type="camera" duration="0" posX="535" posY="32" posZ="615" targetX="542.6" targetY="30" targetZ="619.8" />
+    <cinematic type="camera" duration="10000" posX="550" posY="32" posZ="615" targetX="542.6" targetY="30" targetZ="619.8" ease="Regular.easeInOut"  />
+    <cinematic type="dialog" line="" duration="10" />
+  </tier>
+
+  <tier type="browser" description="TIER 10/11&#13;Locate and retrieve the father's ashes.." url="http://untoldworld.azurewebsites.net/imageviewer.html?src=http://www.mbs-intl.com/tsw/akma/akma_fusang.png" browserTitle="Fusang Projects Map" hideAddress="true" width="745" height="901" />
+  <tier type="location" description="TIER 10/11&#13;Locate and retrieve the father's ashes." playField="34171" x="472" y="26" z="493" distance="6" yDistance="5"/>
+  <tier type="useitem" description="Sprinkle Five Finger Grass on the statue." itemName="Five finger grass" />
+  <tier type="useitem" description="Add a drop Peppermint Oil." itemName="Peppermint oil" />
+  <tier type="useitem" description="Smoke 'em if you got 'em." itemName="Charon Clove Smolder" />
+  <tier type="cinematic" description="Father's ashes retrieved." playField="34171" >
+    <cinematic type="camera" duration="0" posX="480" posY="24.5" posZ="488" targetX="472" targetY="26" targetZ="493" />
+    <cinematic type="camera" duration="10000" posX="473" posY="24.5" posZ="498" targetX="472" targetY="26" targetZ="493" ease="Regular.easeInOut"  />
+    <cinematic type="dialog" line="" duration="2" />
+    <cinematic type="audio" url="http://www.mbs-intl.com/tsw/akma/Strange_Days-Mike_Koenig-176042049.ogg" volume="50" />
+    <cinematic type="dialog" line="" duration="8" />
+  </tier>
+
+  <tier type="browser" description="TIER 10/11&#13;Locate and retrieve the child's ashes.." url="http://untoldworld.azurewebsites.net/imageviewer.html?src=http://www.mbs-intl.com/tsw/akma/akma_fusang.png" browserTitle="Fusang Projects Map" hideAddress="true" width="745" height="901" />
+  <tier type="location" description="TIER 10/11&#13;Locate and retrieve the child's ashes." playField="34171" x="516" y="19" z="520" distance="6" yDistance="5"/>
+  <tier type="useitem" description="Sprinkle Five Finger Grass on the statue." itemName="Five finger grass" />
+  <tier type="useitem" description="Add a drop Peppermint Oil." itemName="Peppermint oil" />
+  <tier type="useitem" description="Light 'em up." itemName="Charon Clove Smolder" />
+  <tier type="cinematic" description="Child's ashes retrieved." playField="34171" >
+    <cinematic type="camera" duration="0" posX="510" posY="20" posZ="525" targetX="516" targetY="19" targetZ="520" />
+    <cinematic type="camera" duration="10000" posX="512" posY="20" posZ="510" targetX="516" targetY="19" targetZ="520" ease="Regular.easeInOut"  />
+    <cinematic type="dialog" line="" duration="2" />
+    <cinematic type="audio" url="http://www.mbs-intl.com/tsw/akma/Strange_Days-Mike_Koenig-176042049.ogg" volume="50" />
+    <cinematic type="dialog" line="" duration="8" />
+  </tier>
+
+  <tier type="location" description="TIER 11/11&#13;Bring the ashes to Hana and Akma at the Kumiho Hotel in Seoul." playField="1200" x="371" y="52.5" z="306" distance="3" yDistance="1" />
+  <tier type="cinematic" description="Listen to Hana." playField="1200" >
+    <cinematic type="fadeout" duration="2" />
+    <cinematic type="dialog" line="" duration="0.5" />
+    <cinematic type="facecoords" x="376" z="306"/>
+    <cinematic type="camera" duration="0" posX="375" posY="51.8" posZ="295.3" targetX="373.57" targetY="51.8" targetZ="295.9" />
+    <cinematic type="camera" duration="30000" posX="375" posY="52.2" posZ="295.3" targetX="373.57" targetY="52.2" targetZ="295.9" />
+    <cinematic type="fadein" duration="10" />
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="dialog" line="Akma, you finally have the answers you have waited so long to hear." />
+    <cinematic type="dialog" line="We have taken revenge on those directly responsible. The rest are long dead." />
+    <cinematic type="dialog" line="Your father -- Si'lat -- and your mother -- Rose -- are tormented no more.  Their ashes..." />
+    <cinematic type="camera" duration="0" posX="376" posY="52" posZ="306"  targetX="376" targetY="51.5" targetZ="303.1" />
+    <cinematic type="camera" duration="250000" posX="373.73" posY="52.2" posZ="295.18" targetX="374.3" targetY="52.2" targetZ="295.9" />
+    <cinematic type="dialog" line="There are three..." />
+    <cinematic type="camera" duration="0" posX="375" posY="52.2" posZ="295.3" targetX="373.57" targetY="52.2" targetZ="295.9" />
+    <cinematic type="dialog" line="Akma?" />
+    <cinematic type="camera" duration="0" posX="376" posY="52" posZ="306"  targetX="376" targetY="51.5" targetZ="303.1" />
+    <cinematic type="camera" duration="250000" posX="373.73" posY="52.2" posZ="295.18" targetX="374.3" targetY="52.2" targetZ="295.9" />
+    <cinematic type="dialog" line="There are three sets of ashes... Mother, Father, and... who?" />
+    <cinematic type="camera" duration="0" posX="373.43" posY="52.2" posZ="295.4" targetX="374.3" targetY="52.2" targetZ="295.9" />
+    <cinematic type="camera" duration="18000" posX="373.75" posY="52.2" posZ="295.5" targetX="374.3" targetY="52.2" targetZ="295.9" />
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="dialog" line="I... do not know." />
+    <cinematic type="dialog" line="Of a swine? Of a traitor? Of an old man that died peacefully in his sleep?" />
+    <cinematic type="dialog" line="It is not our concern." />
+    <cinematic type="dialog" line=" Our concern is that you were spared -- saved -- by The Dragon, and you now serve loyally by my side." />
+    <cinematic type="camera" duration="0" posX="373" posY="52.5" posZ="301.5" targetX="376" targetY="52.2" targetZ="303.1"/>
+    <cinematic type="camera" duration="50000" posX="375.5" posY="51.5" posZ="303.5" targetX="376" targetY="51.5" targetZ="303.1" ease="Regular.easeInOut" />
+    <cinematic type="dialog" line="Akma, you are a product of love." />
+    <cinematic type="dialog" line="What else could bring together a Templar and a Jinn, whose hatred of one another burns so fiercely?" />
+    <cinematic type="dialog" line="Your parents... they would be so proud of you right now." />
+    <cinematic type="dialog" line="Take solace, Akma. This matter is finally laid to rest." />
+    <cinematic type="dialog" line="" duration="5" />
+    <cinematic type="dialog" line="----------------------------------&#13;Akma's Hand&#13;----------------------------------" duration="5" />
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="dialog" line="----------------------------------&#13;Written &amp; Scripted&#13;by&#13;SuperJenius&#13;----------------------------------" duration="5" />
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="dialog" line="----------------------------------&#13;Untold Stories Mission System&#13;developed by&#13;SuperJenius&#13;----------------------------------" duration="5" />
+    <cinematic type="audio" url="http://www.mbs-intl.com/tsw/akma/Strange_Days-Mike_Koenig-176042049.ogg" volume="30" />
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="dialog" line="----------------------------------&#13;'Strange Days' Sound Effect&#13;by&#13;Mike Koenig&#13;----------------------------------" duration="5" />
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="dialog" line="----------------------------------&#13;Thank you for playing!&#13;Please provide feedback in the TSW forums.&#13;----------------------------------" duration="5" />
+    <cinematic type="dialog" line="" duration="4" />
+    <cinematic type="fadeout" duration="5" />
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="dialog" line="Three days later..." duration="3"/>
+  </tier>
+
+  <tier type="browser" description="EPILOGUE&#13;Three days later you receive an email." url="http://www.mbs-intl.com/tsw/akma/venice_full.html" browserTitle="E-mail" hideAddress="true" />
+
+</mission>
