@@ -4,6 +4,7 @@ lore/*
 Mission Art/*
 missions/*
 old/*
+audio/*
 *.bxml
 
 # Windows image file caches
