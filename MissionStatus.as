@@ -32,6 +32,10 @@ class MissionStatus
 	
 	public function LoadStatusNode(missionID:String)
 	{
+		if (m_StatusXML == undefined) {
+			this.LoadStatus();
+		}
+		
 		if (m_StatusNode.attributes.id.toLowerCase() <> missionID.toLowerCase()) {
 			var statusListNode:XMLNode = m_StatusXML.firstChild;
 			var statusNode:XMLNode;
