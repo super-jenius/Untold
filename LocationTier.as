@@ -11,6 +11,7 @@ class LocationTier extends BaseTier
 	public var m_Distance:Number;
 	public var m_yDistance:Number;
 	public var m_IntervalID;
+	public var m_Lore:Boolean = false;
 
 	public var m_CurrentField;
 	public var m_CurrentX;
@@ -48,7 +49,10 @@ class LocationTier extends BaseTier
 	{
 		m_CurrentField = m_Player.m_Character.GetPlayfieldID();
 		var debugWindow = _global.m_MissionDebugWindow;
-		debugWindow.contentTextField.text = "Playfield: " + m_CurrentField.toString();
+		if (m_Lore == false && debugWindow._visible == true)
+		{
+			debugWindow.contentTextField.text = "Playfield: " + m_CurrentField.toString();
+		}
 		// Make sure we are in correct playfield 
 		if (m_CurrentField == m_PlayField) {
 			var position = m_Player.m_Character.GetPosition();
@@ -59,14 +63,17 @@ class LocationTier extends BaseTier
 			m_yDist = Math.abs(m_CurrentY - m_Y);
 			m_zDist = Math.abs(m_CurrentZ - m_Z);
 
-			debugWindow.contentTextField.text += "\nX: " + m_CurrentX.toString();
-			debugWindow.contentTextField.text += "\nY: " + m_CurrentY.toString();
-			debugWindow.contentTextField.text += "\nZ: " + m_CurrentZ.toString();
-			debugWindow.contentTextField.text += "\nRotation: " + m_Player.m_Character.GetRotation().toString();
-			debugWindow.contentTextField.text += "\nX Distance: " + Math.abs(m_CurrentX - m_X).toString();
-			debugWindow.contentTextField.text += "\nY Distance: " + Math.abs(m_CurrentY - m_Y).toString();
-			debugWindow.contentTextField.text += "\nZ Distance: " + Math.abs(m_CurrentZ - m_Z).toString();
-			
+			// Don't show location in debug window if this is lore (WorldStory).  Otherwise, we get a bunch of updates all at once.
+			if (m_Lore == false && debugWindow._visible == true)
+			{
+				debugWindow.contentTextField.text += "\nX: " + m_CurrentX.toString();
+				debugWindow.contentTextField.text += "\nY: " + m_CurrentY.toString();
+				debugWindow.contentTextField.text += "\nZ: " + m_CurrentZ.toString();
+				debugWindow.contentTextField.text += "\nRotation: " + m_Player.m_Character.GetRotation().toString();
+				debugWindow.contentTextField.text += "\nX Distance: " + Math.abs(m_CurrentX - m_X).toString();
+				debugWindow.contentTextField.text += "\nY Distance: " + Math.abs(m_CurrentY - m_Y).toString();
+				debugWindow.contentTextField.text += "\nZ Distance: " + Math.abs(m_CurrentZ - m_Z).toString();
+			}
 			// See if we are in range of coordinates
 			if (Math.abs(m_CurrentX - m_X) <= m_Distance && Math.abs(m_CurrentZ - m_Z) <= m_Distance && Math.abs(m_CurrentY - m_Y) <= m_yDistance) {
 				clearInterval(m_IntervalID);
