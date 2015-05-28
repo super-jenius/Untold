@@ -3,4 +3,5 @@
   <story type="Art" id="Nassir" title="Nassir" subtitle="by Whitequeen" playField="3090" x="900" y="56" z="311" distance="3" yDistance="1" url="http://wordpress.tswguides.com/wp-content/uploads/2012/09/TSW_day14.jpg" width="990" height="765" />
   <story type="Art" id="MontgomeryArun" title="Montgomery and Arun" subtitle="by Whitequeen" playField="3090" x="714" y="53" z="859" distance="3" yDistance="1" url="http://untoldworld.azurewebsites.net/imageviewer.html?src=http://wordpress.tswguides.com/wp-content/uploads/2012/09/TSW_day15.jpg" width="700" height="813" />
   <story type="Art" id="Said" title="Said" subtitle="by Whitequeen" playField="3090" x="836" y="64" z="592" distance="3" yDistance="1" url="http://untoldworld.azurewebsites.net/imageviewer.html?src=http://wordpress.tswguides.com/wp-content/uploads/2012/09/TSW_sketch_day30.jpg" width="680" height="880" />
+  <story type="Mission" faction="Dragon" id="TheScroll" title="The Scroll" subtitle="by Super Jenius" playField="3090" x="714" y="53" z="859" distance="3" yDistance="1" url="http://untoldworld.azurewebsites.net/TheScroll.xml" />
 </world>
