@@ -106,7 +106,7 @@
     <cinematic type="dialog" line="That's what I thought." />
     <cinematic type="dialog" line="We're gonna need some privacy then." />
     <cinematic type="dialog" line="Demons got senses too.  Eyes, ears, and mouths, like the rest of us." />
-    <cinematic type="dialog" line="What say you clear the area before I deliver my shocking exposé?" />
+    <cinematic type="dialog" line="What say you clear the area before I deliver my shocking expose?" />
     <cinematic type="fadeout" duration="3" />
   </tier>
 
@@ -268,7 +268,7 @@
   </tier>
 
   <tier type="kill" description="TIER 7/11&#13;Go to the Outer Complex and remove the golem blocking passage." targetName="Khenti, Dune Tyrant" targetKills="1" />
-  <tier type="kill" description="TIER 7/11&#13;Destroy the mummies that inhabit The Teeth of the Wind." targetName="Corrupted Ka,Little Red Death,Mouth of Ammut,Dessicated Priest" targetKills="15" />
+  <tier type="kill" description="TIER 7/11&#13;Destroy the mummies that inhabit The Teeth of the Wind." targetName="Corrupted Ka,Little Red Death,Mouth of Ammut,Dessicated Priest,Priest of Apep" targetKills="15" />
   
   <tier type="location" description="TIER 8/11&#13;Return to Tanis." playField="3090" x="549" y="73" z="447" distance="4" yDistance="1"/>
   <tier type="cinematic" description="TIER 8/11&#13;Listen to Tanis." playField="3090" >
