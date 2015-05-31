@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <world playfield="5060" name="Agartha" >
   <!--<story type="Blajini Egg" id="MyFunnyValentine" title="My Funny Valentine" subtitle="by Chet Baker" playField="5060" x="508" y="415" z="422" distance="10" yDistance="3" url="https://www.youtube.com/watch?v=jvXywhJpOKs" />-->
-  <story type="Mission" id="BasicTraining" title="Basic Training" subtitle="by Super Jenius" playField="5060" x="511" y="408" z="401" distance="5" yDistance="2" url="http://untoldworld.azurewebsites.net/BasicTraining.xml" />
-  <story type="Mission" id="APersonalMatter" title="A Personal Matter" subtitle="by Super Jenius" playField="5060" x="511" y="408" z="401" distance="5" yDistance="2" url="http://untoldworld.azurewebsites.net/APersonalMatter.xml" />
+  <story type="Mission" id="BasicTraining" title="Basic Training" subtitle="A simple mission for demonstrating and testing the basic features of the system.&#13;Author: Super Jenius" playField="5060" x="511" y="408" z="401" distance="5" yDistance="2" url="http://untoldworld.azurewebsites.net/BasicTraining.xml" />
+  <story type="Mission" id="APersonalMatter" title="A Personal Matter" subtitle="The Stationmaster has a personal request for you. This is an action mission with some light investigation elements.&#13;Author: Super Jenius" playField="5060" x="511" y="408" z="401" distance="5" yDistance="2" url="http://untoldworld.azurewebsites.net/APersonalMatter.xml" />
 </world>

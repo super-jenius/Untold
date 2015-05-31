@@ -7,14 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="bootstrap.slate.min.css">
     <!-- Custom styles for this template -->
     <link href="untold.css" rel="stylesheet">
 </head>
 
-<body>
+<body style="background-color:transparent;">
 
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <!--<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -26,11 +27,11 @@
                 <a class="navbar-brand" href="#">UNTOLD STORIES OF THE SECRET WORLD</a>
             </div>
         </div>
-    </nav>
+    </nav>-->
 
     <div class="container">
 
-        <table class="table">
+        <table class="table" >
             <thead>
                 <tr>
                     <th>MISSION</th>
@@ -182,23 +183,24 @@
             // Make sure launched within game
             if (qs["statusXML"]) {
                 var missionList = new Array();
-                missionList.push(["Basic Training", "BasicTraining", "BasicTraining.xml", "Status", "No", "Super Jenius"]);
-                missionList.push(["A Personal Matter", "APersonalMatter", "APersonalMatter.xml", "Status", "Yes", "Super Jenius"]);
-                missionList.push(["The Scroll", "TheScroll", "TheScroll.xml", "Status", "Yes", "Super Jenius"]);
-                missionList.push(["Undead Gratefulness", "UndeadGratefulness", "UndeadGratefulness.xml", "Status", "Yes", "Tremerion"]);
-                missionList.push(["Extraordinary Merchandise", "ExtraordinaryMerchandise", "ExtraordinaryMerchandise.xml", "Status", "Yes", "Tremerion"]);
-                missionList.push(["Echo Squad", "EchoSquad", "EchoSquad.xml", "Status", "Yes", "bluemoon"]);
-                missionList.push(["The Shadow Out of Time", "TheShadowOutofTime", "TheShadowOutofTime.xml", "Status", "Yes", "Tremerion"]);
+                missionList.push(["Basic Training", "BasicTraining", "BasicTraining.xml", "Status", "No", "Super Jenius", "A simple mission for demonstrating and testing the basic features of the system."]);
+                missionList.push(["A Personal Matter", "APersonalMatter", "APersonalMatter.xml", "Status", "Yes", "Super Jenius", "The Stationmaster has a personal request for you. This is an action mission with some light investigation elements."]);
+                missionList.push(["The Scroll", "TheScroll", "TheScroll.xml", "Status", "Yes", "Super Jenius", "A mysterious scroll has been discovered in the desert. This is a full investigation mission that will test your knowledge of The Secret World. Includes cinematics!"]);
+                missionList.push(["Undead Gratefulness", "UndeadGratefulness", "UndeadGratefulness.xml", "Status", "Yes", "Tremerion", "by Tremerion"]);
+                missionList.push(["Extraordinary Merchandise", "ExtraordinaryMerchandise", "ExtraordinaryMerchandise.xml", "Status", "Yes", "Tremerion", "by Tremerion"]);
+                missionList.push(["Echo Squad", "EchoSquad", "EchoSquad.xml", "Status", "Yes", "bluemoon", "by bluemoon"]);
+                missionList.push(["The Shadow Out of Time", "TheShadowOutofTime", "TheShadowOutofTime.xml", "Status", "Yes", "Tremerion", "by Tremerion"]);
                 if (qs["version"] >= "2.3") {
                     // Version 2.3 or higher required
-                    missionList.push(["Akma's Hand", "AkmasHand", "AkmasHand.xml", "Status", "Yes", "Super Jenius"]);
+                    missionList.push(["Akma's Hand", "AkmasHand", "AkmasHand.xml", "Status", "Yes", "Super Jenius", "Delve into the mysteries and political intrigue surrounding Akma's Hand."]);
                 }
                 var missionHTML = "";
                 for (var i = 0; i < missionList.length; i++) {
                     var mission = missionList[i];
+                    var popover = 'data-toggle="popover" title="' + mission[0] + '" data-content="' + mission[6] + '" data-trigger="hover"';
                     missionHTML += '<tr>\n';
                     missionHTML += '<td>' +
-                        '<a href="#" onClick="loadMission(' + "'" + mission[1] + "','" +
+                        '<a href="#" ' + popover + ' onClick="loadMission(' + "'" + mission[1] + "','" +
                         mission[2] + "');" + '">' + mission[0] + '</a></td>\n';
                     missionHTML += '<td>' + getStatus(mission[1]) + '</td>\n';
                     missionHTML += '<td>' + mission[4] + '</td>\n';
@@ -211,6 +213,7 @@
                 missionHTML = "Mission list is only available from within The Secret World game.";
             }
             document.getElementById("missionList").innerHTML = missionHTML;
+            $('[data-toggle="popover"]').popover();
         }
 
         var missionStatus = null;
