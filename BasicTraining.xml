@@ -88,8 +88,8 @@
 	<tier type="dialog" description="Learn about the web browser capabilities." >
 		<dialog type="dialog" line="You also use browser to show picture, like so..." />
 	</tier>
-	<tier type="browser" description="Notice that the browser has been resized and the URL has been hidden. (Close the browser to continue.)" url="http://veryhilarious.com/wp-content/uploads/2012/02/korean-girls-starcraft.jpg" browserTitle="KOREAN GIRLS&#13;They all want to marry me!" hideAddress="true" width="700" height="535" />
-	<tier type="dialog" description="Learn about the web browser capabilities." >
+  <tier type="browser" description="Notice that the browser has been resized and the URL has been hidden. (Close the browser to continue.)" url="http://untoldworld.azurewebsites.net/imageviewer.html?src=http://static.fjcdn.com/pictures/Korean+girls+oc_a73171_3850933.jpg" browserTitle="KOREAN GIRLS&#13;They all want to marry me!" hideAddress="true" width="750" height="574" />
+  <tier type="dialog" description="Learn about the web browser capabilities." >
 		<dialog type="dialog" line="Web browser also great for YouTube HTML5 video..." />
 	</tier>
 	<tier type="browser" description="YouTube HTML5 videos can be displayed in the browser. Video quality may be limited. (Close the browser to continue.)" url="http://www.youtube.com/embed/O6HKh0tEUFc?autoplay=1&amp;rel=0&amp;enablejsapi=1&amp;playerapiid=ytplayer&amp;html5=1&amp;vq=hd1080" browserTitle="StarCraft Commentators INSANE!" hideAddress="true" />
