@@ -31,6 +31,7 @@
 
     <div class="container">
 
+        <div style="text-align:right"><a href="data:,localMissions" data-toggle="popover" title="Local Mission Launcher" data-content="Load and test missions from your local computer." data-trigger="hover" data-placement="left">Local Missions</a></div>
         <table class="table" >
             <thead>
                 <tr>
@@ -82,6 +83,8 @@
             <p>Added content does NOT require a new version of this MOD to be downloaded, unless you also see a new version announced above.</p>
             <p>
                 <ul>
+                    
+                    <li><b>June 12 2015:</b> New mission "To The Church On Time" by Lilith Darkweaver is now available.</li>
                     <li><b>May 28 2015:</b> New mission "Akma's Hand" now available (requires 2.3 or higher).</li>
                     <li><b>Mar 21 2015:</b> Added FunCom Concept Art lore to London, New York, and Seoul.</li>
                     <li><b>Mar 15 2015:</b> Added more player artwork lore to all playfields.</li>
@@ -172,7 +175,9 @@
                 xmlhttp.open("GET", missionFile, false);
                 xmlhttp.send();
 
-                var dataURL = 'data:,missionID=' + escape(missionID) + escape(xmlhttp.responseText);
+                // encodeURI() seems to be more compatible with ActionScript 2 escape(), especially for special characters in other languages.
+                var dataURL = 'data:,missionID=' + encodeURIComponent(missionID) + encodeURIComponent(xmlhttp.responseText);
+                //var dataURL = 'data:,missionID=' + escape(missionID) + escape(xmlhttp.responseText);
                 window.location = dataURL;
             } catch (err) {
                 alert(err.message);
@@ -184,6 +189,7 @@
             if (qs["statusXML"]) {
                 var missionList = new Array();
                 missionList.push(["Basic Training", "BasicTraining", "BasicTraining.xml", "Status", "No", "Super Jenius", "A simple mission for demonstrating and testing the basic features of the system."]);
+                missionList.push(["Basic Training (German)", "BasicTrainingGerman", "BasicTrainingGerman.xml", "Status", "No", "Super Jenius", "A simple mission for demonstrating and testing the basic features of the system. This version will work with the German TSW client. However, mission text and dialog are still in English."]);
                 missionList.push(["A Personal Matter", "APersonalMatter", "APersonalMatter.xml", "Status", "Yes", "Super Jenius", "The Stationmaster has a personal request for you. This is an action mission with some light investigation elements."]);
                 missionList.push(["The Scroll", "TheScroll", "TheScroll.xml", "Status", "Yes", "Super Jenius", "A mysterious scroll has been discovered in the desert. This is a full investigation mission that will test your knowledge of The Secret World. Includes cinematics!"]);
                 missionList.push(["Undead Gratefulness", "UndeadGratefulness", "UndeadGratefulness.xml", "Status", "Yes", "Tremerion", "by Tremerion"]);
@@ -194,6 +200,28 @@
                     // Version 2.3 or higher required
                     missionList.push(["Akma's Hand", "AkmasHand", "AkmasHand.xml", "Status", "Yes", "Super Jenius", "Delve into the mysteries and political intrigue surrounding Akma's Hand."]);
                 }
+                missionList.push(["To The Church On Time", "ChurchOnTime", "ChurchOnTime.xml", "Status", "Yes", "Lilith Darkweaver", "Lilith Darkweaver has a problem: her father promised her as a bride to a demon prince when she was a baby, and she's running out of time to find a way out of the contract. Finding out more about her father might yield a clue..."]);
+
+                // Sort according to status
+                for (var i = 0; i < missionList.length; i++) {
+                    var mission = missionList[i];
+                    var status = getStatus(mission[1]);
+                    mission.push(status);
+                    if (status.lastIndexOf("In Progress", 0) === 0) {
+                        mission.push(0);
+                    }
+                    else if (status.lastIndexOf("Complete", 0) === 0) {
+                        mission.push(2);
+                    }
+                    else {
+                        mission.push(1);
+                    }
+                }
+                missionList.sort(function (a, b) {
+                    return a[8] - b[8];
+                });
+
+                // Display missions in table
                 var missionHTML = "";
                 for (var i = 0; i < missionList.length; i++) {
                     var mission = missionList[i];
@@ -202,7 +230,7 @@
                     missionHTML += '<td>' +
                         '<a href="#" ' + popover + ' onClick="loadMission(' + "'" + mission[1] + "','" +
                         mission[2] + "');" + '">' + mission[0] + '</a></td>\n';
-                    missionHTML += '<td>' + getStatus(mission[1]) + '</td>\n';
+                    missionHTML += '<td>' + mission[7] + '</td>\n';
                     missionHTML += '<td>' + mission[4] + '</td>\n';
                     missionHTML += '<td>' + mission[5] + '</td>\n';
                     //missionHTML += '<tr><td colspan="4" style="border-top: none">Mission Description will be listed here.</td></tr>\n';
@@ -252,7 +280,7 @@
                     break;
             }
             if (status != "") {
-                status += ' <a href="#" onClick="resetMission(' + "'" + escape(missionID) + "'" + ')">(Reset)</a>';
+                status += ' <a href="#" onClick="resetMission(' + "'" + encodeURI(missionID) + "'" + ')">(Reset)</a>';
             }
             return status;
         }
@@ -260,7 +288,7 @@
         function resetMission(missionID) {
             bootbox.confirm("Do you want to reset your progress on the selected mission?", function (result) {
                 if (result == true) {
-                    window.location = "data:,resetMission=" + escape(missionID);
+                    window.location = "data:,resetMission=" + encodeURI(missionID);
                 }
             });
         }
