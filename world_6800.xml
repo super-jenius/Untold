@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<world playfield="6800" name="Orochi Tower Lobby" >
+  <story type="Twitter" id="@8Nine3" title="@8Nine3" subtitle="The Twitterverse Experiment" playField="6800" x="179" y="80" z="159" distance="3" yDistance="1" url="https://twitter.com/8Nine3" />
+  <story type="Web Site" id="OrochiSite" title="Orochi Group" subtitle="www.orochi-group.com" playField="6800" x="183.7" y="80" z="143" distance="4" yDistance="2" url="http://www.orochi-group.com/" width="1020" height="900" />
+</world>

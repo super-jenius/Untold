@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<world playfield="6880" name="Plethron" >
+  <story type="Web Site" id="PlethronSite" title="Plethron" subtitle="plethron.orochi-group.com" playField="6880" x="261" y="66" z="254" distance="3" yDistance="1" url="http://plethron.orochi-group.com/" width="1040" height="620"/>
+</world>

@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<world playfield="6840" name="Manticore" >
+  <story type="Web Site" id="ManticoreSite" title="Manticore" subtitle="manticore.orochi-group.com" playField="6840" x="261" y="66" z="254" distance="3" yDistance="1" url="http://manticore.orochi-group.com/" width="1020" height="900" />
+</world>
+

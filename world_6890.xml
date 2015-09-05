@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<world playfield="6890" name="The Penthouse" >
+  <story type="Lore" id="AvelineBelmont" title="Aveline Belmont" subtitle="The Secret World Wiki" playField="6890" x="279.9" y="257.6" z="251.5" distance="2" yDistance="1" url="http://wiki.crygaia.com/view/Aveline_Belmont"/>
+</world>

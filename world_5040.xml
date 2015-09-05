@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<world playfield="5040" name="Polaris" >
+  <story type="Concept Art" id="ThePolaris" title="The Polaris" subtitle="by Funcom" playField="5040" x="220" y="227" z="248" distance="8" yDistance="4" url="http://untoldworld.azurewebsites.net/imageviewer.html?src=http://www.mbs-intl.com/tsw/art/The Polaris.jpg" width="1778" height="1000" />
+</world>

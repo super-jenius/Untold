@@ -2,8 +2,3 @@
 <world playfield="7020" name="London Fight Club" >
   <story type="Concept Art" id="FightClub" title="Fight Club" subtitle="by Funcom" playField="7020" x="195" y="13" z="116" distance="3" yDistance="1" url="http://untoldworld.azurewebsites.net/imageviewer.html?src=http://www.mbs-intl.com/tsw/art/FightClub.jpg" width="1846" height="1000" />
 </world>
-
-Playfield: 7020
-X: 194.65325927734
-Y (height): 12.573249816895
-Z: 115.82106018066
