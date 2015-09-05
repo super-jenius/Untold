@@ -24,6 +24,8 @@ class TargetTier extends BaseTier
 	
 	private function CheckTarget(targetID:ID32)
 	{
+		// Uncomment line below to put target name in chat.  Useful for German/French translation.
+		//com.GameInterface.Chat.SetChatInput(Character.GetCharacter(targetID).GetName());
 		if (Character.GetCharacter(targetID).GetName().toLowerCase() == m_TargetName.toLowerCase()) {
 			// Target selected. End Tier.
 			ULog.Info("TargetTier.CheckTarget(): Target selected");
