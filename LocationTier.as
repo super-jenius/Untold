@@ -20,15 +20,18 @@ class LocationTier extends BaseTier
 	public var m_xDist;
 	public var m_yDist;
 	public var m_zDist;
+	public var m_WaypointName;
+	private var m_Waypoint;
 
 	public function LoadXML(tierNode:XMLNode)
 	{
 		//ULog.Info("LocationTier.LoadXML()");
 		this.SetLocation(Number(tierNode.attributes.playField), Number(tierNode.attributes.x), Number(tierNode.attributes.y), 
-						 Number(tierNode.attributes.z), Number(tierNode.attributes.distance), Number(tierNode.attributes.yDistance));
+						 Number(tierNode.attributes.z), Number(tierNode.attributes.distance), Number(tierNode.attributes.yDistance),
+						 tierNode.attributes.waypointName);
 	}
 
-	public function SetLocation(playField:Number, x:Number, y:Number, z:Number, distance:Number, yDistance:Number)
+	public function SetLocation(playField:Number, x:Number, y:Number, z:Number, distance:Number, yDistance:Number, waypointName:String)
 	{
 		//ULog.Info("LocationTier.SetLocation(): playField=" + playField.toString() + ", x=" + x.toString() + ", y=" + y.toString() + ", z=" + z.toString());
 		m_PlayField = playField;
@@ -37,6 +40,7 @@ class LocationTier extends BaseTier
 		m_Z = z;
 		m_Distance = distance;	// distance from 
 		m_yDistance = yDistance;	// distance 
+		m_WaypointName = waypointName;
 	}
 
 	public function StartTier()
@@ -81,6 +85,8 @@ class LocationTier extends BaseTier
 				this.EndTier();
 				return true;
 			}
+			// Check if waypoint should be shown
+			this.ShowWaypoint();
 		}
 		return false;
 	}
@@ -91,7 +97,58 @@ class LocationTier extends BaseTier
 		clearInterval(m_IntervalID);
 		this.EndTier();
 	}
+	
+	public function EndTier()
+	{
+		// Reset waypoints
+		if (m_Waypoint)
+		{
+			_root.waypoints.m_CurrentPFInterface.SignalWaypointRemoved.Emit(m_Waypoint.m_Id);
+			m_Waypoint = undefined;
+			_root.waypoints.m_CurrentPFInterface.SignalPlayfieldChanged.Emit(m_Player.m_Character.GetPlayfieldID());
+		}
+		super.EndTier();
+	}
 
+	public function ShowWaypoint()
+	{
+		// Check if waypoint should be shown
+		if (m_WaypointName && m_Waypoint == undefined && m_Lore == false)
+		{
+			// The API doesn't let you create a new waypoint, but you can hijack an existing one
+			// This only works if there is currently an active mission that uses a waypoint
+			for(var id:String in _root.waypoints.m_CurrentPFInterface.m_Waypoints) {
+				// Get first existing waypoint then exit loop
+				m_Waypoint = _root.waypoints.m_CurrentPFInterface.m_Waypoints[id];
+				break;
+			}
+			if (m_Waypoint == undefined)
+			{
+				// There is no active mission/waypoint, so don't try again
+				m_WaypointName = undefined;
+				// Notify user
+				_root.fifo.SlotShowFIFOMessage("TIP: Untold Stories can display a waypoint if an official mission that uses a waypoint is currently in progress.");
+				return;
+			}
+			// Make changes to waypoint
+			m_Waypoint.m_Label = m_WaypointName; // empty string is ok
+			m_Waypoint.m_WorldPosition.x = m_X;
+			m_Waypoint.m_WorldPosition.y = m_Y;
+			m_Waypoint.m_WorldPosition.z = m_Z;
+			m_Waypoint.m_IsScreenWaypoint = true;
+			m_Waypoint.m_IsStackingWaypoint = false;
+			m_Waypoint.m_Radius = m_Distance;
+			m_Waypoint.m_Color = 255;	// blue looks different than existing waypoints
+			m_Waypoint.m_WaypointState = 0;	// visible
+			m_Waypoint.m_WaypointType = _global.Enums.WaypointType.e_RMWPPvPDestination;
+			
+			// Remove existing waypoint or there will be duplicate references
+			_root.waypoints.m_CurrentPFInterface.SignalWaypointRemoved.Emit(m_Waypoint.m_Id);
+			// Signal waypoint interface to show changes
+			_root.waypoints.m_CurrentPFInterface.SignalWaypointAdded.Emit(m_Waypoint.m_Id);
+		}
+	}
+	
 	public function ConvertToXML()
 	{
 		var tierXML:String = super.ConvertToXML(true);
