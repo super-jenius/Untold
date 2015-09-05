@@ -11,7 +11,7 @@ Unpack the Untold directory into \Data\Gui\Customized\Flash\ located in the root
 
 PLEASE NOTE: Make sure you restart your client after installing this add-on. Always restart your client when adding XML files as these only get read on load.
 
-Start a mission by selecting Underground Missions from the TSW menu.
+Start a mission by selecting Untold Stories from the TSW menu.
 
 *** How to uninstall ***
 
