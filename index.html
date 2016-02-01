@@ -101,13 +101,21 @@
             <p>You can now create missions using <a href="http://forums.thesecretworld.com/showthread.php?82855-MOD-Untold-Stories-of-The-Secret-World&p=1839764&viewfull=1#post1839764">Solon's mission editor</a> (outside the game) or with XML files. Documentation is included in \Data\Gui\Customized\Flash\Untold\Untold_Docs.pdf, located in the root of your The Secret World directory.</p>
             <p>Loading mission files from your local computer requires the Local Mission Launcher.  <a href="data:,localMissions">Click here to start it.</a></p>
         </div>
-        <div>
-            Current Coordinates:
+        <div class="col-sm-6">
+            Player Coordinates:
             <ul>
                 <li>Playfield: <span id="playfield"></span></li>
                 <li>X: <span id="x-coords"></span></li>
                 <li>Y (height): <span id="y-coords"></span></li>
                 <li>Z: <span id="z-coords"></span></li>
+            </ul>
+        </div>
+        <div class="col-sm-6">
+            Target Coordinates:
+            <ul>
+                <li>X: <span id="target-x-coords"></span></li>
+                <li>Y (height): <span id="target-y-coords"></span></li>
+                <li>Z: <span id="target-z-coords"></span></li>
             </ul>
         </div>
 
@@ -298,6 +306,9 @@
             document.getElementById("x-coords").innerHTML = qs["x"];
             document.getElementById("y-coords").innerHTML = qs["y"];
             document.getElementById("z-coords").innerHTML = qs["z"];
+            document.getElementById("target-x-coords").innerHTML = qs["targetX"];
+            document.getElementById("target-y-coords").innerHTML = qs["targetY"];
+            document.getElementById("target-z-coords").innerHTML = qs["targetZ"];
         }
     </script>
 
