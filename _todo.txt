@@ -1,0 +1,44 @@
+Version 3.0
+===============
+Waypoints (done)
+Looks tier
+- Support ID or description
+- Lookup desc/ID in XML file. Fast enough?
+- Put looks on player or NPC. Player needs to be able to reset looks.
+- Allow NPC at set coordinates. Maybe move existing NPC lookup to separate class?
+- Allow looks to be applied to multiple NPCs can be changed
+- Can nametag be changed?
+- Looks will reset after zone change?  Should we worry about it? Maybe later. What about fast travel?
+- Hide weapons during cinematic
+
+Animation tier
+
+Require correct response from browser before moving on
+Add noBell and skipPrevNext options to tiers when tier completed 
+Add minVer option to lore.  Lore won't appear unless player has minimum version installed.
+
+Version 3.1
+===============
+Automatic translation of item/npc names for German/French clients, using string XML files.
+Ability to send player name, ID, version, etc. to browser link and lore.
+
+Lore
+================
+Done: Aveline Belmont on top of tower with Lilith
+Done: Kingsmouth.com at Welcome sign
+Done (just Orochi): Other web sites referenced in game?  That guy in Savage Coast, Orochi, etc.
+Done: Twitter accounts for characters: Helen, Andy, Danny, Carter, and others
+@Hive_Mode where magazines are.
+Done: Add latest trailers to TSW History at theater, including The Park
+World/Locations/Characters from the main TSW site?
+RadioFreeGaia and other stations near radios?
+Kingsmouth: Dixie Bull, Idol of Nergal - Add "research" lore everywhere?
+TSW TV? Near any TV in game.
+- A playlist where we can go to a specic point based on the time (game time?).  Or random if that doesn't work.
+- Picture of TV with transparency overlaid atop YouTube.
+- Horror Movies
+- News (like Pyramiden, old Antarctic news shows, etc.)
+- History channel type shows
+- Game ads? (like The Park, but not TSW ads)
+- Stuff about bees
+- Anything else related to game lore
