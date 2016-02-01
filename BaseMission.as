@@ -55,9 +55,12 @@ class BaseMission
 					(tierGender == undefined || tierGender == "" || tierGender.toLowerCase() == m_Player.m_Gender.toLowerCase()))
 				{
 					// Add tier
-					var tier = this.AddTier(tierType, tierDescription);
+					var tier:BaseTier = this.AddTier(tierType, tierDescription);
 					// Tier handles rest of XML for the node
 					tier.LoadXML(tierNode);	
+					// Reference to this object available during LoadXML() only
+					// Remove circular reference
+					tier.m_Mission = undefined;
 				}
 			}
 		}
@@ -127,11 +130,18 @@ class BaseMission
 			case "audio" :
 				newTier = new AudioTier();
 				break;
+			case "looks" :
+				newTier = new LooksTier();
+				break;
+			case "animation" :
+				newTier = new AnimationTier();
+				break;
 		}
 
 		newTier.m_TierType = tierType;
 		newTier.m_TierDescription = tierDescription;
 		newTier.m_Player = m_Player;
+		newTier.m_Mission = this;
 		m_Tiers.push(newTier);	
 
 		//this.MessageBox("Tier Added.");

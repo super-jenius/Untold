@@ -9,6 +9,7 @@ class BaseTier
 	public var m_TierDescription:String;  // set by CustomMission
 	public var m_TierProgress:String = "";	// set in subclass when progress is tracked
 	public var m_TierEnded;
+	public var m_Mission:BaseMission; // reference to parent mission only available during LoadXML
 
 	public function StartTier()
 	{

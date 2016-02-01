@@ -1,5 +1,6 @@
 ﻿// Cinematic Tier
 // Subclass of Dialog Tier that allows camera control synchronized with dialog.
+import com.GameInterface.CharacterCreation.CharacterCreation;
 import com.GameInterface.Game.Camera;
 import com.GameInterface.DistributedValue;
 import com.GameInterface.MathLib.Vector3;
@@ -18,6 +19,7 @@ class CinematicTier extends DialogTier
 	public var m_CameraNo:Number;
 	public var m_Playfield;
 	public var m_CurrentField;
+	public var m_ResetLooks:Boolean;
 	//public var m_CharacterCreationIF;
 	public var m_TargetCharacter;
 	public var m_IntPosX:Interpolator;
@@ -43,6 +45,9 @@ class CinematicTier extends DialogTier
 		if (tierNode.attributes.speed) {
 			this.m_WordsPerSec = Number(tierNode.attributes.speed);
 		}
+		if (tierNode.attributes.contAudio) {
+			m_ContAudio = Boolean(tierNode.attributes.contAudio);
+		}
 		for (var i = 0; i < tierNode.childNodes.length; i++) {
 			var cinematicNode:XMLNode = tierNode.childNodes[i];
 			if (cinematicNode) {
@@ -61,18 +66,18 @@ class CinematicTier extends DialogTier
 						break;
 					// Removed from TSW API. No longer functions.
 					case "playerpos" :
-						this.AddPlayerPosition(Number(cinematicNode.attributes.x), Number(cinematicNode.attributes.y), Number(cinematicNode.attributes.z), 
-											   Number(cinematicNode.attributes.rotation));
+						//this.AddPlayerPosition(Number(cinematicNode.attributes.x), Number(cinematicNode.attributes.y), Number(cinematicNode.attributes.z), 
+						//					   Number(cinematicNode.attributes.rotation));
 						break;
 					// Removed from TSW API. No longer functions.
 					case "targetpos" :
-						this.AddTargetPosition(Number(cinematicNode.attributes.x), Number(cinematicNode.attributes.y), Number(cinematicNode.attributes.z), 
-											   Number(cinematicNode.attributes.rotation));
+						//this.AddTargetPosition(Number(cinematicNode.attributes.x), Number(cinematicNode.attributes.y), Number(cinematicNode.attributes.z), 
+						//					   Number(cinematicNode.attributes.rotation));
 						break;
 					// Removed from TSW API. No longer functions.
 					case "npcpos" :
-						this.AddNPCPosition(cinematicNode.attributes.name, Number(cinematicNode.attributes.x), Number(cinematicNode.attributes.y), 
-											Number(cinematicNode.attributes.z), Number(cinematicNode.attributes.rotation));
+						//this.AddNPCPosition(cinematicNode.attributes.name, Number(cinematicNode.attributes.x), Number(cinematicNode.attributes.y), 
+						//					Number(cinematicNode.attributes.z), Number(cinematicNode.attributes.rotation));
 						break;
 					case "facecoords" :
 						this.AddFaceCoords(Number(cinematicNode.attributes.x), Number(cinematicNode.attributes.z));
@@ -98,9 +103,21 @@ class CinematicTier extends DialogTier
 					case "audio" :
 						this.AddAudio(cinematicNode.attributes.url, Boolean(cinematicNode.attributes.preload), Number(cinematicNode.attributes.volume), Boolean(cinematicNode.attributes.loop), Boolean(cinematicNode.attributes.stop));
 						break;
+					case "looks" :
+						this.AddLooks(cinematicNode);
+						break;
+					case "animation" :
+						this.AddAnimations(cinematicNode);
+						break;
 					}
 				}
 			}
+		}
+		// If player looks changed, automatically add tier to reset them after cinematic
+		// Otherwise, player will have a mix of applied looks with their own looks
+		if (m_ResetLooks == true) {
+			var resetlooksTier:LooksTier = m_Mission.AddTier("looks", "Reset player looks after cinematic");
+			resetlooksTier.SetTarget("player", 1, true, false, false, 100);
 		}
 	}
 	
@@ -114,9 +131,15 @@ class CinematicTier extends DialogTier
 	public function AddCameraPath(duration:Number, posX:Number, posY:Number, posZ:Number, targetX:Number, targetY:Number, targetZ:Number, ease:String)
 	{
 		m_Dialog.push(["#camera#", duration, posX, posY, posZ, targetX, targetY, targetZ, ease]);
+		// If using player coordinates (-99), need to position camera twice with slight delay between to center on player
+		if (duration == 0 && (posX == -99 || targetX == -99)) {
+			this.AddLine("", .01);
+			m_Dialog.push(["#camera#", duration, posX, posY, posZ, targetX, targetY, targetZ, ease]);
+		}
 	}
 	
-	// Set player position and rotation in cinematic
+	// Removed from TSW API. No longer functions.
+/*	// Set player position and rotation in cinematic
 	public function AddPlayerPosition(x, y, z, rotation) {
 		m_Dialog.push(["#playerpos#", x, y, z, rotation]);
 	}
@@ -130,7 +153,7 @@ class CinematicTier extends DialogTier
 	public function AddNPCPosition(name, x, y, z, rotation) {
 		m_Dialog.push(["#npcpos#", name, x, y, z, rotation]);
 	}
-	
+*/	
 	// Set player rotation to face coordinates
 	public function AddFaceCoords(x, z) {
 		m_Dialog.push(["#facecoords#", x, z]);
@@ -144,6 +167,27 @@ class CinematicTier extends DialogTier
 	// Set player to face named NPC
 	public function AddFaceNPC(name) {
 		m_Dialog.push(["#facenpc#", name]);
+	}
+	
+	// Add looks package
+	public function AddLooks(looksNode:XMLNode) 
+	{
+		var looksTier:LooksTier = new LooksTier();
+		looksTier.LoadXML(looksNode);
+		m_Dialog.push(["#looks#", looksTier]);
+		// If player looks changed, automatically add tier to reset them after cinematic
+		// Otherwise, player will have a mix of applied looks with their own looks
+		if (looksTier.m_LooksTarget == "player") {
+			m_ResetLooks = true;
+		}
+	}
+		
+	// Add animations
+	public function AddAnimations(animNode:XMLNode) 
+	{
+		var animTier:AnimationTier = new AnimationTier();
+		animTier.LoadXML(animNode);
+		m_Dialog.push(["#animation#", animTier]);
 	}
 		
 	public function StartTier()
@@ -160,8 +204,10 @@ class CinematicTier extends DialogTier
 		if (m_CurrentField == m_Playfield) {
 			DistributedValue.SetDValue("CharacterCreationActive", true);	
 			//m_CharacterCreationIF = new com.GameInterface.CharacterCreation.CharacterCreation(true);
-			var targetID = m_Player.m_Character.GetDefensiveTarget();
-			m_TargetCharacter = Character.GetCharacter(targetID);
+			var selector:Selector = new Selector();
+			m_TargetCharacter = selector.SelectFriendlyTarget();
+			//var targetID = m_Player.m_Character.GetDefensiveTarget();
+			//m_TargetCharacter = Character.GetCharacter(targetID);
 			// Untarget so green circle doesn't show in cinematic
 			TargetingInterface.SetTarget(null);
 		} else {
@@ -202,14 +248,46 @@ class CinematicTier extends DialogTier
 				return;
 			}
 			var duration = currentLine[1];
-			m_NewPos.x = currentLine[2];
-			m_NewPos.y = currentLine[3];
-			m_NewPos.z = currentLine[4];
+			
+			if (currentLine[2] == -99) {
+				m_NewPos = m_Player.m_Character.GetPosition();
+				// Slightly adjust to center camera on player face
+				// Adjustment is affected by camera angle
+				// Not perfect, but much better than default camera
+				var deltax = m_NewPos.x - m_CurrentPos.x;
+				var deltaz = m_NewPos.z - m_CurrentPos.z;
+				var xangle = (Math.atan2(deltax, deltaz));
+				var zangle = (Math.atan2(deltaz, deltax));
+				var xadj = (Math.PI / 2 - Math.abs(xangle)) / (Math.PI / 2) * .3;
+				var zadj = (Math.PI / 2 - Math.abs(zangle)) / (Math.PI / 2) * .3;
+				m_NewPos.x -= xadj;
+				m_NewPos.y -= .3;
+				m_NewPos.z += zadj;
+				ULog.Info("Position Camera: xadj = " + xadj + " xangle = " + xangle + " degrees = " + xangle * (180/Math.PI) + " new.x = " + m_NewPos.x) ;
+				ULog.Info("Position Camera: zadj = " + zadj + " zangle = " + zangle + " degrees = " + zangle * (180/Math.PI) + " new.z = " + m_NewPos.z) ;
+			}
+			else {
+				m_NewPos.x = currentLine[2];
+				m_NewPos.y = currentLine[3];
+				m_NewPos.z = currentLine[4];
+			}			
 			// If no new target coordinates, keep current target
 			if (currentLine[5]) {
 				// targetX -99 means player position is target
 				if (currentLine[5] == -99) {
 					m_NewTarget = m_Player.m_Character.GetPosition();
+					// Slightly adjust to center camera on player face
+					var deltax = m_NewTarget.x - m_CurrentPos.x;
+					var deltaz = m_NewTarget.z - m_CurrentPos.z;
+					var xangle = (Math.atan2(deltax, deltaz));
+					var zangle = (Math.atan2(deltaz, deltax));
+					var xadj = (Math.PI / 2 - Math.abs(xangle)) / (Math.PI / 2) * .3;
+					var zadj = (Math.PI / 2 - Math.abs(zangle)) / (Math.PI / 2) * .3;
+					m_NewTarget.x -= xadj;
+					m_NewTarget.y -= .3;
+					m_NewTarget.z += zadj;
+					ULog.Info("Target Camera: xadj = " + xadj + " xangle = " + xangle + " degrees = " + xangle * (180/Math.PI) + " new.x = " + m_NewTarget.x) ;
+					ULog.Info("Target Camera: zadj = " + zadj + " zangle = " + zangle + " degrees = " + zangle * (180/Math.PI) + " new.z = " + m_NewTarget.z) ;
 				}
 				else {
 					m_NewTarget.x = currentLine[5];
@@ -285,7 +363,8 @@ class CinematicTier extends DialogTier
 			this.MoveCamera(m_CameraNo);
 			this.ProcessDialog();
 			break;
-		case "#playerpos#" :
+		// Removed from TSW API. No longer functions.
+/*		case "#playerpos#" :
 			m_CurrentLineNo++;
 			this.SetPlayerPosition(currentLine[1], currentLine[2], currentLine[3], currentLine[4]);
 			this.ProcessDialog();
@@ -299,7 +378,7 @@ class CinematicTier extends DialogTier
 			m_CurrentLineNo++;
 			this.SetNPCPosition(currentLine[1], currentLine[2], currentLine[3], currentLine[4], currentLine[5]);
 			this.ProcessDialog();
-			break;
+			break;*/
 		case "#facecoords#" :
 			m_CurrentLineNo++;
 			// If not in correct playfield, show dialogue only
@@ -328,6 +407,26 @@ class CinematicTier extends DialogTier
 				return;
 			}
 			this.FaceNPC(currentLine[1]);
+			this.ProcessDialog();
+			break;
+		case "#looks#" :
+			m_CurrentLineNo++;
+			// If not in correct playfield, show dialogue only
+			if (m_CurrentField <> m_Playfield) {
+				this.ProcessDialog();
+				return;
+			}
+			this.ApplyLooks(currentLine[1]);
+			this.ProcessDialog();
+			break;
+		case "#animation#" :
+			m_CurrentLineNo++;
+			// If not in correct playfield, show dialogue only
+			if (m_CurrentField <> m_Playfield) {
+				this.ProcessDialog();
+				return;
+			}
+			this.ProcessAnimations(currentLine[1]);
 			this.ProcessDialog();
 			break;
 		default :
@@ -402,18 +501,25 @@ class CinematicTier extends DialogTier
 		}
 	}
 	
-	function FaceNPC(name)
+	function FaceNPC(name:String)
 	{
-		var nearDynels = _root.interactioncontroller.m_InteractionDynels;
-		for (var prop in nearDynels) {
-			if (nearDynels[prop].GetName().toLowerCase() == name.toLowerCase()) {
-				this.FaceCharacter(nearDynels[prop]);
-				break;
-			}
-		}
+		var selector:Selector = new Selector();
+		var npc:Character = selector.SelectNPC(name);
+		this.FaceCharacter(npc);
 	}
 	
-	function SetPlayerPosition(x, y, z, rotation) {
+	function ApplyLooks(looksTier:LooksTier)
+	{
+		looksTier.StartTier();
+	}
+	
+	function ProcessAnimations(animTier:AnimationTier)
+	{
+		animTier.StartTier();
+	}
+	
+	// SetPosition() was removed from TSW API, so none of these Position functions work
+/*	function SetPlayerPosition(x, y, z, rotation) {
 		this.SetPosition(m_Player.m_Character, x, y, z, rotation);
 	}
 
@@ -444,8 +550,9 @@ class CinematicTier extends DialogTier
 		if (rotation) {
 			character.SetRotation(-rotation); // some reason it is negative of value from GetRotation(), maybe because camera is at back
 		}
-	}
+	}*/
 
+	
 	public function EndTier()
 	{
 		ULog.Info("CinematicTier.EndTier().");
@@ -458,7 +565,9 @@ class CinematicTier extends DialogTier
 				// Not sure why, but it seems to be most likely if your character is targeted and you cancel the cinematic with Esc
 				// Nothing I tried prevents it, but hopefully it will be rare
 				//ULog.Info("CinematicTier.EndTier: Creating characterCreationIF");
-				var characterCreationIF = new com.GameInterface.CharacterCreation.CharacterCreation(true);
+				var characterCreationIF:CharacterCreation = new com.GameInterface.CharacterCreation.CharacterCreation(true);
+				//characterCreationIF.ResetSurgeryData();
+
 				//ULog.Info("CinematicTier.EndTier: Set characterCreationIF null");
 				// Setting to null immediately can cause crash, so let object go out of scope normally.
 				// characterCreationIF = null;
@@ -471,8 +580,19 @@ class CinematicTier extends DialogTier
 				if (m_TargetCharacter) {
 					//ULog.Info("CinematicTier.EndTier: Reset target");
 					TargetingInterface.SetTarget(m_TargetCharacter.GetID()); }
+
+				// Reset looks to original character (see LooksTier.ResetLooks() for more info)
+				//var eyeColor = characterCreationIF.GetEyeColorIndex();
+				//_root.fifo.SlotShowFIFOMessage("ResetLooks() EyeColor: " + eyeColor);
+				//characterCreationIF.SetEyeColorIndex(1);
+				//characterCreationIF.SetEyeColorIndex(0);
+				//characterCreationIF.SetEyeColorIndex(eyeColor);
+				//var looks:LooksTier = new LooksTier();
+				//looks.ResetLooks();
 			}
+
 			//ULog.Info("CinematicTier.EndTier: Before super.EndTier()");
+			//_global.setTimeout(super, "EndTier", 2000);
 			super.EndTier();
 			//ULog.Info("CinematicTier.EndTier: After super.EndTier()");
 		}
