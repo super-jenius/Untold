@@ -53,6 +53,11 @@
                 // Loop
                 if (loop == "true") {
                     player.loop = true;
+                } else {
+                    // Let MOD know when audio is complete
+                    player.addEventListener("ended", function () {
+                        window.location = "data:,audiocomplete";
+                    });
                 }
                 // Play audio
                 player.play();

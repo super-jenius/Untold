@@ -9,6 +9,9 @@ import com.GameInterface.DistributedValue;
 class AudioPlayer
 {
 
+	public var m_Browser; // background browser instance
+	public var m_BrowserSignal;
+	
 	public function PlayAudio(audioURL, preload, volume, loop, stop)
 	{
 		if (stop == true) {
@@ -16,8 +19,8 @@ class AudioPlayer
 			return;
 		}
 		
-		//var baseURL = "file:///D:/Games/The%20Secret%20World/Data/Gui/Customized/Flash/Untold/";
-		var baseURL = "http://untoldworld.azurewebsites.net/";
+		var baseURL = "file:///D:/Games/The%20Secret%20World/Data/Gui/Customized/Flash/Untold/";
+		//var baseURL = "http://untoldworld.azurewebsites.net/";
 		
 		var url = baseURL + "audioplayer.html?src=" + escape(audioURL);
 		if (preload == true) {
@@ -32,9 +35,10 @@ class AudioPlayer
 			url = url + "&loop=true";
 		}
 		
-		var browser = _root["untold\\untold"].GetBackgroundBrowser();
+		m_Browser = _root["untold\\untold"].GetBackgroundBrowser();
+		this.TrackURL();
 		ULog.Info("AudioPlayer.PlayAudio(): " + url);
-		browser.OpenURL(url);
+		m_Browser.OpenURL(url);
 	}
 	
 	// Stop existing audio by loading an empty url
@@ -43,4 +47,34 @@ class AudioPlayer
 		_root["untold\\untold"].ReleaseBackgroundBrowser();
 	}
 	
+	// Track when URL changes
+	// This is the only way the browser can send data back to TSW
+	public function TrackURL()
+	{
+		m_BrowserSignal = m_Browser.SignalStartLoadingURL;
+		if (m_BrowserSignal) {
+			ULog.Info("AudioPlayer.TrackURL(): Tracking SignalStartLoadingURL");
+			m_BrowserSignal.Connect(URLChanged, this);
+		}
+		else {
+			// Browser takes a bit to load, so retry until it is loaded
+			// Use _global.setTimeout to avoid scoping issues
+			_global.setTimeout(this, "TrackURL", 100);
+		}
+	}	
+	
+	function URLChanged(newurl:String) {
+		var url = unescape(newurl);
+		_root.fifo.SlotShowFIFOMessage("AudioPlayer.URLChanged: " + url);
+		// Release browser when audio is complete
+		if (url == "data:,audiocomplete")
+		{
+			// Disconnect browser signal
+			m_BrowserSignal.Disconnect(URLChanged, this);
+			// Release browser
+			m_Browser = undefined;
+			this.StopAudio();
+		}
+	}
+
 }
