@@ -13,6 +13,7 @@ class DialogTier extends BaseTier
 	public var m_WordsPerSec:Number;
 	public var m_Cinematic:Boolean;
 	public var m_Audio;
+	public var m_ContAudio;
 	
 	public function DialogTier()
 	{
@@ -25,6 +26,9 @@ class DialogTier extends BaseTier
 		//ULog.Info("DialogTier.LoadXML()");
 		if (tierNode.attributes.speed) {
 			this.m_WordsPerSec = Number(tierNode.attributes.speed);
+		}
+		if (tierNode.attributes.contAudio) {
+			m_ContAudio = Boolean(tierNode.attributes.contAudio);
 		}
 		for (var i = 0; i < tierNode.childNodes.length; i++) {
 			var dialogNode:XMLNode = tierNode.childNodes[i];
@@ -132,7 +136,7 @@ class DialogTier extends BaseTier
 		{
 			ULog.Info("DialogTier.EndTier()");
 			com.GameInterface.Input.RegisterHotkey(_global.Enums.InputCommand.e_InputCommand_ESC, "", _global.Enums.Hotkey.eHotkeyDown, 0);
-			if (m_Audio) {
+			if (m_Audio and m_ContAudio != true) {
 				m_Audio.StopAudio();
 			}
 			super.EndTier();
