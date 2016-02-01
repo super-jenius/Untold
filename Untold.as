@@ -13,6 +13,8 @@ var m_VerNo;
 var m_WorldStories;
 var m_BackgroundBrowser;
 var m_CurrentTier;
+var m_MissionXML;
+//var m_LooksRDBXML;
 
 function onLoad()
 {
@@ -21,11 +23,11 @@ function onLoad()
 	m_VerNo = "2.3";
 	
 	// Turn on info logging?
-	ULog.m_LogInfo = false;
+	ULog.m_LogInfo = true;
 	ULog.Info("Version " + m_VerNo);
 	ULog.Info("Untold.Onload()");
 	// Show sandbox button?
-	m_Sandbox = false;
+	m_Sandbox = true;
 	// Is debug window visible?
 	m_MissionDebugWindow._visible = false;
 	m_MissionDebugWindow.focusButton._visible = false;
@@ -76,6 +78,7 @@ function onLoad()
     m_MissionListWindow._y = visibleRect.height / 2 - m_MissionListWindow._height / 2;
 	
 	this.LoadWorldStories();
+	//this.LoadLooksRDBXML();
 }
 
 // Hook into main menu as soon as it is available
@@ -130,8 +133,8 @@ function CustomJournalHandler()
 // Load home page in browser
 function HomePage()
 {
-	//var baseURL = "file:///D:/Games/The%20Secret%20World/Data/Gui/Customized/Flash/Untold/index.html";
-	var baseURL = "http://untoldworld.azurewebsites.net/";
+	var baseURL = "file:///D:/Games/The%20Secret%20World/Data/Gui/Customized/Flash/Untold/index.html";
+	//var baseURL = "http://untoldworld.azurewebsites.net/";
 	ULog.Info("Untold.HomePage()");
 	
 	// Make sure any existing browser is closed
@@ -144,6 +147,8 @@ function HomePage()
 	var missionStatuses = m_MissionListWindow.m_Content.m_MissionStatus.LoadStatus();
 	var worldEnabled = DistributedValue.GetDValue("us_world");
 	var position = playerInfo.m_Character.GetPosition();
+	var selector:Selector = new Selector();
+	var targetPos = selector.SelectFriendlyTarget().GetPosition();
 	m_HomePage = new BrowserTier();
 //	m_HomePage.SetURL("http://www.google.com", "Google", true);
 	m_HomePage.SetURL(baseURL + "?version=" + escape(m_VerNo)
@@ -156,6 +161,9 @@ function HomePage()
 					  + "&x=" + escape(position.x.toString())
 					  + "&y=" + escape(position.y.toString())
 					  + "&z=" + escape(position.z.toString())
+					  + "&targetX=" + escape(targetPos.x.toString())
+					  + "&targetY=" + escape(targetPos.y.toString())
+					  + "&targetZ=" + escape(targetPos.z.toString())
 					  + "&statusXML=" + escape(missionStatuses),
 					   "UNTOLD STORIES OF THE SECRET WORLD " + m_VerNo, true);
 	m_HomePage.SetURLTracking(true);
@@ -177,6 +185,7 @@ function URLChanged(newurl:String) {
 		var missionID = url.slice(16, xmlStart);
 		ULog.Info("Untold.URLChanged(): missionID " + missionID);
 		var missionXML = url.slice(xmlStart);
+		m_MissionXML = missionXML;
 		m_MissionListWindow.m_Content.LoadWebMission(missionID, missionXML);
 	} 
 	else if ((url.slice(0, 18) == "data:,resetMission")) {
@@ -301,3 +310,24 @@ function ReleaseBackgroundBrowser()
 		//_root.fifo.SlotShowFIFOMessage("Untold.ReleaseBackgroundBrowser()");
 	}
 }
+
+// Load LooksRDB.xml file
+// This works, but looking up IDs adds too much to mission load time.
+/*function LoadLooksRDBXML()
+{
+	ULog.Info("Untold.LoadLooksRDBXML()");
+	var xml:XML = new XML();
+	xml.ignoreWhite = true;
+	xml.onLoad = function( isLoaded:Boolean )
+	{
+	  if (isLoaded) {
+		ULog.Info("Untold.LoadLooksRDBXML(): LooksRDB.xml Loaded");
+		m_LooksRDBXML = xml;
+	  } else {
+		ULog.Info("Untold.LoadLooksRDBXML(): LooksRDB.xml Loading Error");
+		_root.fifo.SlotShowFIFOMessage("LooksRDB.xml Loading Error");
+	  }
+	}
+	xml.load( "Untold/LooksRDB.xml" );
+	return;
+}*/
