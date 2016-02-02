@@ -6,7 +6,7 @@ class Download
 {
 	public var m_Browser; // background browser instance
 	public var m_BrowserSignal;
-	//public var m_BaseURL = "file:///D:/Games/The%20Secret%20World/Data/Gui/Customized/Flash/Untold/";
+	//public var m_BaseURL = "file:///D:/Games/The%20Secret%20World/Data/Gui/Customized/Flash/Untold/web/";
 	public var m_BaseURL = "http://untoldworld.azurewebsites.net/";
 	public var SignalDownloadComplete:Signal;
 	

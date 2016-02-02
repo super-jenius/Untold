@@ -133,7 +133,7 @@ function CustomJournalHandler()
 // Load home page in browser
 function HomePage()
 {
-	var baseURL = "file:///D:/Games/The%20Secret%20World/Data/Gui/Customized/Flash/Untold/index.html";
+	var baseURL = "file:///D:/Games/The%20Secret%20World/Data/Gui/Customized/Flash/Untold/web/index.html";
 	//var baseURL = "http://untoldworld.azurewebsites.net/";
 	ULog.Info("Untold.HomePage()");
 	
