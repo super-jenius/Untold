@@ -7,6 +7,7 @@ import com.GameInterface.MathLib.Vector3;
 import com.GameInterface.AccountManagement;
 import com.GameInterface.Game.Character;
 import com.GameInterface.Game.TargetingInterface;
+import com.GameInterface.GearManager;
 import com.Utils.Interpolator;
 import mx.transitions.easing.*;
 
@@ -28,6 +29,9 @@ class CinematicTier extends DialogTier
 	public var m_IntTargetX:Interpolator;
 	public var m_IntTargetY:Interpolator;
 	public var m_IntTargetZ:Interpolator;
+	public var m_PrimaryWeaponHidden:Boolean;
+	public var m_SecondaryWeaponHidden:Boolean;
+	public var m_AuxiliaryWeaponHidden:Boolean;
 	
 	public function CinematicTier()
 	{
@@ -211,6 +215,7 @@ class CinematicTier extends DialogTier
 			//m_TargetCharacter = Character.GetCharacter(targetID);
 			// Untarget so green circle doesn't show in cinematic
 			TargetingInterface.SetTarget(null);
+			HideWeapons();
 		} else {
 			ULog.Info("CinematicTier.StartTier(): Not in playfield");
 		}
@@ -590,6 +595,7 @@ class CinematicTier extends DialogTier
 				//characterCreationIF.SetEyeColorIndex(eyeColor);
 				//var looks:LooksTier = new LooksTier();
 				//looks.ResetLooks();
+				RestoreWeapons();
 			}
 
 			//ULog.Info("CinematicTier.EndTier: Before super.EndTier()");
@@ -597,6 +603,26 @@ class CinematicTier extends DialogTier
 			super.EndTier();
 			//ULog.Info("CinematicTier.EndTier: After super.EndTier()");
 		}
+	}
+	
+	public function HideWeapons()
+	{
+		// Remember current settings to restore them
+		m_PrimaryWeaponHidden = GearManager.IsPrimaryWeaponHidden();
+		m_SecondaryWeaponHidden = GearManager.IsSecondaryWeaponHidden();
+		m_AuxiliaryWeaponHidden = GearManager.IsAuxiliaryWeaponHidden();
+		// Hide weapons
+		GearManager.SetPrimaryWeaponHidden(true);
+		GearManager.SetSecondaryWeaponHidden(true);
+		GearManager.SetAuxiliaryWeaponHidden(true);
+	}
+	
+	public function RestoreWeapons()
+	{
+		// Restore hidden weapons to previous status
+		GearManager.SetPrimaryWeaponHidden(m_PrimaryWeaponHidden);
+		GearManager.SetSecondaryWeaponHidden(m_SecondaryWeaponHidden);
+		GearManager.SetAuxiliaryWeaponHidden(m_AuxiliaryWeaponHidden);		
 	}
 	
 	public function ConvertToXML()
