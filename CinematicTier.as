@@ -40,6 +40,7 @@ class CinematicTier extends DialogTier
 		m_CurrentTarget = new Vector3(0, 0, 0);
 		m_NewPos = new Vector3(0, 0, 0);
 		m_NewTarget = new Vector3(0, 0, 0);
+		m_SkipPrev = true;
 	}
 
 	public function LoadXML(tierNode:XMLNode)

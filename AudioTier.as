@@ -11,6 +11,12 @@ class AudioTier extends BaseTier
 	public var m_Stop:Boolean;
 	public var m_Player;
 
+	public function AudioTier()
+	{
+		m_SkipPrev = true;
+		m_NoBell = true;
+	}
+	
 	public function LoadXML(tierNode:XMLNode)
 	{
 		//ULog.Info("AudioTier.LoadXML()");

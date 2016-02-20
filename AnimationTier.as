@@ -16,6 +16,12 @@ class AnimationTier extends BaseTier
 	public var m_AnimTargets:Object;
 	public var m_AnimNo:Number;
 	
+	public function AnimationTier()
+	{
+		m_SkipPrev = true;
+		m_NoBell = true;
+	}
+	
 	public function LoadXML(tierNode:XMLNode)
 	{
 		ULog.Info("AnimationTier.LoadXML()");

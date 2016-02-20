@@ -10,6 +10,8 @@ class BaseTier
 	public var m_TierProgress:String = "";	// set in subclass when progress is tracked
 	public var m_TierEnded;
 	public var m_Mission:BaseMission; // reference to parent mission only available during LoadXML
+	public var m_SkipPrev; // When set to true, tier will be skipped when previous is pressed
+	public var m_NoBell; // When true, no bell will sound when tier is complete
 
 	public function StartTier()
 	{

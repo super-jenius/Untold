@@ -8,7 +8,7 @@ class BaseMission
 	public var m_Tiers:Array = new Array();
 	public var m_CurrentTierNo;
 	public var m_MaxTierNo;
-	public var m_CurrentTier;
+	public var m_CurrentTier:BaseTier;
 	public var m_PrevTier;
 	public var m_CustomWindow;
 	public var m_MissionTitle;
@@ -50,12 +50,14 @@ class BaseMission
 				var tierDescription = tierNode.attributes.description;
 				var tierFaction = tierNode.attributes.faction;
 				var tierGender = tierNode.attributes.gender;
+				var tierSkipPrev = tierNode.attributes.skipPrev;
+				var tierNoBell = tierNode.attributes.noBell;
 				// Check faction and gender requirements
 				if ((tierFaction == undefined || tierFaction == "" || tierFaction.toLowerCase() == m_Player.m_Faction.toLowerCase()) &&
 					(tierGender == undefined || tierGender == "" || tierGender.toLowerCase() == m_Player.m_Gender.toLowerCase()))
 				{
 					// Add tier
-					var tier:BaseTier = this.AddTier(tierType, tierDescription);
+					var tier:BaseTier = this.AddTier(tierType, tierDescription, tierSkipPrev, tierNoBell);
 					// Tier handles rest of XML for the node
 					tier.LoadXML(tierNode);	
 					// Reference to this object available during LoadXML() only
@@ -94,9 +96,9 @@ class BaseMission
 	}
 
 	// Add tier and return object for further scripting
-	public function AddTier(tierType:String, tierDescription:String)
+	public function AddTier(tierType:String, tierDescription:String, tierSkipPrev:Boolean, tierNoBell:Boolean)
 	{
-		var newTier;
+		var newTier:BaseTier;
 		
 		switch(tierType.toLowerCase()) 
 		{
@@ -142,6 +144,12 @@ class BaseMission
 		newTier.m_TierDescription = tierDescription;
 		newTier.m_Player = m_Player;
 		newTier.m_Mission = this;
+		if (tierSkipPrev != undefined) {
+			newTier.m_SkipPrev = Boolean(tierSkipPrev);
+		}
+		if (tierNoBell != undefined) {
+			newTier.m_NoBell = Boolean(tierNoBell);
+		}
 		m_Tiers.push(newTier);	
 
 		//this.MessageBox("Tier Added.");
@@ -188,8 +196,8 @@ class BaseMission
 			if (m_CurrentTierNo > 0)
 			{
 				m_CurrentTierNo--;
-				// If skipping backward, skip again past cinematics, or player can get stuck
-				if (m_Tiers[m_CurrentTierNo].m_TierType.toLowerCase() == "cinematic" || m_Tiers[m_CurrentTierNo].m_TierType.toLowerCase() == "audio") {
+				// If skipping backward, skip again past certain tiers (cinematics, audio, etc.), or player can get stuck
+				if (m_Tiers[m_CurrentTierNo].m_SkipPrev == true) {
 					m_PrevTier = true;
 					this.StartNextTier();
 					return;
@@ -218,17 +226,20 @@ class BaseMission
 			this.UpdateDescription();
 			// Create reference to this so event handlers below can see it and call back
 			var thisMission = this;
+			var thisTier = m_CurrentTier;
 			// When tier complete, move on to next tier
 			m_CurrentTier.onTierComplete = function() {
 				ULog.Info("BaseMission.StartNextTier(): onTierComplete");
 				//thisMission.MessageBox("Tier Complete");
-				//Utils.PlayFeedbackSound("sfx/gui/gui_tier_complete.wav");
-				//m_Player.m_Character.AddEffectPackage("sound_fxpackage_GUI_achievement_get.xml");
-				//m_Player.m_Character.AddEffectPackage("sound_fxpackage_GUI_lore_get.xml");
-				//m_Player.m_Character.AddEffectPackage("sound_fxpackage_GUI_tier_complete.xml");
-				m_Player.m_Character.AddEffectPackage("sound_fxpackage_GUI_goal_complete.xml");
-				//m_Player.m_Character.AddEffectPackage("sound_fxpackage_GUI_mission_complete.xml");
-				//m_Player.m_Character.AddEffectPackage("sound_fxpackage_GUI_mission_get.xml");
+				if (thisTier.m_NoBell != true) {
+					//Utils.PlayFeedbackSound("sfx/gui/gui_tier_complete.wav");
+					//m_Player.m_Character.AddEffectPackage("sound_fxpackage_GUI_achievement_get.xml");
+					//m_Player.m_Character.AddEffectPackage("sound_fxpackage_GUI_lore_get.xml");
+					//m_Player.m_Character.AddEffectPackage("sound_fxpackage_GUI_tier_complete.xml");
+					m_Player.m_Character.AddEffectPackage("sound_fxpackage_GUI_goal_complete.xml");
+					//m_Player.m_Character.AddEffectPackage("sound_fxpackage_GUI_mission_complete.xml");
+					//m_Player.m_Character.AddEffectPackage("sound_fxpackage_GUI_mission_get.xml");
+				}
 				thisMission.StartNextTier();
 			}
 

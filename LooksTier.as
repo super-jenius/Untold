@@ -19,6 +19,12 @@ class LooksTier extends BaseTier
 	public var m_Distance:Number;	// distance from X,Z
 	public var m_yDistance:Number;	// distance from Y
 	
+	public function LooksTier()
+	{
+		m_SkipPrev = true;
+		m_NoBell = true;
+	}
+	
 	public function LoadXML(tierNode:XMLNode)
 	{
 		ULog.Info("LooksTier.LoadXML()");
