@@ -106,25 +106,28 @@ class Selector
 		var npc:Character;
 		var npcName:String;
 		for (var prop in nearDynels) {
-			ULog.Info("SelectNPCS -- DynelName: " + nearDynels[prop].GetName());
-			npc = Character.GetCharacter(nearDynels[prop].GetID());
-			npcName = npc.GetName().toLowerCase();
-			ULog.Info("SelectNPCS -- npcName: " + npcName);
-			for (var i:Number = 0; i < names.length; i++)
-			{
-				if (names[i] == "*" || npcName == names[i]) {
-					ULog.Info("SelectNPCS -- Name Match");
-					if (this.CheckLocation(npc) == true) {
-						npcs[prop] = npc;
-						qtyFound++;
-						break;
+			// Old dynels may stay in collection as undefined
+			// Make sure valid first, or there could be performance delays
+			if (nearDynels[prop]) {
+				npcName =  nearDynels[prop].GetName().toLowerCase();
+				//ULog.Info("SelectNPCS -- npcName: " + npcName);
+				for (var i:Number = 0; i < names.length; i++)
+				{
+					if (names[i] == "*" || npcName == names[i]) {
+						ULog.Info("SelectNPCS -- Name Match: " + npcName);
+						npc = Character.GetCharacter(nearDynels[prop].GetID());
+						if (this.CheckLocation(npc) == true) {
+							npcs[prop] = npc;
+							qtyFound++;
+							break;
+						}
 					}
 				}
-			}
-			// If quantity met, stop searching
-			if (qtyFound >= qty)
-			{
-				break;
+				// If quantity met, stop searching
+				if (qtyFound >= qty)
+				{
+					break;
+				}
 			}
 		}
 		
@@ -137,7 +140,7 @@ class Selector
 	public function CheckLocation(dynel:Dynel) : Boolean
 	{
 		// If no location set, return
-		_root.fifo.SlotShowFIFOMessage("m_PlayField: " + m_PlayField);
+		//_root.fifo.SlotShowFIFOMessage("m_PlayField: " + m_PlayField);
 		if (m_PlayField == undefined || m_PlayField == NaN)
 		{
 			return true;
@@ -146,7 +149,7 @@ class Selector
 		// Check if object is in correct playfield and location
 		var inLocation = false;
 		var currentField = dynel.GetPlayfieldID();
-		_root.fifo.SlotShowFIFOMessage("currentField: " + currentField);
+		//_root.fifo.SlotShowFIFOMessage("currentField: " + currentField);
 		if (currentField == m_PlayField) {
 			var position = dynel.GetPosition();
 			var currentX = position.x;
@@ -161,7 +164,7 @@ class Selector
 				inLocation = true;
 			}
 		}
-		_root.fifo.SlotShowFIFOMessage("inLocation: " + inLocation);
+		//_root.fifo.SlotShowFIFOMessage("inLocation: " + inLocation);
 		return inLocation;
 	}
 	
