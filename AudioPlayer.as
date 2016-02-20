@@ -9,10 +9,14 @@ import com.GameInterface.DistributedValue;
 class AudioPlayer
 {
 
-	public var m_Browser; // background browser instance
 	public var m_BrowserSignal;
+	public var m_MuteMusic;
+	public var m_BackgroundVolume;
+	public var m_CombatVolume;
+	public var m_RadioVolume;
+	public var m_AlreadyMute;
 	
-	public function PlayAudio(audioURL, preload, volume, loop, stop)
+	public function PlayAudio(audioURL, preload, volume, loop, stop, muteMusic)
 	{
 		if (stop == true) {
 			this.StopAudio();
@@ -35,23 +39,30 @@ class AudioPlayer
 			url = url + "&loop=true";
 		}
 		
-		m_Browser = _root["untold\\untold"].GetBackgroundBrowser();
-		this.TrackURL();
+		var browser = _root["untold\\untold"].GetBackgroundBrowser();
+		this.TrackURL(browser);
 		ULog.Info("AudioPlayer.PlayAudio(): " + url);
-		m_Browser.OpenURL(url);
+		browser.OpenURL(url);
+		
+		m_MuteMusic = muteMusic;
+		MuteMusic();
 	}
 	
 	// Stop existing audio by loading an empty url
 	public function StopAudio()
 	{
+		ULog.Info("AudioPlayer.StopAudio()");
+		RestoreMusic();
+		// Disconnect browser signal
+		m_BrowserSignal.Disconnect(URLChanged, this);
 		_root["untold\\untold"].ReleaseBackgroundBrowser();
 	}
 	
 	// Track when URL changes
 	// This is the only way the browser can send data back to TSW
-	public function TrackURL()
+	public function TrackURL(browser)
 	{
-		m_BrowserSignal = m_Browser.SignalStartLoadingURL;
+		m_BrowserSignal = browser.SignalStartLoadingURL;
 		if (m_BrowserSignal) {
 			ULog.Info("AudioPlayer.TrackURL(): Tracking SignalStartLoadingURL");
 			m_BrowserSignal.Connect(URLChanged, this);
@@ -69,11 +80,36 @@ class AudioPlayer
 		// Release browser when audio is complete
 		if (url == "data:,audiocomplete")
 		{
-			// Disconnect browser signal
-			m_BrowserSignal.Disconnect(URLChanged, this);
-			// Release browser
-			m_Browser = undefined;
 			this.StopAudio();
+		}
+	}
+	
+	// Mute music while audio plays
+	function MuteMusic()
+	{
+		if (m_MuteMusic == true && m_AlreadyMute != true) {
+			// Save current volume settings to restore when audio stops
+			m_BackgroundVolume = DistributedValue.GetDValue("AudioVolumeBackgroundMusic");
+			m_CombatVolume = DistributedValue.GetDValue("AudioVolumeCombatMusic");
+			m_RadioVolume = DistributedValue.GetDValue("AudioVolumeRadioMusic");
+
+			DistributedValue.SetDValue("AudioVolumeBackgroundMusic", 0);
+			DistributedValue.SetDValue("AudioVolumeCombatMusic", 0);
+			DistributedValue.SetDValue("AudioVolumeRadioMusic", 0);
+			m_AlreadyMute = true;
+			ULog.Info("MuteMusic() Background: " + m_BackgroundVolume + " Combat: " + m_CombatVolume + " Radio: " + m_RadioVolume);
+		}
+	}
+	
+	// Restore music volume if it has been muted
+	function RestoreMusic()
+	{
+		if (m_MuteMusic == true || m_AlreadyMute == true) {
+			// Restore previous volume settings 
+			DistributedValue.SetDValue("AudioVolumeBackgroundMusic", m_BackgroundVolume);
+			DistributedValue.SetDValue("AudioVolumeCombatMusic", m_CombatVolume);
+			DistributedValue.SetDValue("AudioVolumeRadioMusic", m_RadioVolume);
+			m_AlreadyMute = false;
 		}
 	}
 

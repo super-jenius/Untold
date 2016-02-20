@@ -14,7 +14,8 @@ class AudioTier extends BaseTier
 	public function LoadXML(tierNode:XMLNode)
 	{
 		//ULog.Info("AudioTier.LoadXML()");
-		this.SetAudio(tierNode.attributes.url, Boolean(tierNode.attributes.preload), Number(tierNode.attributes.volume), Boolean(tierNode.attributes.loop), Boolean(tierNode.attributes.stop));
+		this.SetAudio(tierNode.attributes.url, Boolean(tierNode.attributes.preload), Number(tierNode.attributes.volume), Boolean(tierNode.attributes.loop), 
+			Boolean(tierNode.attributes.stop), Boolean(tierNode.attributes.muteMusic));
 	}
 
 	public function SetAudio(url:String, preload:Boolean, volume:Number, loop:Boolean, stop:Boolean)
@@ -29,7 +30,7 @@ class AudioTier extends BaseTier
 	public function StartTier()
 	{
 		ULog.Info("AudioTier.StartTier(): url=" + m_URL);
-		m_Player = new AudioPlayer();
+		m_Player = _root["untold\\untold"].GetAudioPlayer();
 		m_Player.PlayAudio(m_URL, m_Preload, m_Volume, m_Loop, m_Stop);
 		// Move immediately to next tier
 		this.EndTier();

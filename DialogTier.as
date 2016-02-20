@@ -42,7 +42,8 @@ class DialogTier extends BaseTier
 					var dialogLine;
 					if (dialogNode.attributes.type == "audio") {
 						dialogLine = "#audio#";
-						this.AddAudio(dialogNode.attributes.url, Boolean(dialogNode.attributes.preload), Number(dialogNode.attributes.volume), Boolean(dialogNode.attributes.loop), Boolean(dialogNode.attributes.stop));
+						this.AddAudio(dialogNode.attributes.url, Boolean(dialogNode.attributes.preload), Number(dialogNode.attributes.volume), 
+							Boolean(dialogNode.attributes.loop), Boolean(dialogNode.attributes.stop), Boolean(dialogNode.attributes.muteMusic));
 					} else {
 						switch (dialogNode.attributes.type) {
 						case "fadeout" :
@@ -98,9 +99,9 @@ class DialogTier extends BaseTier
 		m_Dialog.push([dialogLine, duration]);	
 	}
 	
-	public function AddAudio(audioURL, preload, volume, loop, stop)
+	public function AddAudio(audioURL, preload, volume, loop, stop, muteMusic)
 	{
-		m_Dialog.push(["#audio#", audioURL, preload, volume, loop, stop]);	
+		m_Dialog.push(["#audio#", audioURL, preload, volume, loop, stop, muteMusic]);	
 	}
 	
 	public function StartTier()
@@ -136,6 +137,7 @@ class DialogTier extends BaseTier
 		{
 			ULog.Info("DialogTier.EndTier()");
 			com.GameInterface.Input.RegisterHotkey(_global.Enums.InputCommand.e_InputCommand_ESC, "", _global.Enums.Hotkey.eHotkeyDown, 0);
+			ULog.Info("DialogTier.EndTier() m_ContAudio=" + m_ContAudio);
 			if (m_Audio and m_ContAudio != true) {
 				m_Audio.StopAudio();
 			}
@@ -168,7 +170,7 @@ class DialogTier extends BaseTier
 				_root.ugFade.SlotFadeScreen( true, lineDelay );
 				_global.setTimeout(this, "ProcessDialog", 500);
 			} else if (lineText == "#audio#"){
-				this.PlayAudio(currentLine[1], currentLine[2], currentLine[3], currentLine[4], currentLine[5]);
+				this.PlayAudio(currentLine[1], currentLine[2], currentLine[3], currentLine[4], currentLine[5], currentLine[6]);
 				_global.setTimeout(this, "ProcessDialog", 10);
 			} else {
 				Show2DText(lineText, lineDelay, 0, 0.8, 3, "center", .5, .5);
@@ -179,12 +181,12 @@ class DialogTier extends BaseTier
 		}
 	}
 	
-	public function PlayAudio(audioURL, preload, volume, loop, stop)
+	public function PlayAudio(audioURL, preload, volume, loop, stop, muteMusic)
 	{
 		if (m_Audio == undefined) { 
-			m_Audio = new AudioPlayer();
+			m_Audio = _root["untold\\untold"].GetAudioPlayer();
 		}
-		m_Audio.PlayAudio(audioURL, preload, volume, loop, stop);
+		m_Audio.PlayAudio(audioURL, preload, volume, loop, stop, muteMusic);
 	}
 
 	public function ConvertToXML()

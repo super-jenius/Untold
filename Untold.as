@@ -15,6 +15,7 @@ var m_BackgroundBrowser;
 var m_CurrentTier;
 var m_MissionXML;
 //var m_LooksRDBXML;
+var m_AudioPlayer;
 
 function onLoad()
 {
@@ -309,6 +310,14 @@ function ReleaseBackgroundBrowser()
 		//_root.mainmenuwindow.m_PetitionMonitor.SignalChanged.Disconnect(SlotPetitionState, this);
 		//_root.fifo.SlotShowFIFOMessage("Untold.ReleaseBackgroundBrowser()");
 	}
+}
+
+function GetAudioPlayer()
+{
+	if (m_AudioPlayer == undefined) {
+		m_AudioPlayer = new AudioPlayer();
+	}
+	return m_AudioPlayer;
 }
 
 // Load LooksRDB.xml file
