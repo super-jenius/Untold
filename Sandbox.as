@@ -62,7 +62,7 @@ class Sandbox extends BaseMission
 		// this.TestBrowser();
 		//this.TestSound();
 		//this.DirectX11Test();
-		//this.StartMission();
+		this.StartNewMission();
 		//this.StopMission();
 		//this.RemoveWaypoints();
 		//m_Instance 680, m_Type 51320
@@ -89,7 +89,7 @@ class Sandbox extends BaseMission
 		//this.AddLooksTier("Civilian", 99, 7987827, "Hat",false,true);
 		//this.AddLooksTier("Civilian", 99, 7028883, "Mei Ling");
 		//this.LoadLooksXML();
-		this.TestAnimationTier();
+		//this.TestAnimationTier();
 		
 		var tier_4 = this.AddTier("useitem", "There is no spoon.");
 		tier_4.SetItem("thereisnospoon");		
@@ -510,13 +510,21 @@ class Sandbox extends BaseMission
 	
 	function StartNewMission()
 	{
-		//com.GameInterface.Quests.AcceptQuestFromQuestgiver( 2893, new ID32(51320, 680))
-		com.GameInterface.Quests.AcceptQuestFromQuestgiver( 2918, new ID32(51320, 783))
+		if (_root.missiontracker.m_MissionBar["Slot5"].m_MissionTrackerItem == undefined) {
+			com.GameInterface.Quests.AcceptQuestFromQuestgiver( 3176, new ID32(0, 0)) // Mission persons
+		} else {
+			_root.fifo.SlotShowFIFOMessage("No mission slot available.");
+		}
+		//com.GameInterface.Quests.AcceptQuestFromQuestgiver( 2893, new ID32(51320, 680)) // Mission persons
+		//com.GameInterface.Quests.AcceptQuestFromQuestgiver( 2918, new ID32(51320, 783)) // Trespassers
+		//com.GameInterface.Quests.AcceptQuestFromQuestgiver( 3176, new ID32(51320, 783)) // Bullets for Andy
+		// 3176
 	}
 	
 	function StopMission()
 	{
-		com.GameInterface.Quests.SignalMissionCompleted.Emit(2893);
+		//com.GameInterface.Quests.SignalMissionCompleted.Emit(2893);
+		com.GameInterface.Quests.SignalMissionFailed.Emit(2918);
 	}
 	
 	function DirectX11Test()

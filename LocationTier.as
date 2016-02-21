@@ -1,5 +1,7 @@
 ﻿// Location Tier
 // Completes when player arrives within range of designated coordinates
+import com.Utils.ID32;
+import com.GameInterface.Quests;
 
 class LocationTier extends BaseTier
 {
@@ -110,7 +112,7 @@ class LocationTier extends BaseTier
 		super.EndTier();
 	}
 
-	public function ShowWaypoint()
+	public function ShowWaypoint(missionStarted:Boolean)
 	{
 		// Check if waypoint should be shown
 		if (m_WaypointName && m_Waypoint == undefined && m_Lore == false)
@@ -124,10 +126,22 @@ class LocationTier extends BaseTier
 			}
 			if (m_Waypoint == undefined)
 			{
+				// Start a side mission that contains a waypoint
+				// 3176 - Bullets for Andy
+				// 2918 - Trespassers
+				// 2893 - Mission persons (multiple waypoints)
+				// Make sure mission slot available
+				if (!missionStarted && _root.missiontracker.m_MissionBar["Slot5"].m_MissionTrackerItem == undefined) {
+					Quests.AcceptQuestFromQuestgiver( 3176, new ID32(0, 0));
+					// Notify user
+					_root.fifo.SlotShowFIFOMessage("Untold Stories started a side mission to enable waypoints.");
+					ShowWaypoint(true);
+					return;
+				}
 				// There is no active mission/waypoint, so don't try again
 				m_WaypointName = undefined;
 				// Notify user
-				_root.fifo.SlotShowFIFOMessage("TIP: Untold Stories can display a waypoint if an official mission that uses a waypoint is currently in progress.");
+				//_root.fifo.SlotShowFIFOMessage("TIP: Untold Stories can display a waypoint if an official mission that uses a waypoint is currently in progress.");
 				return;
 			}
 			// Make changes to waypoint
