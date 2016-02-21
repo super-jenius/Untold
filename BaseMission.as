@@ -138,6 +138,9 @@ class BaseMission
 			case "animation" :
 				newTier = new AnimationTier();
 				break;
+			case "response" :
+				newTier = new BrowserResponseTier();
+				break;				
 		}
 
 		newTier.m_TierType = tierType;

@@ -11,12 +11,21 @@ class BrowserTier extends BaseTier
 	public var m_Width:Number;
 	public var m_Height:Number;
 	public var m_TrackURL:Boolean;
+	public var m_Response:String;
+	public var m_ResponseTier:BrowserResponseTier;
 	
 	public function LoadXML(tierNode:XMLNode)
 	{
 		//ULog.Info("BrowserTier.LoadXML()");
 		this.SetURL(tierNode.attributes.url, tierNode.attributes.browserTitle, (tierNode.attributes.hideAddress == "true"), 
 					Number(tierNode.attributes.width), Number(tierNode.attributes.height));
+		// Can require correct response before advancing to next tier
+		m_Response = tierNode.attributes.response;
+		if (m_Response) {
+			m_ResponseTier = m_Mission.AddTier("response", "The previous tier must be completed successfully before you can move on to the next tier.\n\nPress the Back button to reopen the window.");
+			SetURLTracking(true);
+			onURLChanged = CheckResponse;
+		}
 	}
 
 	public function SetURL(url:String, browserTitle:String, hideAddress:Boolean, width:Number, height:Number)
@@ -156,6 +165,22 @@ class BrowserTier extends BaseTier
 	public function onURLChanged(url)
 	{
 		ULog.Info("BrowserTier.onURLChanged(): " + url);
+	}
+	
+	// Check browser response
+	public function CheckResponse(url) 
+	{
+		// Formatted as data URL + expected string
+		var correctResponse = "data:," + m_Response.toLowerCase();
+		if (url.toLowerCase() == correctResponse) {
+			// Set response tier complete
+			m_ResponseTier.m_Complete = true;
+			// Close browser
+			com.GameInterface.DistributedValueBase.SetDValue("WebBrowserStartURL", "");
+			com.GameInterface.DistributedValueBase.SetDValue("web_browser", false);
+			// End tier
+			EndTier();
+		}
 	}
 	
 	public function AbortTier()
