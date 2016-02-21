@@ -76,7 +76,7 @@ class AudioPlayer
 	
 	function URLChanged(newurl:String) {
 		var url = unescape(newurl);
-		_root.fifo.SlotShowFIFOMessage("AudioPlayer.URLChanged: " + url);
+		//_root.fifo.SlotShowFIFOMessage("AudioPlayer.URLChanged: " + url);
 		// Release browser when audio is complete
 		if (url == "data:,audiocomplete")
 		{

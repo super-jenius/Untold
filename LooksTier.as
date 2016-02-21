@@ -137,7 +137,7 @@ class LooksTier extends BaseTier
 			break;
 		}
 		if (looksTargets != undefined) {
-			_root.fifo.SlotShowFIFOMessage("Targets found: " + m_LooksTarget + " " + looksTargets);
+			//_root.fifo.SlotShowFIFOMessage("Targets found: " + m_LooksTarget + " " + looksTargets);
 			var target:Character;
 			for (var prop in looksTargets) {
 				target = looksTargets[prop];
@@ -174,7 +174,7 @@ class LooksTier extends BaseTier
 		// Change eye color twice to make sure it is actually different from the player's current eye color.
 		// Otherwise, it may not register as a change, and player won't get original looks back.
 		var eyeColor = characterCreationIF.GetEyeColorIndex();
-		_root.fifo.SlotShowFIFOMessage("ResetLooks() EyeColor: " + eyeColor);
+		//_root.fifo.SlotShowFIFOMessage("ResetLooks() EyeColor: " + eyeColor);
 		characterCreationIF.SetEyeColorIndex(1);
 		characterCreationIF.SetEyeColorIndex(0);
 		characterCreationIF.SetEyeColorIndex(eyeColor);
