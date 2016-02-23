@@ -82,9 +82,11 @@ class WorldStories
 				var storyType = storyNode.attributes.type;
 				var storyFaction = storyNode.attributes.faction;
 				var storyGender = storyNode.attributes.gender;
+				var minVer = storyNode.attributes.minVer;
 				// Check faction and gender requirements
 				if ((storyFaction == undefined || storyFaction == "" || storyFaction.toLowerCase() == m_Player.m_Faction.toLowerCase()) &&
-					(storyGender == undefined || storyGender == "" || storyGender.toLowerCase() == m_Player.m_Gender.toLowerCase()))
+					(storyGender == undefined || storyGender == "" || storyGender.toLowerCase() == m_Player.m_Gender.toLowerCase()) &&
+					(minVer == undefined || minVer <=  _root["untold\\untold"].m_VerNo))
 				{
 					switch (storyType.toLowerCase()) {
 					case "panorama" :
