@@ -12,7 +12,7 @@ class DialogTier extends BaseTier
 	public var m_CurrentLineNo;
 	public var m_WordsPerSec:Number;
 	public var m_Cinematic:Boolean;
-	public var m_Audio;
+	public var m_Audio:AudioPlayer;
 	public var m_ContAudio;
 	
 	public function DialogTier()
@@ -42,7 +42,7 @@ class DialogTier extends BaseTier
 					var dialogLine;
 					if (dialogNode.attributes.type == "audio") {
 						dialogLine = "#audio#";
-						this.AddAudio(dialogNode.attributes.url, Boolean(dialogNode.attributes.preload), Number(dialogNode.attributes.volume), 
+						this.AddAudio(dialogNode.attributes.url, dialogNode.attributes.preload, Number(dialogNode.attributes.volume), 
 							Boolean(dialogNode.attributes.loop), Boolean(dialogNode.attributes.stop), Boolean(dialogNode.attributes.muteMusic));
 					} else {
 						switch (dialogNode.attributes.type) {
@@ -171,7 +171,6 @@ class DialogTier extends BaseTier
 				_global.setTimeout(this, "ProcessDialog", 500);
 			} else if (lineText == "#audio#"){
 				this.PlayAudio(currentLine[1], currentLine[2], currentLine[3], currentLine[4], currentLine[5], currentLine[6]);
-				_global.setTimeout(this, "ProcessDialog", 10);
 			} else {
 				Show2DText(lineText, lineDelay, 0, 0.8, 3, "center", .5, .5);
 			}
@@ -186,7 +185,17 @@ class DialogTier extends BaseTier
 		if (m_Audio == undefined) { 
 			m_Audio = _root["untold\\untold"].GetAudioPlayer();
 		}
+		if (preload == "wait") {
+			// Wait for audio to preload before processing next line
+			var thisTier = this;
+			m_Audio.onPreloadComplete = function () {
+				_global.setTimeout(thisTier, "ProcessDialog", 10);
+			}
+		}
 		m_Audio.PlayAudio(audioURL, preload, volume, loop, stop, muteMusic);
+		if (preload != "wait") {
+			_global.setTimeout(this, "ProcessDialog", 10);
+		}
 	}
 
 	public function ConvertToXML()

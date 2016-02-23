@@ -27,8 +27,8 @@ class AudioPlayer
 		//var baseURL = "http://untoldworld.azurewebsites.net/";
 		
 		var url = baseURL + "audioplayer.html?src=" + escape(audioURL);
-		if (preload == true) {
-			url = url + "&preload=true";
+		if (preload != undefined) {
+			url = url + "&preload=" + preload; // "true" or "wait"
 		}
 		// Volume format is 0 to 100, but will change to web format of 0 to 1
 		if (volume) {
@@ -74,7 +74,8 @@ class AudioPlayer
 		}
 	}	
 	
-	function URLChanged(newurl:String) {
+	function URLChanged(newurl:String) 
+	{
 		var url = unescape(newurl);
 		//_root.fifo.SlotShowFIFOMessage("AudioPlayer.URLChanged: " + url);
 		// Release browser when audio is complete
@@ -82,6 +83,17 @@ class AudioPlayer
 		{
 			this.StopAudio();
 		}
+		// Notify calling program and release browser when preload is complete
+		if (url == "data:,preloadcomplete")
+		{
+			this.StopAudio();
+			this.onPreloadComplete();
+		}
+	}
+	
+	public function onPreloadComplete() 
+	{
+		// Fires when preload="wait" and loading is complete
 	}
 	
 	// Mute music while audio plays

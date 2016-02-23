@@ -45,9 +45,16 @@
             if (volume) {
                 player.volume = volume;
             }
-            if (preload == "true") {
+            if (preload == "true" || preload == "wait") {
                 // Preload audio
                 player.preload = true;
+                if (preload == "wait") {
+                    // Let MOD know when preload is complete
+                    player.addEventListener("canplay", function () {
+                        alert("preload complete");
+                        window.location = "data:,preloadcomplete";
+                    });
+                }
                 player.load();
             } else {
                 // Loop

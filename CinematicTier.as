@@ -106,7 +106,7 @@ class CinematicTier extends DialogTier
 						this.AddLine(cinematicLine, Number(cinematicNode.attributes.duration));
 						break;
 					case "audio" :
-						this.AddAudio(cinematicNode.attributes.url, Boolean(cinematicNode.attributes.preload), Number(cinematicNode.attributes.volume), 
+						this.AddAudio(cinematicNode.attributes.url, cinematicNode.attributes.preload, Number(cinematicNode.attributes.volume), 
 							Boolean(cinematicNode.attributes.loop), Boolean(cinematicNode.attributes.stop), Boolean(cinematicNode.attributes.muteMusic));
 						break;
 					case "looks" :
