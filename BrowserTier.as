@@ -31,7 +31,7 @@ class BrowserTier extends BaseTier
 	public function SetURL(url:String, browserTitle:String, hideAddress:Boolean, width:Number, height:Number)
 	{
 		//ULog.Info("BrowserTier.SetURL(): title=" + browserTitle);
-		m_URL = url;
+		m_URL = USUtils.TextMerge(url, true);
 		m_BrowserTitle = browserTitle;
 		m_HideAddress = hideAddress;
 		m_Width = width;

@@ -67,28 +67,7 @@ class DialogTier extends BaseTier
 	// Specify duration to override default time
 	public function AddLine(dialogLine:String, duration:Number)
 	{
-		// Evaluate {{expression}} contained in string
-		// You can only get the value of a property or variable. You can't evaluate any expression.
-		var expStart = dialogLine.indexOf("{{");
-		var expEnd = dialogLine.indexOf("}}");
-		while (expStart >= 0 && expEnd >= 0) {
-			var expBraces = dialogLine.substring(expStart, expEnd + 2);
-			var expression = expBraces.substr(2, expBraces.length - 4); 
-			// _root path to property required
-			var expression = "_root.untold\\untold.m_MissionListWindow.m_Content.m_CurrentMission." + expression;
-			var expResult = eval(expression);
-			// If valid expression, update line
-			if (expResult) {
-				dialogLine = dialogLine.split(expBraces).join(expResult.toString());
-				// Check for more expressions
-				expStart = dialogLine.indexOf("{{");
-				expEnd = dialogLine.indexOf("}}");
-			} 
-			else {
-				// Bad expression
-				break;
-			}
-		}
+		dialogLine = USUtils.TextMerge(dialogLine);
 		
 		// If no duration specified, calculated default
 		if (!duration) 

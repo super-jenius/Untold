@@ -62,7 +62,7 @@ class Sandbox extends BaseMission
 		// this.TestBrowser();
 		//this.TestSound();
 		//this.DirectX11Test();
-		this.StartNewMission();
+		//this.StartNewMission();
 		//this.StopMission();
 		//this.RemoveWaypoints();
 		//m_Instance 680, m_Type 51320
@@ -90,9 +90,26 @@ class Sandbox extends BaseMission
 		//this.AddLooksTier("Civilian", 99, 7028883, "Mei Ling");
 		//this.LoadLooksXML();
 		//this.TestAnimationTier();
+		this.TestTextMerge();
 		
 		var tier_4 = this.AddTier("useitem", "There is no spoon.");
 		tier_4.SetItem("thereisnospoon");		
+	}
+	
+	function TestTextMerge()
+	{
+		var tier:BrowserTier = this.AddTier("browser", "Test Text Merge");
+		tier.SetURL("data:,TestTextMerge?id={{player.m_CharacterID}}&name={{player.m_Name}}&version={{untold.m_VerNo}}");
+		
+		var template = "Version: {{untold.m_VerNo}}\n" + 
+						"Player: {{player.m_Name}}\n" +
+						"Character ID: {{player.m_CharacterID}}\n" +
+						"Faction: {{m_Player.m_Faction}}\n" +
+						"Gender: {{player.m_Gender}}\n" +
+						"Mission Title: {{mission.m_MissionTitle}}\n" +
+						"Tier Description: {{tier.m_TierDescription}}\n";						
+		var result = USUtils.TextMerge(template);
+		_root.fifo.SlotShowFIFOMessage("TestTextMerge\n" + result);
 	}
 	
 	function TestAnimationTier()
