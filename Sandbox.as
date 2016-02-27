@@ -75,7 +75,7 @@ class Sandbox extends BaseMission
 		//this.ListEffectsPackage();
 		//this.GetClothing();
 		//this.SetAnimation();
-		//this.EffectsPackage();
+		this.EffectsPackage();
 		//this.HitDaFlo();
 		//this.AddLooksTier("Civilian", 99, 7569838, "Carter");
 		////this.AddLooksTier("Civilian", 99, 7164010, "Carter");		
@@ -90,7 +90,7 @@ class Sandbox extends BaseMission
 		//this.AddLooksTier("Civilian", 99, 7028883, "Mei Ling");
 		//this.LoadLooksXML();
 		//this.TestAnimationTier();
-		this.TestTextMerge();
+		//this.TestTextMerge();
 		
 		var tier_4 = this.AddTier("useitem", "There is no spoon.");
 		tier_4.SetItem("thereisnospoon");		
@@ -238,11 +238,12 @@ class Sandbox extends BaseMission
 
 	function EffectsPackage()
 	{
-		var emote = "cinematic_jack_boone_mission_01";
-		_root.fifo.SlotShowFIFOMessage("EffectsPackage(): " + emote);
-		var targetID = m_Player.m_Character.GetDefensiveTarget();
-		var target = Character.GetCharacter(targetID);
-		target.AddEffectPackage(emote);
+		var effect = "fx_weapon_shotgun_impact_04.xml";
+		_root.fifo.SlotShowFIFOMessage("EffectsPackage(): " + effect);
+		//var targetID = m_Player.m_Character.GetDefensiveTarget();
+		//var target = Character.GetCharacter(targetID);
+		var target = m_Player.m_Character;
+		target.AddEffectPackage(effect);
 	}
 	
 	function MoveWaypoint()
