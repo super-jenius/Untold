@@ -21,7 +21,7 @@ function onLoad()
 {
 
 	// Set version here for each release
-	m_VerNo = "2.3";
+	m_VerNo = "3.0";
 	
 	// Turn on info logging?
 	ULog.m_LogInfo = true;
@@ -134,8 +134,8 @@ function CustomJournalHandler()
 // Load home page in browser
 function HomePage()
 {
-	var baseURL = "file:///D:/Games/The%20Secret%20World/Data/Gui/Customized/Flash/Untold/web/index.html";
-	//var baseURL = "http://untoldworld.azurewebsites.net/";
+	//var baseURL = "file:///D:/Games/The%20Secret%20World/Data/Gui/Customized/Flash/Untold/web/index.html";
+	var baseURL = "http://untoldworld.azurewebsites.net/";
 	ULog.Info("Untold.HomePage()");
 	
 	// Make sure any existing browser is closed

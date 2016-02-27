@@ -23,8 +23,8 @@ class AudioPlayer
 			return;
 		}
 		
-		var baseURL = "file:///D:/Games/The%20Secret%20World/Data/Gui/Customized/Flash/Untold/web/";
-		//var baseURL = "http://untoldworld.azurewebsites.net/";
+		//var baseURL = "file:///D:/Games/The%20Secret%20World/Data/Gui/Customized/Flash/Untold/web/";
+		var baseURL = "http://untoldworld.azurewebsites.net/";
 		
 		var url = baseURL + "audioplayer.html?src=" + escape(audioURL);
 		if (preload != undefined) {

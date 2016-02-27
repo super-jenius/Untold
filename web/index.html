@@ -49,26 +49,13 @@
         <div id="newVersion" class="alert alert-danger" role="alert" style="display: none;">
             <ul>
                 <li>
-                    Version 2.3 is now available for download using the Curse Client or from SecretUI. This is a RECOMMENDED update and adds the following features:
+                    Version 3.0 is now available for download using the Curse Client or from SecretUI. This is a <b>REQUIRED</b> update and adds the following features:
                     <ul>
-                        <li>Missions can now be started from Untold Stories Lore. These missions can co-exist with the main mission list (started either way), or they can be "hidden" missions on lore only.</li>
-                        <li>Various fixes and performance improvements.</li>
-                        <li><b>Akma's Hand</b>, an all new mission, is now available to play. It requires some of the aforementioned fixes, so version 2.3 is required to play it.</li>
+                        <li><b>Being Carter</b>, an all new mission, is now available to play. It demonstrates the new features added in version 3.0.</li>
+                        <li>The new <b>Looks Tier</b> changes the appearance of the player or NPCs. The new look can be another NPC from the game (including major storyline characters), or one of your own design combining multiple looks and clothing. This tier can also be used during cinematics.</li>
+                        <li>The new <b>Animation Tier</b> allows emotes and animations to be applied to the player or NPCS. This is great for cinematics!</li>
+                        <li><b>Waypoints</b> can now be displayed when using the Location Tier. This requires an existing mission that uses a waypoint to be active. If one is not available, an old mission from Kingsmouth will be started automatically to enable the waypoint.</li>
                     </ul>
-                <li>
-                    Version 2.2 adds the following features:
-                    <ul>
-                        <li>Panoramas/Cinematics have been added as types of Untold Stories Lore.  When you are near a panorama, click on the Lore icon to play it. Yes, this is a blatant ripoff of the Panorama feature in Age of Conan, but I figure the devs won't add it to TSW for a long time. I have placed three panoramas in Solomon Island, one in each zone (Kingsmouth, The Savage Coast, Blue Mountain). See if you can find them!</li>
-                        <li>Audio files, including voiceover, can now be played during missions, dialog, and cinematics. Refer to the documentation for more details.</li>
-                        <li>Cinematic camera paths now support "ease" functions for more natural movement. Refer to the documentation for more details.</li>
-                    </ul>
-                </li>
-                <li>Version 2.1 fixes the 20 FPS lag issue introduced in 2.0.</li>
-                <li>
-                    Version 2.0 introduces a major new feature: <b>Untold Stories Lore</b>.
-                    Untold Stories Lore highlights fan fiction, art, music, and video creations from the TSW community.  When you are near a designated location or character, a red US icon will appear in the notification area.
-                    Click the icon to open the lore.
-                </li>
             </ul>
         </div>
         <div id="worldWell" class="alert alert-success" role="alert" style="display: none;">
@@ -84,7 +71,9 @@
             <p>
                 <ul>
                     
-                    <li><b>June 12 2015:</b> New mission "To The Church On Time" by Lilith Darkweaver is now available.</li>
+                    <li><b>Feb 22 2016:</b> New mission "Being Carter" now available (requires 3.0 or higher).</li>
+                    <li><b>Sep 3 2015:</b> Sprinkled lore of concept art, ARGs, and Twitterverses throughout The Secret World.</li>
+                    <li><b>Jun 12 2015:</b> New mission "To The Church On Time" by Lilith Darkweaver is now available.</li>
                     <li><b>May 28 2015:</b> New mission "Akma's Hand" now available (requires 2.3 or higher).</li>
                     <li><b>Mar 21 2015:</b> Added FunCom Concept Art lore to London, New York, and Seoul.</li>
                     <li><b>Mar 15 2015:</b> Added more player artwork lore to all playfields.</li>
@@ -160,7 +149,7 @@
         })(window.location.search.substr(1).split('&'));
 
         function checkVersion() {
-            if (qs["version"] != "2.3") {
+            if (qs["version"] != "3.0") {
                 $("#newVersion").show();
             }
         }
@@ -196,19 +185,20 @@
             // Make sure launched within game
             if (qs["statusXML"]) {
                 var missionList = new Array();
-                missionList.push(["Basic Training", "BasicTraining", "BasicTraining.xml", "Status", "No", "Super Jenius", "A simple mission for demonstrating and testing the basic features of the system."]);
-                missionList.push(["Basic Training (German)", "BasicTrainingGerman", "BasicTrainingGerman.xml", "Status", "No", "Super Jenius", "A simple mission for demonstrating and testing the basic features of the system. This version will work with the German TSW client. However, mission text and dialog are still in English."]);
-                missionList.push(["A Personal Matter", "APersonalMatter", "APersonalMatter.xml", "Status", "Yes", "Super Jenius", "The Stationmaster has a personal request for you. This is an action mission with some light investigation elements."]);
-                missionList.push(["The Scroll", "TheScroll", "TheScroll.xml", "Status", "Yes", "Super Jenius", "A mysterious scroll has been discovered in the desert. This is a full investigation mission that will test your knowledge of The Secret World. Includes cinematics!"]);
-                missionList.push(["Undead Gratefulness", "UndeadGratefulness", "UndeadGratefulness.xml", "Status", "Yes", "Tremerion", "by Tremerion"]);
-                missionList.push(["Extraordinary Merchandise", "ExtraordinaryMerchandise", "ExtraordinaryMerchandise.xml", "Status", "Yes", "Tremerion", "by Tremerion"]);
-                missionList.push(["Echo Squad", "EchoSquad", "EchoSquad.xml", "Status", "Yes", "bluemoon", "by bluemoon"]);
-                missionList.push(["The Shadow Out of Time", "TheShadowOutofTime", "TheShadowOutofTime.xml", "Status", "Yes", "Tremerion", "by Tremerion"]);
-                if (qs["version"] >= "2.3") {
-                    // Version 2.3 or higher required
+                if (qs["version"] >= "3.0") {
+                    // Version 3.0 is a required update
+                    missionList.push(["Basic Training", "BasicTraining", "BasicTraining.xml", "Status", "No", "Super Jenius", "A simple mission for demonstrating and testing the basic features of the system."]);
+                    missionList.push(["Basic Training (German)", "BasicTrainingGerman", "BasicTrainingGerman.xml", "Status", "No", "Super Jenius", "A simple mission for demonstrating and testing the basic features of the system. This version will work with the German TSW client. However, mission text and dialog are still in English."]);
+                    missionList.push(["A Personal Matter", "APersonalMatter", "APersonalMatter.xml", "Status", "Yes", "Super Jenius", "The Stationmaster has a personal request for you. This is an action mission with some light investigation elements."]);
+                    missionList.push(["The Scroll", "TheScroll", "TheScroll.xml", "Status", "Yes", "Super Jenius", "A mysterious scroll has been discovered in the desert. This is a full investigation mission that will test your knowledge of The Secret World. Includes cinematics!"]);
+                    missionList.push(["Undead Gratefulness", "UndeadGratefulness", "UndeadGratefulness.xml", "Status", "Yes", "Tremerion", "by Tremerion"]);
+                    missionList.push(["Extraordinary Merchandise", "ExtraordinaryMerchandise", "ExtraordinaryMerchandise.xml", "Status", "Yes", "Tremerion", "by Tremerion"]);
+                    missionList.push(["Echo Squad", "EchoSquad", "EchoSquad.xml", "Status", "Yes", "bluemoon", "by bluemoon"]);
+                    missionList.push(["The Shadow Out of Time", "TheShadowOutofTime", "TheShadowOutofTime.xml", "Status", "Yes", "Tremerion", "by Tremerion"]);
                     missionList.push(["Akma's Hand", "AkmasHand", "AkmasHand.xml", "Status", "Yes", "Super Jenius", "Delve into the mysteries and political intrigue surrounding Akma's Hand."]);
+                    missionList.push(["To The Church On Time", "ChurchOnTime", "ChurchOnTime.xml", "Status", "Yes", "Lilith Darkweaver", "Lilith Darkweaver has a problem: her father promised her as a bride to a demon prince when she was a baby, and she's running out of time to find a way out of the contract. Finding out more about her father might yield a clue..."]);
+                    missionList.push(["Being Carter", "BeingCarter", "BeingCarter.xml", "Status", "Yes", "Super Jenius", "You find yourself thinking about Carter. Pay her a visit at Innsmouth Academy. REQUIRES ACCESS TO TOKYO."]);
                 }
-                missionList.push(["To The Church On Time", "ChurchOnTime", "ChurchOnTime.xml", "Status", "Yes", "Lilith Darkweaver", "Lilith Darkweaver has a problem: her father promised her as a bride to a demon prince when she was a baby, and she's running out of time to find a way out of the contract. Finding out more about her father might yield a clue..."]);
 
                 // Sort according to status
                 for (var i = 0; i < missionList.length; i++) {

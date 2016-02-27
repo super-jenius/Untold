@@ -1,26 +1,34 @@
 Version 3.0
 ===============
-Waypoints (done)
-Looks tier
-- Support ID or description
-- Lookup desc/ID in XML file. Fast enough?
-- Put looks on player or NPC. Player needs to be able to reset looks.
-- Allow NPC at set coordinates. Maybe move existing NPC lookup to separate class?
-- Allow looks to be applied to multiple NPCs can be changed
-- Can nametag be changed?
-- Looks will reset after zone change?  Should we worry about it? Maybe later. What about fast travel?
-- Hide weapons during cinematic
+Done: Waypoints
+Done: Looks tier
+- ID only: Support ID or description
+- Too slow: Lookup desc/ID in XML file. Fast enough?
+- Done: Put looks on player or NPC. Player needs to be able to reset looks.
+- Done: Allow NPC at set coordinates. Maybe move existing NPC lookup to separate class?
+- Done: Allow looks to be applied to multiple NPCs can be changed
+- No: Can nametag be changed?
+- No: Looks will reset after zone change? (Yes) Should we worry about it? (No, Maybe later). What about fast travel? (Not a problem)
+- Done: Hide weapons during cinematic
 
-Animation tier
+Done: Animation tier
 
-Require correct response from browser before moving on
-Add noBell and skipPrevNext options to tiers when tier completed 
-Add minVer option to lore.  Lore won't appear unless player has minimum version installed.
+Done: Require correct response from browser before moving on
+Done: Add noBell and skipPrevNext options to tiers when tier completed 
+Done: Add minVer option to lore.  Lore won't appear unless player has minimum version installed.
+Done: Audio player waits for preloading to complete.
+Done: Ability to send player name, ID, version, etc. to browser link and lore.
 
 Version 3.1
 ===============
+Bug fixes
+Documentation for new features in 3.0
+
+Future features
+===============
 Automatic translation of item/npc names for German/French clients, using string XML files.
-Ability to send player name, ID, version, etc. to browser link and lore.
+Effects packages possible?
+Possible to use in-world items like you can in missions or with lore?
 
 Lore
 ================
@@ -28,7 +36,7 @@ Done: Aveline Belmont on top of tower with Lilith
 Done: Kingsmouth.com at Welcome sign
 Done (just Orochi): Other web sites referenced in game?  That guy in Savage Coast, Orochi, etc.
 Done: Twitter accounts for characters: Helen, Andy, Danny, Carter, and others
-@Hive_Mode where magazines are.
+@Hive_Mode where magazines are. http://thesecret.buzz too.
 Done: Add latest trailers to TSW History at theater, including The Park
 World/Locations/Characters from the main TSW site?
 RadioFreeGaia and other stations near radios?
