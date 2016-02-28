@@ -3,7 +3,7 @@
 Local lcRDBFolder, lnFiles, lnFile, lcFile, lcContents, lnRDBID, lcFullDesc, lcDesc
 Local Array laRDBFiles[1]
 
-Wait "Extracting RDB Info..." WINDOW nowait
+Wait "Extracting Looks RDB Info..." WINDOW nowait
 
 Close Database All 
 Use LooksRDB
@@ -26,9 +26,10 @@ EndFor
 
 Select RDBID, Desc from LooksRDB ;
 	where !Empty(Desc) ;
-	into cursor LooksRDB
+	order by Desc ;
+	into cursor Looks
 	
-CursorToXML("LooksRDB", "LooksRDB.xml", 1, 512)
+CursorToXML("Looks", "LooksRDB.xml", 2, 512)
 
 Close Databases all
 Wait clear
