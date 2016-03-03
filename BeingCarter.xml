@@ -375,9 +375,9 @@
       <animation name="cinematic_expression_shakehead_losthope" duration="7.4"/>-->
     </cinematic>
     <cinematic type="dialog" line="Thoroughly humiliated, I ran out of there crying and went to the church." />
-    <tier type="looks" description="Carter" looksTarget="player">
+    <cinematic type="looks" description="Carter" looksTarget="player">
       <looks rdbid="6940248" description="npc_new-england_female_carter" />
-    </tier>
+    </cinematic>
     <cinematic type="fadeout" duration="3" />
   </tier>
   <tier type="looks" description="Reset Danny Looks" looksTarget="Danny Dufresne">
@@ -879,7 +879,7 @@
     <cinematic type="dialog" line="Jung: Have you come again?"/>
     <cinematic type="dialog" line="" duration="1" />
     <cinematic type="dialog" line="I like it when you visit."/>
-    <cinematic type="dialog" line="You don’t see me as the others do."/>
+    <cinematic type="dialog" line="You don't see me as the others do."/>
     <cinematic type="dialog" line="" duration=".9" />
     <cinematic type="dialog" line="You are not afraid."/>
     <!--<cinematic type="dialog" line="" duration=".5" />-->
@@ -930,7 +930,7 @@
     <cinematic type="dialog" line="– or worse, mindfully –"/>
     <cinematic type="dialog" line="ravage those that cling to light." duration="3.5"/>
     <cinematic type="dialog" line="" duration="1.5" />
-    <cinematic type="dialog" line="It’s a sad state of affairs we find ourselves in."/>
+    <cinematic type="dialog" line="It's a sad state of affairs we find ourselves in."/>
     <!--<cinematic type="camera" duration="0" posX="811.5" posY="77.5" posZ="180.75" targetX="813.35" targetY="76.8" targetZ="180.75"/>
     <cinematic type="camera" duration="50000" posX="813.35" posY="76.8" posZ="180.75" targetX="813.35" targetY="76.8" targetZ="180.75"/>-->
     <cinematic type="dialog" line="" duration=".6" />
@@ -1079,10 +1079,10 @@
     <cinematic type="dialog" line="" duration="5" />
     <cinematic type="dialog" line="I don't know why I jumped." />
     <cinematic type="dialog" line="It just felt like the right thing to do." />
-    <cinematic type="dialog" line="You’re supposed to wake up after a big fall like that, but I didn’t." />
+    <cinematic type="dialog" line="You're supposed to wake up after a big fall like that, but I didn't." />
     <cinematic type="dialog" line="I could see myself just lying there... lifeless." />
     <cinematic type="dialog" line="I was dead..." duration="3"/>
-    <cinematic type="dialog" line="and then I wasn’t." />
+    <cinematic type="dialog" line="and then I wasn't." />
     <cinematic type="dialog" line="" duration="3" />
     <cinematic type="fadeout" duration="4"/>
   </tier>
@@ -1113,14 +1113,14 @@
     <cinematic type="dialog" line="" duration="2" />
     <cinematic type="camera" duration="20000" posX="942" posY="38.9" posZ="552" targetX="942.2" targetY="38.8" targetZ="551.1"/>
     <cinematic type="dialog" line="" duration="2" />-->
-    <cinematic type="dialog" line="When I revived, I wasn’t myself anymore." />
-    <cinematic type="dialog" line="I didn’t know who I was." />
+    <cinematic type="dialog" line="When I revived, I wasn't myself anymore." />
+    <cinematic type="dialog" line="I didn't know who I was." />
     <cinematic type="dialog" line="It was the weirdest feeling..." />
     <cinematic type="animation" description="Stoic pose" animTarget="player">
       <animation name="normal_emote_idlepose_arrogant"/>
     </cinematic>
     <cinematic type="camera" duration="50000" posX="945.1" posY="40" posZ="556.47" targetX="-99" ease="Strong.easeOut"/>
-    <cinematic type="dialog" line="I recognized the presence, but I couldn’t place it." />
+    <cinematic type="dialog" line="I recognized the presence, but I couldn't place it." />
     <cinematic type="dialog" line="Not until now."/>
     <cinematic type="dialog" line="Now, I know." />
     <cinematic type="dialog" line="" duration="3" />
@@ -1181,16 +1181,16 @@
       <animation name="cinematic_expression_handgesturestalkinglong2" duration="2"/>
       <animation name="normal_emote_additive_eyes_left_long" duration="2"/>
     </cinematic>
-    <cinematic type="dialog" line="One minute you’re having a normal dream, sans pants..." />
-    <cinematic type="dialog" line="and the next you’re in another world." />
+    <cinematic type="dialog" line="One minute you're having a normal dream, sans pants..." />
+    <cinematic type="dialog" line="and the next you're in another world." />
     <cinematic type="camera" duration="0" posX="305.5" posY="147" posZ="373.5" targetX="307.9" targetY="146.6" targetZ="371.5" />
     <cinematic type="animation" description="Animations" animTarget="Carter">
       <animation name="cinematic_expression_fingersonlipsbrief_considering" duration="2"/>
       <animation name="expression_look_left" />
     </cinematic>
     <cinematic type="dialog" line="" duration="2" />
-    <cinematic type="dialog" line="You felt it too, didn’t you? The dream?" />
-    <cinematic type="dialog" line="It’s why you came here today." />
+    <cinematic type="dialog" line="You felt it too, didn't you? The dream?" />
+    <cinematic type="dialog" line="It's why you came here today." />
     <cinematic type="camera" duration="0" posX="307" posY="146.5" posZ="372" targetX="-99" />
     <cinematic type="animation" description="Animations" animTarget="player">
       <animation name="cinematic_expression_fingersonlipsbrief_considering" duration="1.5"/>
@@ -1239,7 +1239,7 @@
       <animation name="normal_emote_additive_eyes_left_long" duration="2"/>
     </cinematic>
     <cinematic type="dialog" line="Listen... about the crying..." />
-    <cinematic type="dialog" line="It's just... It was something I hadn’t felt in a long, long time." />
+    <cinematic type="dialog" line="It's just... It was something I hadn't felt in a long, long time." />
     <cinematic type="animation" description="Animations" animTarget="Carter">
       <animation name="expression_look_left" />
     </cinematic>
