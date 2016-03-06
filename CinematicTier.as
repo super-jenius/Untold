@@ -436,6 +436,16 @@ class CinematicTier extends DialogTier
 			this.ProcessAnimations(currentLine[1]);
 			this.ProcessDialog();
 			break;
+		case "#fadein#" :
+		case "#fadeout#" :
+			// If not in correct playfield, show dialogue only
+			if (m_CurrentField <> m_Playfield) {
+				m_CurrentLineNo++;
+				this.ProcessDialog();
+				return;
+			}
+			super.ProcessDialog();
+			break;		
 		default :
 			// Parent class handles dialog
 			super.ProcessDialog();
