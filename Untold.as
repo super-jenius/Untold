@@ -91,6 +91,11 @@ function hookMenu()
 		// Menu gets reloaded when you zone, so regularly check if it exists
 		m_Interval = setInterval(checkMenu, 1000);
 	}
+	else if (_root["meeehrui\\meeehrui-topbar"].MainMenu)
+	{
+		// Add to Meeehr TopBar menu
+		addMTBMenu();
+	}
 	else 
 	{
 		setTimeout(hookMenu, 100);
@@ -121,6 +126,37 @@ function addMenu()
 	menu.m_MenuItems[menu.m_MenuItems.length - 3] = menu.m_CustomJournalButton;
 	menu.m_MenuItems[menu.m_MenuItems.length - 2] = menu.m_SettingsButton;
 	menu.m_MenuItems[menu.m_MenuItems.length - 1] = menu.m_ExitButton;
+}
+
+// Add to Meeehr TopBar menu
+function addMTBMenu()
+{
+	ULog.Info("Untold.addMTBMenu()");
+	var menu = _root["meeehrui\\meeehrui-topbar"].MainMenu;
+	var button = menu.MenuButton4;
+	var newButton = button.duplicateMovieClip('MenuButtonUS', menu.getNextHighestDepth(), { _y:(button._height * 20) + 5 } );
+	newButton.attachMovie("JournalIcon", "Icon", menu.getNextHighestDepth(), {_x:button.Icon._x, _y:button.Icon._y, _width:button.Icon._width, _height:button.Icon._height});
+
+	//_root.fifo.SlotShowFIFOMessage("New 1: " + newButton.Text.text, 0);
+	newButton.Text.text = "Untold Stories";	
+	newButton.Active._visible = false;
+	newButton.Hotkey._visible = false;
+	newButton.distributedValue = undefined;
+	newButton.onPress = function() {
+		//_root.fifo.SlotShowFIFOMessage("newButton.onPress", 0);
+		_root["meeehrui\\meeehrui-topbar"].CloseMenu();
+		newButton.Highlight._visible = false;
+		CustomJournalHandler();
+	}
+	//button.Icon.duplicateMovieClip('newButton.Icon', menu.getNextHighestDepth());;
+	//_root.fifo.SlotShowFIFOMessage("New 2: " + newButton.Text.text, 0);
+	// Move other buttons down
+	var i = 20;
+	while (menu["MenuButton" + i.toString()]) {
+		var moveButton = menu["MenuButton" + i.toString()];
+		moveButton._y += moveButton._height;
+		i++;
+	}
 }
 
 function CustomJournalHandler()
