@@ -935,7 +935,7 @@
     <cinematic type="camera" duration="50000" posX="813.35" posY="76.8" posZ="180.75" targetX="813.35" targetY="76.8" targetZ="180.75"/>-->
     <cinematic type="dialog" line="" duration=".6" />
     <cinematic type="dialog" line="There is hope."/>
-    <cinematic type="dialog" line="Snow... mountains a cave... a little girl?"/>
+    <cinematic type="dialog" line="Snow... mountains... a cave... a little girl?"/>
     <cinematic type="dialog" line="" duration="1" />
     <cinematic type="camera" duration="0" posX="815.5" posY="77.7" posZ="177.25" targetX="-99" />
     <cinematic type="camera" duration="30000" posX="817.5" posY="78" posZ="173.5" targetX="-99" />
