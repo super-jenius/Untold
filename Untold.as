@@ -21,14 +21,14 @@ function onLoad()
 {
 
 	// Set version here for each release
-	m_VerNo = "3.0";
+	m_VerNo = "3.1";
 	
 	// Turn on info logging?
-	ULog.m_LogInfo = true;
+	ULog.m_LogInfo = false;
 	ULog.Info("Version " + m_VerNo);
 	ULog.Info("Untold.Onload()");
 	// Show sandbox button?
-	m_Sandbox = true;
+	m_Sandbox = false;
 	// Is debug window visible?
 	m_MissionDebugWindow._visible = false;
 	m_MissionDebugWindow.focusButton._visible = false;

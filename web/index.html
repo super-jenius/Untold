@@ -32,6 +32,28 @@
     <div class="container">
 
         <div style="text-align:right"><a href="data:,localMissions" data-toggle="popover" title="Local Mission Launcher" data-content="Load and test missions from your local computer." data-trigger="hover" data-placement="left">Local Missions</a></div>
+
+        <div id="newVersion" class="alert alert-danger" role="alert" style="display: none;">
+            <ul>
+                <li id="version31">
+                    <b>Version 3.1</b> is now available for download using the Curse Client or from SecretUI. This is a <b>RECOMMENDED</b> update and adds the following features:
+                    <ul>
+                        <li>Documentation for mission authors of all new features added in version 3.0.</li>
+                        <li>Support for meeehrUI-Topbar.</li>
+                    </ul>
+                </li>
+                <li id="version30" style="display: none;">
+                    <b>Version 3.0</b> is now available for download using the Curse Client or from SecretUI. This is a <b>REQUIRED</b> update and adds the following features:
+                    <ul>
+                        <li><b>Being Carter</b>, an all new mission, is now available to play. It demonstrates the new features added in version 3.0.</li>
+                        <li>The new <b>Looks Tier</b> changes the appearance of the player or NPCs. The new look can be another NPC from the game (including major storyline characters), or one of your own design combining multiple looks and clothing. This tier can also be used during cinematics.</li>
+                        <li>The new <b>Animation Tier</b> allows emotes and animations to be applied to the player or NPCS. This is great for cinematics!</li>
+                        <li><b>Waypoints</b> can now be displayed when using the Location Tier. This requires an existing mission that uses a waypoint to be active. If one is not available, an old mission from Kingsmouth will be started automatically to enable the waypoint.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
         <table class="table" >
             <thead>
                 <tr>
@@ -46,18 +68,7 @@
 
         *Lore-Friendly: "Yes" indicates the author intended not to contradict the official lore of The Secret World. "No" means no such attempt was made, or that the content otherwise falls outside the official lore.
 
-        <div id="newVersion" class="alert alert-danger" role="alert" style="display: none;">
-            <ul>
-                <li>
-                    Version 3.0 is now available for download using the Curse Client or from SecretUI. This is a <b>REQUIRED</b> update and adds the following features:
-                    <ul>
-                        <li><b>Being Carter</b>, an all new mission, is now available to play. It demonstrates the new features added in version 3.0.</li>
-                        <li>The new <b>Looks Tier</b> changes the appearance of the player or NPCs. The new look can be another NPC from the game (including major storyline characters), or one of your own design combining multiple looks and clothing. This tier can also be used during cinematics.</li>
-                        <li>The new <b>Animation Tier</b> allows emotes and animations to be applied to the player or NPCS. This is great for cinematics!</li>
-                        <li><b>Waypoints</b> can now be displayed when using the Location Tier. This requires an existing mission that uses a waypoint to be active. If one is not available, an old mission from Kingsmouth will be started automatically to enable the waypoint.</li>
-                    </ul>
-            </ul>
-        </div>
+
         <div id="worldWell" class="alert alert-success" role="alert" style="display: none;">
             <p>Untold Stories Lore highlights fan fiction, art, music, and video creations from the TSW community.  When you are near a designated location or character, a red US icon will appear in the notification area. Click the icon to open the lore.</p>
             <p id="disableWorld" style="display: none;"><a href="data:,worldStories=false">Disable Untold Stories Lore</a></p>
@@ -149,8 +160,12 @@
         })(window.location.search.substr(1).split('&'));
 
         function checkVersion() {
-            if (qs["version"] != "3.0") {
+            var version = qs["version"];
+            if (version != "3.1") {
                 $("#newVersion").show();
+                if (version < "3.0") {
+                    $("#version30").show();
+                }
             }
         }
 
