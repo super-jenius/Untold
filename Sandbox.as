@@ -4,6 +4,8 @@ import com.GameInterface.Chat
 import com.GameInterface.DistributedValue;
 import com.GameInterface.VicinitySystem;
 import com.GameInterface.Game.Dynel;
+import com.GameInterface.CharacterCreation.CharacterCreation;
+import com.GameInterface.Game.Camera;
 import Base64;
 import mx.utils.Base64Decoder;
 import com.Utils.LDBFormat;
@@ -22,7 +24,7 @@ class Sandbox extends BaseMission
 	public var m_Browser;
 	public var m_Browser2;
 	public var m_CamAdjust = 0;
-	public var m_CharacterCreationIF;
+	public var m_CharacterCreationIF:CharacterCreation;
 	public var m_Dynel;
 	public var m_UWIcon;
 	public var m_WorldStory;
@@ -75,7 +77,7 @@ class Sandbox extends BaseMission
 		//this.ListEffectsPackage();
 		//this.GetClothing();
 		//this.SetAnimation();
-		this.EffectsPackage();
+		//this.EffectsPackage();
 		//this.HitDaFlo();
 		//this.AddLooksTier("Civilian", 99, 7569838, "Carter");
 		////this.AddLooksTier("Civilian", 99, 7164010, "Carter");		
@@ -91,10 +93,75 @@ class Sandbox extends BaseMission
 		//this.LoadLooksXML();
 		//this.TestAnimationTier();
 		//this.TestTextMerge();
+		//this.MonsterTest();
+		this.MosterLoginTest();
+		//this.CamTest();
 		
 		var tier_4 = this.AddTier("useitem", "There is no spoon.");
 		tier_4.SetItem("thereisnospoon");		
+		
+		var tier5:LooksTier = this.AddTier("looks", "Reset Looks");
+		tier5.ResetLooks();
 	}
+	
+	function MosterLoginTest() {
+		m_CharacterCreationIF = new CharacterCreation(false);
+		var character:Character = m_CharacterCreationIF.GetCharacter();
+		m_CharacterCreationIF.ExitCharacterCreation();
+		m_CharacterCreationIF.SetHairStyleIndex(4);
+		m_CharacterCreationIF.SetGender(2);
+		m_CharacterCreationIF.SetMonsterData(5352715);			
+	}
+	
+	function MonsterTest() {
+		//_root.fifo.SlotShowFIFOMessage("MonsterTest");
+		com.GameInterface.Game.Camera.PlaceCamera(509 + (m_CamAdjust/100), 413.5, 417 + (m_CamAdjust/100), 511, 413.5, 419.7, 0, 1, 0);
+		if (m_CamAdjust == 0) {
+			com.GameInterface.DistributedValueBase.SetDValue("CharacterCreationActive", true);	
+			m_CharacterCreationIF = new CharacterCreation(true);
+			var character:Character = m_CharacterCreationIF.GetCharacter();
+			m_CharacterCreationIF.SetHairStyleIndex(4);
+			m_CharacterCreationIF.SetGender(2);
+			m_CharacterCreationIF.SetMonsterData(5352715);			
+		}
+		if (m_CamAdjust == 5) {
+			m_CharacterCreationIF.SetHairStyleIndex(2);
+		}
+		m_CamAdjust = m_CamAdjust + .1;
+		if (m_CamAdjust < 10){
+			//setTimeout(CamTest, 1); 
+			_global.setTimeout(this, "MonsterTest", 10);
+		}
+		else {
+	//		com.GameInterface.Game.Camera.SignalCinematicActivated.Emit();
+	//		var charcreate = new com.GameInterface.CharacterCreation.CharacterCreation(false);
+	//		charcreate.ExitCharacterCreation();
+	//		var m_CharacterCreationIF = new com.GameInterface.CharacterCreation.CharacterCreation( m_IsSurgery);
+	//		m_CharacterCreationIF.ResetSurgeryData();
+	//        UnloadClip();
+	
+	//		GUIFramework.SFClipLoaderBase.ClipUnloaded("");
+			//var m_CharacterCreationIF = new com.GameInterface.CharacterCreation.CharacterCreation(true);
+			m_CharacterCreationIF = null;
+			// m_CharacterCreationIF.ExitCharacterCreation();
+			this.MessageBox("Camera complete.");
+			com.GameInterface.DistributedValueBase.SetDValue("CharacterCreationActive", false);	
+		}	
+		
+		//Camera.PlaceCamera(811, 78, 188, 814, 78, 184, 0, 1, 0);
+		//DistributedValue.SetDValue("CharacterCreationActive", false);	
+		//DistributedValue.SetDValue("CharacterCreationActive", true);	
+		//m_CharacterCreationIF = new CharacterCreation(true);
+		//m_CharacterCreationIF.SetMonsterData(3070173);
+		//m_CharacterCreationIF.GetHairStyleIndexes();
+		//m_CharacterCreationIF.SetHairStyleIndex(1);
+		//m_CharacterCreationIF.SetRandomFacialPreset();
+		//m_CharacterCreationIF.SetEyeColorIndex(1);
+		//m_CharacterCreationIF.SetEyeColorIndex(0);
+	
+		//DistributedValue.SetDValue("CharacterCreationActive", false);	
+	}
+	
 	
 	function TestTextMerge()
 	{
