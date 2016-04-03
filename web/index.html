@@ -42,6 +42,12 @@
 
         <div id="newVersion" class="alert alert-danger" role="alert" style="display: none;">
             <ul>
+                <li id="version32">
+                    <b>Version 3.2</b> is now available for download using the Curse Client or from SecretUI. This is a <b>RECOMMENDED</b> update and adds the following features:
+                    <ul>
+                        <li>Fixed an issue that prevented the timer from unloading after a PvP match or scenario.</li>
+                    </ul>
+                </li>
                 <li id="version31">
                     <b>Version 3.1</b> is now available for download using the Curse Client or from SecretUI. This is a <b>RECOMMENDED</b> update and adds the following features:
                     <ul>
@@ -178,8 +184,11 @@
 
         function checkVersion() {
             var version = qs["version"];
-            if (version != "3.1") {
+            if (version != "3.2") {
                 $("#newVersion").show();
+                if (version < "3.1") {
+                    $("#version31").show();
+                }
                 if (version < "3.0") {
                     $("#version30").show();
                 }
