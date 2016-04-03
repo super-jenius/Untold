@@ -15,6 +15,7 @@ class WorldStories
 		ULog.Info("WorldStories.WorldStories()");
 		m_Player = new PlayerInfo();
 		this.DownloadPlayField();
+		WaypointInterface.SignalPlayfieldChanged.Connect(SlotPlayfieldChanged, this);
 	}
 	
 	// Download XML file for current playfield
@@ -26,7 +27,6 @@ class WorldStories
 		if (m_CurrentField <> newPlayfield) {
 			m_CurrentField = newPlayfield;
 			this.Cleanup();
-			WaypointInterface.SignalPlayfieldChanged.Connect(SlotPlayfieldChanged, this);
 			
 			// Download world XML file
 			if (m_Download == undefined) {
@@ -128,7 +128,6 @@ class WorldStories
 	// Cleanup current stories before loading new ones
 	public function Cleanup()
 	{
-		WaypointInterface.SignalPlayfieldChanged.Disconnect(SlotPlayfieldChanged, this);
 		for (var i = 0; i < m_Stories.length; i++) {
 			m_Stories[i].Cleanup();
 			m_Stories[i] = undefined;
@@ -142,6 +141,7 @@ class WorldStories
 	{
 		this.Cleanup();
 		m_Download = undefined;	
+		WaypointInterface.SignalPlayfieldChanged.Disconnect(SlotPlayfieldChanged, this);
 	}
 
 }
