@@ -59,13 +59,14 @@ class LooksTier extends BaseTier
 				var rdbID:String = looksNode.attributes.rdbid;
 				var description:String = looksNode.attributes.description;
 				var remove:Boolean = Boolean(looksNode.attributes.removeLooks);
+        var configuration:String = looksNode.attributes.configuration;
 				//if (rdbID == undefined) {
 					//// Lookup RDBID in XML file based on description
 					//var query = "VFPData/looksrdb[@desc='" + description + "']";
 					//var xmlNode:XMLNode = XPathAPI.selectSingleNode(looksXML.firstChild, query);
 					//rdbID = xmlNode.attributes.rdbid;
 				//}
-				this.AddLooks(rdbID, description, remove);
+				this.AddLooks(rdbID, description, remove, configuration);
 			}
 		}
 		ULog.Info("LooksTier.LoadXML(): Complete");
@@ -92,12 +93,12 @@ class LooksTier extends BaseTier
 		m_yDistance = yDistance;
 	}
 	
-	public function AddLooks(looksPackageRDBID:String, description:String, removeLooks:Boolean) 
+	public function AddLooks(looksPackageRDBID:String, description:String, removeLooks:Boolean, looksConfiguration:String) 
 	{
 		if (m_Looks == undefined) {
 			m_Looks = new Array();
 		}
-		m_Looks.push([Number(looksPackageRDBID), description, removeLooks]);	
+		m_Looks.push([Number(looksPackageRDBID), description, removeLooks, Number(looksConfiguration)]);	
 	}
 	
 	public function StartTier()
@@ -146,11 +147,11 @@ class LooksTier extends BaseTier
 				}
 				for (var i = 0; i < m_Looks.length; i++) {
 					var currentLooks = m_Looks[i];
-					ULog.Info("LooksTier.ApplyLooks(): target=" + target.GetName() + " rdbid= " + currentLooks[0] + " desc=" + currentLooks[1] + " remove=" + currentLooks[2]);
+					ULog.Info("LooksTier.ApplyLooks(): target=" + target.GetName() + " rdbid= " + currentLooks[0] + " desc=" + currentLooks[1] + " remove=" + currentLooks[2] + " configuration=" + currentLooks[3]);
 					if (currentLooks[2] == true) {
 						target.RemoveLooksPackage(currentLooks[0]);
 					} else {
-						target.AddLooksPackage(currentLooks[0], 0);
+						target.AddLooksPackage(currentLooks[0], currentLooks[3]);
 					}
 				}
 			}
