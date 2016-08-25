@@ -35,6 +35,8 @@ function onLoad()
 	m_MissionDebugWindow.titleTextField.text = "Mission Debug";
 	m_MissionDebugWindow._x = 10;
 	m_MissionDebugWindow._y = 150;
+  m_MissionDebugWindow.prevButton.textField.text = "Previous";
+  m_MissionDebugWindow.nextButton.textField.text = "Next";
 	_global.m_MissionDebugWindow = m_MissionDebugWindow;
 	
 //    m_MissionDebugWindow.SignalClose.Connect( SlotCloseDebugWindow, this );
@@ -49,6 +51,8 @@ function onLoad()
 //    m_CustomWindow.SignalClose.Connect( SlotCloseCustomWindow, this );
 //	_global.m_CustomWindow = m_CustomWindow;
 	m_CustomWindow.closeButton.addEventListener("click", this, "CloseCustomWindow");
+  m_CustomWindow.prevButton.textField.text = "Previous";
+  m_CustomWindow.nextButton.textField.text = "Next";
 
 	// Hook into main menu as soon as it is available
 	this.hookMenu();

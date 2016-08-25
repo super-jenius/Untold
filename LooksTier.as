@@ -59,7 +59,7 @@ class LooksTier extends BaseTier
 				var rdbID:String = looksNode.attributes.rdbid;
 				var description:String = looksNode.attributes.description;
 				var remove:Boolean = Boolean(looksNode.attributes.removeLooks);
-                		var configuration:String = looksNode.attributes.configuration;
+        var configuration:String = looksNode.attributes.configuration;
 				//if (rdbID == undefined) {
 					//// Lookup RDBID in XML file based on description
 					//var query = "VFPData/looksrdb[@desc='" + description + "']";
