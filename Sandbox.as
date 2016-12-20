@@ -6,7 +6,12 @@ import com.GameInterface.VicinitySystem;
 import com.GameInterface.Game.Dynel;
 import com.GameInterface.CharacterCreation.CharacterCreation;
 import com.GameInterface.Game.Camera;
+import com.GameInterface.Waypoint;
+import flash.geom.Matrix;
+import GUI.CharacterCreation.CameraController;
 import Base64;
+import GUI.Dialogue.DialogueWindow;
+import GUIFramework.ClipNode;
 import mx.utils.Base64Decoder;
 import com.Utils.LDBFormat;
 import com.Utils.ID32;
@@ -17,6 +22,9 @@ import com.GameInterface.SpellBase;
 import flash.filters.DropShadowFilter;
 import com.GameInterface.Browser.Browser;
 import mx.xpath.XPathAPI;
+import com.GameInterface.MathLib.Vector3;
+import com.GameInterface.Quests;
+import com.GameInterface.DialogueBase;
 
 class Sandbox extends BaseMission
 {
@@ -31,13 +39,14 @@ class Sandbox extends BaseMission
 	public var m_WorldStory2;
 	public var m_ClothingItem;
 	public var m_LastTier:BaseTier;
+	public var m_LastZoom;
 
 	public function ScriptMission()
 	{
 		
 		m_MissionTitle = "Sandbox";
 		m_CurrentTierNo = -1;
-		
+		_global.m_MissionDebugWindow._visible = true;		
 
 //		this.HackLocation();
 //		this.ListDynels();
@@ -52,14 +61,12 @@ class Sandbox extends BaseMission
 		//this.PostTest();		
 		//this.URLTest();
 		//this.ListNPCs();
-		// this.TrackVicinity();
+		//this.TrackVicinity();
 		//this.RotateCharacter();
 		//this.AbortTest();
 		//this.AddMission();
 		//this.TestNotification();
 		//this.CreateDialog();
-		//this.AddWaypoint();
-		//this.MoveWaypoint();
 		//this.TestWorldStory();
 		// this.TestBrowser();
 		//this.TestSound();
@@ -94,14 +101,165 @@ class Sandbox extends BaseMission
 		//this.TestAnimationTier();
 		//this.TestTextMerge();
 		//this.MonsterTest();
-		this.MosterLoginTest();
+		//this.MosterLoginTest();
 		//this.CamTest();
+		//this.CharacterCam();
+		//this.AddWaypoint();
+		//this.MoveWaypoint();
+		//this.ScreenPosition();
+		//this.DeleteQuest();
+		this.LabelDynels();
+		//this.CustodianWaypoint();
 		
 		var tier_4 = this.AddTier("useitem", "There is no spoon.");
 		tier_4.SetItem("thereisnospoon");		
 		
 		var tier5:LooksTier = this.AddTier("looks", "Reset Looks");
 		tier5.ResetLooks();
+	}
+	
+
+	function LabelDynels() {
+		var nearDynels = _root.interactioncontroller.m_InteractionDynels;
+		for (var prop in nearDynels) {
+			this.DialogueWindow(nearDynels[prop].GetID(),nearDynels[prop].GetName());
+		}
+	}
+	
+	function DialogueWindow(targetID, targetName) {
+		//var targetID = m_Player.m_Character.GetDefensiveTarget();
+		//var target = Character.GetCharacter(targetID);
+		_global.m_MissionDebugWindow.contentTextField.text = "Name:" + targetName + "\n" + _global.m_MissionDebugWindow.contentTextField.text;
+		var dc = _root.dialoguecontroller;
+		var dlg = dc.CreateDialogueWindow(targetID);
+		//dlg.configUI();
+		dlg.m_USName = dlg.attachMovie("DynelName", "m_DynelName", dlg.getNextHighestDepth());
+		dlg.m_USName.m_Name.textField.text = targetName;
+		_global.setTimeout(this, "SetVisible", 100, dlg);
+	}
+	
+	function SetVisible(dlg) {
+		dlg._visible = true;
+	}
+	
+	function CustodianWaypoint() {
+		DialogueBase.SignalVoiceStarted.Connect(SlotVoiceStarted, this);
+		//DialogueBase.JumpToTopic = function (npcID:ID32, topicIndex:Number, topicNum:Number) {
+			//_root.fifo.SlotShowFIFOMessage("npcID: " + npcID + ", index: " + topicIndex + ", num: " + topicNum);
+		//}
+		DialogueBase.JumpToTopic(new ID32(50000, 23), 0, 1);
+	}
+	
+	function SlotVoiceStarted(voiceHandle:Number)
+	{
+		_root.fifo.SlotShowFIFOMessage("voiceHandle: " + voiceHandle);
+	}
+	
+	function DeleteQuest() {
+		// Doesn't do anything
+		Quests.DeleteCurrentQuestOfMainQuest( 3176);
+	}
+	
+	function AddWaypoint()
+	{
+		
+		var x = 689.76495361328;
+		var y = 49.836078643799;
+		var z = 666.05035400391;		
+		var waypoint = new com.GameInterface.Waypoint();
+		waypoint.m_Id = new ID32(43,12367);
+		waypoint.m_WaypointType = _global.Enums.WaypointType.e_RMWPPvPDestination;
+		waypoint.m_Label = "Test Waypoint";
+		waypoint.m_IsScreenWaypoint = true;
+		waypoint.m_IsStackingWaypoint = true;
+		waypoint.m_Radius = 0;
+		waypoint.m_Color = 255;
+		waypoint.m_WaypointState = 0;
+		//waypoint.m_ScreenPositionX = 942; // -90000;
+		//waypoint.m_ScreenPositionY = 600;	//0;
+		waypoint.m_ScreenPositionX = 0; // -90000;
+		waypoint.m_ScreenPositionY = 0;	//0;
+		waypoint.m_CollisionOffsetX = 0;
+		waypoint.m_CollisionOffsetY = 0;
+		waypoint.m_WorldPosition = new com.GameInterface.MathLib.Vector3(x,y,z);
+		waypoint.m_MinViewDistance = 0;
+		waypoint.m_MaxViewDistance = 0;
+		waypoint.m_DistanceToCam = 0;
+
+		//_root.waypoints.m_CurrentPFInterface.m_Waypoints[waypoint.m_Id.toString()] = waypoint;
+		_root.waypoints.m_CurrentPFInterface.m_Waypoints["43:12367"] = waypoint;
+		_root.waypoints.m_CurrentPFInterface.SignalWaypointAdded.Emit(waypoint.m_Id);
+		_root.waypoints.UpdateScreenWaypoints();
+		UpdateWaypoint(waypoint);
+	}
+	
+	function UpdateWaypoint(waypoint:Waypoint)
+	{
+		// Didn't work. Don't have enough info about camera angles to find screen position
+		if (waypoint) {
+			var cam:Vector3 = Camera.m_Pos;
+			if (Camera.GetZoom() != m_LastZoom) {
+				m_LastZoom = Camera.GetZoom();
+				_global.m_MissionDebugWindow.contentTextField.text += "Zoom: " + m_LastZoom + "\n";
+			}
+			var pos:Vector3 = waypoint.m_WorldPosition;
+			// Taken from http://www.calculatorsoup.com/calculators/geometry-solids/distance-two-points.php
+			var distance = Math.sqrt(Math.pow(pos.x - cam.x, 2) + Math.pow(pos.y - cam.y, 2) + Math.pow(pos.z - cam.z, 2));
+			distance = Math.abs(Math.round(distance));
+			waypoint.m_DistanceToCam = distance;
+			
+			// Adapted from http://stackoverflow.com/questions/724219/how-to-convert-a-3d-point-into-2d-perspective-projection
+			var width = 1920;
+			var height = 1200;
+			var halfWidth = width * 0.5;
+			var halfHeight = height * 0.5;
+			var fov = 60 * (Math.PI / 180);
+			var aspect = width / height;
+			var near = 0.1;
+			var far = 2000;
+			var w = 1;			
+			// Setup calculation Matrix
+			var m = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];			
+			var f = 1.0 / Math.tan(fov * 0.5);
+			m[0] = f * aspect;
+			m[5] = f;
+			m[10] = (far+near) / (far-near);
+			m[11] = 1.0; /* this 'plugs' the old z into w */
+			m[14] = (2.0*near*far) / (near-far);
+			m[15] = 0.0;
+			
+			var v = Vector3.Sub(cam, pos);
+			v.w = w;
+			var dst = new Object();
+			dst.x = v.x*m[0] + v.y*m[4] + v.z*m[8 ] + v.w*m[12];
+			dst.y = v.x*m[1] + v.y*m[5] + v.z*m[9 ] + v.w*m[13];
+			dst.z = v.x*m[2] + v.y*m[6] + v.z*m[10] + v.w*m[14];
+			dst.w = v.x * m[3] + v.y * m[7] + v.z * m[11] + v.w * m[15];
+			
+			var screenx = (dst.x * width) / (2.0 * dst.w) + halfWidth;
+			var screeny = (dst.y * height) / (2.0 * dst.w) + halfWidth;
+			
+			waypoint.m_ScreenPositionX = screenx;
+			waypoint.m_ScreenPositionY = screeny;
+			_root.waypoints.UpdateScreenWaypoints();
+			
+			_global.setTimeout(this, "UpdateWaypoint", 500, waypoint);		
+			
+		}		
+	}	
+	
+	function CharacterCam() {
+		//var clip:ClipNode = GUIFramework.SFClipLoader.LoadClip("CharacterCreation.swf", "ccTest" , true, _global.Enums.ViewLayer.e_ViewLayerSplashScreenTop, 0, [true]);
+		//clip.SignalLoaded.Connect( CCLoaded, this );
+		var m_CameraController = new CameraController( CameraController.e_ModeBody );
+		m_CameraController.UpdateTargetPositions( this.m_Player.m_Character );
+		m_CameraController.FrameProcess();
+	}
+	
+	function CCLoaded() {
+		 //GUIFramework.SFClipLoader.SignalFrameStarted.Disconnect( CCLoaded, this );
+		//this.MessageBox("State: " + _root.ccTest.m_CurrentMode);
+		_root.ccTest.SetState(1);
 	}
 	
 	function MosterLoginTest() {
@@ -340,33 +498,7 @@ class Sandbox extends BaseMission
 
 	}
 
-	function AddWaypoint()
-	{
-		var waypoint = new com.GameInterface.Waypoint();
-		waypoint.m_Id = new ID32(43,12367);
-		waypoint.m_WaypointType = _global.Enums.WaypointType.e_RMWPPvPDestination;
-		waypoint.m_Label = "Test Waypoint";
-		waypoint.m_IsScreenWaypoint = true;
-		waypoint.m_IsStackingWaypoint = true;
-		waypoint.m_Radius = 0;
-		waypoint.m_Color = 255;
-		waypoint.m_WaypointState = 0;
-		waypoint.m_ScreenPositionX = 942; // -90000;
-		waypoint.m_ScreenPositionY = 600;	//0;
-		waypoint.m_CollisionOffsetX = 0;
-		waypoint.m_CollisionOffsetY = 0;
-		waypoint.m_WorldPosition = new com.GameInterface.MathLib.Vector3(272,161.25,384);
-		waypoint.m_MinViewDistance = 0;
-		waypoint.m_MaxViewDistance = 0;
-		waypoint.m_DistanceToCam = 0;
 
-		//_root.waypoints.m_CurrentPFInterface.m_Waypoints[waypoint.m_Id.toString()] = waypoint;
-		_root.waypoints.m_CurrentPFInterface.m_Waypoints["43:12367"] = waypoint;
-		_root.waypoints.m_CurrentPFInterface.SignalWaypointAdded.Emit(waypoint.m_Id);
-		_root.waypoints.UpdateScreenWaypoints();
-	}
-	
-	
 	function HitDaFlo()
 	{
 		//this.AddLooksTier(undefined, "Reset", true);
@@ -1050,17 +1182,23 @@ class Sandbox extends BaseMission
 	function SlotEnterVicinity( dynelID)
 	{
 		var dynel = Character.GetDynel(dynelID);
-		if (dynel.IsNPC() == true) {
-			_root.fifo.SlotShowFIFOMessage("Enter Vicinity:" + dynel.GetName(), 0);
-		}
+		//if (dynel.IsNPC() == true) {
+			//_root.fifo.SlotShowFIFOMessage("Enter Vicinity:" + dynel.GetName(), 0);
+		//}
+		//if (dynel.GetName()) {
+			_global.m_MissionDebugWindow.contentTextField.text = "Enter Vicinity:" + dynel.GetName() + "\n" + _global.m_MissionDebugWindow.contentTextField.text;
+		//}
 	}
 
 	function SlotLeaveVicinity( dynelID)
 	{
 		var dynel = Character.GetDynel(dynelID);
 //		if (dynel.IsNPC() == true) {
-			_root.fifo.SlotShowFIFOMessage("Leave Vicinity:" + dynel.GetName(), 0);
+			//_root.fifo.SlotShowFIFOMessage("Leave Vicinity:" + dynel.GetName(), 0);
 //		}
+		//if (dynel.GetName()) {
+			_global.m_MissionDebugWindow.contentTextField.text = "Leave Vicinity:" + dynel.GetName() + "\n" + _global.m_MissionDebugWindow.contentTextField.text;
+		//}
 	}
 
 	function ScryFIFO(messageArray:Array)
