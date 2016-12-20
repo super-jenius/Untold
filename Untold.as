@@ -5,6 +5,7 @@ import com.GameInterface.Browser.Browser;
 
 var m_MissionListWindow;
 var m_MissionDebugWindow;
+var m_HideSubtitles;
 //var m_CustomWindow;
 var m_Interval;
 var m_Sandbox;
@@ -16,6 +17,7 @@ var m_CurrentTier;
 var m_MissionXML;
 //var m_LooksRDBXML;
 var m_AudioPlayer;
+var m_LoadLocal;
 
 function onLoad()
 {
@@ -29,6 +31,8 @@ function onLoad()
 	ULog.Info("Untold.Onload()");
 	// Show sandbox button?
 	m_Sandbox = false;
+	// Load local mission window instead of home page?
+	m_LoadLocal =  false;
 	// Is debug window visible?
 	m_MissionDebugWindow._visible = false;
 	m_MissionDebugWindow.focusButton._visible = false;
@@ -36,6 +40,9 @@ function onLoad()
 	m_MissionDebugWindow._x = 10;
 	m_MissionDebugWindow._y = 150;
 	_global.m_MissionDebugWindow = m_MissionDebugWindow;
+	
+	// Hide subtitles in dialog/cinematics?
+	m_HideSubtitles = false;
 	
 //    m_MissionDebugWindow.SignalClose.Connect( SlotCloseDebugWindow, this );
 	m_MissionDebugWindow.closeButton.addEventListener("click", this, "CloseDebugWindow");
@@ -162,8 +169,11 @@ function addMTBMenu()
 function CustomJournalHandler()
 {
 	_root.mainmenuwindow.MainMenuReleaseEventHandler();
-	//this.LocalMissionList();
-	this.HomePage();
+	if (m_LoadLocal == true) {
+		this.LocalMissionList();
+	} else {
+		this.HomePage();
+	}
 	//_global.m_MissionDebugWindow.contentTextField.text += "Title: " + m_HomePage.m_BrowserTitle + "\n";
 }
 

@@ -368,6 +368,11 @@ class DialogTier extends BaseTier
 			  //SJ: Process next line
 			  thisTier.ProcessDialog();
 			}
+			else if ( _root["untold\\untold"].m_HideSubtitles == true)
+			{
+				//SJ: Hide subtitles
+				this._alpha = 0;
+			}			
 			else if( time < this.startTime + fadeIn )
 			{
 				// Fade in.
