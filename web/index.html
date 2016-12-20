@@ -41,6 +41,8 @@
         </div>
 
         <div id="newVersion" class="alert alert-danger" role="alert" style="display: none;">
+            <a href="javascript:history.back()">Go Back</a>
+
             <ul>
                 <li id="version32">
                     <b>Version 3.2</b> is now available for download using the Curse Client or from SecretUI. This is a <b>RECOMMENDED</b> update and adds the following features:
@@ -87,7 +89,11 @@
             <p>Added content does NOT require a new version of this MOD to be downloaded, unless you also see a new version announced above.</p>
             <p>
                 <ul>
-                    
+                    <li><b>Dec 20 2016:</b> New mission "Where Fools Fear to Tread Part 7" by Dorothy "Dots" Gale is now available (requires 3.0 or higher).</li>                   
+                    <li><b>Aug 27 2016:</b> New mission "Where Fools Fear to Tread Part 6" by Dorothy "Dots" Gale is now available (requires 3.0 or higher).</li>                   
+                    <li><b>Jun 10 2016:</b> "The Shadow Out of Time - Revisited" by Tremerion is now available.</li>
+                    <li><b>May 31 2016:</b> New mission "Where Fools Fear to Tread Part 5" by Dorothy "Dots" Gale and Nekhebit is now available (requires 3.0 or higher). Part 1 as also been updated.</li>
+                    <li><b>Apr 24 2016:</b> New mission "Where Fools Fear to Tread Part 4" by Dorothy "Dots" Gale is now available (requires 3.0 or higher).</li>                   
                     <li><b>Apr 10 2016:</b> New mission "Where Fools Fear to Tread Part 3" by Dorothy "Dots" Gale is now available (requires 3.0 or higher).</li>
                     <li><b>Mar 29 2016:</b> New mission "Where Fools Fear to Tread Part 2" by Dorothy "Dots" Gale is now available (requires 3.0 or higher).</li>
                     <li><b>Feb 28 2016:</b> New mission "Where Fools Fear to Tread" by Dorothy "Dots" Gale is now available.</li>
@@ -236,13 +242,17 @@
                     missionList.push(["Undead Gratefulness", "UndeadGratefulness", "UndeadGratefulness.xml", "Status", "Yes", "Tremerion", "by Tremerion"]);
                     missionList.push(["Extraordinary Merchandise", "ExtraordinaryMerchandise", "ExtraordinaryMerchandise.xml", "Status", "Yes", "Tremerion", "by Tremerion"]);
                     missionList.push(["Echo Squad", "EchoSquad", "EchoSquad.xml", "Status", "Yes", "bluemoon", "by bluemoon"]);
-                    missionList.push(["The Shadow Out of Time", "TheShadowOutofTime", "TheShadowOutofTime.xml", "Status", "Yes", "Tremerion", "by Tremerion"]);
+                    missionList.push(["The Shadow Out of Time - Revisited", "TheShadowOutofTimeRevisited", "TheShadowOutofTimeRevisited.xml", "Status", "Yes", "Tremerion", "by Tremerion"]);
                     missionList.push(["Akma's Hand", "AkmasHand", "AkmasHand.xml", "Status", "Yes", "Super Jenius", "Delve into the mysteries and political intrigue surrounding Akma's Hand."]);
                     missionList.push(["To The Church On Time", "ChurchOnTime", "ChurchOnTime.xml", "Status", "Yes", "Lilith Darkweaver", "Lilith Darkweaver has a problem: her father promised her as a bride to a demon prince when she was a baby, and she's running out of time to find a way out of the contract. Finding out more about her father might yield a clue..."]);
                     missionList.push(["Being Carter", "BeingCarter", "BeingCarter.xml", "Status", "Yes", "Super Jenius", "You find yourself thinking about Carter. Pay her a visit at Innsmouth Academy. REQUIRES ACCESS TO TOKYO."]);
-                    missionList.push(["Where Fools Fear to Tread", "WhereFoolsFearToTread", "WhereFoolsFearToTread.xml", "Status", "Yes", "Dorothy &quot;Dots&quot; Gale", "The Fallen King holds court in London. He may have wisdom to share."]);
-                    missionList.push(["Where Fools Fear to Tread Part 2", "WhereFoolsFearToTread2", "WhereFoolsFearToTread-Part2.xml", "Status", "Yes", "Dorothy &quot;Dots&quot; Gale", "The Fallen King holds court in London. He may have wisdom to share once again."]);
-                    missionList.push(["Where Fools Fear to Tread Part 3", "WhereFoolsFearToTread3", "Tarot3.xml", "Status", "Yes", "Dorothy &quot;Dots&quot; Gale", "The Fallen King has been helpful in getting you started so far. Maybe you should ask him again."]);
+                    missionList.push(["Where Fools Fear to Tread", "WhereFoolsFearToTread", "Tarot1.xml", "Status", "Yes", 'Dorothy "Dots" Gale (<a href="http://www.ambersandbox.com/dots_credits.htm">Credits</a>)', "The Fallen King holds court in London. He may have wisdom to share."]);
+                    missionList.push(["Where Fools Fear to Tread Part 2", "WhereFoolsFearToTread2", "WhereFoolsFearToTread-Part2.xml", "Status", "Yes", 'Dorothy "Dots" Gale (<a href=" http://www.ambersandbox.com/dots_credits.htm">Credits</a>)', "The Fallen King holds court in London. He may have wisdom to share once again."]);
+                    missionList.push(["Where Fools Fear to Tread Part 3", "WhereFoolsFearToTread3", "Tarot3.xml", "Status", "Yes", 'Dorothy "Dots" Gale (<a href="http://www.ambersandbox.com/dots_credits.htm">Credits</a>)', "The Fallen King has been helpful in getting you started so far. Maybe you should ask him again."]);
+                    missionList.push(["Where Fools Fear to Tread Part 4", "WhereFoolsFearToTread4", "Tarot4.xml", "Status", "Yes", 'Dorothy "Dots" Gale (<a href="http://www.ambersandbox.com/dots_credits.htm">Credits</a>)', "You are plagued with a few unanswered questions about The Wheel of Fortune and where the Fool's Journey leads next."]);
+                    missionList.push(["Where Fools Fear to Tread Part 5", "WhereFoolsFearToTread5", "Tarot5.xml", "Status", "Yes", 'Dorothy "Dots" Gale (<a href="http://www.ambersandbox.com/dots_credits.htm">Credits</a>)', "While you've learned about the Fool's Journey through the encounters you've had so far, you wonder if there's a library where you could look up a little more information *before* you run into Death...."]);
+                    missionList.push(["Where Fools Fear to Tread Part 6", "WhereFoolsFearToTread6", "Tarot6.xml", "Status", "Yes", 'Dorothy "Dots" Gale (<a href="http://www.ambersandbox.com/dots_credits.htm">Credits</a>)', "Where Fools Fear to Tread Part 6"]);
+                    missionList.push(["Where Fools Fear to Tread Part 7", "WhereFoolsFearToTread7", "Tarot7.xml", "Status", "Yes", 'Dorothy "Dots" Gale (<a href="http://www.ambersandbox.com/dots_credits.htm">Credits</a>)', "Where Fools Fear to Tread Part 7"]);
                 }
 
                 // Sort according to status
