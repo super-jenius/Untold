@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
 <world playfield="3130" name="The Shadowy Forest" >
-  <story type="Art" id="Wagon" title="Anastasia and Wagon" subtitle="by Whitequeen" playField="3130" x="952" y="32" z="812" distance="3" yDistance="1" url="http://untoldworld.azurewebsites.net/imageviewer.html?src=http://wordpress.tswguides.com/wp-content/uploads/2012/09/TSW_day27.jpg" width="628" height="825" />
-  <story type="Art" id="Ocatavian" title="Ocatavian" subtitle="by Whitequeen" playField="3130" x="284" y="47" z="462" distance="3" yDistance="1" url="http://untoldworld.azurewebsites.net/imageviewer.html?src=http://wordpress.tswguides.com/wp-content/uploads/2012/09/TSW_day25.jpg" width="680" height="880" />
+  <story type="Art" id="Wagon" title="Anastasia and Wagon" subtitle="by Whitequeen" playField="3130" x="952" y="32" z="812" distance="3" yDistance="1" url="http://untoldworld.azurewebsites.net/imageviewer.html?src=http://orig09.deviantart.net/44cd/f/2012/246/1/4/tsw_fanart_day_27_by_drunkfu-d5dgc7z.jpg" width="628" height="825" />
+  <story type="Art" id="Ocatavian" title="Ocatavian" subtitle="by Whitequeen" playField="3130" x="284" y="47" z="462" distance="3" yDistance="1" url="http://untoldworld.azurewebsites.net/imageviewer.html?src=http://orig13.deviantart.net/e1ba/f/2012/244/a/5/tsw_fanart_day_25_by_drunkfu-d5d91or.jpg" width="680" height="880" />
 </world>

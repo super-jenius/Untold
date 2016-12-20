@@ -1,4 +1,4 @@
 <?xml version="1.0"?>
 <world playfield="7251" name="The Modern Prometheus" >
-  <story type="Art" id="Nurse" title="Nurse Outfit" subtitle="by Windcharm" playField="7251" x="255" y="29" z="239" distance="3" yDistance="1" url="http://untoldworld.azurewebsites.net/imageviewer.html?src=http://img834.imageshack.us/img834/3759/dkyj.jpg" width="708" height="1000" />
+  <!--<story type="Art" id="Nurse" title="Nurse Outfit" subtitle="by Windcharm" playField="7251" x="255" y="29" z="239" distance="3" yDistance="1" url="http://untoldworld.azurewebsites.net/imageviewer.html?src=http://img834.imageshack.us/img834/3759/dkyj.jpg" width="708" height="1000" />-->
 </world>
