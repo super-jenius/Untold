@@ -24,16 +24,17 @@ class LocationTier extends BaseTier
 	public var m_zDist;
 	public var m_WaypointName;
 	private var m_Waypoint;
+	public var m_Ghost;
 
 	public function LoadXML(tierNode:XMLNode)
 	{
 		//ULog.Info("LocationTier.LoadXML()");
 		this.SetLocation(Number(tierNode.attributes.playField), Number(tierNode.attributes.x), Number(tierNode.attributes.y), 
 						 Number(tierNode.attributes.z), Number(tierNode.attributes.distance), Number(tierNode.attributes.yDistance),
-						 tierNode.attributes.waypointName);
+						 tierNode.attributes.waypointName, Boolean(tierNode.attributes.ghost));
 	}
 
-	public function SetLocation(playField:Number, x:Number, y:Number, z:Number, distance:Number, yDistance:Number, waypointName:String)
+	public function SetLocation(playField:Number, x:Number, y:Number, z:Number, distance:Number, yDistance:Number, waypointName:String, ghost:Boolean)
 	{
 		//ULog.Info("LocationTier.SetLocation(): playField=" + playField.toString() + ", x=" + x.toString() + ", y=" + y.toString() + ", z=" + z.toString());
 		m_PlayField = playField;
@@ -43,6 +44,7 @@ class LocationTier extends BaseTier
 		m_Distance = distance;	// distance from 
 		m_yDistance = yDistance;	// distance 
 		m_WaypointName = waypointName;
+		m_Ghost = (ghost ? ghost : false);
 	}
 
 	public function StartTier()
@@ -59,8 +61,9 @@ class LocationTier extends BaseTier
 		{
 			debugWindow.contentTextField.text = "Playfield: " + m_CurrentField.toString();
 		}
-		// Make sure we are in correct playfield 
-		if (m_CurrentField == m_PlayField) {
+		// Make sure we are in correct playfield
+		// Also check if player should be ghosting (in anima form)
+		if (m_CurrentField == m_PlayField && m_Ghost == m_Player.m_Character.IsGhosting()) {
 			var position = m_Player.m_Character.GetPosition();
 			m_CurrentX = position.x;
 			m_CurrentY = position.y;
