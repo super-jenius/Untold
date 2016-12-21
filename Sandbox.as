@@ -108,8 +108,11 @@ class Sandbox extends BaseMission
 		//this.MoveWaypoint();
 		//this.ScreenPosition();
 		//this.DeleteQuest();
-		this.LabelDynels();
+		//this.LabelDynels();
 		//this.CustodianWaypoint();
+		this.TestLooksConfig();
+		this.IsPlayerDead();
+		
 		
 		var tier_4 = this.AddTier("useitem", "There is no spoon.");
 		tier_4.SetItem("thereisnospoon");		
@@ -118,6 +121,54 @@ class Sandbox extends BaseMission
 		tier5.ResetLooks();
 	}
 	
+	function IsPlayerDead() {
+		var dead = this.m_Player.m_Character.IsGhosting()
+		_root.fifo.SlotShowFIFOMessage("Ghosting: " + dead);
+	}
+	
+	function TestLooksConfig() {
+		var tier:LooksTier = this.AddTier("looks", "Test Looks Config");
+		tier.SetTarget("player");
+		//tier.AddLooks("7569838", "head_1_new-england_female_carter_gameplay");
+		tier.AddLooks("9138326", "cit_multislot_female_nude", false, "26611");
+		tier.AddLooks("6869379", "CC_headmesh_cau_female_01", false, "4343");
+		tier.AddLooks("7355905", "makeup");		
+		//tier.AddLooks("7569838", "head_1_new-england_female_carter_gameplay");
+		//tier.AddLooks("6869378", "CC_headmesh_cau_male_01", false, "16295");
+		tier.AddLooks("7116432", "CC_hair_female", false, "18625");
+		tier.AddLooks("7116447", "CC_hair_tint", false, "4556");
+		tier.AddLooks("6960816", "CC_facial_hair_female", false, "6684");
+		//tier.AddLooks("7116405", "CC_hair_male");
+		//tier.AddLooks("7116405", "CC_hair_male", false, "4570");
+		//tier.AddLooks("7729481", "shirt");
+		//tier.AddLooks("7419974", "coat");
+		//tier.AddLooks("8150248", "pants");
+		//tier.AddLooks("7356216", "shoes");
+		//tier.AddLooks("7419046", "hands");
+		//tier.AddLooks("7994021", "earrings");
+		return;
+		this.CheckConfigID(tier, "9138326");
+		//this.CheckConfigID(tier, "7863510");
+		//this.CheckConfigID(tier, "7863511");
+		//this.CheckConfigID(tier, "7863512");
+		//this.CheckConfigID(tier, "7863541");
+		//this.CheckConfigID(tier, "7863542");
+		//this.CheckConfigID(tier, "7863543");
+		//this.CheckConfigID(tier, "7863544");
+		//for (var i = 6869378; i <= 6869385; i++) {
+			//this.CheckConfigID(tier, i.toString());
+		//}
+	}
+	
+	function CheckConfigID(tier, id) {
+		
+		// Find valid config IDs
+		// Invalid IDs will be logged
+		for (var i = 1; i < 30000; i++) {
+			tier.AddLooks(id, "CheckConfigID", false, i.toString());
+		}
+		_root.fifo.SlotShowFIFOMessage("Config ID Complete: " + id);
+	}
 
 	function LabelDynels() {
 		var nearDynels = _root.interactioncontroller.m_InteractionDynels;

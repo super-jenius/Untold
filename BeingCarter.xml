@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<mission title="Being Carter" debugMode="false" debugTier="0" >
+<mission title="Being Carter" debugMode="false" debugTier="22" >
   <!--Tier 1-->
   <tier type="location" description="TIER 1/11&#13;You find yourself thinking about Carter. Pay her a visit at Innsmouth Academy." playField="3040" x="306" y="147" z="372" distance="2" yDistance="1" waypointName="Carter" />
   <tier type="cinematic" description="Listen to Carter." playField="3040" >
@@ -206,7 +206,7 @@
     <cinematic type="fadein" duration="10" />
     <cinematic type="looks" description="Apply Carter Looks" looksTarget="player">
       <looks rdbid="7569838" description="head_1_new-england_female_carter_gameplay" />
-      <looks rdbid="7116432" description="CC_hair_female (varies with player)" />
+      <looks rdbid="7116432" description="CC_hair_female" configuration="18625"/>
       <looks rdbid="7729481" description="shirt" />
       <looks rdbid="7419974" description="coat" />
       <!--<looks rdbid="7700547" description="jacket" />-->
@@ -547,7 +547,7 @@
       <looks rdbid="8227416" description="cit_legs_female_pants_suit_07_black" />
       <looks rdbid="8229384" description="cit_feet_female_shoe_highheel_09_with_strap_black" />
       <looks rdbid="7419046" description="cit_hands_female_jewelry_bracelets_02_bracelet" />
-      <looks rdbid="7116432" description="CC_hair_female" />
+      <looks rdbid="7116432" description="CC_hair_female" configuration="18625" />
     </cinematic>
     <cinematic type="dialog" line="The next thing I knew, I was there, standing in the bar." />
     <cinematic type="dialog" line="I guess sex was on the brain." />
@@ -586,7 +586,7 @@
     <looks rdbid="8227416" description="cit_legs_female_pants_suit_07_black" />
     <looks rdbid="8229384" description="cit_feet_female_shoe_highheel_09_with_strap_black" />
     <looks rdbid="7419046" description="cit_hands_female_jewelry_bracelets_02_bracelet" />
-    <looks rdbid="7116432" description="CC_hair_female" />
+    <looks rdbid="7116432" description="CC_hair_female" configuration="18625" />
   </tier>
   <tier type="location" description="TIER 4/11&#13;Talk to Eve near the stairs." playField="1000" x="164" y="30" z="219" distance="2.5" yDistance="1" waypointName="Eve"/>
   <tier type="cinematic" description="Listen to Carter." playField="1000" contAudio="true">
@@ -619,7 +619,7 @@
       <looks rdbid="8227416" description="cit_legs_female_pants_suit_07_black" />
       <looks rdbid="8229384" description="cit_feet_female_shoe_highheel_09_with_strap_black" />
       <looks rdbid="7419046" description="cit_hands_female_jewelry_bracelets_02_bracelet" />
-      <looks rdbid="7116432" description="CC_hair_female" />
+      <looks rdbid="7116432" description="CC_hair_female"  configuration="18625" />
     </cinematic>
     <cinematic type="dialog" line="Eve: Welcome to the Garden of Eve." duration="3"/>
     <cinematic type="dialog" line="Can I interest you in any fruit?" duration="4"/>
@@ -693,11 +693,18 @@
     <cinematic type="looks" description="Carter Nude Female" looksTarget="player" gender="female">
       <looks rdbid="9138326" description="cit_multislot_female_nude" />
       <looks rdbid="7569838" description="head_1_new-england_female_carter_gameplay" />
-      <looks rdbid="7116432" description="CC_hair_female" />
+      <looks rdbid="7116432" description="CC_hair_female"  configuration="18625"/>
     </cinematic>
+    <!--<cinematic type="looks" description="Carter Nude Male v 3.3 (female model forces male head)" looksTarget="player" gender="male">
+      <looks rdbid="9138326" description="cit_multislot_female_nude" />
+      <looks rdbid="6869379" description="CC_headmesh_cau_female_01" configuration="4343" />
+      <looks rdbid="7116432" description="CC_hair_female"  configuration="18625"/>
+      <looks rdbid="7116447" description="CC_hair_tint"  configuration="4556"/>
+      <looks rdbid="6960816" description="CC_facial_hair_female" configuration="6684"/>
+    </cinematic>-->
     <cinematic type="looks" description="Carter Nude Male (female model forces male head)" looksTarget="player" gender="male">
       <looks rdbid="7569838" description="head_1_new-england_female_carter_gameplay" />
-      <looks rdbid="7116432" description="CC_hair_female" />
+      <looks rdbid="7116432" description="CC_hair_female"  configuration="18625"/>
       <looks rdbid="8907654" description="chest bling" />
       <looks rdbid="8266685" description="bikini" />
       <looks rdbid="8229384" description="cit_feet_female_shoe_highheel_09_with_strap_black" />
