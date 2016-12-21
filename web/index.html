@@ -41,10 +41,17 @@
         </div>
 
         <div id="newVersion" class="alert alert-danger" role="alert" style="display: none;">
-            <a href="javascript:history.back()">Go Back</a>
+            <!--<a href="javascript:history.back()">Go Back</a>-->
 
             <ul>
-                <li id="version32">
+                 <li id="version33">
+                    <b>Version 3.3</b> is now available for download using the Curse Client or from SecretUI. This is a <b>RECOMMENDED</b> update and adds the following features:
+                    <ul>
+                        <li>Added a configuration attribute to the Looks tier, which now allows head type, hair style, eye tint, and facial hair to be set.</li>
+                        <li>Added a ghost attribute to the Location tier. Mission authors can now require the player to be in ghost/anima form when going to a location.</li>
+                    </ul>
+                </li>
+                <li id="version32"  style="display: none;">
                     <b>Version 3.2</b> is now available for download using the Curse Client or from SecretUI. This is a <b>RECOMMENDED</b> update and adds the following features:
                     <ul>
                         <li>Fixed an issue that prevented the timer from unloading after a PvP match or scenario.</li>
@@ -191,8 +198,11 @@
 
         function checkVersion() {
             var version = qs["version"];
-            if (version != "3.2") {
+            if (version != "3.3") {
                 $("#newVersion").show();
+                if (version < "3.2") {
+                    $("#version32").show();
+                }
                 if (version < "3.1") {
                     $("#version31").show();
                 }
