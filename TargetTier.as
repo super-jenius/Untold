@@ -37,14 +37,16 @@ class TargetTier extends BaseTier
 	{
 		ULog.Info("TargetTier.StartTier(): m_TargetName=" + m_TargetName + " m_IsOffensiveTarget=" + m_IsOffensiveTarget.toString());
 		if (m_IsOffensiveTarget == true) {
-			m_Player.m_Character.SignalOffensiveTargetChanged.Connect(SlotTargetChanged, this);
+			com.Utils.GlobalSignal.SignalCrosshairTargetUpdated.Connect(SlotTargetChanged, this);
+			// m_Player.m_Character.SignalOffensiveTargetChanged.Connect(SlotTargetChanged, this);
 			// Check if target already selected.
-			this.CheckTarget(m_Player.m_Character.GetOffensiveTarget());
+			// this.CheckTarget(m_Player.m_Character.GetOffensiveTarget());
 			//this.MessageBox("Offensive Slot Set");
 		} else {
-			m_Player.m_Character.SignalDefensiveTargetChanged.Connect(SlotTargetChanged, this);
+			com.Utils.GlobalSignal.SignalCrosshairTargetUpdated.Connect(SlotTargetChanged, this);
+			// m_Player.m_Character.SignalDefensiveTargetChanged.Connect(SlotTargetChanged, this);
 			// Check if target already selected.
-			this.CheckTarget(m_Player.m_Character.GetDefensiveTarget());
+			//this.CheckTarget(m_Player.m_Character.GetDefensiveTarget());
 			//this.MessageBox("Defensive Slot Set");
 		}
 	}
