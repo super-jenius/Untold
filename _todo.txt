@@ -1,3 +1,40 @@
+Future features
+===============
+Toggle "Enable music" instead of changing individual volumes.
+Notification messages, assuming they support text.
+Mission turn in - Send Report.
+Attach lore and mission starters to objects/NPCs. Continue to support current lore model as well.
+Way to turn off NPC dialog while you are in range.
+Automatic translation of item/npc names for German/French clients, using string XML files.
+Possible to use in-world items like you can in missions or with lore?
+Saduff: Do you think you could also change the tier back and forward buttons from chevrons to something bigger so that they can be clicked faster?
+
+Unsuccessful features
+======================
+Effects packages possible? Tried it, but didn't work.
+
+
+Lore
+================
+Done: Aveline Belmont on top of tower with Lilith
+Done: Kingsmouth.com at Welcome sign
+Done (just Orochi): Other web sites referenced in game?  That guy in Savage Coast, Orochi, etc.
+Done: Twitter accounts for characters: Helen, Andy, Danny, Carter, and others
+@Hive_Mode where magazines are. http://thesecret.buzz too.
+Done: Add latest trailers to TSW History at theater, including The Park
+World/Locations/Characters from the main TSW site?
+RadioFreeGaia and other stations near radios?
+Kingsmouth: Dixie Bull, Idol of Nergal - Add "research" lore everywhere?
+TSW TV? Near any TV in game.
+- A playlist where we can go to a specic point based on the time (game time?).  Or random if that doesn't work.
+- Picture of TV with transparency overlaid atop YouTube.
+- Horror Movies
+- News (like Pyramiden, old Antarctic news shows, etc.)
+- History channel type shows
+- Game ads? (like The Park, but not TSW ads)
+- Stuff about bees
+- Anything else related to game lore
+
 Version 3.0
 ===============
 Done: Waypoints
@@ -23,30 +60,3 @@ Version 3.1
 ===============
 Bug fixes
 Documentation for new features in 3.0
-
-Future features
-===============
-Automatic translation of item/npc names for German/French clients, using string XML files.
-Effects packages possible?
-Possible to use in-world items like you can in missions or with lore?
-
-Lore
-================
-Done: Aveline Belmont on top of tower with Lilith
-Done: Kingsmouth.com at Welcome sign
-Done (just Orochi): Other web sites referenced in game?  That guy in Savage Coast, Orochi, etc.
-Done: Twitter accounts for characters: Helen, Andy, Danny, Carter, and others
-@Hive_Mode where magazines are. http://thesecret.buzz too.
-Done: Add latest trailers to TSW History at theater, including The Park
-World/Locations/Characters from the main TSW site?
-RadioFreeGaia and other stations near radios?
-Kingsmouth: Dixie Bull, Idol of Nergal - Add "research" lore everywhere?
-TSW TV? Near any TV in game.
-- A playlist where we can go to a specic point based on the time (game time?).  Or random if that doesn't work.
-- Picture of TV with transparency overlaid atop YouTube.
-- Horror Movies
-- News (like Pyramiden, old Antarctic news shows, etc.)
-- History channel type shows
-- Game ads? (like The Park, but not TSW ads)
-- Stuff about bees
-- Anything else related to game lore
