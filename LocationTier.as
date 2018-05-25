@@ -1,7 +1,10 @@
 ﻿// Location Tier
+// Location Tier
 // Completes when player arrives within range of designated coordinates
 import com.Utils.ID32;
 import com.GameInterface.Quests;
+import com.GameInterface.MathLib.Vector3;
+import com.GameInterface.Game.Camera;
 
 class LocationTier extends BaseTier
 {
@@ -120,33 +123,13 @@ class LocationTier extends BaseTier
 		// Check if waypoint should be shown
 		if (m_WaypointName && m_Waypoint == undefined && m_Lore == false)
 		{
-			// The API doesn't let you create a new waypoint, but you can hijack an existing one
-			// This only works if there is currently an active mission that uses a waypoint
-			for(var id:String in _root.waypoints.m_CurrentPFInterface.m_Waypoints) {
-				// Get first existing waypoint then exit loop
-				m_Waypoint = _root.waypoints.m_CurrentPFInterface.m_Waypoints[id];
-				break;
-			}
-			if (m_Waypoint == undefined)
-			{
-				// Start a side mission that contains a waypoint
-				// 3176 - Bullets for Andy
-				// 2918 - Trespassers
-				// 2893 - Mission persons (multiple waypoints)
-				// Make sure mission slot available
-				if (!missionStarted && _root.missiontracker.m_MissionBar["Slot5"].m_MissionTrackerItem == undefined) {
-					Quests.AcceptQuestFromQuestgiver( 3176, new ID32(0, 0));
-					// Notify user
-					_root.fifo.SlotShowFIFOMessage("Untold Stories started a side mission to enable waypoints.");
-					ShowWaypoint(true);
-					return;
-				}
-				// There is no active mission/waypoint, so don't try again
-				m_WaypointName = undefined;
-				// Notify user
-				//_root.fifo.SlotShowFIFOMessage("TIP: Untold Stories can display a waypoint if an official mission that uses a waypoint is currently in progress.");
-				return;
-			}
+			var customWaypoint = false;
+			// The API doesn't let you create a new waypoint, so create a custom waypoint that tracks approximate position
+			m_Waypoint = new com.GameInterface.Waypoint();
+			m_Waypoint.m_Id = new ID32(0, 0);
+			m_Waypoint.m_WorldPosition = new com.GameInterface.MathLib.Vector3();
+			_root.waypoints.m_CurrentPFInterface.m_Waypoints["0:0"] = m_Waypoint;
+				
 			// Make changes to waypoint
 			m_Waypoint.m_Label = m_WaypointName; // empty string is ok
 			m_Waypoint.m_WorldPosition.x = m_X;
@@ -156,15 +139,61 @@ class LocationTier extends BaseTier
 			m_Waypoint.m_IsStackingWaypoint = false;
 			m_Waypoint.m_Radius = m_Distance;
 			m_Waypoint.m_Color = 255;	// blue looks different than existing waypoints
-			m_Waypoint.m_WaypointState = 0;	// visible
+			m_Waypoint.m_WaypointState = _global.Enums.QuestWaypointState.e_WPStateActive;	// visible
 			m_Waypoint.m_WaypointType = _global.Enums.WaypointType.e_RMWPPvPDestination;
+			m_Waypoint.m_CollisionOffsetX = 0;
+			m_Waypoint.m_CollisionOffsetY = 0;
+			m_Waypoint.m_MinViewDistance = 0;
+			m_Waypoint.m_MaxViewDistance = 0;
+			m_Waypoint.m_DistanceToCam = 0;
 			
 			// Remove existing waypoint or there will be duplicate references
 			_root.waypoints.m_CurrentPFInterface.SignalWaypointRemoved.Emit(m_Waypoint.m_Id);
 			// Signal waypoint interface to show changes
 			_root.waypoints.m_CurrentPFInterface.SignalWaypointAdded.Emit(m_Waypoint.m_Id);
+			
+			this.UpdateWaypoint();
 		}
 	}
+	
+	// Update custom waypoint
+	public function UpdateWaypoint()
+	{
+		if (m_Waypoint) {
+			var cam:Vector3 = Camera.m_Pos;
+			var pos:Vector3 = m_Waypoint.m_WorldPosition;
+			var visibleRect = Stage["visibleRect"];
+			
+			// Calculate distance
+			// Taken from http://www.calculatorsoup.com/calculators/geometry-solids/distance-two-points.php
+			var distance = Math.sqrt(Math.pow(pos.x - cam.x, 2) + Math.pow(pos.y - cam.y, 2) + Math.pow(pos.z - cam.z, 2));
+			distance = Math.abs(Math.round(distance));
+			m_Waypoint.m_DistanceToCam = distance;
+
+			// Calculate horizontal positiion on screen
+			var camAngle = Camera.m_AngleY;			
+			var charPos: Vector3 = this.m_Player.m_Character.GetPosition( _global.Enums.AttractorPlace.e_Ground );
+			var deltaz = pos.z - charPos.z;
+			var deltax = pos.x - charPos.x;
+			var hAngle = (Math.atan2(deltax, deltaz));			
+			var waypointAngle = camAngle + hAngle;
+			var multiplier = waypointAngle + 1
+			var screenx = (visibleRect.width / 2) * multiplier;
+			m_Waypoint.m_ScreenPositionX = screenx;
+			
+			// Calculate vertical position on screen
+			// Loose approximation based on character position, because vertical camera angle is not provided by API
+			var deltay = pos.y - charPos.y;
+			var vAngle = Math.abs((Math.atan2(deltaz, deltay)));
+			var vmultiplier = ((vAngle + 1)/Math.PI);
+			var screeny = Math.max(Math.min((visibleRect.height / 2) * vmultiplier, visibleRect.height * .9), 0);
+			m_Waypoint.m_ScreenPositionY = screeny;			
+
+			_root.waypoints.UpdateScreenWaypoints();
+			_global.setTimeout(this, "UpdateWaypoint", 30);
+		}
+	}
+
 	
 	public function ConvertToXML()
 	{
