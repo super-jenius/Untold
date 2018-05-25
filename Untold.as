@@ -43,6 +43,13 @@ function onLoad()
 	
 	// Hide subtitles in dialog/cinematics?
 	m_HideSubtitles = false;
+
+	// Scale windows according to Miscellaneous Scaling option
+	var guiScale = com.GameInterface.DistributedValueBase.GetDValue("GUIScaleHUD");
+	m_MissionDebugWindow._xscale = guiScale;
+	m_MissionDebugWindow._yscale = guiScale;
+	m_CustomWindow._xscale = guiScale;
+	m_CustomWindow._yscale = guiScale;
 	
 //    m_MissionDebugWindow.SignalClose.Connect( SlotCloseDebugWindow, this );
 	m_MissionDebugWindow.closeButton.addEventListener("click", this, "CloseDebugWindow");
@@ -51,8 +58,8 @@ function onLoad()
 	m_CustomWindow._visible = false;
 	m_CustomWindow.focusButton._visible = false;
     var visibleRect = Stage["visibleRect"];
-    m_CustomWindow._x = visibleRect.width - m_CustomWindow._width - 225;
-    m_CustomWindow._y = 22;	// visibleRect.height * .15
+    m_CustomWindow._x = visibleRect.width - ((m_CustomWindow._width + 225) * guiScale/100);
+    m_CustomWindow._y = 22 * guiScale/100;	// visibleRect.height * .15
 //    m_CustomWindow.SignalClose.Connect( SlotCloseCustomWindow, this );
 //	_global.m_CustomWindow = m_CustomWindow;
 	m_CustomWindow.closeButton.addEventListener("click", this, "CloseCustomWindow");
@@ -78,6 +85,8 @@ function onLoad()
     m_MissionListWindow.ShowResizeButton( false );
     m_MissionListWindow.ShowStroke( false );
     //m_MissionListWindow.SetSize( 350, 250 );
+	m_MissionListWindow.m_Content._xscale = guiScale;
+	m_MissionListWindow.m_Content._yscale = guiScale;
     
     var visibleRect = Stage["visibleRect"];
 	_x = visibleRect.x;
@@ -180,7 +189,7 @@ function CustomJournalHandler()
 // Load home page in browser
 function HomePage()
 {
-	//var baseURL = "file:///D:/Games/The%20Secret%20World/Data/Gui/Customized/Flash/Untold/web/index.html";
+	//var baseURL = "file:///E:/Games/Secret%20World%20Legends/Data/Gui/Custom/Flash/Untold/web/index.html";
 	var baseURL = "http://untoldworld.azurewebsites.net/";
 	ULog.Info("Untold.HomePage()");
 	
@@ -198,7 +207,7 @@ function HomePage()
 	var targetPos = selector.SelectFriendlyTarget().GetPosition();
 	m_HomePage = new BrowserTier();
 //	m_HomePage.SetURL("http://www.google.com", "Google", true);
-	m_HomePage.SetURL(baseURL + "?version=" + escape(m_VerNo)
+	var homePage = baseURL + "?version=" + escape(m_VerNo)
 					  + "&playerName=" + escape(playerInfo.m_Name) 
 					  + "&playerID=" + escape(playerInfo.m_CharacterID.toString()) 
 					  + "&playerFaction=" + escape(playerInfo.m_Faction) 
@@ -211,8 +220,8 @@ function HomePage()
 					  + "&targetX=" + escape(targetPos.x.toString())
 					  + "&targetY=" + escape(targetPos.y.toString())
 					  + "&targetZ=" + escape(targetPos.z.toString())
-					  + "&statusXML=" + escape(missionStatuses),
-					   "UNTOLD STORIES OF THE SECRET WORLD " + m_VerNo, true);
+					  + "&statusXML=" + escape(missionStatuses);
+	m_HomePage.SetURL(homePage, "UNTOLD STORIES OF THE SECRET WORLD " + m_VerNo, true);
 	m_HomePage.SetURLTracking(true);
 	m_HomePage.onURLChanged = URLChanged;
 	m_HomePage.onTierComplete = function() {
