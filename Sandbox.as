@@ -7,6 +7,7 @@ import com.GameInterface.Game.Dynel;
 import com.GameInterface.CharacterCreation.CharacterCreation;
 import com.GameInterface.Game.Camera;
 import com.GameInterface.Waypoint;
+import com.Utils.Point;
 import flash.geom.Matrix;
 import GUI.CharacterCreation.CameraController;
 import Base64;
@@ -25,6 +26,7 @@ import mx.xpath.XPathAPI;
 import com.GameInterface.MathLib.Vector3;
 import com.GameInterface.Quests;
 import com.GameInterface.DialogueBase;
+import com.GameInterface.Nametags;
 
 class Sandbox extends BaseMission
 {
@@ -46,8 +48,8 @@ class Sandbox extends BaseMission
 		
 		m_MissionTitle = "Sandbox";
 		m_CurrentTierNo = -1;
-		_global.m_MissionDebugWindow._visible = true;		
-
+		_global.m_MissionDebugWindow._visible = true;	
+		
 //		this.HackLocation();
 //		this.ListDynels();
 
@@ -111,14 +113,63 @@ class Sandbox extends BaseMission
 		//this.LabelDynels();
 		//this.CustodianWaypoint();
 		this.TestLooksConfig();
-		this.IsPlayerDead();
-		
+		//this.IsPlayerDead();
+		//this.TestTarget();
+		//this.TestScale();		
+		//this.ShowDValue("GUIResolutionScale");
+		//this.SignalQuestAvailable();
+		//this.LocationTest();
 		
 		var tier_4 = this.AddTier("useitem", "There is no spoon.");
 		tier_4.SetItem("thereisnospoon");		
 		
 		var tier5:LooksTier = this.AddTier("looks", "Reset Looks");
-		tier5.ResetLooks();
+		tier5.m_ResetLooks = true;
+		//tier5.ResetLooks();			
+
+	}
+	
+	function LocationTest()
+	{
+		var tier:LocationTier = this.AddTier("location", "Location Test");
+		tier.SetLocation(5060, 400, 375, 265, 3, 3, "Test Waypoint");
+	}
+	
+	function SignalQuestAvailable()
+	{
+		com.GameInterface.QuestsBase.SignalQuestAvailable.Connect(OnQuestAvailable, this);
+	}
+	
+	function OnQuestAvailable(idQuestGiver:Number, questName:String, mainQuestType:Number, unused:Number, questGiverType:Number, questGiverInstance:Number, tier:Number )
+	{
+		_root.fifo.SlotShowFIFOMessage("idQuestGiver: " + idQuestGiver + "\n" + "questName: " + questName + "\n" + "mainQuestType: " + mainQuestType + "\n" +
+			"questGiverType: " + questGiverType + "\n" + "questGiverInstance: " + questGiverInstance + "\n" + "tier: " + tier)
+	}
+	
+	function ShowDValue(valueName)
+	{
+		var value = com.GameInterface.DistributedValueBase.GetDValue(valueName);
+		_root.fifo.SlotShowFIFOMessage(valueName + ": " + value);
+	}
+	
+	function TestScale()
+	{
+		var scale = 200;
+		_root._xscale = scale;
+		_root._yscale = scale;
+		
+	}
+	
+	function TestTarget() {
+		_root.fifo.SlotShowFIFOMessage("TestTarget()");
+		com.Utils.GlobalSignal.SignalCrosshairTargetUpdated.Connect(SlotCrosshairTargetUpdated, this);
+	}
+	
+	function SlotCrosshairTargetUpdated(newTargetID:ID32)
+	{
+		var name =  Character.GetCharacter(newTargetID).GetName();
+		_root.fifo.SlotShowFIFOMessage("SlotCrosshairTargetUpdated: " + name);
+		ULog.Error("Target Name: " + name);
 	}
 	
 	function IsPlayerDead() {
@@ -129,25 +180,26 @@ class Sandbox extends BaseMission
 	function TestLooksConfig() {
 		var tier:LooksTier = this.AddTier("looks", "Test Looks Config");
 		tier.SetTarget("player");
-		//tier.AddLooks("7569838", "head_1_new-england_female_carter_gameplay");
-		tier.AddLooks("9138326", "cit_multislot_female_nude", false, "26611");
-		tier.AddLooks("6869379", "CC_headmesh_cau_female_01", false, "4343");
+		//tier.AddLooks("6940248", "carter");
+		tier.AddLooks("7569838", "head_1_new-england_female_carter_gameplay");
+		//tier.AddLooks("9138326", "cit_multislot_female_nude", false, "26611");
+		//tier.AddLooks("6869379", "CC_headmesh_cau_female_01", false, "4343");
 		tier.AddLooks("7355905", "makeup");		
 		//tier.AddLooks("7569838", "head_1_new-england_female_carter_gameplay");
 		//tier.AddLooks("6869378", "CC_headmesh_cau_male_01", false, "16295");
-		tier.AddLooks("7116432", "CC_hair_female", false, "18625");
-		tier.AddLooks("7116447", "CC_hair_tint", false, "4556");
-		tier.AddLooks("6960816", "CC_facial_hair_female", false, "6684");
+		//tier.AddLooks("7116432", "CC_hair_female", false, "18625");
+		//tier.AddLooks("7116447", "CC_hair_tint", false, "4556");
+		//tier.AddLooks("6960816", "CC_facial_hair_female", false, "6684");
 		//tier.AddLooks("7116405", "CC_hair_male");
 		//tier.AddLooks("7116405", "CC_hair_male", false, "4570");
-		//tier.AddLooks("7729481", "shirt");
-		//tier.AddLooks("7419974", "coat");
-		//tier.AddLooks("8150248", "pants");
-		//tier.AddLooks("7356216", "shoes");
-		//tier.AddLooks("7419046", "hands");
-		//tier.AddLooks("7994021", "earrings");
+		tier.AddLooks("7729481", "shirt");
+		tier.AddLooks("7419974", "coat");
+		tier.AddLooks("8150248", "pants");
+		tier.AddLooks("7356216", "shoes");
+		tier.AddLooks("7419046", "hands");
+		tier.AddLooks("7994021", "earrings");
 		return;
-		this.CheckConfigID(tier, "9138326");
+		//this.CheckConfigID(tier, "9138326");
 		//this.CheckConfigID(tier, "7863510");
 		//this.CheckConfigID(tier, "7863511");
 		//this.CheckConfigID(tier, "7863512");
@@ -186,6 +238,8 @@ class Sandbox extends BaseMission
 		//dlg.configUI();
 		dlg.m_USName = dlg.attachMovie("DynelName", "m_DynelName", dlg.getNextHighestDepth());
 		dlg.m_USName.m_Name.textField.text = targetName;
+		var questions = ["Question 1", "Question 2", "Question 3"];
+		dlg.SetQuestions(questions);
 		_global.setTimeout(this, "SetVisible", 100, dlg);
 	}
 	
@@ -214,10 +268,23 @@ class Sandbox extends BaseMission
 	function AddWaypoint()
 	{
 		
-		var x = 689.76495361328;
-		var y = 49.836078643799;
-		var z = 666.05035400391;		
-		var waypoint = new com.GameInterface.Waypoint();
+		//400, 376, 263
+		var x = 400;
+		var y = 376;
+		var z = 263;
+		//var x = 689.76495361328;
+		//var y = 49.836078643799;
+		//var z = 666.05035400391;
+		//var nearDynels = _root.interactioncontroller.m_InteractionDynels;
+		//var dynel: Dynel;
+		//for (var prop in nearDynels) {
+			//dynel = nearDynels[prop];
+			//break;
+		//}
+		// var dynel: Dynel = _root.interactioncontroller.m_InteractionDynels[1];
+		var dynel: Dynel = this.m_Player.m_Character;
+		_root.fifo.SlotShowFIFOMessage("dynel: " + dynel.GetID() + " " + dynel.GetName());
+		var waypoint: Waypoint = new com.GameInterface.Waypoint();
 		waypoint.m_Id = new ID32(43,12367);
 		waypoint.m_WaypointType = _global.Enums.WaypointType.e_RMWPPvPDestination;
 		waypoint.m_Label = "Test Waypoint";
@@ -225,11 +292,15 @@ class Sandbox extends BaseMission
 		waypoint.m_IsStackingWaypoint = true;
 		waypoint.m_Radius = 0;
 		waypoint.m_Color = 255;
-		waypoint.m_WaypointState = 0;
+		//waypoint.m_WaypointState = 0;
+		waypoint.m_WaypointState = _global.Enums.QuestWaypointState.e_WPStateActive;
 		//waypoint.m_ScreenPositionX = 942; // -90000;
 		//waypoint.m_ScreenPositionY = 600;	//0;
-		waypoint.m_ScreenPositionX = 0; // -90000;
-		waypoint.m_ScreenPositionY = 0;	//0;
+		var pos: flash.geom.Point = dynel.GetScreenPosition();
+		_root.fifo.SlotShowFIFOMessage("pos.x: " + pos.x);
+		_root.fifo.SlotShowFIFOMessage("pos.y: " + pos.y);
+		waypoint.m_ScreenPositionX = pos.x - 130; // 0; // -90000;
+		waypoint.m_ScreenPositionY = pos.y + 100; // 0;	//0;
 		waypoint.m_CollisionOffsetX = 0;
 		waypoint.m_CollisionOffsetY = 0;
 		waypoint.m_WorldPosition = new com.GameInterface.MathLib.Vector3(x,y,z);
@@ -248,10 +319,11 @@ class Sandbox extends BaseMission
 	{
 		// Didn't work. Don't have enough info about camera angles to find screen position
 		if (waypoint) {
+			_global.m_MissionDebugWindow.contentTextField.text = "";
 			var cam:Vector3 = Camera.m_Pos;
 			if (Camera.GetZoom() != m_LastZoom) {
 				m_LastZoom = Camera.GetZoom();
-				_global.m_MissionDebugWindow.contentTextField.text += "Zoom: " + m_LastZoom + "\n";
+				//_global.m_MissionDebugWindow.contentTextField.text += "Zoom: " + m_LastZoom + "\n";
 			}
 			var pos:Vector3 = waypoint.m_WorldPosition;
 			// Taken from http://www.calculatorsoup.com/calculators/geometry-solids/distance-two-points.php
@@ -259,42 +331,78 @@ class Sandbox extends BaseMission
 			distance = Math.abs(Math.round(distance));
 			waypoint.m_DistanceToCam = distance;
 			
-			// Adapted from http://stackoverflow.com/questions/724219/how-to-convert-a-3d-point-into-2d-perspective-projection
-			var width = 1920;
-			var height = 1200;
-			var halfWidth = width * 0.5;
-			var halfHeight = height * 0.5;
-			var fov = 60 * (Math.PI / 180);
-			var aspect = width / height;
-			var near = 0.1;
-			var far = 2000;
-			var w = 1;			
-			// Setup calculation Matrix
-			var m = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];			
-			var f = 1.0 / Math.tan(fov * 0.5);
-			m[0] = f * aspect;
-			m[5] = f;
-			m[10] = (far+near) / (far-near);
-			m[11] = 1.0; /* this 'plugs' the old z into w */
-			m[14] = (2.0*near*far) / (near-far);
-			m[15] = 0.0;
+			//// Adapted from http://stackoverflow.com/questions/724219/how-to-convert-a-3d-point-into-2d-perspective-projection
+			//var width = 1920;
+			//var height = 1200;
+			//var halfWidth = width * 0.5;
+			//var halfHeight = height * 0.5;
+			//var fov = 60 * (Math.PI / 180);
+			//var aspect = width / height;
+			//var near = 0.1;
+			//var far = 2000;
+			//var w = 1;			
+			//// Setup calculation Matrix
+			//var m = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];			
+			//var f = 1.0 / Math.tan(fov * 0.5);
+			//m[0] = f * aspect;
+			//m[5] = f;
+			//m[10] = (far+near) / (far-near);
+			//m[11] = 1.0; /* this 'plugs' the old z into w */
+			//m[14] = (2.0*near*far) / (near-far);
+			//m[15] = 0.0;
+			//
+			//var v = Vector3.Sub(cam, pos);
+			//v.w = w;
+			//var dst = new Object();
+			//dst.x = v.x*m[0] + v.y*m[4] + v.z*m[8 ] + v.w*m[12];
+			//dst.y = v.x*m[1] + v.y*m[5] + v.z*m[9 ] + v.w*m[13];
+			//dst.z = v.x*m[2] + v.y*m[6] + v.z*m[10] + v.w*m[14];
+			//dst.w = v.x * m[3] + v.y * m[7] + v.z * m[11] + v.w * m[15];
 			
-			var v = Vector3.Sub(cam, pos);
-			v.w = w;
-			var dst = new Object();
-			dst.x = v.x*m[0] + v.y*m[4] + v.z*m[8 ] + v.w*m[12];
-			dst.y = v.x*m[1] + v.y*m[5] + v.z*m[9 ] + v.w*m[13];
-			dst.z = v.x*m[2] + v.y*m[6] + v.z*m[10] + v.w*m[14];
-			dst.w = v.x * m[3] + v.y * m[7] + v.z * m[11] + v.w * m[15];
+			var compass = Camera.m_AngleY;
+			var degrees:Number = ((Math.round(( compass * 180)  / Math.PI) + 360) % 360);
 			
-			var screenx = (dst.x * width) / (2.0 * dst.w) + halfWidth;
-			var screeny = (dst.y * height) / (2.0 * dst.w) + halfWidth;
+			var MyPos: Vector3 = this.m_Player.m_Character.GetPosition( _global.Enums.AttractorPlace.e_Ground );
+			//_global.m_MissionDebugWindow.contentTextField.text = "MyPos.x: " + MyPos.x + "\n";
+			//_global.m_MissionDebugWindow.contentTextField.text += "MyPos.z: " + MyPos.z + "\n";
+			var deltaz = waypoint.m_WorldPosition.z - MyPos.z;
+			var deltax = waypoint.m_WorldPosition.x - MyPos.x;
+			//_global.m_MissionDebugWindow.contentTextField.text += "deltaz: " + deltaz + "\n";
+			//_global.m_MissionDebugWindow.contentTextField.text += "deltax: " + deltax + "\n";
+			var hAngle = (Math.atan2(deltax, deltaz));			
+			_global.m_MissionDebugWindow.contentTextField.text += "hAngle: " + hAngle + "\n";;
+			//_global.m_MissionDebugWindow.contentTextField.text += "Compass: " + compass + "\n";
+			var waypointAngle = compass + hAngle;
+			_global.m_MissionDebugWindow.contentTextField.text += "wpAngle: " + waypointAngle  + "\n";
 			
+			//var screenx = (dst.x * width) / (2.0 * dst.w) + halfWidth;
+			//var screeny = (dst.y * height) / (2.0 * dst.w) + halfWidth;			
+			
+			
+			var visibleRect = Stage["visibleRect"];
+			// +/- .82 is viewable angle on 16:9 monitor
+			//var multiplier = (.82 + waypointAngle) + (1 - .82)
+			var multiplier = waypointAngle + 1
+			//_global.m_MissionDebugWindow.contentTextField.text += "multiplier: " + multiplier  + "\n";
+			var screenx = (visibleRect.width / 2) * multiplier;
+			_global.m_MissionDebugWindow.contentTextField.text += "screenx: " + screenx  + "\n";
 			waypoint.m_ScreenPositionX = screenx;
-			waypoint.m_ScreenPositionY = screeny;
+			
+			var deltay = waypoint.m_WorldPosition.y - MyPos.y;
+			var vAngle = Math.abs((Math.atan2(deltaz, deltay)));
+			_global.m_MissionDebugWindow.contentTextField.text += "deltay: " + deltay + "\n";
+			_global.m_MissionDebugWindow.contentTextField.text += "vAngle: " + vAngle + "\n";
+			var vmultiplier = ((vAngle + 1)/Math.PI);
+			_global.m_MissionDebugWindow.contentTextField.text += "vmultiplier: " + vmultiplier  + "\n";
+			var screeny = Math.max(Math.min((visibleRect.height / 2) * vmultiplier, visibleRect.height * .9), 0);
+			_global.m_MissionDebugWindow.contentTextField.text += "screeny: " + screeny  + "\n";
+			waypoint.m_ScreenPositionY = screeny;			
+			
+			waypoint.m_Label = deltay;
+			
 			_root.waypoints.UpdateScreenWaypoints();
 			
-			_global.setTimeout(this, "UpdateWaypoint", 500, waypoint);		
+			_global.setTimeout(this, "UpdateWaypoint", 100, waypoint);		
 			
 		}		
 	}	
@@ -778,8 +886,9 @@ class Sandbox extends BaseMission
 	
 	function StartNewMission()
 	{
-		if (_root.missiontracker.m_MissionBar["Slot5"].m_MissionTrackerItem == undefined) {
-			com.GameInterface.Quests.AcceptQuestFromQuestgiver( 3176, new ID32(0, 0)) // Mission persons
+		if (_root.missiontracker.m_MissionBar["Slot6"].m_MissionTrackerItem == undefined) {
+			_root.fifo.SlotShowFIFOMessage("Starting mission...");
+			com.GameInterface.Quests.AcceptQuestFromQuestgiver(2908, new ID32(0, 0)) // Mission persons
 		} else {
 			_root.fifo.SlotShowFIFOMessage("No mission slot available.");
 		}
@@ -787,6 +896,9 @@ class Sandbox extends BaseMission
 		//com.GameInterface.Quests.AcceptQuestFromQuestgiver( 2918, new ID32(51320, 783)) // Trespassers
 		//com.GameInterface.Quests.AcceptQuestFromQuestgiver( 3176, new ID32(51320, 783)) // Bullets for Andy
 		// 3176
+		// 1325:51320
+		// 4024 - Museum
+		// 51320,29691 2908
 	}
 	
 	function StopMission()
