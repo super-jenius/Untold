@@ -3,6 +3,7 @@
 import com.GameInterface.CharacterCreation.CharacterCreation;
 import com.GameInterface.Game.Camera;
 import com.GameInterface.DistributedValue;
+import com.GameInterface.Game.CharacterBase;
 import com.GameInterface.MathLib.Vector3;
 import com.GameInterface.AccountManagement;
 import com.GameInterface.Game.Character;
@@ -21,6 +22,7 @@ class CinematicTier extends DialogTier
 	public var m_Playfield;
 	public var m_CurrentField;
 	public var m_ResetLooks:Boolean;
+	public var m_FirstCamera:Boolean;
 	//public var m_CharacterCreationIF;
 	public var m_TargetCharacter;
 	public var m_IntPosX:Interpolator;
@@ -41,6 +43,7 @@ class CinematicTier extends DialogTier
 		m_NewPos = new Vector3(0, 0, 0);
 		m_NewTarget = new Vector3(0, 0, 0);
 		m_SkipPrev = true;
+		m_FirstCamera = true;
 	}
 
 	public function LoadXML(tierNode:XMLNode)
@@ -136,6 +139,14 @@ class CinematicTier extends DialogTier
 	// Add camera path
 	public function AddCameraPath(duration:Number, posX:Number, posY:Number, posZ:Number, targetX:Number, targetY:Number, targetZ:Number, ease:String)
 	{
+		// If first camera path, then reset camera first. Otherwise, character may be rotated.
+		if (m_FirstCamera == true) {
+			m_FirstCamera = false;
+			m_Dialog.push(["#camera#", 0, -99, 0, 0, targetX, targetY, targetZ]);
+			this.AddLine("", .01);
+			m_Dialog.push(["#camera#", 0, -99, 0, 0, targetX, targetY, targetZ]);
+			this.AddLine("", .01);
+		}
 		m_Dialog.push(["#camera#", duration, posX, posY, posZ, targetX, targetY, targetZ, ease]);
 		// If using player coordinates (-99), need to position camera twice with slight delay between to center on player
 		if (duration == 0 && (posX == -99 || targetX == -99)) {
@@ -208,6 +219,7 @@ class CinematicTier extends DialogTier
 		// If not in correct playField, don't hide UI
 		m_CurrentField = m_Player.m_Character.GetPlayfieldID();
 		if (m_CurrentField == m_Playfield) {
+			CharacterBase.ExitReticuleMode(); // seems to help character head from looking in wrong direction
 			DistributedValue.SetDValue("CharacterCreationActive", true);	
 			//m_CharacterCreationIF = new com.GameInterface.CharacterCreation.CharacterCreation(true);
 			var selector:Selector = new Selector();
@@ -581,9 +593,11 @@ class CinematicTier extends DialogTier
 				// Mysterious green glasses can sometimes appear on character after cinematics
 				// Not sure why, but it seems to be most likely if your character is targeted and you cancel the cinematic with Esc
 				// Nothing I tried prevents it, but hopefully it will be rare
-				//ULog.Info("CinematicTier.EndTier: Creating characterCreationIF");
-				var characterCreationIF:CharacterCreation = new com.GameInterface.CharacterCreation.CharacterCreation(true);
-				//characterCreationIF.ResetSurgeryData();
+				// If resetting looks after cinematic, then it will be handled by the ResetLooks tier. Doing it twice causes issues.
+				if (!m_ResetLooks) {
+					//ULog.Info("CinematicTier.EndTier: Creating characterCreationIF");
+					var characterCreationIF:CharacterCreation = new com.GameInterface.CharacterCreation.CharacterCreation(true);
+				}
 
 				//ULog.Info("CinematicTier.EndTier: Set characterCreationIF null");
 				// Setting to null immediately can cause crash, so let object go out of scope normally.
@@ -598,14 +612,6 @@ class CinematicTier extends DialogTier
 					//ULog.Info("CinematicTier.EndTier: Reset target");
 					TargetingInterface.SetTarget(m_TargetCharacter.GetID()); }
 
-				// Reset looks to original character (see LooksTier.ResetLooks() for more info)
-				//var eyeColor = characterCreationIF.GetEyeColorIndex();
-				//_root.fifo.SlotShowFIFOMessage("ResetLooks() EyeColor: " + eyeColor);
-				//characterCreationIF.SetEyeColorIndex(1);
-				//characterCreationIF.SetEyeColorIndex(0);
-				//characterCreationIF.SetEyeColorIndex(eyeColor);
-				//var looks:LooksTier = new LooksTier();
-				//looks.ResetLooks();
 				RestoreWeapons();
 			}
 
