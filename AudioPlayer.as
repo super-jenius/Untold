@@ -14,6 +14,7 @@ class AudioPlayer
 	public var m_BackgroundVolume;
 	public var m_CombatVolume;
 	public var m_RadioVolume;
+	public var m_MusicEnabled;
 	public var m_AlreadyMute;
 	
 	public function PlayAudio(audioURL, preload, volume, loop, stop, muteMusic)
@@ -23,7 +24,7 @@ class AudioPlayer
 			return;
 		}
 		
-		//var baseURL = "file:///D:/Games/The%20Secret%20World/Data/Gui/Customized/Flash/Untold/web/";
+		//var baseURL = "file:///E:/Games/Secret%20World%20Legends/Data/Gui/Custom/Flash/Untold/web/";
 		var baseURL = "http://untoldworld.azurewebsites.net/";
 		
 		var url = baseURL + "audioplayer.html?src=" + escape(audioURL);
@@ -100,16 +101,22 @@ class AudioPlayer
 	function MuteMusic()
 	{
 		if (m_MuteMusic == true && m_AlreadyMute != true) {
-			// Save current volume settings to restore when audio stops
-			m_BackgroundVolume = DistributedValue.GetDValue("AudioVolumeBackgroundMusic");
-			m_CombatVolume = DistributedValue.GetDValue("AudioVolumeCombatMusic");
-			m_RadioVolume = DistributedValue.GetDValue("AudioVolumeRadioMusic");
+			// Use Enable Music setting instead of changing volumes
+			// Not sure why I didn't use this before. Maybe I just missed it, but I may have had issues with it.
+		 	m_MusicEnabled = DistributedValue.GetDValue("AudioMusicOnOff");
+			DistributedValue.SetDValue("AudioMusicOnOff", false);			
 
-			DistributedValue.SetDValue("AudioVolumeBackgroundMusic", 0);
-			DistributedValue.SetDValue("AudioVolumeCombatMusic", 0);
-			DistributedValue.SetDValue("AudioVolumeRadioMusic", 0);
+			// Save current volume settings to restore when audio stops
+			//m_BackgroundVolume = DistributedValue.GetDValue("AudioVolumeBackgroundMusic");
+			//m_CombatVolume = DistributedValue.GetDValue("AudioVolumeCombatMusic");
+			//m_RadioVolume = DistributedValue.GetDValue("AudioVolumeRadioMusic");
+			
+			//DistributedValue.SetDValue("AudioVolumeBackgroundMusic", 0);
+			//DistributedValue.SetDValue("AudioVolumeCombatMusic", 0);
+			//DistributedValue.SetDValue("AudioVolumeRadioMusic", 0);
 			m_AlreadyMute = true;
-			ULog.Info("MuteMusic() Background: " + m_BackgroundVolume + " Combat: " + m_CombatVolume + " Radio: " + m_RadioVolume);
+			ULog.Info("MuteMusic() Enabled: " + m_MusicEnabled);
+			//ULog.Info("MuteMusic() Background: " + m_BackgroundVolume + " Combat: " + m_CombatVolume + " Radio: " + m_RadioVolume);
 		}
 	}
 	
@@ -117,10 +124,12 @@ class AudioPlayer
 	function RestoreMusic()
 	{
 		if (m_MuteMusic == true || m_AlreadyMute == true) {
+			// Restore previous setting
+			DistributedValue.SetDValue("AudioMusicOnOff", m_MusicEnabled);			
 			// Restore previous volume settings 
-			DistributedValue.SetDValue("AudioVolumeBackgroundMusic", m_BackgroundVolume);
-			DistributedValue.SetDValue("AudioVolumeCombatMusic", m_CombatVolume);
-			DistributedValue.SetDValue("AudioVolumeRadioMusic", m_RadioVolume);
+			//DistributedValue.SetDValue("AudioVolumeBackgroundMusic", m_BackgroundVolume);
+			//DistributedValue.SetDValue("AudioVolumeCombatMusic", m_CombatVolume);
+			//DistributedValue.SetDValue("AudioVolumeRadioMusic", m_RadioVolume);
 			m_AlreadyMute = false;
 		}
 	}

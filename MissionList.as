@@ -339,6 +339,9 @@ class MissionList extends WindowComponentContent
 		ULog.Info("MissionList.ClearMission()");
 		m_CurrentMission.AbortMission();
 		m_CurrentMission = null;
+		// Stop audio and restore music setting
+		var audioPlayer = _root["untold\\untold"].GetAudioPlayer();
+		audioPlayer.StopAudio();
 		_root["untold\\untold"].ReleaseBackgroundBrowser();
 		//m_MissionDebugWindow.contentTextField.text += "\nMission cleared.";
 		// If aborting current mission to start new one, call StartMission again
