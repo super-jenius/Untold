@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <missionList>
-  <mission title="Being Carter" id="BeingCarter" file="BeingCarter.xml" author="Super Jenius" />
-  <mission title="Akma's Hand" id="AkmasHand" file="AkmasHand.xml" author="Super Jenius" />
-  <mission title="Basic Training" id="BasicTraining" file="BasicTraining.xml" author="Super Jenius" />
+  <mission title="Being Carter" id="BeingCarter" file="BeingCarterSWL.xml" author="Super Jenius" />
+  <mission title="Akma's Hand" id="AkmasHand" file="AkmasHandSWL.xml" author="Super Jenius" />
+  <mission title="Basic Training" id="BasicTraining" file="BasicTrainingSWL.xml" author="Super Jenius" />
   <mission title="A Personal Matter" id="APersonalMatter" file="APersonalMatter.xml" author="Super Jenius" />
-  <mission title="The Scroll" id="TheScroll" file="TheScroll.xml" author="Super Jenius" />
+  <mission title="The Scroll" id="TheScroll" file="TheScrollSWL.xml" author="Super Jenius" />
 </missionList>

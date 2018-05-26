@@ -1,0 +1,599 @@
+﻿<?xml version="1.0"?>
+<mission title = "The Scroll" debugMode="false" debugTier="0" >
+	<tier type="browser" faction="Illuminati" description="You have received a text message from headquarters." url="http://www.mbs-intl.com/tsw/scroll/scroll_illuminati_text.png" browserTitle="Text Message" hideAddress="true" width="320" height="640" />
+	<tier type="target" faction="Illuminati" description="Go see Kirsten Geary at Illuminati headquarters." targetName="Kirsten Geary" isOffensiveTarget="false" />
+	<tier type="cinematic" faction="Illuminati" description="Cinematic" playField="1100" >
+		<cinematic type="fadeout" duration="2" />
+		<cinematic type="dialog" line="" duration="0.5" />
+		<cinematic type="facecoords" x="284.5" z="337.2"/>
+		<cinematic type="camera" duration="0" posX="310" posY="65" posZ="280" targetX="284.5" targetY="57.5" targetZ="337.2" />
+		<cinematic type="camera" duration="17000" posX="285" posY="57.4" posZ="335" targetX="284.5" targetY="57.5" targetZ="337.2" ease="Regular.easeOut"/>
+		<cinematic type="fadein" duration="10" />
+		<cinematic type="dialog" line="" duration="1" />
+		<cinematic type="dialog" line="----------------------------------&#13;The Scroll&#13;----------------------------------" duration="5" />
+		<cinematic type="dialog" line="It's Mayan." /> 2
+		<cinematic type="dialog" line="A reminder that not everything goes according to schedule," /> 4
+		<cinematic type="dialog" line="and that great power once gained can still be lost." /> 4
+		<cinematic type="camera" duration="0" posX="282" posY="57.4" posZ="331" targetX="284.5" targetY="57.5" targetZ="337.2" />
+		<cinematic type="camera" duration="15000" posX="288" posY="57.4" posZ="331" targetX="284.5" targetY="57.5" targetZ="337.2" ease="Regular.easeInOut"/>
+		<cinematic type="dialog" line="I found it on eBay for 50 bucks." />
+		<cinematic type="dialog" line="Poor guy didn't know he was holding an ancient relic of forgotten power." />
+		<cinematic type="dialog" line="C'est la vie." duration="3" />
+		<cinematic type="dialog" line="Speaking of relics..." />
+		<cinematic type="facenpc" name="Kirsten Geary"/>
+		<cinematic type="camera" duration="0" posX="279" posY="57.4" posZ="332" targetX="-99" targetY="0" targetZ="0" />
+		<cinematic type="camera" duration="30000" posX="280" posY="57.4" posZ="332" targetX="-99" targetY="0" targetZ="0" />
+		<cinematic type="dialog" line="Something is going down in Egypt, and I don't mean in the good way." />
+		<cinematic type="dialog" line="My sources tell me a couple of professor-types have discovered an artifact in the desert." />
+		<cinematic type="camera" duration="0" posX="289" posY="57.4" posZ="339" targetX="284" targetY="57.4" targetZ="335" />
+		<cinematic type="camera" duration="21000" posX="286" posY="57.4" posZ="336" targetX="284" targetY="57.4" targetZ="335" />
+		<cinematic type="dialog" line="They don't know what they have... not yet anyway." />
+		<cinematic type="dialog" line="Neither do we, but the risk-to-reward is high on this one," />
+		<cinematic type="dialog" line="and Mama needs a new pair of shoes." />
+		<cinematic type="camera" duration="0" posX="284" posY="57.4" posZ="330" targetX="284" targetY="57.4" targetZ="335" />
+		<cinematic type="camera" duration="15000" posX="283" posY="58" posZ="325" targetX="284" targetY="57.4" targetZ="335" />
+		<cinematic type="dialog" line="Go down there and see what you can dig up.&#13;Ta-ta." />
+		<cinematic type="fadeout" duration="3" />
+	</tier>
+	<tier type="browser" faction="Templar" description="You have received a text message from headquarters." url="http://www.mbs-intl.com/tsw/scroll/scroll_templar_text.png" browserTitle="Text Message" hideAddress="true" width="320" height="640" />
+	<tier type="location" faction="Templar" description="Speak with Richard Sonnac in Temple Hall." playField="1000" x="338" y="36" z="308" distance="5" yDistance="1" waypointName="Richard Sonnac"/>
+	<tier type="cinematic" faction="Templar" description="Receive your assignment from Richard Sonnac." playField="1000" >
+		<cinematic type="fadeout" duration="2" />
+		<cinematic type="dialog" line="" duration="0.5" />
+		<cinematic type="camera" duration="0" posX="251" posY="70" posZ="387" targetX="347.5" targetY="36" targetZ="325.3" />
+		<cinematic type="camera" duration="20000" posX="347.5" posY="36" posZ="325.3" targetX="347.5" targetY="36" targetZ="325.3" />
+		<cinematic type="facecoords" x="335.4" z="301.47"/>
+		<cinematic type="fadein" duration="10" />
+		<cinematic type="dialog" line="" duration="4" />
+		<cinematic type="dialog" line="----------------------------------&#13;The Scroll&#13;----------------------------------" duration="5" />
+		<cinematic type="dialog" line="" duration="2" />
+		<cinematic type="playerpos" x="338.5" y="36.3" z="304" rotation="2.3" />
+		<cinematic type="dialog" line="'Michael and his angels fought against the dragon; and the dragon fought and his angels," />
+		<cinematic type="camera" duration="0" posX="337.4" posY="39" posZ="304.4" targetX="335.4" targetY="39" targetZ="301.47" />
+		<cinematic type="camera" duration="15000" posX="339.5" posY="36.3" posZ="311.8" targetX="335.4" targetY="39" targetZ="301.47" />
+		<cinematic type="dialog" line="And prevailed not; neither was their place found any more in heaven.'" />
+		<cinematic type="dialog" line="" duration="1" />
+		<cinematic type="dialog" line="Raphael provides inspiration for us all." />
+		<cinematic type="dialog" line="A reminder that victory is not only possible, but necessary." />
+		<cinematic type="dialog" line="" duration="1" />
+		<cinematic type="camera" duration="0" posX="339.6" posY="36.3" posZ="306" targetX="336.8" targetY="36" targetZ="309.6" />
+		<cinematic type="camera" duration="40000" posX="336.8" posY="36" posZ="309.6" targetX="336.8" targetY="36" targetZ="309.6" />
+		<cinematic type="facenpc" name="Richard Sonnac"/>
+		<cinematic type="dialog" line="I have a new assignment for you..." />
+		<cinematic type="dialog" line="Two gentlemen from Oxford - archaeologists - have uncovered an artifact in Egypt." />
+		<cinematic type="camera" duration="0" posX="343.3" posY="36.3" posZ="309.6" targetX="336.8" targetY="36" targetZ="309.6" />
+		<cinematic type="camera" duration="25000" posX="341.3" posY="36.3" posZ="313.9" targetX="336.8" targetY="36" targetZ="309.6" />
+		<cinematic type="dialog" line="It's a scroll of some sort, but I'm getting mixed messages regarding it's value." />
+		<cinematic type="dialog" line="I need you to go down there and sort it out." />
+		<cinematic type="camera" duration="0" posX="345.2" posY="36.3" posZ="306.5" targetX="336.8" targetY="36" targetZ="309.6" />
+		<cinematic type="camera" duration="30000" posX="336.8" posY="36" posZ="309.6" targetX="336.8" targetY="36" targetZ="309.6" />
+		<cinematic type="dialog" line="There's more... this find has captured the attention of the higher ups," />
+		<cinematic type="dialog" line="much more than is warranted by something this trivial." />
+		<cinematic type="camera" duration="0" posX="336" posY="36.3" posZ="311.6" targetX="-99" targetY="0" targetZ="0" />
+		<cinematic type="camera" duration="30000" posX="339.6" posY="36.3" posZ="306" targetX="-99" targetY="0" targetZ="0" />
+		<cinematic type="dialog" line="There is more to this than meets the eye, and I'm being left out of the loop." />
+		<cinematic type="dialog" line="I expect you to fill me in." />
+		<cinematic type="camera" duration="0" posX="340.7" posY="36.3" posZ="306.7" targetX="336.8" targetY="36" targetZ="309.6" />
+		<cinematic type="camera" duration="25000" posX="345.6" posY="36.3" posZ="303.8" targetX="336.8" targetY="36" targetZ="309.6" />
+		<cinematic type="dialog" line="Ascertain the true meaning of this discovery, and as always, watch your back." />
+		<cinematic type="fadeout" duration="3" />
+	</tier>
+	<tier type="browser" faction="Dragon" description="You have received a text message from headquarters." url="http://www.mbs-intl.com/tsw/scroll/scroll_dragon_text.png" browserTitle="Text Message" hideAddress="true" width="320" height="640" />
+	<tier type="location" description="Travel to the Oxford Camp in The Scorched Desert, Egypt." playField="3090" x="714" y="52" z="858" distance="5" yDistance="1" waypointName="Oxford Camp"/>
+	<tier type="cinematic" description="Listen to the Oxford archeologists." playField="3090" >
+		<cinematic type="fadeout" duration="2" />
+		<cinematic type="dialog" line="" duration="0.5" />
+		<cinematic type="facenpc" name="Montgomery de la Roche"/>
+		<cinematic type="camera" faction="Dragon" duration="0" posX="729" posY="65" posZ="956" targetX="737" targetY="75" targetZ="1010" />
+		<cinematic type="camera" faction="Dragon" duration="20000" posX="710" posY="52" posZ="849" targetX="737" targetY="75" targetZ="1010" />
+		<cinematic type="fadein" faction="Dragon" duration="10" />
+		<cinematic type="dialog" faction="Dragon" line="" duration="5" />
+		<cinematic type="dialog" faction="Dragon" line="----------------------------------&#13;The Scroll&#13;----------------------------------" duration="8" />
+		<cinematic type="dialog" faction="Dragon" line="" duration="1" />
+		<cinematic type="camera" duration="0" posX="714" posY="52.5" posZ="858.8" targetX="715.6" targetY="52.8" targetZ="858.3" />
+		<cinematic type="camera" duration="30000" posX="713" posY="52.5" posZ="859.8" targetX="715.6" targetY="52.8" targetZ="858.3" />
+		<cinematic type="fadein" duration="5" />
+		<cinematic type="dialog" line="Montgomery: I'm telling you, Arun. This mystery goes deeper. We must learn more!" />
+		<cinematic type="camera" duration="0" posX="714" posY="52.5" posZ="858.8" targetX="715.8" targetY="52" targetZ="861.2" />
+		<cinematic type="camera" duration="30000" posX="713" posY="52.5" posZ="857.8" targetX="715.8" targetY="52" targetZ="861.2" />
+		<cinematic type="dialog" line="Arun: There is no mystery! It is a blank piece of papyrus!&#13;We have more pressing matters to attend to." />
+		<cinematic type="camera" duration="0" posX="713" posY="52.5" posZ="859.8" targetX="715.6" targetY="52.8" targetZ="858.3" />
+		<cinematic type="camera" duration="30000" posX="714" posY="52.5" posZ="858.8" targetX="715.6" targetY="52.8" targetZ="858.3" />
+		<cinematic type="dialog" line="Montgomery: Don't be naive, boy!" />
+		<cinematic type="camera" duration="0" posX="713" posY="52.5" posZ="857.8" targetX="715.8" targetY="52" targetZ="861.2" />
+		<cinematic type="camera" duration="30000" posX="714" posY="52.5" posZ="858.8" targetX="715.8" targetY="52" targetZ="861.2" />
+		<cinematic type="dialog" line="Arun: Boy? I am a full-grown man, Monty! You of all people know this to be true!" />
+		<cinematic type="playerpos" x="712.5" y="52.798439" z="858.8" rotation="-1.565" />
+		<cinematic type="camera" duration="0" posX="710" posY="52.5" posZ="866" targetX="715.6" targetY="52.8" targetZ="858.3" />
+		<cinematic type="camera" duration="30000" posX="715.5" posY="52.5" posZ="865" targetX="715.6" targetY="52.8" targetZ="858.3" />
+		<cinematic type="dialog" line="Montgomery: Er um... we have a visitor, Arun. Important news travels fast, does it not?" />
+		<cinematic type="camera" duration="0" posX="716" posY="52.5" posZ="859.7" targetX="-99" targetY="0" targetZ="0" />
+		<cinematic type="camera" duration="30000" posX="723.3" posY="56.2" posZ="857.3" targetX="-99" targetY="0" targetZ="0" />
+		<cinematic type="dialog" line="Perhaps you can settle the matter for us..." />
+		<cinematic type="dialog" line="I hold in my hands an ancient artifact, " />
+		<cinematic type="dialog" line="My young colleague would have you believe it is simply a piece of unused paper stock, but I..." />
+		<cinematic type="camera" duration="0" posX="702.3" posY="55.9" posZ="862.3" targetX="-99" targetY="0" targetZ="0" />
+		<cinematic type="camera" duration="30000" posX="711.2" posY="52.798439" posZ="857.3" targetX="-99" targetY="0" targetZ="0" />
+		<cinematic type="dialog" line="I see a mystery. A piece of history waiting to be uncovered." />
+		<cinematic type="dialog" line="Here, take a look for yourself." />
+		<cinematic type="dialog" line="Curious... it seems to glow at your touch." />
+		<cinematic type="dialog" line="Arun: Look! Something is appearing!" />
+	</tier>
+	<tier type="browser" description="The scroll seems to glow, and an image is appearing." url="http://www.mbs-intl.com/tsw/scroll/scroll_tree_2.htm" browserTitle=" " hideAddress="true" width="960" height="635" />
+	<tier type="cinematic" description="Listen to the Oxford archeologists." playField="3090" >
+		<cinematic type="camera" duration="0" posX="713" posY="52.5" posZ="859.8" targetX="715.6" targetY="52.8" targetZ="858.3" />
+		<cinematic type="camera" duration="30000" posX="714" posY="52.5" posZ="858.8" targetX="715.6" targetY="52.8" targetZ="858.3" />
+		<cinematic type="dialog" line="Montgomery: Remarkable! There is indeed an image, but these old eyes don't see very well." />
+		<cinematic type="camera" duration="0" posX="713" posY="52.5" posZ="857.8" targetX="715.8" targetY="52" targetZ="861.2" />
+		<cinematic type="camera" duration="30000" posX="714" posY="52.5" posZ="858.8" targetX="715.8" targetY="52" targetZ="861.2" />
+		<cinematic type="dialog" line="Arun: The image is distorted, but it appears to be a large tree of some sort." />
+		<cinematic type="camera" duration="0" posX="714" posY="52.5" posZ="858.8" targetX="715.6" targetY="52.8" targetZ="858.3" />
+		<cinematic type="camera" duration="30000" posX="713" posY="52.5" posZ="859.8" targetX="715.6" targetY="52.8" targetZ="858.3" />
+		<cinematic type="dialog" line="Montgomery: The course forward is clear... You must take the scroll, and find this location." />
+		<cinematic type="camera" duration="0" posX="714" posY="52.5" posZ="858.8" targetX="715.8" targetY="52" targetZ="861.2" />
+		<cinematic type="camera" duration="30000" posX="713" posY="52.5" posZ="857.8" targetX="715.8" targetY="52" targetZ="861.2" />
+		<cinematic type="dialog" line="Arun: Aren't we going as well?" />
+		<cinematic type="camera" duration="0" posX="710" posY="52.5" posZ="866" targetX="715.6" targetY="52.8" targetZ="858.3" />
+		<cinematic type="camera" duration="30000" posX="715.5" posY="52.5" posZ="865" targetX="715.6" targetY="52.8" targetZ="858.3" />
+		<cinematic type="dialog" line="Montgomery: No. The scroll's destiny lies with our visitor." />
+		<cinematic type="dialog" line="We will continue to research this mystery, but our place is here." />
+		<cinematic type="dialog" line="Find this tree, and all will be revealed." />
+		<cinematic type="fadeout" duration="3" />
+	</tier>
+	<tier type="browser" description="Take the scroll to the pictured location." url="http://www.mbs-intl.com/tsw/scroll/scroll_tree_2.png" browserTitle=" " hideAddress="true" width="960" height="635" />
+	<tier type="location" description="Take the scroll to the pictured location." playField="5060" x="0" y="0" z="0" distance="10000" yDistance="10000" />
+	<tier type="browser" description="The scroll is changing. A message appears, but it is difficult to make out." url="http://www.mbs-intl.com/tsw/scroll/scroll_branch.htm" browserTitle=" " hideAddress="true" width="960" height="635" />
+	<tier type="location" description="The scroll changed. A message appeared, but it is difficult to make out." playField="5060" x="684" y="90" z="344" distance="3" yDistance="1" />
+	<tier type="browser" description="The scroll is changing again. A new message appears." url="http://www.mbs-intl.com/tsw/scroll/scroll_ascend.htm" browserTitle=" " hideAddress="true" width="960" height="635" />
+	<tier type="location" description="The scroll changed again. A new message appeared." playField="5060" x="458" y="426" z="292" distance="3" yDistance="1" />
+	<tier type="browser" description="A new message is appearing on the scroll." url="http://www.mbs-intl.com/tsw/scroll/scroll_faith.htm" browserTitle=" " hideAddress="true" width="960" height="635" />
+	<tier type="location" description="The scroll changed again. A new message appeared." playField="5060" x="540" y="90" z="110" distance="1000" yDistance="10" noBell="true" />
+	<tier type="location" description="The scroll changed again. A new message appeared." playField="5060" x="540" y="400" z="110" distance="1000" yDistance="20" />
+	<!-- <tier type="location" description="The scroll changed again. A new message appeared." playField="5060" x="505" y="408" z="402" distance="10" yDistance="3" /> -->
+	<tier type="browser" description="Another message is appearing on the scroll. The inscription is very clear." url="http://www.mbs-intl.com/tsw/scroll/scroll_lilith.htm" browserTitle=" " hideAddress="true" width="960" height="635" />
+	<tier type="location" description="Another message appeared on the scroll. The inscription is very clear." playField="3120" x="941" y="68" z="547" distance="4" yDistance="1" />
+	<tier type="cinematic" description="Show the scroll to Cucuvea." playField="3120" >
+		<cinematic type="fadeout" duration="2" />
+		<cinematic type="dialog" line="" duration="0.5" />
+		<cinematic type="facenpc" name="Cucuvea"/>
+		<cinematic type="camera" duration="0" posX="996" posY="100" posZ="602" targetX="950" targetY="70" targetZ="559" />
+		<cinematic type="camera" duration="21000" posX="950" posY="70" posZ="559" targetX="950" targetY="70" targetZ="559" />
+		<cinematic type="fadein" duration="10" />
+		<cinematic type="dialog" line="" duration="4" />
+		<cinematic type="dialog" line="The world always needs saving, doesn't it?" />
+		<cinematic type="dialog" line="Wouldn't it be nice if it stayed saved, if only for a little while?" />
+		<cinematic type="dialog" line="Some days, I just don't give a hoot. But nevermind that..." />
+		<cinematic type="camera" duration="0" posX="940" posY="68.6" posZ="553.5" targetX="941.9" targetY="67.5" targetZ="547.6" />
+		<cinematic type="camera" duration="35000" posX="941.9" posY="67.5" posZ="547.6" targetX="941.9" targetY="67.5" targetZ="547.6" />
+		<cinematic type="dialog" line="What have you brought me today?" />
+		<cinematic type="camera" duration="0" posX="941" posY="68.6" posZ="550" targetX="941.9" targetY="67.5" targetZ="547.6" />
+		<cinematic type="camera" duration="35000" posX="941.9" posY="67.5" posZ="547.6" targetX="941.9" targetY="67.5" targetZ="547.6" />
+		<cinematic type="dialog" line="Oh dear. I suppose I shouldn't be surprised to see that again." />
+		<cinematic type="dialog" line="You keep hold of that yourself, but I will tell you what I know, or at least what I remember." />
+		<cinematic type="camera" duration="0" posX="943.2" posY="69.5" posZ="541.5" targetX="-99" targetY="0" targetZ="0" />
+		<cinematic type="camera" duration="45000" posX="941.9" posY="67.5" posZ="547.6" targetX="941.9" targetY="67.5" targetZ="547.6" />
+		<cinematic type="dialog" line="It is called The World Scroll. It draws power from the World Tree." />
+		<cinematic type="dialog" line="But you already knew that, didn't you?" />
+		<cinematic type="camera" duration="0" posX="937.2" posY="68.3" posZ="547.7" targetX="946.6" targetY="68.3" targetZ="548" />
+		<cinematic type="camera" duration="45000" posX="946.6" posY="68.3" posZ="548" targetX="946.6" targetY="68.3" targetZ="548" />
+		<cinematic type="dialog" line="It's a peculiar device. It doesn't tell you exactly where it wants to go, does it?" />
+		<cinematic type="camera" duration="0" posX="941" posY="68.6" posZ="550" targetX="941.9" targetY="67.5" targetZ="547.6" />
+		<cinematic type="camera" duration="35000" posX="940" posY="68.6" posZ="553.5" targetX="941.9" targetY="67.5" targetZ="547.6" />
+		<cinematic type="dialog" line="Oh, it wants to, desperately, but it can't." />
+		<cinematic type="dialog" line="It doesn't know what it needs, only that it needs it." />
+		<cinematic type="camera" duration="0" posX="944.8" posY="68.2" posZ="546.3" targetX="-99" targetY="0" targetZ="0" />
+		<cinematic type="camera" duration="35000" posX="941.9" posY="67.5" posZ="547.6" targetX="-99" targetY="0" targetZ="0" />
+		<cinematic type="dialog" line="And now here you are, in my tree." />
+		<cinematic type="dialog" line="It's only doing its job, I suppose. All things in due time." />
+		<cinematic type="camera" duration="0" posX="941" posY="68.3" posZ="550" targetX="941.9" targetY="67.5" targetZ="547.6" />
+		<cinematic type="camera" duration="35000" posX="943.8" posY="68.3" posZ="549.9" targetX="941.9" targetY="67.5" targetZ="547.6" />
+		<cinematic type="dialog" line="First the awakening, and then the gathering, and then..." />
+		<cinematic type="dialog" line="Well... 'Your journey has only just begun.' I believe that is the appropriate phrase." />
+		<cinematic type="camera" duration="0" posX="943.1" posY="68.5" posZ="553" targetX="941.9" targetY="67.5" targetZ="547.6" />
+		<cinematic type="camera" duration="25000" posX="948.5" posY="70.7" posZ="558.6" targetX="941.9" targetY="67.5" targetZ="547.6" />
+		<cinematic type="dialog" line="You had better get to it." />
+		<cinematic type="dialog" line="I have a world to save." />
+		<cinematic type="fadeout" duration="3" />
+	</tier>
+	<tier type="browser" description="The scroll contains a picture of the tree again." url="http://www.mbs-intl.com/tsw/scroll/scroll_tree.htm" browserTitle=" " hideAddress="true" width="960" height="635" />
+	<tier type="location" description="The scroll contains a picture of the tree again." playField="5060" x="0" y="0" z="0" distance="10000" yDistance="10000" />
+	<tier type="browser" description="A new message appears on the scroll." url="http://www.mbs-intl.com/tsw/scroll/scroll_books.htm" browserTitle=" " hideAddress="true" width="960" height="635" />
+	<tier type="location" description="A new message appears on the scroll." playField="1300" x="255" y="34" z="243" distance="5" yDistance="2" />
+	<tier type="browser" description="A new message appears on the scroll." url="http://www.mbs-intl.com/tsw/scroll/scroll_education.htm" browserTitle=" " hideAddress="true" width="960" height="635" />
+	<tier type="location" description="A new message appears on the scroll." playField="3040" x="265" y="146" z="373" distance="7" yDistance="1" />
+	<tier type="browser" description="A painting appears on the scroll." url="http://www.mbs-intl.com/tsw/scroll/scroll_painting.htm" browserTitle=" " hideAddress="true" width="960" height="635" />
+	<tier type="location" description="A painting appears on the scroll." playField="3030" x="343" y="139.5" z="349.5" distance="3" yDistance="1" />
+	<tier type="browser" description="A sculpture appears on the scroll." url="http://www.mbs-intl.com/tsw/scroll/scroll_statue.htm" browserTitle=" " hideAddress="true" width="960" height="635" />
+	<tier type="location" description="A sculpture appears on the scroll." playField="1000" x="314" y="29" z="313" distance="2" yDistance="1" />
+	<tier type="browser" description="A new image appears on the scroll." url="http://www.mbs-intl.com/tsw/scroll/scroll_troll.htm" browserTitle=" " hideAddress="true" width="960" height="635" />
+	<tier type="target" description="A new image appears on the scroll." targetName="Mosul" isOffensiveTarget="false" />
+	<tier type="cinematic" description="Show the scroll to Mosul." playField="3130" speed="2" >
+		<cinematic type="fadeout" duration="2" />
+		<cinematic type="dialog" line="" duration="0.5" />
+		<cinematic type="facetarget"/>
+		<cinematic type="camera" duration="0" posX="579.4" posY="27.8" posZ="615.5" targetX="596.4" targetY="28.4" targetZ="615.9" />
+		<cinematic type="camera" duration="11500" posX="547.7" posY="28" posZ="615.5" targetX="596.4" targetY="28.4" targetZ="615.9" />
+		<cinematic type="fadein" duration="10" />
+		<cinematic type="dialog" line="" duration="9" />
+		<cinematic type="camera" duration="0" posX="574.4" posY="29.6" posZ="609.9" targetX="-99" targetY="0" targetZ="0" />
+		<cinematic type="camera" duration="25000" posX="569" posY="32.6" posZ="614.6" targetX="-99" targetY="0" targetZ="0" />
+		<cinematic type="dialog" line="You have returned. Shall I tell your story, huh?" />
+		<cinematic type="dialog" line="I have not forgotten." />
+		<cinematic type="camera" duration="0" posX="585" posY="40" posZ="623.5" targetX="569" targetY="32.6" targetZ="614.6" />
+		<cinematic type="camera" duration="40000" posX="569" posY="32.6" posZ="614.6" targetX="569" targetY="32.6" targetZ="614.6" />
+		<cinematic type="dialog" line="From hiding you emerged, hungry and weak." />
+		<cinematic type="dialog" line="You gathered close to the Great Tree and were restored." />
+		<cinematic type="dialog" line="The designs of man - words, art, music, culture, technology - you devoured them all." />
+		<cinematic type="camera" duration="0" posX="574.4" posY="32.6" posZ="609.9" targetX="569" targetY="32.6" targetZ="614.6" />
+		<cinematic type="camera" duration="25000" posX="560.7" posY="45" posZ="605.5" targetX="569" targetY="32.6" targetZ="614.6" />
+		<cinematic type="dialog" line="You coveted the mind of an Old One, but the Old Ones are wise." />
+		<cinematic type="dialog" line="Unfulfilled, you returned to hibernation." />
+		<cinematic type="camera" duration="0" posX="571.7" posY="32.6" posZ="614.8" targetX="569" targetY="32.6" targetZ="614.6" />
+		<cinematic type="camera" duration="30000" posX="581.2" posY="28" posZ="615.8" targetX="-99" targetY="0" targetZ="0" />
+		<cinematic type="dialog" line="So the story goes, and so it will go again." />
+		<cinematic type="dialog" line="The bridge you seek shall not be crossed.&#13;Now go." />
+		<cinematic type="fadeout" duration="3" />
+	</tier>
+	<tier type="browser" description="A photograph appears on the scroll." url="http://www.mbs-intl.com/tsw/scroll/scroll_jukebox.htm" browserTitle=" " hideAddress="true" width="960" height="635" />
+	<tier type="location" description="A photograph appears on the scroll." playField="1000" x="178" y="35" z="234" distance="2" yDistance="1" />
+	<tier type="browser" description="The scroll now displays an image. It vibrates slightly as music emanates from it." url="http://www.mbs-intl.com/tsw/scroll/scroll_shoes.htm" browserTitle=" " hideAddress="true" width="960" height="635" />
+	<tier type="location" description="The scroll now displays an image. It vibrates slightly as music emanates from it." playField="1000" x="192" y="29" z="219" distance="2" yDistance="1" />
+	<tier type="browser" description="The scroll is changing and displaying a motion picture." url="http://www.mbs-intl.com/tsw/scroll/scroll_romeo.htm" browserTitle=" " hideAddress="true" width="960" height="635" />
+	<tier type="location" description="The scroll has changed and is displaying a motion picture." playField="7070" x="125" y="30" z="220" distance="8" yDistance="3" />
+	<tier type="browser" description="The scroll is displaying a stage play." url="http://www.mbs-intl.com/tsw/scroll/scroll_play.htm" browserTitle=" " hideAddress="true" width="960" height="635" />
+	<tier type="location" description="The scroll is displaying a stage play." playField="1200" x="327" y="53" z="176" distance="3" yDistance="1" />
+	<tier type="browser" description="A new image appears on the scroll." url="http://www.mbs-intl.com/tsw/scroll/scroll_gypsy.htm" browserTitle=" " hideAddress="true" width="960" height="635" />
+	<tier type="target" description="A new image appears on the scroll." targetName="Anastasia" isOffensiveTarget="false" />
+	<tier type="cinematic" description="Give the scroll to Anastasia." playField="3130" >
+		<cinematic type="fadeout" duration="2" />
+		<cinematic type="dialog" line="" duration="0.5" />
+		<cinematic type="facetarget"/>
+		<cinematic type="camera" duration="0" posX="950" posY="33.4" posZ="830" targetX="955.4" targetY="33.4" targetZ="809.2" />
+		<cinematic type="camera" duration="30000" posX="943" posY="33.4" posZ="800" targetX="955.4" targetY="33.4" targetZ="809.2" />
+		<cinematic type="fadein" duration="10" />
+		<cinematic type="dialog" line="" duration="3" />
+		<cinematic type="dialog" line="Wagon: ..." />
+		<cinematic type="dialog" line="Anastasia: What they asked of such a young girl was wrong, but I still miss them." />
+		<cinematic type="dialog" line="Wagon: ..." />
+		<cinematic type="dialog" line="Anastasia: Yes, you're my family now, Wagon." />
+		<cinematic type="dialog" line="Wagon: ..." />
+		<cinematic type="dialog" line="Anastasia: Me too, Wagon. Me too." />
+		<cinematic type="dialog" line="" duration="1" />
+		<cinematic type="camera" duration="0" posX="949" posY="30.3" posZ="823.6" targetX="952" targetY="32.3" targetZ="811" />
+		<cinematic type="camera" duration="20000" posX="954.15" posY="32.3" posZ="813" targetX="952" targetY="32.3" targetZ="811" />
+		<cinematic type="dialog" line="Oh, hello. What can I do for you?" />
+		<cinematic type="dialog" line="What's that? Sure, I'll have a look." />
+		<cinematic type="dialog" line="" duration="1" />
+		<cinematic type="camera" duration="0" posX="953" posY="32.5" posZ="805" targetX="952" targetY="32" targetZ="811" />
+		<cinematic type="camera" duration="25000" posX="954.15" posY="32" posZ="813" targetX="952" targetY="32" targetZ="811" />
+		<cinematic type="dialog" line="This is no ordinary scroll, is it?" />
+		<cinematic type="dialog" line="I have a way with supposedly 'inanimate' objects." />
+		<cinematic type="dialog" line="Oh look, the scroll is changing. It's a picture of you, Wagon..." />
+		<cinematic type="camera" duration="500" posX="951.4" posY="33.4" posZ="812.3" targetX="955.4" targetY="33.4" targetZ="809.2" />
+		<cinematic type="dialog" line="Wagon: !!!" />
+		<cinematic type="camera" duration="0" posX="951.4" posY="33.4" posZ="812.3" targetX="-99" targetY="0" targetZ="0" />
+		<cinematic type="camera" duration="15000" posX="954.39" posY="31.814325" posZ="815.66" targetX="-99" targetY="0" targetZ="0" />
+		<cinematic type="dialog" line="Anastasia: What? Oh no! Take the scroll back! Please take it and go!" />
+		<cinematic type="camera" duration="0" posX="953.5" posY="31.3" posZ="817" targetX="954.15" targetY="32" targetZ="813" />
+		<cinematic type="camera" duration="20000" posX="954.15" posY="32" posZ="813" targetX="954.15" targetY="32" targetZ="813" />
+		<cinematic type="dialog" line="Oh, I'm sorry, Wagon! I didn't see! I didn't see!" />
+		<cinematic type="dialog" line="It's ok, I'm here. Everything's going to be alright, I promise." />
+		<cinematic type="camera" duration="0" posX="951.4" posY="33.4" posZ="812.3" targetX="-99" targetY="0" targetZ="0" />
+		<cinematic type="camera" duration="10000" posX="949" posY="36" posZ="805" targetX="-99" targetY="0" targetZ="0" />
+		<cinematic type="dialog" line="You got what you came for, thief! Now leave!" />
+		<cinematic type="fadeout" duration="3" />
+	</tier>
+	<tier type="browser" description="You have received a text message from the Oxford camp." url="http://www.mbs-intl.com/tsw/scroll/scroll_arun_text.png" browserTitle="Text Message" hideAddress="true" width="320" height="640" />
+	<tier type="location" description="Return to the Oxford Camp." playField="3090" x="714" y="52" z="858" distance="5" yDistance="1" waypointName="Oxford Camp" />
+	<tier type="cinematic" description="Listen to the Oxford archeologists." playField="3090" speed="2.5" >
+		<cinematic type="fadeout" duration="2" />
+		<cinematic type="dialog" line="" duration="0.5" />
+		<cinematic type="facenpc" name="Montgomery de la Roche"/>
+		<cinematic type="camera" duration="0" posX="702.3" posY="55.9" posZ="862.3" targetX="-99" targetY="0" targetZ="0" />
+		<cinematic type="camera" duration="30000" posX="711.2" posY="52.798439" posZ="857.3" targetX="-99" targetY="0" targetZ="0" />
+		<cinematic type="fadein" duration="5" />
+		<cinematic type="dialog" line="Montgomery: Ah, welcome back. We have learned much since we last spoke." />
+		<cinematic type="dialog" line="Listen to this text..." />
+		<cinematic type="camera" duration="0" posX="714" posY="52.5" posZ="858.8" targetX="715.6" targetY="52.8" targetZ="858.3" />
+		<cinematic type="camera" duration="30000" posX="713" posY="52.5" posZ="859.8" targetX="715.6" targetY="52.8" targetZ="858.3" />
+		<cinematic type="dialog" line="'The Scroll of Aten goes by many names..." />
+		<cinematic type="dialog" line="The Scroll of Knowledge, The World Scroll, The Devouring Scroll...'" />
+		<cinematic type="camera" duration="0" posX="714" posY="52.5" posZ="858.8" targetX="715.8" targetY="52" targetZ="861.2" />
+		<cinematic type="camera" duration="30000" posX="713" posY="52.5" posZ="857.8" targetX="715.8" targetY="52" targetZ="861.2" />
+		<cinematic type="dialog" line="Arun: The Hitchhiker's Guide to the Galaxy?" />
+		<cinematic type="camera" duration="0" posX="713" posY="52.5" posZ="859.8" targetX="715.6" targetY="52.8" targetZ="858.3" />
+		<cinematic type="camera" duration="40000" posX="714" posY="52.5" posZ="858.8" targetX="715.6" targetY="52.8" targetZ="858.3" />
+		<cinematic type="dialog" line="Montgomery: Er um... as I was saying..." />
+		<cinematic type="dialog" line="'The scroll has surfaced multiple times throughout history." />
+		<cinematic type="dialog" line="Its possessor is led to special locations." />
+		<cinematic type="dialog" line="These serve as touchstones, feeding the scroll with new knowledge and unlocking dormant abilities." />
+		<cinematic type="camera" duration="0" posX="710" posY="52.5" posZ="866" targetX="715.6" targetY="52.8" targetZ="858.3" />
+		<cinematic type="camera" duration="50000" posX="715.5" posY="52.5" posZ="865" targetX="715.6" targetY="52.8" targetZ="858.3" />
+		<cinematic type="dialog" line="Legend says what it seeks most is to touch the mind of an immortal," />
+		<cinematic type="dialog" line="to unlock the secrets of life and death." />
+		<cinematic type="dialog" line="Failing in that pursuit, it goes back into hiding," />
+		<cinematic type="dialog" line="awakening again, often centuries later, to try again.'" />
+		<cinematic type="dialog" line="Arun, the other text, please..." />
+		<cinematic type="camera" duration="0" posX="713" posY="52.5" posZ="857.8" targetX="715.8" targetY="52" targetZ="861.2" />
+		<cinematic type="camera" duration="40000" posX="714" posY="52.5" posZ="858.8" targetX="715.8" targetY="52" targetZ="861.2" />
+		<cinematic type="dialog" line="Arun: 'And the Scroll of Aten shall gather the knowledge of man," />
+		<cinematic type="dialog" line="and it shall discover the path to immortality." />
+		<cinematic type="dialog" line="Wholly enlightened, the scroll shall return to its true master..." />
+		<cinematic type="dialog" line="Akhenaten.'" duration="3" />
+		<cinematic type="camera" duration="0" posX="716" posY="52.5" posZ="859.7" targetX="-99" targetY="0" targetZ="0" />
+		<cinematic type="camera" duration="30000" posX="723.3" posY="56.2" posZ="857.3" targetX="-99" targetY="0" targetZ="0" />
+		<cinematic type="dialog" line="Look! There is a new symbol on the scroll." />
+		<cinematic type="dialog" line="Montgomery: It seems your journey is not yet complete." />
+		<cinematic type="fadeout" duration="3" />
+	</tier>
+	<tier type="browser" description="A new image is revealed on the scroll." url="http://www.mbs-intl.com/tsw/scroll/scroll_aten.png" browserTitle=" " hideAddress="true" width="960" height="635" />
+	<tier type="location" description="A new image is revealed on the scroll." playField="3100" x="748" y="70" z="484" distance="5" yDistance="3" waypointName="Pyramid"/>
+	<tier type="cinematic" description="The scroll is reacting to the pyramid." playField="3100">
+		<!-- <cinematic type="facecoords" x="767" z="415"/> -->
+		<cinematic type="fadeout" duration="2" />
+		<cinematic type="dialog" line="" duration="0.5" />
+		<!-- <cinematic type="camera" duration="0" posX="749" posY="75" posZ="474" targetX="-99" targetY="0" targetZ="0" />
+		<cinematic type="camera" duration="20000" posX="758" posY="120" posZ="444" targetX="-99" targetY="0" targetZ="0" /> -->
+		<cinematic type="camera" duration="0" posX="745" posY="66" posZ="490" targetX="758" targetY="75" targetZ="474" />
+		<cinematic type="camera" duration="25000" posX="758" posY="80" posZ="444" targetX="767" targetY="232" targetZ="415" />
+		<cinematic type="fadein" duration="5" />
+		<!-- <cinematic type="facecoords" x="767" z="415"/> -->
+		<cinematic type="animation" description="Animation" animTarget="player">
+			<animation name="normal_emote_look_up" duration="4"/>
+			<animation name="cinematic_human_character_origin_2_3" duration="16"/>
+			<animation name="cinematic_human_character_origin_2_3" duration="15"/>
+		</cinematic>
+		<cinematic type="dialog" line="" duration="7"/>
+		<!-- <cinematic type="camera" duration="0" posX="749" posY="100" posZ="474" targetX="767" targetY="232" targetZ="415" />
+		<cinematic type="camera" duration="12000" posX="767" posY="232" posZ="415" targetX="767" targetY="232" targetZ="415" />
+		<cinematic type="dialog" line="" duration="4"/> -->
+		<cinematic type="camera" duration="0" posX="749" posY="75" posZ="474" targetX="-99" targetY="0" targetZ="0" />
+		<cinematic type="camera" duration="10000" posX="-99" posY="0" posZ="0" targetX="-99" targetY="0" targetZ="0" />
+		<cinematic type="dialog" line="" duration="7.5"/>
+		<cinematic type="camera" duration="0" posX="758" posY="165" posZ="444" targetX="767" targetY="232" targetZ="415" />
+		<cinematic type="camera" duration="6000" posX="767" posY="232" posZ="415" targetX="767" targetY="232" targetZ="415" />
+		<cinematic type="dialog" line="" duration="5"/>
+		<cinematic type="fadeout" duration="2" />
+	</tier>
+	<tier type="browser" description="The scroll is changing rapidly." url="http://www.mbs-intl.com/tsw/scroll/scroll_aten_2.htm" browserTitle=" " hideAddress="true" width="960" height="635" />
+	<tier type="browser" faction="Dragon" description="You have received a text message from headquarters." url="http://www.mbs-intl.com/tsw/scroll/scroll_dragon_text_2.png" browserTitle="Text Message" hideAddress="true" width="320" height="640" />
+	<tier type="target" faction="Dragon" description="Bring the scroll to Jin Jae-Hoon at the Kumiho Hotel in Seoul." targetName="Jin Jae-Hoon" isOffensiveTarget="false" />
+	<tier type="cinematic" faction="Dragon" description="Give the scroll to Jin Jae-Hoon." playField="1200" >
+		<cinematic type="fadeout" duration="2" />
+		<cinematic type="dialog" line="" duration="0.5" />
+		<cinematic type="facetarget" />
+		<cinematic type="camera" duration="0" posX="345.4" posY="42.6" posZ="361.1" targetX="346.7" targetY="44.4" targetZ="342.1" />
+		<cinematic type="camera" duration="40000" posX="346" posY="42.6" posZ="354.5" targetX="346.7" targetY="44.4" targetZ="342.1" />
+		<cinematic type="fadein" duration="10" />
+		<cinematic type="dialog" line="" duration="3" />
+		<cinematic type="dialog" line="When a bee dies, no one notices, but if the last bee dies..." />
+		<cinematic type="dialog" line="Is the last death really more significant than the first?" />
+		<cinematic type="dialog" line="" duration="1" />
+		<cinematic type="camera" duration="0" posX="374.53" posY="47.3" posZ="308.3" targetX="378.6" targetY="47" targetZ="305.1" />
+		<cinematic type="camera" duration="60000" posX="378.6" posY="47.3" posZ="307" targetX="-99" targetY="0" targetZ="0" />
+		<cinematic type="dialog" line="This scroll is quite a find, and to have completed its quest..." />
+		<cinematic type="dialog" line="There are those that would chastise you for such actions, but we know better." />
+		<cinematic type="camera" duration="0" posX="373.9" posY="48" posZ="313.9" targetX="378.6" targetY="47" targetZ="305.1" />
+		<cinematic type="camera" duration="60000" posX="378.6" posY="47" posZ="305.1" targetX="378.6" targetY="47" targetZ="305.1" />
+		<cinematic type="dialog" line="This is no single pollination. You have thrown seeds into a tempest," />
+		<cinematic type="dialog" line="and they will be sewn far and wide." />
+		<cinematic type="camera" duration="0" posX="376.5" posY="47.3" posZ="305.4" targetX="378.6" targetY="47" targetZ="305.1" />
+		<cinematic type="camera" duration="60000" posX="374.2" posY="47.6" posZ="306.1" targetX="378.6" targetY="47" targetZ="305.1" />
+		<cinematic type="dialog" line="To predict the reaping... you have given us much to contemplate." />
+		<cinematic type="dialog" line="And this scroll, as it is, deserves much study." />
+		<cinematic type="dialog" line="Leave it with me, please." />
+		<cinematic type="dialog" line="" duration="1" />
+		<cinematic type="camera" duration="0" posX="373.1" posY="47.5" posZ="303" targetX="-99" targetY="0" targetZ="0" />
+		<cinematic type="camera" duration="30000" posX="366.1" posY="47.5" posZ="299.6" targetX="368.4" targetY="47.5" targetZ="307" />
+		<cinematic type="dialog" line="Someone else would like to see you." />
+		<cinematic type="dialog" line="Please go to the second floor, end of the hallway." />
+		<cinematic type="fadeout" duration="3" />
+	</tier>
+	<tier type="location" faction="Dragon" description="Go to the second floor, end of the hallway." playField="1200" x="373.66" y="52.5" z="306.28" distance="3" yDistance="1" />
+	<tier type="cinematic" faction="Dragon" description="Meet someone upstairs." playField="1200" >
+		<cinematic type="fadeout" duration="2" />
+		<cinematic type="dialog" line="" duration="0.5" />
+		<cinematic type="camera" duration="0" posX="373.27" posY="50.8" posZ="295.96" targetX="373.57" targetY="50.8" targetZ="295.9" />
+		<cinematic type="camera" duration="14000" posX="373.27" posY="52" posZ="295.96" targetX="373.57" targetY="52" targetZ="295.9" />
+		<cinematic type="fadein" duration="10" />
+		<cinematic type="dialog" line="" duration="9" />
+		<cinematic type="dialog" line="'Dduhsi itnuhn kose kiri itda.'" />
+		<cinematic type="camera" duration="0" posX="375" posY="51.8" posZ="295.3" targetX="373.57" targetY="51.8" targetZ="295.9" />
+		<cinematic type="camera" duration="30000" posX="375" posY="52.2" posZ="295.3" targetX="373.57" targetY="52.2" targetZ="295.9" />
+		<cinematic type="dialog" line="It means 'In a place where there is will, there is a road.'" />
+		<cinematic type="dialog" line="Your road has led to an unexpected discovery..." />
+		<cinematic type="camera" duration="0" posX="377.11" posY="52.5" posZ="301.3" targetX="373.57" targetY="51.8" targetZ="295.9" />
+		<cinematic type="camera" duration="60000" posX="375" posY="52.2" posZ="295.3" targetX="373.57" targetY="51.8" targetZ="295.9" />
+		<cinematic type="dialog" line="A new variable for the equations...&#13;A new element on the periodic table, so to speak." />
+		<cinematic type="dialog" line="This is very rare." />
+		<cinematic type="dialog" line="The models are gods, and now they look upon you with favor." />
+		<cinematic type="dialog" line="" duration="1" />
+		<cinematic type="camera" duration="0" posX="376" posY="52.5" posZ="297" targetX="370" targetY="51" targetZ="301" />
+		<cinematic type="camera" duration="100000" posX="370" posY="51" posZ="301" targetX="370" targetY="51" targetZ="301" />
+		<cinematic type="dialog" line="" duration="1" />
+		<cinematic type="dialog" line="How long has it been since..." />
+		<cinematic type="dialog" line="" duration="1" />
+		<cinematic type="dialog" line="You're still shy." />
+		<cinematic type="dialog" line="" duration="1" />
+		<cinematic type="dialog" line="Come in. Lie down." />
+		<cinematic type="dialog" line="" duration="1" />
+		<cinematic type="dialog" line="This is our way." />
+		<cinematic type="dialog" line="Our path..." />
+		<cinematic type="dialog" line="" duration="1" />
+		<cinematic type="camera" duration="0" posX="373.95" posY="52.2" posZ="295.4" targetX="374.3" targetY="52.2" targetZ="295.9" />
+		<cinematic type="camera" duration="18000" posX="373.73" posY="52.2" posZ="295.18" targetX="374.3" targetY="52.2" targetZ="295.9" />
+		<cinematic type="dialog" line="" duration="1" />
+		<cinematic type="dialog" line="-- Ecstasy --" />
+		<cinematic type="dialog" line="" duration="1" />
+		<cinematic type="dialog" line="-- Clarity --" />
+		<cinematic type="dialog" line="" duration="1" />
+		<cinematic type="dialog" line="-- Truth --" />
+		<cinematic type="dialog" line="" duration="1" />
+		<cinematic type="dialog" line="-- Chaos --" />
+		<cinematic type="dialog" line="" duration="1" />
+		<cinematic type="dialog" line="-- Order --" />
+		<cinematic type="camera" duration="450000" posX="365" posY="55" posZ="276" targetX="374.3" targetY="52.2" targetZ="295.9"  />
+		<cinematic type="dialog" line="" duration="3" />
+		<cinematic type="dialog" line="Let us begin." />
+		<cinematic type="camera" duration="400000" posX="366" posY="55" posZ="276" targetX="374.3" targetY="52.2" targetZ="295.9"  />
+		<cinematic type="dialog" line="" duration="8" />
+		<cinematic type="camera" duration="350000" posX="368" posY="55" posZ="276" targetX="374.3" targetY="52.2" targetZ="295.9"  />
+		<cinematic type="dialog" line="----------------------------------&#13;The Scroll&#13;----------------------------------" duration="6" />
+		<cinematic type="dialog" line="" duration="1" />
+		<cinematic type="camera" duration="250000" posX="369" posY="55" posZ="276" targetX="374.3" targetY="52.2" targetZ="295.9"  />
+		<cinematic type="dialog" line="----------------------------------&#13;Written &amp; Scripted&#13;by&#13;SuperJenius&#13;----------------------------------" duration="6" />
+		<cinematic type="dialog" line="" duration="1" />
+		<cinematic type="camera" duration="175000" posX="370" posY="55" posZ="276" targetX="374.3" targetY="52.2" targetZ="295.9"  />
+		<cinematic type="dialog" line="----------------------------------&#13;Untold Stories Mission System&#13;developed by&#13;SuperJenius&#13;----------------------------------" duration="6" />
+		<cinematic type="dialog" line="" duration="1" />
+		<cinematic type="dialog" line="----------------------------------&#13;Thank you for playing!&#13;Please provide feedback in the SWL forums.&#13;----------------------------------" duration="6" />
+		<cinematic type="dialog" line="" duration="4" />
+		<cinematic type="fadeout" duration="5" />
+	</tier>
+	<tier type="browser" faction="Illuminati" description="You have received a text message from headquarters." url="http://www.mbs-intl.com/tsw/scroll/scroll_illuminati_text_2.png" browserTitle="Text Message" hideAddress="true" width="320" height="640" />
+	<tier type="location" faction="Illuminati" description="Bring the scroll to Leah Cassini at Illuminati headquarters." playField="1100" x="222.7" y="35.4" z="291.5" distance="1" yDistance="1" waypointName="Leah Cassini" />
+	<!-- <tier type="target" faction="Illuminati" description="Bring the scroll to Leah Cassini at Illuminati headquarters." targetName="Leah Cassini" isOffensiveTarget="false" /> -->
+	<tier type="cinematic" faction="Illuminati" description="Give the scroll to Leah Cassini." playField="1100" >
+		<cinematic type="fadeout" duration="2" />
+		<cinematic type="dialog" line="" duration="1.0" />
+		<cinematic type="facenpc" name="Leah Cassini"/>
+		<cinematic type="camera" duration="0" posX="223.7" posY="37" posZ="275" targetX="223.7" targetY="35.2" targetZ="291.3" />
+		<cinematic type="camera" duration="30000" posX="223.7" posY="35.2" posZ="291.3" targetX="223.7" targetY="35.2" targetZ="291.3" />
+		<cinematic type="fadein" duration="5" />
+		<cinematic type="dialog" line="" duration="2" />
+		<cinematic type="dialog" line="Oh good, it's here." />
+		<cinematic type="dialog" line="Now, I just need to connect the electrodes to the scroll." />
+		<cinematic type="dialog" line="Check." />
+		<cinematic type="dialog" line="Glowing red lights." />
+		<cinematic type="dialog" line="Check." />
+		<cinematic type="camera" duration="0" posX="222.5" posY="35.4" posZ="291.3" targetX="223.7" targetY="35" targetZ="290.5" />
+		<cinematic type="camera" duration="100000" posX="223.7" posY="35" posZ="290.5" targetX="223.7" targetY="35" targetZ="290.5" />
+		<cinematic type="dialog" line="Finally, I'll press the blinking Enter button, and..." />
+		<cinematic type="dialog" line="" duration="1" />
+		<cinematic type="dialog" line="nothing." />
+		<cinematic type="dialog" line="" duration="1" />
+		<cinematic type="dialog" line="Oh! We forgot to put bras on our heads." />
+		<cinematic type="dialog" line="" duration="0.5" />
+		<cinematic type="camera" duration="0" posX="224.5" posY="34.5" posZ="290.1" targetX="-99" targetY="0" targetZ="0" />
+		<cinematic type="camera" duration="300000" posX="222.47" posY="34.5" posZ="291.69" targetX="-99" targetY="0" targetZ="0" />
+		<cinematic type="dialog" line="This isn't Weird Science! That's what I tell the bosses, but do they listen?" />
+		<cinematic type="dialog" line="I don't know why they send this shit to me." />
+		<cinematic type="dialog" line="I know computers, not magic, or whatever cool word we have for 'magic' these days." />
+		<cinematic type="dialog" line="Sigh." />
+		<cinematic type="camera" duration="0" posX="224.85" posY="35.4" posZ="293.1" targetX="223.7" targetY="35" targetZ="290.5" />
+		<cinematic type="camera" duration="70000" posX="223.7" posY="36.2" posZ="297.9" targetX="223.7" targetY="35" targetZ="290.5" />
+		<cinematic type="dialog" line="Yes, I just said the word 'sigh'. Another one of my adorable idiosyncrasies." />
+		<cinematic type="dialog" line="Leave the scroll with me. I'll scan it and data mine it into oblivion." />
+		<cinematic type="dialog" line="The boss will have my report when I'm done." />
+		<cinematic type="fadeout" duration="3" />
+	</tier>
+	<tier type="target" faction="Illuminati" description="Report to Kirsten Geary at Illuminati headquarters." targetName="Kirsten Geary" isOffensiveTarget="false" />
+	<tier type="cinematic" faction="Illuminati" description="Listen to Ms. Geary." playField="1100" >
+		<cinematic type="fadeout" duration="2" />
+		<cinematic type="dialog" line="" duration="0.5" />
+		<cinematic type="camera" duration="0" posX="280" posY="56.2" posZ="332" targetX="281" targetY="56" targetZ="333.3" />
+		<cinematic type="camera" duration="30000" posX="280" posY="56.2" posZ="334" targetX="281" targetY="56" targetZ="333.3" />
+		<!-- <cinematic type="facenpc" name="Kirsten Geary"/> -->
+		<cinematic type="fadein" duration="5" />
+		<cinematic type="dialog" line="" duration="1" />
+		<cinematic type="dialog" line="What do you think of my shoes? Aren't they lovely?" />
+		<cinematic type="dialog" line="The ultimate in fashion, elegance, comfort, and of course, expense." />
+		<cinematic type="dialog" line="It's my first pair. A pure joy and worth every penny, I assure you." />
+		<cinematic type="camera" duration="0" posX="289" posY="57.4" posZ="339" targetX="284" targetY="57.4" targetZ="335" />
+		<cinematic type="camera" duration="21000" posX="286" posY="57.4" posZ="336" targetX="284" targetY="57.4" targetZ="335" />
+		<cinematic type="dialog" line="I think I'll wear them for the rest of the day..." />
+		<cinematic type="dialog" line="then it's into the bin like every other pair." />
+		<cinematic type="dialog" line="A girl has to maintain her standards." />
+		<cinematic type="camera" duration="0" posX="279" posY="57.4" posZ="332" targetX="-99" targetY="0" targetZ="0" />
+		<cinematic type="camera" duration="30000" posX="280" posY="57.4" posZ="332" targetX="-99" targetY="0" targetZ="0" />
+		<cinematic type="dialog" line="I was so looking forward to buying a month's supply," />
+		<cinematic type="dialog" line="but a blank scroll isn't the same as a blank check, is it?" />
+		<cinematic type="camera" duration="0" posX="284" posY="57.4" posZ="330" targetX="284" targetY="57.4" targetZ="335" />
+		<cinematic type="camera" duration="30000" posX="283" posY="58" posZ="325" targetX="284" targetY="57.4" targetZ="335" />
+		<cinematic type="dialog" line="Next time, maybe bring the scroll to us, before you go all Veronica Mars and solve the case?" />
+		<cinematic type="dialog" line="An impotent artifact is such a turnoff." />
+		<cinematic type="dialog" line="" duration="1" />
+		<cinematic type="camera" duration="0" posX="283" posY="57.4" posZ="333" targetX="-99" targetY="0" targetZ="0" />
+		<cinematic type="camera" duration="30000" posX="285" posY="57.4" posZ="333" targetX="-99" targetY="0" targetZ="0" />
+		<cinematic type="dialog" line="Awwww... I see those little wheels turning in your mind." />
+		<cinematic type="dialog" line="That's so sweet, but you couldn't afford these shoes. Trust me." />
+		<cinematic type="camera" duration="0" posX="279" posY="58" posZ="335" targetX="288.39" targetY="57.5" targetZ="328.76" />
+		<cinematic type="camera" duration="80000" posX="251.5" posY="60" posZ="353" targetX="-99" targetY="0" targetZ="0" />
+		<cinematic type="dialog" line="I tell you what, dear..." />
+		<cinematic type="dialog" line="Every time my feet hurt for the next month, I will think of you.&#13;Deal? Good... and bye." />
+		<cinematic type="dialog" line="" duration="5" />
+		<cinematic type="dialog" line="----------------------------------&#13;The Scroll&#13;----------------------------------" duration="5" />
+		<cinematic type="dialog" line="" duration="1" />
+		<cinematic type="dialog" line="----------------------------------&#13;Written &amp; Scripted&#13;by&#13;SuperJenius&#13;----------------------------------" duration="5" />
+		<cinematic type="dialog" line="" duration="1" />
+		<cinematic type="dialog" line="----------------------------------&#13;Untold Stories Mission System&#13;developed by&#13;SuperJenius&#13;----------------------------------" duration="5" />
+		<cinematic type="dialog" line="" duration="1" />
+		<cinematic type="dialog" line="----------------------------------&#13;Thank you for playing!&#13;Please provide feedback in the SWL forums.&#13;----------------------------------" duration="5" />
+		<cinematic type="dialog" line="" duration="2" />
+		<cinematic type="fadeout" duration="3" />
+	</tier>
+	<tier type="browser" faction="Templar" description="You have received a text message from headquarters." url="http://www.mbs-intl.com/tsw/scroll/scroll_templar_text_2.png" browserTitle="Text Message" hideAddress="true" width="320" height="640" />
+	<tier type="location" faction="Templar" description="Bring the scroll to Dame Julia Beatrix Tyburn in Temple Hall." playField="1000" x="397" y="36" z="292" distance="5" yDistance="1" />
+	<tier type="cinematic" faction="Templar" description="Give the scroll to Dame Julia Beatrix Tyburn." playField="1000" >
+		<cinematic type="fadeout" duration="2" />
+		<cinematic type="dialog" line="" duration="0.5" />
+		<cinematic type="facenpc" name="Dame Julia Beatrix Tyburn"/>
+		<cinematic type="camera" duration="0" posX="393.44" posY="37" posZ="292.41" targetX="397.8" targetY="36.27" targetZ="292.25" />
+		<cinematic type="camera" duration="40000" posX="397.8" posY="36.27" posZ="292.25" targetX="397.8" targetY="36.27" targetZ="292.25" />
+		<cinematic type="fadein" duration="10" />
+		<cinematic type="dialog" line="" duration="1" />
+		<cinematic type="dialog" line="Oh good, you got my message." />
+		<cinematic type="dialog" line="These devices are not as smart as they are made out to be." />
+		<cinematic type="dialog" line="At my age..." />
+		<cinematic type="dialog" line="" duration="1" />
+		<cinematic type="camera" duration="0" posX="377.23" posY="36.27" posZ="317.96" targetX="376.24" targetY="36.27" targetZ="318.57" />
+		<cinematic type="camera" duration="60000" posX="375" posY="36.27" posZ="316.9" targetX="376.24" targetY="36.27" targetZ="318.578" />
+		<cinematic type="dialog" line="Look at the young lady standing over there." />
+		<cinematic type="dialog" line="She is quite striking, isn't she? We all appreciate beauty," />
+		<cinematic type="dialog" line="but when you reach a certain age, it is the youth you admire." />
+		<cinematic type="dialog" line="The young skin, of course, but moreso the energy... the hope... the naivety." />
+		<cinematic type="dialog" line="She has her whole life in front of her." />
+		<cinematic type="camera" duration="0" posX="402.65" posY="36.9" posZ="296.3" targetX="-99" targetY="0" targetZ="0" />
+		<cinematic type="camera" duration="40000" posX="396.61" posY="36.271633" posZ="293" targetX="-99" targetY="0" targetZ="0" />
+		<cinematic type="dialog" line="There are legends, but this scroll..." />
+		<cinematic type="dialog" line="This blank scroll... it does not seem it could change anything." />
+		<cinematic type="camera" duration="0" posX="397.1" posY="36.27" posZ="293.3" targetX="397.8" targetY="36.27" targetZ="292.25" />
+		<cinematic type="camera" duration="40000" posX="394.8" posY="37" posZ="296.42" targetX="397.8" targetY="36.27" targetZ="292.25" />
+		<cinematic type="dialog" line="Nevertheless, we will thoroughly examine the artifact and keep it safe in our vaults." />
+		<cinematic type="dialog" line="Your service is appreciated." />
+		<cinematic type="fadeout" duration="3" />
+	</tier>
+	<tier type="location" faction="Templar" description="Report to Richard Sonnac in Temple Hall." playField="1000" x="338" y="36" z="308" distance="5" yDistance="1" />
+	<tier type="cinematic" faction="Templar" description="Debrief with Richard Sonnac." playField="1000" >
+		<cinematic type="fadeout" duration="2" />
+		<cinematic type="dialog" line="" duration="0.5" />
+		<cinematic type="facenpc" name="Richard Sonnac"/>
+		<cinematic type="camera" duration="0" posX="339.6" posY="36.3" posZ="306" targetX="336.8" targetY="36" targetZ="309.6" />
+		<cinematic type="camera" duration="35000" posX="336.8" posY="36" posZ="309.6" targetX="336.8" targetY="36" targetZ="309.6" />
+		<cinematic type="fadein" duration="5" />
+		<cinematic type="dialog" line="" duration="1" />
+		<cinematic type="dialog" line="I have read the reports. Our best people are examining the scroll," />
+		<cinematic type="dialog" line="but they can't get anything out of it." />
+		<cinematic type="camera" duration="0" posX="343.3" posY="36.3" posZ="309.6" targetX="336.8" targetY="36" targetZ="309.6" />
+		<cinematic type="camera" duration="30000" posX="341.3" posY="36.3" posZ="313.9" targetX="336.8" targetY="36" targetZ="309.6" />
+		<cinematic type="dialog" line="We may have learned more if you had brought us the scroll while it was activated," />
+		<cinematic type="dialog" line="and who knows what events have now been set in motion." />
+		<cinematic type="camera" duration="0" posX="343.5" posY="37" posZ="305.7" targetX="336.8" targetY="36" targetZ="309.6" />
+		<cinematic type="camera" duration="100000" posX="366.3" posY="37" posZ="291.7" targetX="336.8" targetY="36" targetZ="309.6" />
+		<cinematic type="dialog" line="Perhaps it is for the best. Evil comes in many forms." />
+		<cinematic type="dialog" line="Even the most wise may succumb to temptation." />
+		<cinematic type="dialog" line="Time will tell us how this all plays out." />
+		<cinematic type="dialog" line="That is all for now." />
+		<cinematic type="dialog" line="We'll be in touch." />
+		<cinematic type="dialog" line="" duration="4" />
+		<cinematic type="dialog" line="----------------------------------&#13;The Scroll&#13;----------------------------------" duration="5" />
+		<cinematic type="dialog" line="" duration="1" />
+		<cinematic type="dialog" line="----------------------------------&#13;Written &amp; Scripted&#13;by&#13;SuperJenius&#13;----------------------------------" duration="5" />
+		<cinematic type="dialog" line="" duration="1" />
+		<cinematic type="dialog" line="----------------------------------&#13;Untold Stores Mission System&#13;developed by&#13;SuperJenius&#13;----------------------------------" duration="5" />
+		<cinematic type="dialog" line="" duration="1" />
+		<cinematic type="dialog" line="----------------------------------&#13;Thank you for playing!&#13;Please provide feedback in the SWL forums.&#13;----------------------------------" duration="5" />
+		<cinematic type="dialog" line="" duration="2" />
+		<cinematic type="fadeout" duration="3" />
+	</tier>
+</mission>

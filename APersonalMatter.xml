@@ -208,11 +208,10 @@
 		<dialog type="dialog" line="Your kind assistance has been essential in this endeavor." />
 		<dialog type="dialog" line="You have my eternal gratitude." duration="5" />
 	</tier>
-	<tier type="dialog" description="Thank your for playing! Please provide feedback in the TSW forums." >
+	<tier type="dialog" description="Thank your for playing! Please provide feedback in the SWL forums." >
 		<dialog type="dialog" line="----------------------------------&#13;A Personal Matter&#13;----------------------------------" duration="4" />
 		<dialog type="dialog" line="----------------------------------&#13;Written &amp; Scripted&#13;by&#13;SuperJenius&#13;----------------------------------" duration="4" />
 		<dialog type="dialog" line="----------------------------------&#13;Untold Stories Mission System&#13;developed by&#13;SuperJenius&#13;----------------------------------" duration="4" />
-		<dialog type="dialog" line="----------------------------------&#13;Thank you for playing!&#13;Please provide feedback in the TSW forums.&#13;----------------------------------" duration="4" />
+		<dialog type="dialog" line="----------------------------------&#13;Thank you for playing!&#13;Please provide feedback in the SWL forums.&#13;----------------------------------" duration="4" />
 	</tier>
-	<tier type="browser" description="Thank your for playing! Please provide feedback in the TSW forums." url="http://forums.thesecretworld.com/showthread.php?t=82855" />
 </mission>

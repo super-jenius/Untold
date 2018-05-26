@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<mission title="Basic Training" debugMode="false" debugTier="0" >
+	<tier type="target" description="Speak with The Stationmaster in Agartha. (Target him to start a conversation.)&#13;&#13;You can abort this mission at any time by clicking on the X above." targetName="The Stationmaster" isOffensiveTarget="false" />
+	<tier type="dialog" description="Listen to The Stationmaster.&#13;&#13;(You should see dialog in subtitles.)" >
+		<dialog type="dialog" line="----------------------------------&#13;Basic Training&#13;----------------------------------" duration="5" />
+		<dialog type="dialog" gender="male" line="Good day, sir." />
+		<dialog type="dialog" gender="female" line="Good day, madame." />
+		<dialog type="dialog" line="Ah... another seeking to take a peek into what lies under the surface, I gather." />
+		<dialog type="dialog" line="There are stories yet to be told... grand adventures yet to be had." />
+		<dialog type="dialog" line="Unsanctioned adventures, mind you. Stories not bound by canon or decree." />
+		<dialog type="dialog" line="Welcome, then. Welcome, indeed." />
+		<dialog type="dialog" line="My colleagues and I will endeavor to give you a proper tour of the mission system." />
+		<dialog type="dialog" line="As such, we will be 'breaking the fourth wall' as it were." />
+		<dialog type="dialog" line="However, this is not indicative of future missions." />
+		<dialog type="dialog" line="We seek only the highest quality and entertainment." />
+		<dialog type="dialog" line="Perhaps you will play a part in that... but first we must provide you with an education." />
+		<dialog type="dialog" line="Let's get started, shall we? Punctuality is key." />
+		<dialog type="dialog" line="As you are no doubt aware, a mission is made up of multiple tiers." />
+		<dialog type="dialog" line="Tiers in this system are small affairs." />
+		<dialog type="dialog" line="You already completed a tier when you targeted me." />
+		<dialog type="dialog" line="You are in the middle of a dialog tier right now." />
+		<dialog type="dialog" line="Other types of tiers are available as well, and perhaps even more will be added over time." />
+		<dialog type="dialog" line="I won't keep you with all the details, but suffice it to say there is much you can do." />
+		<dialog type="dialog" line="That is all for your first lesson." />
+		<dialog type="dialog" line="A Mr. Boone now awaits you in Kingsmouth Town." />
+	</tier>
+	<tier type="target" description="Go see Jack Boone in Kingsmouth." targetName="Jack Boone" isOffensiveTarget="false" />
+	<tier type="dialog" description="Listen as Jack Boone talks about the dialog system." >
+		<dialog type="dialog" gender="male" line="{{m_Player.m_Name}}... How's the {{m_Player.m_Faction}} treatin' ya, brother?" />
+		<dialog type="dialog" gender="female" line="{{m_Player.m_Name}}... How's the {{m_Player.m_Faction}} treatin' ya, darlin'?" />
+		<dialog type="dialog" line="I reckon you don't feel so 'secret' after a line like that." />
+		<dialog type="dialog" line="Don't fret, I won't overdo it." />
+		<dialog type="dialog" line="That wouldn't be in keepin' with expectations." />
+		<dialog type="dialog" line="You ought to know what the system is capable of, that's all." />
+		<dialog type="dialog" line="We're here to talk about dialog." />
+		<dialog type="dialog" line="As you can see, we communicate through subtitles." />
+		<dialog type="dialog" line="The full power of the written word reigns supreme around here." />
+		<dialog type="dialog" line="Cinematic cameras, animations, voice acting... they're all available for those inclined to put in the effort." />
+		<dialog type="dialog" line="There are other tricks of the trade..." />
+		<dialog type="dialog" line="You need a pause in the conversation, you just fade out for a bit..." />
+		<dialog type="fadeout" duration="1" />
+		<dialog type="dialog" line="... then fade back in... " />
+		<dialog type="fadein" duration="1" />
+		<dialog type="dialog" line="... and continue your dialog." />
+		<dialog type="dialog" line="If I'm talkin' too slow or too fast for ya, you just let us know." />
+		<dialog type="dialog" line="We aim to please." />
+		<dialog type="dialog" gender="male" line="That's my piece. Nice talkin' to ya, but there's more to life than conversation, brother." />
+		<dialog type="dialog" gender="female" line="That's my piece. Nice talkin' to ya, but there's more to life than conversation, darlin'." />
+		<dialog type="dialog" line="Head on down the road to see Sheriff Bannerman. She'll learn you a thing or two." />
+	</tier>
+	<tier type="target" description="Go talk to the Sheriff." targetName="Helen Bannerman" isOffensiveTarget="false" />
+	<tier type="dialog" description="Talk to the Sheriff about combat." >
+		<dialog type="dialog" line="You've got some dangerous lookin' weapons there." />
+		<dialog type="dialog" line="Good. You're gonna need 'em." />
+		<dialog type="dialog" line="There's a time to talk to your friends, and a time to put down your enemies." />
+		<dialog type="dialog" line="The system works how you'd expect." />
+		<dialog type="dialog" line="Pick your enemies, how many ya want to kill, then get to work." />
+		<dialog type="dialog" line="It's that simple." />
+		<dialog type="dialog" line="The church is your next stop. Take out some zombies on your way.&#13;Lord knows we have plenty." />
+	</tier>
+	<tier type="kill" description="Take out some zombies. (The counter should increment as you kill zombies in the area.)" targetName="Ravenous Horde,Returned Townie,Alerted Zombie" targetKills="12" />
+	<tier type="location" description="Go to the church." playField="3030" x="300" y="147" z="454" distance="3" yDistance="1" waypointName = "Church"/>
+	<tier type="target" description="Talk to Henry Hawthorne." targetName="Henry Hawthorne" isOffensiveTarget="false" />
+	<tier type="dialog" description="Henry Hawthorne will teach you about the Location tier." >
+		<dialog type="dialog" line="Great blessings upon you, my child." />
+		<dialog type="dialog" line="You have come to the right place." />
+		<dialog type="dialog" line="Indeed, you may have noticed that your mission advanced as soon as you walked into the church." />
+		<dialog type="dialog" line="The Location tier makes this easy." />
+		<dialog type="dialog" line="Arrive within range of the specified coordinates, and the mission tier will complete." />
+		<dialog type="dialog" line="I'm sure there are a great many uses for this technology, including Investigation missions." />
+		<dialog type="dialog" line="Ah, but for those, you will need additional technical support," />
+		<dialog type="dialog" line="and I'm afraid you won't find much of that around here." />
+		<dialog type="dialog" line="You must journey to Seoul to find the enlightenment you seek.&#13;Safe travels, my child." />
+	</tier>
+	<tier type="location" description="Travel to Seoul." playField="1200" x="0" y="0" z="0" distance="10000" yDistance="10000" />
+	<tier type="location" description="Go to the Blackhole PC bang." playField="1200" x="327" y="53" z="176" distance="3" yDistance="1" waypointName="Blackhole PC"/>
+	<tier type="location" description="Talk to the administrative worker." playField="1200" x="316" y="53" z="175" distance="3" yDistance="1" waypointName="Administrator"/>
+	<!--<tier type="target" description="Talk to the administrative worker." targetName="Worker" isOffensiveTarget="false" />-->	
+	<tier type="dialog" description="Learn about the web browser capabilities." >
+		<dialog type="dialog" line="Biyong-eun seonbullo sigandang cheon-won ibnida ..." />
+		<dialog type="dialog" line="Oh, you {{m_Player.m_Name}}, right? Please excuse." />
+		<dialog type="dialog" line="You here for technical support then. Very good." />
+		<dialog type="dialog" line="You want make Investigation mission, then web browser your best friend." />
+		<dialog type="dialog" line="Of course, player still use browser on their own for research, but you also use to display web site." />
+		<dialog type="dialog" line="I will demonstrate..." />
+	</tier>
+	<tier type="browser" description="You can display a site of your choosing using the web browser. The title bar caption is customizable. (Close the browser to continue.)" url="http://wcs.battle.net/sc2/en/standings" browserTitle="StarCraft II Standings" />
+	<tier type="dialog" description="Learn about the web browser capabilities." >
+		<dialog type="dialog" line="You also use browser to show picture, like so..." />
+	</tier>
+  <tier type="browser" description="Notice that the browser has been resized and the URL has been hidden. (Close the browser to continue.)" url="http://untoldworld.azurewebsites.net/imageviewer.html?src=http://static.fjcdn.com/pictures/Korean+girls+oc_a73171_3850933.jpg" browserTitle="KOREAN GIRLS&#13;They all want to marry me!" hideAddress="true" width="750" height="574" />
+  <tier type="dialog" description="Learn about the web browser capabilities." >
+		<dialog type="dialog" line="Web browser also great for YouTube HTML5 video..." />
+	</tier>
+	<tier type="browser" description="YouTube HTML5 videos can be displayed in the browser. Video quality may be limited. (Close the browser to continue.)" url="http://www.youtube.com/embed/O6HKh0tEUFc?autoplay=1&amp;rel=0&amp;enablejsapi=1&amp;playerapiid=ytplayer&amp;html5=1&amp;vq=hd1080" browserTitle="StarCraft Commentators INSANE!" hideAddress="true" />
+	<tier type="dialog" description="Leave the building." >
+		<dialog type="dialog" line="That pretty cool, huh?" />
+		<dialog type="dialog" line="That all I have to show you." />
+		<dialog type="dialog" line="You get back to your game, so I get back to mine." />
+	</tier>
+	<tier type="location" description="Leave the building." playField="1200" x="327" y="53" z="176" distance="3" yDistance="1" />
+	<tier type="browser" description="Sweet, Space Invaders! I guess a quick game couldn't hurt." url="http://www.somethinghitme.com/projects/canvasinvaders/" browserTitle="INVADERS&#13;Use arrow keys to move, SPACE to fire." hideAddress="true"  width="762" height="800" />
+	<tier type="target" description="Basic training is complete. Go back to Agartha and speak with The Stationmaster." targetName="The Stationmaster" isOffensiveTarget="false" />
+	<tier type="dialog" description="Speak with the Stationmaster." >
+		<dialog type="dialog" line="Ah, welcome back." />
+		<dialog type="dialog" line="I hope you found your tour of the system educational." />
+		<dialog type="dialog" line="If you would be so kind as to provide us with your feedback." />
+		<dialog type="dialog" line="Looking forward... this is just the beginning." />
+		<dialog type="dialog" line="There are so many stories in this 'Secret World' of ours, just waiting to be told." />
+		<dialog type="dialog" line="Where we go from here depends on the community." />
+		<dialog type="dialog" line="Thank you for your time and attention." />
+	</tier>
+	<tier type="dialog" description="Thank your for playing! Please provide feedback in the SWL forums." >
+		<dialog type="dialog" line="----------------------------------&#13;Basic Training&#13;----------------------------------" duration="4" />
+		<dialog type="dialog" line="----------------------------------&#13;Written &amp; Scripted&#13;by&#13;SuperJenius&#13;----------------------------------" duration="4" />
+		<dialog type="dialog" line="----------------------------------&#13;Untold Stories Mission System&#13;developed by&#13;SuperJenius&#13;----------------------------------" duration="4" />
+		<dialog type="dialog" line="----------------------------------&#13;Thank you for playing!&#13;Please provide feedback in the SWL forums.&#13;----------------------------------" duration="4" />
+	</tier>
+</mission>

@@ -1,0 +1,1323 @@
+<?xml version="1.0"?>
+<mission title="Being Carter" debugMode="true" debugTier="25" >
+  <!--Tier 1-->
+  <tier type="location" description="TIER 1/11&#13;You find yourself thinking about Carter. Pay her a visit at Innsmouth Academy." playField="3040" x="306" y="147" z="372" distance="2" yDistance="1" waypointName="Carter" />
+  <tier type="cinematic" description="Listen to Carter." playField="3040" >
+    <cinematic type="fadeout" duration="2" />
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="animation" description="Reset Animation" animTarget="Carter">
+      <animation name="character_idle" />
+    </cinematic>
+    <cinematic type="animation" description="Reset Animation" animTarget="Hayden Montag">
+      <animation name="character_idle" />
+    </cinematic>
+    <cinematic type="animation" description="Reset Animation" animTarget="Annabel Usher">
+      <animation name="character_idle" />
+    </cinematic>
+    <cinematic type="animation" description="Minimal Player Animation" animTarget="player">
+      <animation name="normal_idle" />
+    </cinematic>
+    <cinematic type="camera" duration="0" posX="301" posY="148.3" posZ="377.8" targetX="299.6" targetY="148.3" targetZ="377.7" />
+    <cinematic type="camera" duration="30000" posX="303" posY="148" posZ="379" targetX="307.9" targetY="146.4" targetZ="371.5" ease="Regular.easeIn"/>
+    <cinematic type="fadein" duration="10" />
+    <cinematic type="facenpc" name="Carter"/>
+    <cinematic type="audio" url="http://www.mbs-intl.com/tsw/carter/carter_intro.ogg" volume="30" muteMusic="true"/>
+    <cinematic type="dialog" line="" duration="12" />
+    <cinematic type="dialog" line="----------------------------------&#13;Being Carter&#13;----------------------------------" duration="10" />
+    <cinematic type="dialog" line="" duration="3" />
+    <cinematic type="camera" duration="0" posX="304" posY="147" posZ="375" targetX="307.9" targetY="146.4" targetZ="371.5" />
+    <cinematic type="dialog" line="" duration=".5" />
+    <cinematic type="animation" description="Animations" animTarget="Carter">
+      <animation name="expression_look_left" duration="3"/>
+    </cinematic>
+    <tier type="animation" description="Hayden Animation" animTarget="Hayden Montag">
+      <animation name="character_idle" duration="2" />
+      <animation name="normal_emote_look_backleft" duration="4" />
+      <animation name="character_idle" />
+    </tier>
+    <tier type="animation" description="Hayden Animation" animTarget="Annabel Usher">
+      <animation name="character_idle" duration="1.5"/>
+      <animation name="expression_look_left" />
+    </tier>
+    <cinematic type="dialog" line="" duration=".5" />
+    <cinematic type="dialog" line="You. I know you." />
+    <cinematic type="animation" description="Animations" animTarget="Carter">
+      <animation name="cinematic_expression_handgesturestalkinglong2" duration="2"/>
+      <animation name="normal_emote_additive_eyes_left_long" duration="2"/>
+      <animation name="cinematic_expression_fingersonlipsbrief_considering"/>
+    </cinematic>
+    <cinematic type="dialog" line="I mean, of course I know you, but it's something else..." />
+    <cinematic type="dialog" line="" duration=".5" />
+    <cinematic type="camera" duration="0" posX="305.5" posY="147" posZ="373.5" targetX="307.9" targetY="146.6" targetZ="371.5" />
+    <cinematic type="dialog" line="" duration="1.5" />
+    <cinematic type="animation" description="Animations" animTarget="Carter">
+      <animation name="cinematic_expression_handgesturestalkinglong2" duration="1"/>
+      <animation name="normal_emote_additive_eyes_left_long" duration="2.5"/>
+      <animation name="expression_look_left" />
+    </cinematic>
+    <cinematic type="dialog" gender="male" line="My dream! You're the man of my dream!" />
+    <cinematic type="dialog" gender="female" line="My dream! You're the woman of my dream!" />
+    <cinematic type="camera" duration="0" posX="307" posY="146.5" posZ="372" targetX="-99" />
+    <cinematic type="animation" description="Animations" animTarget="player">
+      <animation name="expression_additive_eyebrows_lowered" duration=".25"/>
+      <animation name="expression_additive_eyebrows_raised" duration="1"/>
+      <animation name="expression_additive_eyebrows_lowered"/>
+    </cinematic>
+    <cinematic type="dialog" line="" duration="1.5" />
+    <cinematic type="camera" duration="0" posX="305.5" posY="147" posZ="373.5" targetX="307.9" targetY="146.6" targetZ="371.5" />
+    <cinematic type="animation" description="Animations" animTarget="Carter">
+      <animation name="expression_additive_speech_interrupted" />
+    </cinematic>
+    <cinematic type="dialog" line="" duration=".75" />
+    <cinematic type="animation" description="Animations" animTarget="Carter">
+      <animation name="normal_emote_handgesture_noshakehead_upperbody" duration="2"/>
+      <animation name="cinematic_expression_handgesturestalkinglong2" duration="1"/>
+      <animation name="normal_emote_additive_eyes_left_long" duration="1"/>
+      <animation name="normal_emote_additive_eyes_down_left_long"/>
+    </cinematic>
+    <cinematic type="dialog" line="Wait! That didn't come out right." />
+    <cinematic type="dialog" line="You were in my dream last night..." />
+    <cinematic type="animation" description="Animations" animTarget="Carter">
+      <animation name="cinematic_expression_holdupheadwithhands_thoughtful"/>
+    </cinematic>
+    <cinematic type="dialog" line="Or were you? So hard to remember..." />
+    <cinematic type="dialog" line="" duration="1"/>
+    <cinematic type="animation" description="Animations" animTarget="Hayden Montag">
+      <animation name="cinematic_expression_handgesturestalkinglong2" duration="1"/>
+      <animation name="expression_additive_eyes_eyedarts_long_both_sides" duration="6"/>
+    </cinematic>
+    <cinematic type="camera" duration="0" posX="307.5" posY="146.5" posZ="368.5" targetX="-99" />
+    <cinematic type="camera" duration="12000" posX="307" posY="146.5" posZ="368" targetX="-99" ease="Regular.easeInOut"/>
+    <cinematic type="animation" description="Animations" animTarget="Carter">
+      <animation name="normal_emote_look_left"/>
+    </cinematic>
+    <cinematic type="animation" description="Animations" animTarget="player">
+      <animation name="expression_look_right" />
+    </cinematic>
+    <cinematic type="dialog" line="Montag: Recalling a dream is not unlike grasping at the ghost of a former lover," />
+    <cinematic type="animation" description="Animations" animTarget="Hayden Montag">
+      <animation name="human_generic_lookat_item"/>
+    </cinematic>
+    <cinematic type="dialog" line="sacrificed by your own hand in the heat of passion." />
+    <cinematic type="camera" duration="0" posX="307" posY="147" posZ="374" targetX="307.9" targetY="146.6" targetZ="371.5" />
+    <cinematic type="animation" description="Animations" animTarget="Carter">
+      <animation name="normal_emote_facial_surprise"/>
+    </cinematic>
+    <cinematic type="dialog" line="" duration="1.5"/>
+    <tier type="animation" description="Animation Test" animTarget="Hayden Montag">
+      <animation name="normal_emote_look_backleft" duration="4" />
+      <animation name="character_idle" />
+    </tier>
+    <cinematic type="dialog" line="Montag: ... in a manner of speaking." />
+    <cinematic type="animation" description="Animations" animTarget="Carter">
+      <animation name="normal_emote_look_left"/>
+    </cinematic>
+    <cinematic type="dialog" line="Carter: Gee, thanks for that Professor Creepshow." />
+    <cinematic type="animation" description="Animations" animTarget="Annabel Usher">
+      <animation name="cinematic_expression_handgesturestalkinglong2" duration="1"/>
+      <animation name="normal_emote_additive_eyes_left_long"/>
+    </cinematic>
+    <cinematic type="animation" description="Animations" animTarget="Carter">
+      <animation name="normal_emote_look_right" duration="2.5"/>
+      <animation name="expression_look_right" duration="1"/>
+      <animation name="normal_emote_additive_eyes_right_long"/>
+    </cinematic>
+    <cinematic type="dialog" line="Annabel: I think what Mr. Montag is trying to say is that it is possible to recount a dream," />
+    <cinematic type="dialog" line="but it may require some effort." />
+    <cinematic type="animation" description="Animations" animTarget="Annabel Usher">
+      <animation name="normal_emote_look_left"/>
+    </cinematic>
+    <cinematic type="dialog" line="Isn't that right, H.J.?" />
+    <cinematic type="animation" description="Animations" animTarget="Hayden Montag">
+      <animation name="normal_emote_look_left" duration="3"/>
+      <animation name="character_idle" />
+    </cinematic>
+    <cinematic type="animation" description="Animations" animTarget="Carter">
+      <animation name="expression_look_left" duration="2.5"/>
+      <animation name="expression_look_right"/>
+    </cinematic>
+    <cinematic type="dialog" line="Montag: Yes, yes... of course." />
+    <cinematic type="animation" description="Animations" animTarget="Annabel Usher">
+      <animation name="cinematic_expression_handgesturestalkinglong2" duration="1"/>
+      <animation name="normal_emote_additive_eyes_left_long" duration="3"/>
+      <animation name="expression_look_left" />
+    </cinematic>
+    <cinematic type="dialog" line="Annabel: Perhaps if you start from the beginning?" />
+    <cinematic type="animation" description="Animations" animTarget="Carter">
+      <animation name="expression_additive_eyes_eyedarts_long_both_sides" duration="2"/>
+      <animation name="cinematic_expression_fingersonlips_considering"/>
+    </cinematic>
+    <cinematic type="camera" duration="0" posX="305.5" posY="147" posZ="373.5" targetX="307.9" targetY="146.6" targetZ="371.5" />
+    <cinematic type="camera" duration="30000" posX="307.9" posY="146.8" posZ="371.5" targetX="307.9" targetY="146.6" targetZ="371.5" ease="Regular.easeIn"/>
+    <cinematic type="dialog" line="Carter: Well, let me think..." />
+    <cinematic type="dialog" line="I was at the skate park with Danny..." />
+    <cinematic type="fadeout" duration="3" />
+  </tier>
+  <tier type="animation" description="Reset Animation" animTarget="Carter">
+    <animation name="character_idle" />
+  </tier>
+  <tier type="animation" description="Reset Animation" animTarget="Hayden Montag">
+    <animation name="character_idle" />
+  </tier>
+  <tier type="animation" description="Reset Animation" animTarget="Annabel Usher">
+    <animation name="character_idle" />
+  </tier>
+  <tier type="animation" description="Reset Animation" animTarget="player">
+    <animation name="character_idle" />
+  </tier>
+
+  <!--Tier 2-->
+  <tier type="location" description="TIER 2/11&#13;Go see Danny at the skate park in Kingsmouth." playField="3030" x="420" y="140" z="655" distance="12" yDistance="5" waypointName="Skate Park" />
+  <tier type="location" description="TIER 2/11&#13;Carter talked to Danny face-to-face. Stand near the barrel to continue recounting her dream." playField="3030" x="421" y="139.7" z="653.5" distance="1" yDistance="1" waypointName="Carter"/>
+  <tier type="cinematic" description="Listen to Carter." playField="3030" >
+    <cinematic type="fadeout" duration="2" />
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="facenpc" name="Danny Dufresne"/>
+    <cinematic type="animation" description="Danny Animation" animTarget="Danny Dufresne">
+      <animation name="cinematic_expression_handgesturestalkinglong" duration="6"/>
+      <animation name="normal_emote_dance_robotdance_2" duration="6.5"/>
+      <animation name="normal_emote_laugh_out_loud" duration="3"/>
+      <animation name="normal_emote_laugh_big" duration="6" />
+      <animation name="normal_emote_giggle" />
+    </cinematic>
+    <cinematic type="animation" description="Carter Animation" animTarget="player">
+      <animation name="normal_idle" duration="4"/>
+      <animation name="normal_emote_laugh_out_loud" duration="4"/>
+      <animation name="normal_emote_laugh_big" duration="6"/>
+      <animation name="normal_emote_dance_samba" duration="7"/>
+      <animation name="normal_emote_laugh_out_loud" duration="2.2"/>
+      <animation name="normal_emote_giggle" duration="1.6"/>
+      <animation name="normal_emote_idlepose_lefthandonhip" />
+    </cinematic>
+    <cinematic type="camera" duration="0" posX="429" posY="139.5" posZ="655" targetX="-99" />
+    <!--<cinematic type="dialog" line="" duration=".01" />-->
+    <!--<cinematic type="camera" duration="30000" posX="420" posY="139.5" posZ="657" targetX="-99" ease="Regular.easeOut"/>-->
+    <cinematic type="camera" duration="30000" posX="422" posY="139.5" posZ="659" targetX="-99" ease="Regular.easeOut"/>
+    <cinematic type="looks" description="Apply Danny Looks" looksTarget="Danny Dufresne">
+      <!--<looks description="npc_new_england_male_danny_dufresne" />-->
+      <looks rdbid="7574379" description="head_1_new-england_male_danny_dufresne"/>
+      <!--<looks rdbid="7419338" description="cit_chest_male_tshirt_basic_small_logo_01_conspiracy_theorist_grey" />-->
+      <looks rdbid="7729447" description="tshirt" />
+      <looks rdbid="7420167" description="pants" />
+      <!--<looks rdbid="7420274" description="jacket" />-->
+      <looks rdbid="7554039" description="jacket" />
+      <looks rdbid="7553517" description="shoes" />
+    </cinematic>
+    <cinematic type="fadein" duration="10" />
+    <cinematic type="looks" description="Apply Carter Looks" looksTarget="player">
+      <looks rdbid="7569838" description="head_1_new-england_female_carter_gameplay" />
+      <looks rdbid="7116432" description="CC_hair_female" configuration="18625"/>
+      <looks rdbid="7729481" description="shirt" />
+      <looks rdbid="7419974" description="coat" />
+      <!--<looks rdbid="7700547" description="jacket" />-->
+      <looks rdbid="7419496" description="pants" />
+      <!--<looks rdbid="8150248" description="pants" />-->
+      <!--<looks rdbid="8395604" description="granny panties" />-->
+      <looks rdbid="7356216" description="shoes" />
+      <!--<looks rdbid="8229384" description="shoes" />-->
+      <looks rdbid="7419046" description="hands" />
+      <looks rdbid="7994021" description="earrings" />
+    </cinematic>
+    <cinematic type="dialog" line="I was at the skate park with Danny." />
+    <cinematic type="dialog" line="We were talking... joking... laughing." />
+    <cinematic type="dialog" line="It must have been before everything went wrong... before the fog." />
+    <cinematic type="dialog" line="Katana Guy and Headphones Girl in full effect!" />
+    <cinematic type="dialog" line="If you had been standing over my bed at that moment, you'd have seen a big smile on my face." />
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="camera" duration="0" posX="421.3" posY="139.3" posZ="652" targetX="420.46" targetY="139.3" targetZ="654.94"/>
+    <cinematic type="animation" description="Danny Animation" animTarget="Danny Dufresne">
+      <animation name="cinematic_human_generic_talking_gesture_left_hand_04_Male" duration="3"/>
+      <animation name="normal_idle"/>
+    </cinematic>
+    <cinematic type="dialog" line="Danny: Hey! You changed your hair." />
+    <!--<cinematic type="camera" duration="0" posX="420.37" posY="139.3" posZ="655.5" targetX="-99"/>
+    <cinematic type="dialog" line="" duration=".01" />-->
+    <cinematic type="camera" duration="0" posX="420.37" posY="139.3" posZ="655.5" targetX="-99"/>
+    <cinematic type="animation" description="Carter Animation" animTarget="player">
+      <animation name="normal_emote_scratch_hair" duration="2.5"/>
+      <animation name="normal_emote_idlepose_lefthandonhip" />
+    </cinematic>
+    <cinematic type="dialog" line="Carter: It's about time you noticed, you dope!" />
+    <cinematic type="camera" duration="0" posX="421.3" posY="139.3" posZ="652" targetX="420.46" targetY="139.3" targetZ="654.94"/>
+    <cinematic type="animation" description="Danny Animation" animTarget="Danny Dufresne">
+      <animation name="cinematic_human_generic_talking_gesture_two_handed_big" duration="3"/>
+      <animation name="cinematic_expression_headleanleft" duration="1.5"/>
+      <animation name="cinematic_human_generic_talking_gesture_shoulders_up_Male" duration="1.8"/>
+      <animation name="normal_idle" duration="1.5"/>
+      <animation name="cinematic_human_generic_talking_gesture_right_hand_04" duration="3"/>
+      <animation name="normal_idle"/>
+    </cinematic>
+    <cinematic type="dialog" line="Danny: Come on, I noticed! How could I miss it?" />
+    <cinematic type="dialog" line="I was just waiting for the right moment." />
+    <cinematic type="dialog" line="It looks awesome!" />
+    <cinematic type="camera" duration="0" posX="420.37" posY="139.3" posZ="655.5" targetX="-99"/>
+    <cinematic type="dialog" line="" duration=".01" />
+    <cinematic type="camera" duration="0" posX="420.37" posY="139.3" posZ="655.5" targetX="-99"/>
+    <cinematic type="animation" description="Carter Animation" animTarget="player">
+      <animation name="normal_emote_smile" duration="2"/>
+      <animation name="normal_emote_idlepose_teenagepunk" duration="4.5"/>
+      <animation name="normal_emote_giggle" duration="2"/>
+      <animation name="normal_emote_shiftweight_leftfootback"/>
+    </cinematic>
+    <cinematic type="dialog" line="Carter: Thanks! Consider it my own personal brand of rebellion." />
+    <cinematic type="camera" duration="0" posX="421.3" posY="139.3" posZ="652" targetX="420.46" targetY="139.3" targetZ="654.94"/>
+    <cinematic type="animation" description="Danny Animation" animTarget="Danny Dufresne">
+      <animation name="cinematic_expression_pointhere_righthererightnow" duration="2"/>
+      <animation name="normal_emote_giggle" duration="1.5"/>
+      <animation name="normal_emote_shiftweight_leanright" duration="2.5"/>
+      <animation name="cinematic_expression_handgesturestalkingshort"/>
+    </cinematic>
+    <cinematic type="dialog" line="Danny: Look out, world!" />
+    <cinematic type="dialog" line="" duration="2" />
+    <cinematic type="dialog" line="Hey, speaking of the right moment... I've been meaning to ask you something." />
+    <cinematic type="camera" duration="0" posX="420.37" posY="139.3" posZ="655.5" targetX="-99"/>
+    <cinematic type="dialog" line="" duration=".01" />
+    <cinematic type="camera" duration="0" posX="420.37" posY="139.3" posZ="655.5" targetX="-99"/>
+    <cinematic type="animation" description="Carter Animation" animTarget="player">
+      <animation name="normal_idle" duration=".75"/>
+      <animation name="expression_additive_eyebrows_raised" duration="2"/>
+      <animation name="expression_additive_eyebrows_lowered"/>
+    </cinematic>
+    <cinematic type="dialog" line="Carter: Oh?" />
+    <cinematic type="animation" description="Danny Animation" animTarget="Danny Dufresne">
+      <animation name="normal_emote_rub_neck_back_righthand"/>
+    </cinematic>
+    <cinematic type="camera" duration="0" posX="421.3" posY="139.3" posZ="652" targetX="420.46" targetY="139.3" targetZ="654.94"/>
+    <cinematic type="dialog" line="Danny: Yeah, but it's kinda awkward." />
+    <cinematic type="camera" duration="0" posX="420.37" posY="139.3" posZ="655.5" targetX="-99"/>
+    <cinematic type="dialog" line="" duration=".01" />
+    <cinematic type="camera" duration="0" posX="420.37" posY="139.3" posZ="655.5" targetX="-99"/>
+    <cinematic type="animation" description="Carter Animation" animTarget="player">
+      <animation name="cinematic_human_generic_talking_gesture_left_hand_04" duration="2.5" />
+      <animation name="normal_emote_shiftweight_leanright"/>
+    </cinematic>
+    <cinematic type="dialog" line="Carter: You know you can ask me anything." />
+    <cinematic type="animation" description="Danny Animation" animTarget="Danny Dufresne">
+      <animation name="normal_emote_kickdirt_right" duration="4.4"/>
+      <animation name="normal_emote_kickdirt_left" duration="4"/>
+      <animation name="cinematic_expression_handgesturestalkingshort" duration="4"/>
+      <animation name="cinematic_expression_headleanright" />
+    </cinematic>
+    <cinematic type="camera" duration="0" posX="421.3" posY="139.3" posZ="652" targetX="420.46" targetY="139.3" targetZ="654.94"/>
+    <cinematic type="dialog" line="Danny: Uhm..." duration="2.5" />
+    <cinematic type="camera" duration="0" posX="420.45" posY="139.3" posZ="654.33" targetX="-99"/>
+    <cinematic type="dialog" line="" duration=".01" />
+    <cinematic type="camera" duration="0" posX="420.45" posY="139.3" posZ="654.33" targetX="-99"/>
+    <cinematic type="animation" description="Carter Animation" animTarget="player">
+      <animation name="normal_idle" duration=".5"/>
+      <animation name="expression_additive_eyebrows_raised" duration=".1"/>
+      <animation name="expression_additive_smile_subtle" duration="1.9"/>
+      <animation name="expression_additive_eyebrows_lowered"/>
+    </cinematic>
+    <cinematic type="dialog" line="Carter: Yes, Danny?" duration="2"/>
+    <cinematic type="camera" duration="0" posX="421.3" posY="139.3" posZ="652" targetX="420.46" targetY="139.3" targetZ="654.94"/>
+    <cinematic type="dialog" line="Danny: Well... kids at school have been talking about this thing..." />
+    <cinematic type="dialog" line="&quot;Friends with Benefits&quot;" />
+    <cinematic type="dialog" line="Have you heard of it?" />
+    <cinematic type="camera" duration="0" posX="420.30" posY="139.3" posZ="654.2" targetX="-99"/>
+    <cinematic type="dialog" line="" duration=".01" />
+    <cinematic type="camera" duration="30000" posX="420.45" posY="139.3" posZ="654.33" targetX="-99"/>
+    <cinematic type="animation" description="Carter Animation" animTarget="player">
+      <animation name="normal_idle" duration=".5"/>
+      <animation name="expression_additive_speech_interrupted" duration="2"/>
+      <animation name="normal_idle"/>
+    </cinematic>
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="dialog" line="Of all the things he could have asked me, I did not expect that!" />
+    <cinematic type="dialog" line="I mean... Friends with Benefits?" />
+    <cinematic type="dialog" line="I was shocked... stunned... speechless." />
+    <cinematic type="animation" description="Danny Animation" animTarget="Danny Dufresne">
+      <animation name="normal_emote_laugh_big" duration="6"/>
+      <animation name="normal_emote_laugh_point" duration="7.5"/>
+      <animation name="normal_emote_laugh_big" duration="6"/>
+      <animation name="normal_emote_laugh_point" duration="7.5"/>
+      <animation name="normal_emote_cough_big" duration="5"/>
+      <animation name="normal_emote_laugh_big" duration="6"/>
+    </cinematic>
+    <cinematic type="camera" duration="0" posX="420.78" posY="139.3" posZ="653.2" targetX="420.46" targetY="139.3" targetZ="654.94"/>
+    <cinematic type="dialog" line="Then, before I could even think about what to say, he started laughing..." />
+    <cinematic type="dialog" line="at me!" />
+    <cinematic type="looks" description="Pantless Carter" looksTarget="player" keepLooks="true">
+      <looks rdbid="7419496" description="Remove pants" removeLooks="true"/>
+      <looks rdbid="8395604" description="granny panties" />
+    </cinematic>
+    <cinematic type="camera" duration="0" posX="421.36" posY="139.3" posZ="656.4" targetX="-99"/>
+    <cinematic type="dialog" line="" duration=".01" />
+    <cinematic type="camera" duration="0" posX="421.36" posY="139.3" posZ="656.4" targetX="-99"/>
+    <cinematic type="animation" description="Carter Animation" animTarget="player">
+      <animation name="normal_emote_look_down" duration="1.5"/>
+      <animation name="normal_emote_scared_lookleftright_looping" duration="4"/>
+    </cinematic>
+    <cinematic type="dialog" line="Because I wasn't wearing any pants!" />
+    <cinematic type="dialog" line="It's a dream! Clothing can go missing at any time!" />
+    <cinematic type="dialog" line="And if you want to get into someone's pants, you shouldn't laugh when they come off!" />
+    <tier type="looks" description="Carter blink" looksTarget="player" keepLooks="true">
+      <looks rdbid="6940248" description="npc_new-england_female_carter" />
+    </tier>
+    <cinematic type="dialog" line="" duration=".3" />
+    <tier type="looks" description="Carter blink" looksTarget="player" keepLooks="true">
+      <looks rdbid="6940248" description="npc_new-england_female_carter" removeLooks="true"/>
+      <looks rdbid="7569838" description="head_1_new-england_female_carter_gameplay" />
+    </tier>
+    <cinematic type="dialog" line="I was definitely no longer smiling in my bed!" />
+    <tier type="looks" description="Carter blink" looksTarget="player" keepLooks="true">
+      <looks rdbid="6940248" description="npc_new-england_female_carter" />
+    </tier>
+    <cinematic type="dialog" line="" duration=".3" />
+    <tier type="looks" description="Carter blink" looksTarget="player" keepLooks="true">
+      <looks rdbid="6940248" description="npc_new-england_female_carter" removeLooks="true"/>
+      <looks rdbid="7569838" description="head_1_new-england_female_carter_gameplay" />
+    </tier>
+    <cinematic type="animation" description="Carter Animation" animTarget="player">
+      <animation name="normal_emote_cry" duration="4"/>
+      <animation name="cinematic_expression_shakehead_losthope" duration="7.4"/>
+      <!--<animation name="normal_emote_cry" duration="4"/>
+      <animation name="cinematic_expression_shakehead_losthope" duration="7.4"/>-->
+    </cinematic>
+    <cinematic type="dialog" line="Thoroughly humiliated, I ran out of there crying and went to the church." />
+    <cinematic type="looks" description="Carter" looksTarget="player">
+      <looks rdbid="6940248" description="npc_new-england_female_carter" />
+    </cinematic>
+    <cinematic type="fadeout" duration="3" />
+  </tier>
+  <tier type="looks" description="Reset Danny Looks" looksTarget="Danny Dufresne">
+    <looks rdbid="6699649" description="Danny" />
+  </tier>
+  <tier type="looks" description="Reset Looks" looksTarget="player" resetLooks="true"/>
+
+  <!--Tier 3-->
+  <tier type="location" description="TIER 3/11&#13;Follow Carter's tracks to the church." playField="3030" x="308" y="146" z="446" distance="5" yDistance="3" waypointName="Church"/>
+  <tier type="looks" description="Apply Carter Looks" looksTarget="player">
+    <looks rdbid="6940248" description="npc_new-england_female_carter" />
+  </tier>
+  <tier type="dialog" description="TIER 3/11&#13;Carter continues recounting the dream.">
+    <dialog type="dialog" line="When I got to the steps the church... Danny was there... he was different." />
+    <dialog type="dialog" line="He had a look in his eyes, a hunger." />
+    <dialog type="dialog" line="Then he attacked me! I had no choice!" />
+    <dialog type="dialog" line="I had no choice." />
+  </tier>
+  <tier type="looks" description="Danny Zombies" looksTarget="Returned Townie" targetQty="99" invisible="true">
+    <looks rdbid="6699649" description="Danny" />
+  </tier>
+  <tier type="kill" description="TIER 3/11&#13;Kill Danny.&#13;&#13;(If you can't find Danny nearby, then kill a Returned Townie zombie.)" targetName="Returned Townie" targetKills="1"/>
+  <tier type="location" description="TIER 3/11&#13;Go in the church to see Reverend Hawthorne." playField="3030" x="284" y="148" z="474" distance="3" yDistance="1" waypointName="Rev. Hawthorne"/>
+  <tier type="animation" description="Carter Animation" animTarget="player">
+    <animation name="cinematic_expression_shakehead_losthope" duration="9.5"/>
+    <animation name="human_generic_lookat_item" duration="6.5"/>
+    <animation name="normal_emote_rub_face"/>
+  </tier>
+  <tier type="animation" description="Hawthorne Animation" animTarget="Henry Hawthorne">
+    <animation name="character_idle" duration="9"/>
+    <animation name="normal_emote_give_item_lefthand_upperbody" duration="4"/>
+    <animation name="character_idle"/>
+  </tier>
+  <tier type="dialog" description="TIER 3/11&#13;Carter continues recounting the dream.">
+    <dialog type="dialog" line="As angry as I was at Danny, the thought of killing him..." />
+    <dialog type="dialog" line="It was too much." />
+    <dialog type="dialog" line="Rev. Hawthorne: Perhaps this will raise your spirits, child." />
+    <dialog type="dialog" line="He handed me a flyer for &quot;Ladies and Gentlemen's Night&quot; in London." />
+    <dialog type="dialog" line="Not exactly what you'd expect from your local minister." />
+    <dialog type="dialog" line="The next thing I knew, I was there, standing in the bar..." />
+  </tier>
+  <tier type="looks" description="Reset Looks" looksTarget="player" resetLooks="true"/>
+  <tier type="dialog" description="TIER 3/11&#13;Carter continues recounting the dream." skipPrev="true" noBell="true">
+    <dialog type="dialog" line="" duration="1" />
+  </tier>
+  <tier type="browser" description="Reverend Hawthorned handed you a flyer.  Go the bar shown in the flyer." url="http://www.mbs-intl.com/tsw/carter/carter_invitation.jpg" browserTitle="Flyer" hideAddress="true" width="1365" height="742" />
+
+  <!--Tier 4-->
+  <tier type="location" description="TIER 4/11&#13;Go to the bar shown in the flyer." playField="1000" x="180.8" y="30" z="227" distance="15" yDistance="5" skipPrev="true" noBell="true"/>
+  <tier type="looks" description="Hostess (before entering club)" looksTarget="Civilian" playField="1000" x="180.5" y="30" z="226.5" distance="2" yDistance="1" >
+    <looks rdbid="7863544" description="head" />
+    <looks rdbid="8934275" description="dress" />
+    <looks rdbid="8325418" description="neck" />
+    <looks rdbid="8865237" description="makeup" />
+    <looks rdbid="7116432" description="hair" />
+    <looks rdbid="8934276" description="hands" />
+    <looks rdbid="8934279" description="ears" />
+    <looks rdbid="8229384" description="feet" />
+  </tier>
+  <tier type="location" description="TIER 4/11&#13;Go to the bar shown in the flyer." playField="1000" x="177.3" y="30" z="228" distance="5" yDistance="1" />
+  <tier type="cinematic" description="Listen to Carter." playField="1000" contAudio="true">
+    <cinematic type="fadeout" duration="2" />
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="audio" url="http://www.mbs-intl.com/tsw/carter/horned_god_party.ogg" volume="40" muteMusic="true"/>
+    <cinematic type="facecoords" x="170" z="225"/>
+    <cinematic type="looks" description="Hostess (after entering club)" looksTarget="Civilian" playField="1000" x="180.5" y="30" z="226.5" distance="2" yDistance="1" >
+      <looks rdbid="7863544" description="head" />
+      <looks rdbid="8934275" description="dress" />
+      <looks rdbid="8325418" description="neck" />
+      <looks rdbid="8865237" description="makeup" />
+      <looks rdbid="7116432" description="hair" />
+      <looks rdbid="8934276" description="hands" />
+      <looks rdbid="8934279" description="ears" />
+      <looks rdbid="8229384" description="feet" />
+    </cinematic>
+    <!--<cinematic type="animation" description="Eve Animation" animTarget="Civilian" playField="1000" x="164.1" y="30" z="219.5" distance="1" yDistance="1">
+    <animation name="normal_emote_hoe_touchmybody_looping" />
+  </cinematic>-->
+    <cinematic type="looks" description="Nude Bling" looksTarget="Civilian" playField="1000" x="167.6" y="30" z="229.47" distance=".5" yDistance="1">
+      <looks rdbid="6869385" description="head" />
+      <looks rdbid="8907654" description="chest bling" />
+      <looks rdbid="8907650" description="glasses" />
+      <looks rdbid="8907652" description="neck" />
+      <looks rdbid="8907646" description="hat" />
+      <looks rdbid="7116432" description="hair" />
+      <looks rdbid="8734703" description="pants" />
+      <looks rdbid="8734702" description="feet" />
+    </cinematic>
+    <cinematic type="looks" description="Gold Gentleman" looksTarget="Civilian" playField="1000" x="167.1" y="30" z="227.8" distance=".5" yDistance="1">
+      <looks rdbid="7218604" description="head" />
+      <looks rdbid="8342505" description="chest" />
+      <looks rdbid="8342504" description="jacket" />
+      <looks rdbid="8342517" description="pants" />
+      <looks rdbid="8342538" description="feet" />
+      <looks rdbid="8231364" description="monocle" />
+    </cinematic>
+    <!--<cinematic type="animation" description="Make it rain" animTarget="Civilian" playField="1000" x="167.1" y="30" z="227.8" distance=".5" yDistance="1">
+    <animation name="normal_idle" duration="5" />
+    <animation name="normal_emote_make_it_rain" />
+  </cinematic>-->
+    <cinematic type="looks" description="Lady Dress" looksTarget="Graduate Student" playField="1000" x="172" y="30" z="217.3" distance="1" yDistance="1" >
+      <looks rdbid="8102929" description="dress" />
+      <looks rdbid="7993408" description="neck" />
+      <looks rdbid="7351662" description="head" />
+      <looks rdbid="7116432" description="hair" />
+      <looks rdbid="7994005" description="hands" />
+      <looks rdbid="7994006" description="hands" />
+      <looks rdbid="8229384" description="feet" />
+    </cinematic>
+    <cinematic type="looks" description="Man in Robe" looksTarget="Civilian" playField="1000" x="172" y="30" z="218.5" distance="1" yDistance="1">
+      <looks rdbid="8939684" description="robe" />
+      <looks rdbid="8258184" description="male chest" />
+      <looks rdbid="7692050" description="neck" />
+      <looks rdbid="7418761" description="hands" />
+      <looks rdbid="7210478" description="head" />
+      <looks rdbid="8319174" description="underwear" />
+      <looks rdbid="9117907" description="feet" />
+    </cinematic>
+    <cinematic type="looks" description="Zamira" looksTarget="Zamira Vata" >
+      <looks rdbid="7569855" description="Zamira head" />
+      <looks rdbid="8102944" description="dress" />
+      <looks rdbid="7993461" description="neck" />
+      <looks rdbid="7116432" description="hair" />
+      <looks rdbid="8426229" description="hands" />
+      <looks rdbid="7420527" description="earrings" />
+      <looks rdbid="7564925" description="feet" />
+    </cinematic>
+    <cinematic type="looks" description="Konrad" looksTarget="Konrad Engel">
+      <looks rdbid="7569924" description="Konrad head" />
+      <looks rdbid="8157716" description="jacket" />
+      <looks rdbid="8157714" description="chest" />
+      <looks rdbid="7993461" description="neck" />
+      <looks rdbid="7116432" description="hair" />
+      <looks rdbid="8157718" description="legs" />
+      <looks rdbid="7418796" description="feet" />
+    </cinematic>
+    <cinematic type="looks" description="Tom Cruise" looksTarget="Personal Assistant" playField="1000" x="170" y="30" z="233" distance="2" yDistance="1" >
+      <looks rdbid="8859864" description="Tom Cruise" />
+    </cinematic>
+    <cinematic type="looks" description="SnM Guy" looksTarget="Civilian" playField="1000" x="168.8" y="30" z="232.4" distance="1" yDistance="1" >
+      <looks rdbid="7990762" description="head" />
+      <looks rdbid="8761572" description="blindfold" />
+      <looks rdbid="8268489" description="neck" />
+      <looks rdbid="8319172" description="speedo" />
+      <looks rdbid="7692668" description="feet" />
+      <looks rdbid="7691857" description="hands" />
+    </cinematic>
+    <cinematic type="looks" description="Adam" looksTarget="Civilian" playField="1000" x="163.6" y="30" z="228" distance="2" yDistance="1">
+      <looks rdbid="9138373" description="cit_multislot_male_nude" />
+      <looks rdbid="6869383" description="head" />
+      <looks rdbid="7210372" description="london head" />
+    </cinematic>
+    <cinematic type="looks" description="Eve" looksTarget="Civilian" playField="1000" x="164.1" y="30" z="219.5" distance="3" yDistance="2">
+      <!--<looks rdbid="9138326" description="cit_multislot_female_nude" />-->
+      <looks rdbid="7116432" description="hair" configuration="4580"/>
+      <looks rdbid="7211982" description="head" />
+      <looks rdbid="8748185" description="makeup" />
+    </cinematic>
+    <cinematic type="looks" description="Eve body delayed to prevent hair color change" looksTarget="Civilian" playField="1000" x="164.1" y="30" z="219.5" distance="3" yDistance="2" keepLooks="true" delay="1000">
+      <looks rdbid="9138326" description="cit_multislot_female_nude" />
+    </cinematic>   
+    <cinematic type="dialog" line="" duration="2"/>
+    <cinematic type="camera" duration="0" posX="183.2" posY="29.3" posZ="228.1" targetX="180.75" targetY="29.6" targetZ="226.6"/>
+    <cinematic type="camera" duration="16000" posX="180.75" posY="29.6" posZ="226.6" targetX="180.75" targetY="29.6" targetZ="226.6"/>
+    <cinematic type="fadein" duration="10" />
+    <cinematic type="looks" description="Carter Tux" looksTarget="player" delay="0">
+      <looks rdbid="7569838" description="head_1_new-england_female_carter_gameplay" />
+      <looks rdbid="8227413" description="cit_chest_female_shirt_bowtie_01_white" />
+      <looks rdbid="8227414" description="cit_back_female_jacket_suit_11_black" />
+      <looks rdbid="8227416" description="cit_legs_female_pants_suit_07_black" />
+      <looks rdbid="8229384" description="cit_feet_female_shoe_highheel_09_with_strap_black" />
+      <looks rdbid="7419046" description="cit_hands_female_jewelry_bracelets_02_bracelet" />
+      <looks rdbid="7116432" description="CC_hair_female" configuration="18625" />
+    </cinematic>
+    <cinematic type="dialog" line="The next thing I knew, I was there, standing in the bar." />
+    <cinematic type="dialog" line="I guess sex was on the brain." />
+    <cinematic type="dialog" line="First &quot;Friends with Benefits&quot; and now this." />
+    <cinematic type="camera" duration="0" posX="173.87" posY="29.3" posZ="218.63" targetX="172.14" targetY="29.6" targetZ="217.64"/>
+    <cinematic type="camera" duration="8000" posX="173.68" posY="29.6" posZ="216.61" targetX="172.78" targetY="29.6" targetZ="218.36"/>
+    <cinematic type="dialog" line="Ladies..." duration="5"/>
+    <cinematic type="camera" duration="0" posX="170.36" posY="29.6" posZ="231.57" targetX="170" targetY="29.6" targetZ="232.72"/>
+    <cinematic type="camera" duration="6000" posX="171.08" posY="29.6" posZ="230.88" targetX="169.04" targetY="29.6" targetZ="232.29"/>
+    <cinematic type="dialog" line="Gentlemen..." duration="5"/>
+    <cinematic type="camera" duration="0" posX="167.28" posY="29.6" posZ="227.17" targetX="167.98" targetY="29.6" targetZ="229.02"/>
+    <cinematic type="camera" duration="6000" posX="168.53" posY="29.6" posZ="228.4" targetX="167.93" targetY="29.4" targetZ="229.41"/>
+    <cinematic type="animation" description="Bling Girl Animation" animTarget="Civilian" playField="1000" x="167.6" y="30" z="229.47" distance=".5" yDistance="1">
+      <animation name="normal_emote_hoe_touchmybody" />
+    </cinematic>
+    <cinematic type="dialog" line="&quot;Entertainment.&quot;" duration="5"/>
+    <cinematic type="animation" description="Animations" animTarget="player">
+      <animation name="expression_look_side_to_side"/>
+    </cinematic>
+    <cinematic type="camera" duration="0" posX="177.3" posY="29.6" posZ="228" targetX="-99"/>
+    <cinematic type="camera" duration="10000" posX="-99" targetX="-99" />
+    <cinematic type="dialog" line="A night to remember, and I dressed the part." duration="6"/>
+    <cinematic type="camera" duration="0" posX="164.55" posY="29.7" posZ="219.20" targetX="163.97" targetY="29.7" targetZ="219.20"/>
+    <cinematic type="camera" duration="10000" posX="164.2" posY="29.7" posZ="219.20" targetX="163.97" targetY="29.7" targetZ="219.20"/>
+    <cinematic type="dialog" line="I wandered over to a dark corner and talked to &quot;Eve&quot;."/>
+    <cinematic type="fadeout" duration="3" />
+  </tier>
+  <!--<tier type="looks" description="Reset Looks" looksTarget="player" resetLooks="true"/>-->
+  <!--<tier type="dialog" description="TIER 4/11&#13;Talk to Eve near the stairs.">
+    <dialog type="dialog" line="After Reset" duration="2" />
+  </tier>-->
+  <tier type="looks" description="Reapply Carter Tux" looksTarget="player" delay="5000">
+    <looks rdbid="7569838" description="head_1_new-england_female_carter_gameplay" />
+    <looks rdbid="8227413" description="cit_chest_female_shirt_bowtie_01_white" />
+    <looks rdbid="8227414" description="cit_back_female_jacket_suit_11_black" />
+    <looks rdbid="8227416" description="cit_legs_female_pants_suit_07_black" />
+    <looks rdbid="8229384" description="cit_feet_female_shoe_highheel_09_with_strap_black" />
+    <looks rdbid="7419046" description="cit_hands_female_jewelry_bracelets_02_bracelet" />
+    <looks rdbid="7116432" description="CC_hair_female" configuration="18625" />
+  </tier>
+  <tier type="location" description="TIER 4/11&#13;Talk to Eve near the stairs." playField="1000" x="164" y="30" z="219" distance="2.5" yDistance="1" waypointName="Eve"/>
+  <tier type="cinematic" description="Listen to Carter." playField="1000" contAudio="true">
+    <cinematic type="fadeout" duration="2" />
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="facecoords" x="163.97" z="219.20"/>
+    <cinematic type="looks" description="Reapply Eve" looksTarget="Civilian" playField="1000" x="164.1" y="30" z="219.5" distance="3" yDistance="2">
+      <looks rdbid="7211982" description="head" />
+      <looks rdbid="8748185" description="makeup" />
+      <looks rdbid="7116432" description="hair" configuration="4580"/>
+    </cinematic>
+    <cinematic type="looks" description="Eve body delayed to prevent hair color change" looksTarget="Civilian" playField="1000" x="164.1" y="30" z="219.5" distance="3" yDistance="2" keepLooks="true" delay="1000">
+      <looks rdbid="9138326" description="cit_multislot_female_nude" />
+    </cinematic>
+    <cinematic type="dialog" line="" duration=".5" />
+    <cinematic type="camera" duration="0" posX="165" posY="29" posZ="218.5" targetX="163.97" targetY="28.5" targetZ="219.20"/>
+    <cinematic type="camera" duration="15000" posX="165" posY="29.5" posZ="220" targetX="163.97" targetY="29.6" targetZ="219.20" ease="Regular.easeInOut"/>
+    <cinematic type="fadein" duration="10" />
+    <cinematic type="dialog" line="" duration="13"/>
+    <cinematic type="animation" description="Eve Animation" animTarget="Civilian" playField="1000" x="164.1" y="30" z="219.5" distance="3" yDistance="2" speed="2">
+      <animation name="expression_additive_smirk"/>
+      <animation name="cinematic_expression_handonheart_believeme" duration="2.6"/>
+      <animation name="cinematic_human_generic_talking_gesture_left_hand_03" duration="4"/>
+      <animation name="cinematic_expression_headleanleft" duration="2"/>
+    </cinematic>
+    <cinematic type="looks" description="Reapply Carter Tux" looksTarget="player" >
+      <looks rdbid="7569838" description="head_1_new-england_female_carter_gameplay" />
+      <looks rdbid="8227413" description="cit_chest_female_shirt_bowtie_01_white" />
+      <looks rdbid="8227414" description="cit_back_female_jacket_suit_11_black" />
+      <looks rdbid="8227416" description="cit_legs_female_pants_suit_07_black" />
+      <looks rdbid="8229384" description="cit_feet_female_shoe_highheel_09_with_strap_black" />
+      <looks rdbid="7419046" description="cit_hands_female_jewelry_bracelets_02_bracelet" />
+      <looks rdbid="7116432" description="CC_hair_female"  configuration="18625" />
+    </cinematic>
+    <cinematic type="dialog" line="Eve: Welcome to the Garden of Eve." duration="3"/>
+    <cinematic type="dialog" line="Can I interest you in any fruit?" duration="4"/>
+    <cinematic type="camera" duration="0" posX="163.43" posY="29.5" posZ="218.05" targetX="-99"/>
+    <cinematic type="animation" description="Carter Animation" animTarget="player">
+      <animation name="cinematic_human_generic_talking_gesture_two_handed_small" duration="3.45"/>
+      <animation name="expression_look_right" duration="3"/>
+    </cinematic>
+    <cinematic type="dialog" line="Carter: Um..." duration="2"/>
+    <cinematic type="animation" description="Eve Animation" animTarget="Civilian" playField="1000" x="164.1" y="30" z="219.5" distance="3" yDistance="2" speed="2">
+      <animation name="expression_look_left"/>
+    </cinematic>
+    <cinematic type="camera" duration="0" posX="165" posY="29.5" posZ="217" targetX="164" targetY="29.5" targetZ="227.7"/>
+    <cinematic type="camera" duration="50000" posX="164" posY="29.5" posZ="227.7" targetX="164" targetY="29.5" targetZ="227.7"/>
+    <cinematic type="dialog" line="Eve: Perhaps Adam is more to your taste, then?"/>
+    <cinematic type="camera" duration="0" posX="164.5" posY="29.5" posZ="225" targetX="164" targetY="29.5" targetZ="227.7"/>
+    <cinematic type="camera" duration="30000" posX="164" posY="29.5" posZ="227.7" targetX="164" targetY="29.5" targetZ="227.7"/>
+    <cinematic type="animation" description="Adam Animation" animTarget="Civilian" playField="1000" x="163.6" y="30" z="228" distance="2" yDistance="1">
+      <animation name="expression_look_right"/>
+    </cinematic>
+    <cinematic type="dialog" line="" duration="4"/>
+    <cinematic type="camera" duration="0" posX="163.43" posY="29.5" posZ="218.05" targetX="-99"/>
+    <cinematic type="animation" description="Carter Animation" animTarget="player">
+      <animation name="cinematic_human_generic_talking_gesture_shoulders_up" duration="2"/>
+      <animation name="normal_idle" />
+    </cinematic>
+    <cinematic type="dialog" line="Carter: I..." duration="2"/>
+    <cinematic type="camera" duration="0" posX="165" posY="29.5" posZ="220" targetX="163.97" targetY="29.6" targetZ="219.20"/>
+    <cinematic type="animation" description="Eve Animation" animTarget="Civilian" playField="1000" x="164.1" y="30" z="219.5" distance="3" yDistance="2" speed="2">
+      <animation name="cinematic_human_generic_talking_gesture_right_hand_03" duration="4"/>
+      <animation name="cinematic_expression_handonheart_believeme" duration="2.6"/>
+      <animation name="cinematic_expression_fingersonlips_considering"/>
+    </cinematic>
+    <cinematic type="dialog" line="Eve: You are the Perfect Gentleman, aren't you?" duration="4"/>
+    <cinematic type="dialog" line="No worries, there is always time to turn over a new leaf." duration="4"/>
+    <cinematic type="dialog" line="I bet you like to Sextus, hmmmm?" duration="4"/>
+    <cinematic type="camera" duration="0" posX="164.7" posY="29.7" posZ="219.20" targetX="-99"/>
+    <cinematic type="animation" description="Carter Animation" animTarget="player">
+      <animation name="normal_emote_facial_headtiltback"/>
+    </cinematic>
+    <cinematic type="looks" description="Gentleman Swap" looksTarget="Civilian" playField="1000" x="164.1" y="30" z="219.5" distance="3" yDistance="2">
+      <looks rdbid="7544929" description="old gentleman head" />
+      <looks rdbid="6960817" description="facial hair" />
+      <looks rdbid="8157714" description="chest" />
+      <looks rdbid="8157715" description="cit_back_female_jacket_suit_11_black" />
+      <looks rdbid="8157717" description="cit_legs_female_pants_suit_07_black" />
+      <looks rdbid="7418818" description="cit_feet_female_shoe_highheel_09_with_strap_black" />
+      <looks rdbid="7994016" description="cit_hands_female_jewelry_bracelets_02_bracelet" />
+      <looks rdbid="7987819" description="Top Hat" />
+      <looks rdbid="8231366" description="Monocle" />
+    </cinematic>
+    <cinematic type="dialog" line="Carter: To what?" duration="2"/>
+    <cinematic type="camera" duration="0" posX="165" posY="29.5" posZ="220" targetX="163.97" targetY="29.6" targetZ="219.20"/>
+    <cinematic type="animation" description="Gentleman Animation" animTarget="Civilian" playField="1000" x="164.1" y="30" z="219.5" distance="3" yDistance="2" speed="2">
+      <animation name="cinematic_human_generic_talking_gesture_two_handed_big"/>
+    </cinematic>
+    <cinematic type="dialog" line="Gentleman: I said... Would you like me to get you a Sextus?" duration="4"/>
+    <!--<cinematic type="camera" duration="0" posX="164.7" posY="29.7" posZ="219.20" targetX="-99"/>
+    <cinematic type="animation" description="Carter Animation" animTarget="player">
+      <animation name="expression_additive_eyebrows_raised"/>
+      <animation name="expression_additive_speech_interrupted" />
+    </cinematic>
+    <cinematic type="dialog" line="Carter: What the...?"/>-->
+    <cinematic type="camera" duration="0" posX="165.2" posY="29.5" posZ="231.5" targetX="180.7" targetY="29.5" targetZ="226"/>
+    <cinematic type="camera" duration="4000" posX="165.21" posY="30.5" posZ="231.51" targetX="180.7" targetY="29.5" targetZ="225"/>
+    <cinematic type="animation" description="Everyone Jazz Hands" animTarget="*"  targetQty="99">
+      <animation name="character_idle" duration="1.5"/>
+      <animation name="normal_emote_jazzhands"/>
+    </cinematic>
+    <cinematic type="dialog" line="" duration="1"/>
+    <cinematic type="looks" description="Carter Nude Female" looksTarget="player" gender="female">
+      <looks rdbid="9138326" description="cit_multislot_female_nude" />
+      <looks rdbid="7569838" description="head_1_new-england_female_carter_gameplay" />
+      <looks rdbid="7116432" description="CC_hair_female"  configuration="18625"/>
+    </cinematic>
+    <!--<cinematic type="looks" description="Carter Nude Male v 3.3 (female model forces male head)" looksTarget="player" gender="male">
+      <looks rdbid="9138326" description="cit_multislot_female_nude" />
+      <looks rdbid="6869379" description="CC_headmesh_cau_female_01" configuration="4343" />
+      <looks rdbid="7116432" description="CC_hair_female"  configuration="18625"/>
+      <looks rdbid="7116447" description="CC_hair_tint"  configuration="4556"/>
+      <looks rdbid="6960816" description="CC_facial_hair_female" configuration="6684"/>
+    </cinematic>-->
+    <cinematic type="looks" description="Carter Nude Male (female model forces male head)" looksTarget="player" gender="male">
+      <looks rdbid="7569838" description="head_1_new-england_female_carter_gameplay" />
+      <looks rdbid="7116432" description="CC_hair_female"  configuration="18625"/>
+      <looks rdbid="8907654" description="chest bling" />
+      <looks rdbid="8266685" description="bikini" />
+      <looks rdbid="8229384" description="cit_feet_female_shoe_highheel_09_with_strap_black" />
+      <looks rdbid="7419046" description="cit_hands_female_jewelry_bracelets_02_bracelet" />
+    </cinematic>
+    <cinematic type="dialog" line="Bar Patrons: Sextus!!!" duration="3"/>
+    <cinematic type="camera" duration="0" posX="170.2" posY="29.5" posZ="219.5" targetX="-99"/>
+    <cinematic type="camera" duration="30000" posX="-99" targetX="-99"/>
+    <cinematic type="animation" description="Carter Animation" animTarget="player">
+      <animation name="normal_emote_look_down" duration="1.5"/>
+      <animation name="normal_emote_scared_lookleftright_looping" duration="12"/>
+      <animation name="normal_idle"/>
+    </cinematic>
+    <cinematic type="dialog" line="" duration="1"/>
+    <cinematic type="dialog" line="Carter: Ah!"/>
+    <cinematic type="dialog" line="Suddenly, I was the &quot;Entertainment&quot;."/>
+    <cinematic type="dialog" line="Nude entertainment!"/>
+    <cinematic type="dialog" line="Have I mentioned how much I hate dreams!"/>
+    <cinematic type="fadeout" duration=".01" />
+    <cinematic type="audio" stop="true" />
+    <cinematic type="dialog" line="" duration="1"/>
+    <cinematic type="audio" url="http://www.mbs-intl.com/tsw/carter/hotel_reveal.ogg" volume="40" muteMusic="true"/>
+    <cinematic type="dialog" line="A blink later..."/>
+    <cinematic type="camera" duration="0" posX="182" posY="34" posZ="330" targetX="160" targetY="37" targetZ="337"/>
+    <cinematic type="camera" duration="20000" posX="160" posY="37" posZ="337" targetX="160" targetY="37" targetZ="337"/>
+    <cinematic type="fadein" duration="3" />
+    <cinematic type="dialog" line="I found myself standing in the lobby of a hotel.&#13;A very strange hotel." duration="8"/>
+    <cinematic type="fadeout" duration="8"/>
+  </tier>
+  <tier type="looks" description="Gentleman Swap" looksTarget="Civilian" playField="1000" x="164.1" y="30" z="219.5" distance="3" yDistance="2">
+    <looks rdbid="7544929" description="old gentleman head" />
+    <looks rdbid="6960817" description="facial hair" />
+    <looks rdbid="8157714" description="chest" />
+    <looks rdbid="8157715" description="cit_back_female_jacket_suit_11_black" />
+    <looks rdbid="8157717" description="cit_legs_female_pants_suit_07_black" />
+    <looks rdbid="7418818" description="cit_feet_female_shoe_highheel_09_with_strap_black" />
+    <looks rdbid="7994016" description="cit_hands_female_jewelry_bracelets_02_bracelet" />
+    <looks rdbid="7987819" description="Top Hat" />
+    <looks rdbid="8231366" description="Monocle" />
+  </tier>
+
+  <!--Tier 5-->
+  <tier type="location" description="TIER 5/11&#13;Follow Carter's footsteps and continue the dream." playField="7080" x="153" y="30" z="335" distance="50" yDistance="10" />
+  <tier type="looks" description="Carter" looksTarget="player" delay="5000">
+    <looks rdbid="6940248" description="npc_new-england_female_carter"/>
+  </tier>
+  <tier type="location" description="TIER 5/11&#13;Follow Carter's footsteps and continue the dream." playField="7080" x="153.6" y="34.1" z="325.1" distance="3" yDistance="1" />
+  <tier type="location" description="TIER 5/11&#13;Get on the bed." playField="7080" x="151.83" y="34.58" z="321.85" distance="1" yDistance="1" />
+  <tier type="cinematic" description="Carter's Tabula Rasa Dream." playField="7080" contAudio="true">
+    <cinematic type="fadeout" duration="3" />
+    <cinematic type="audio" url="http://www.mbs-intl.com/tsw/carter/tabula_rasa.ogg" volume="30"/>
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="camera" duration="0" posX="149" posY="38" posZ="338" targetX="149" targetY="45" targetZ="338"/>
+    <cinematic type="camera" duration="40000" posX="138.5" posY="34" posZ="349.5" targetX="149" targetY="32" targetZ="338" ease="Regular.easeInOut"/>
+    <cinematic type="facecoords" x="155.37" z="321.34"/>
+    <cinematic type="fadein" duration="10" />
+    <cinematic type="looks" description="Reapply Carter looks" looksTarget="player">
+      <looks rdbid="6940248" description="npc_new-england_female_carter" />
+    </cinematic>
+    <cinematic type="animation" description="Carter Sleep" animTarget="player">
+      <animation name="normal_emote_sleep"/>
+    </cinematic>
+    <cinematic type="dialog" line="" duration="7"/>
+    <cinematic type="dialog" line="This hotel..."/>
+    <cinematic type="dialog" line="I was certain I'd never been here before, but it was also strangely familiar."/>
+    <cinematic type="dialog" line="Like a long forgotten dream on the edge of memory."/>
+    <cinematic type="dialog" line="" duration="3"/>
+    <cinematic type="camera" duration="0" posX="154.7" posY="35" posZ="325.3" targetX="151.83" targetY="33" targetZ="321.85"/>
+    <cinematic type="camera" duration="45000" posX="152.7" posY="34.1" posZ="320.05" targetX="151.83" targetY="33" targetZ="321.85" ease="Regular.easeInOut"/>
+    <cinematic type="dialog" line="I laid in the bed for what must have been hours..."/>
+    <cinematic type="dialog" line="or was it only seconds?"/>
+    <cinematic type="dialog" line="Dreamtime is hard to interpret, ya know?"/>
+    <cinematic type="dialog" line="I dozed off and started to dream."/>
+    <cinematic type="dialog" line="A dream within a dream, just like in the movies."/>
+    <cinematic type="dialog" line="A stream of familiar voices flowed into the unconciousness..."/>
+    <cinematic type="dialog" line="Be&#9;&#9;&#9;&#9;Listen&#13;mindful&#9;&#9;&#9;&#9;to&#13;of&#9;&#9;&#9;&#9;the&#13;the&#9;&#9;&#9;&#9;voices&#13;voices.&#9;&#9;&#9;&#9;...&#13;" duration="1"/>
+    <cinematic type="dialog" line="They&#13;&#9;called&#13;&#9;&#9;me&#13;&#9;&#9;&#9;Subject&#13;&#9;&#9;&#9;&#9;28.&#13;&#13;&#13;&#13;&#13;&#13;&#13;&#13;&#13;&#13;" duration="1"/>
+    <cinematic type="dialog" line="There's something down there." duration="1"/>
+    <cinematic type="dialog" line="They will&#9;&#9;&#9;&#9;that&#13;whisper..." duration="1"/>
+    <cinematic type="dialog" line="My gifts&#13;&#9;allow me&#13;&#9;&#9;to protect&#13;&#9;&#9;&#9;myself and&#13;&#9;&#9;&#9;&#9;this playground.&#13;&#13;&#13;&#13;&#13;&#13;&#13;" duration="1"/>
+    <cinematic type="dialog" line="&#13;&#13;&#9;&#9;&#9;&#9;Something old.&#13;&#13;" duration="1"/>
+    <cinematic type="dialog" line="in&#13;your&#13;sleep." duration="1"/>
+    <cinematic type="dialog" line="&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;Something terrifying.&#13;&#13;" duration="1"/>
+    <cinematic type="dialog" line="Loneliness is&#13;&#9;just craving&#13;&#9;&#9;for something&#13;&#9;&#9;&#9;containing nought&#13;&#9;&#9;&#9;&#9;but empty calories.&#13;&#13;&#13;&#13;" duration="1"/>
+    <cinematic type="dialog" line="There are only two things worse than an empty canvas:&#13;&#13;death and taxes.&#13;&#13;&#13;&#13;" duration="1"/>
+    <cinematic type="dialog" line="I should very much like my teddy now." duration="1"/>
+    <cinematic type="dialog" line="" duration="2"/>
+    <cinematic type="dialog" line="Then the voices stopped, and I looked around."/>
+    <cinematic type="dialog" line="I was surrounded by bright lights and big city, black ooze dripping from the buildings."/>
+    <cinematic type="dialog" line="Standing outside a restaurant, I smelled sushi..."/>
+    <cinematic type="fadeout" duration="5"/>
+  </tier>
+
+  <!--Tier 6-->
+  <tier type="location" description="TIER 6/11&#13;Go to the next location in Carter's dream." playField="3070" x="285" y="85" z="573" distance="4" yDistance="1" waypointName="Diner"/>
+  <tier type="cinematic" description="Carter's Tokyo Dream." playField="3070" contAudio="true">
+    <cinematic type="fadeout" duration="3" />
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="camera" duration="0" posX="435" posY="85" posZ="627" targetX="466" targetY="110" targetZ="614"/>
+    <cinematic type="camera" duration="15000" posX="435" posY="90" posZ="627" targetX="441" targetY="110" targetZ="587" ease="Regular.easeInOut"/>
+    <!--<cinematic type="facecoords" x="295.4" z="578.4"/>-->
+    <cinematic type="facecoords" x="299" z="573"/>
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="fadein" duration="10" />
+    <cinematic type="audio" url="http://www.mbs-intl.com/tsw/carter/MilkshakeGirlSong.ogg" volume="40" muteMusic="true"/>
+    <cinematic type="dialog" line="" duration="3" />
+    <cinematic type="dialog" line="I was surrounded by bright lights and big city..." duration-="5"/>
+    <cinematic type="camera" duration="0" posX="372" posY="88" posZ="645" targetX="358.5" targetY="95" targetZ="661.2"/>
+    <cinematic type="camera" duration="7000" posX="376.5" posY="95" posZ="640" targetX="358.5" targetY="110" targetZ="661.2" ease="Regular.easeInOut"/>
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="dialog" line="black ooze dripping from the buildings." duration="5"/>
+    <cinematic type="looks" description="Mei Ling" looksTarget="player">
+      <looks rdbid="7028883" description="mei_ling" />
+    </cinematic>
+    <cinematic type="camera" duration="0" posX="281.1" posY="85" posZ="570.1" targetX="281.15" targetY="85" targetZ="564.6"/>
+    <cinematic type="camera" duration="15000" posX="281.3" posY="95" posZ="580" targetX="281.15" targetY="92" targetZ="564.6" ease="Regular.easeInOut"/>
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="dialog" line="Standing outside a restaurant, I smelled sushi..." duration="4"/>
+    <cinematic type="dialog" line="but I tasted... milk and sugar?" duration="4"/>
+    <cinematic type="dialog" line="And I heard music... really cool music."/>
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="camera" duration="0" posX="264" posY="105" posZ="656" targetX="270.5" targetY="110" targetZ="665"/>
+    <cinematic type="camera" duration="15000" posX="267" posY="114" posZ="660" targetX="270.5" targetY="117.5" targetZ="665" ease="Regular.easeOut"/>
+    <cinematic type="dialog" line="Some kind of monster dropped from one of the buildings."/>
+    <cinematic type="dialog" line="Instead of running away, I ran towards it..."/>
+    <cinematic type="dialog" line="and used my super powers to strike it down, Headphones Girl style!"/>
+    <cinematic type="dialog" line="I was such a badass!"/>
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="camera" duration="0" posX="299" posY="85" posZ="573" targetX="-99"/>
+    <cinematic type="camera" duration="15000" posX="-99" targetX="-99" ease="Regular.easeInOut"/>
+    <cinematic type="dialog" line="That's when I realized I was not myself." duration="4"/>
+    <cinematic type="dialog" line="I was someone else." duration="3"/>
+    <cinematic type="dialog" line="Someone like you." duration="4"/>
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="fadeout" duration="4"/>
+  </tier>
+  <tier type="looks" description="Reapply Mei Ling" looksTarget="player" delay="5000">
+    <looks rdbid="7028883" description="mei_ling" />
+  </tier>
+  <!--<tier type="audio" url="http://www.mbs-intl.com/tsw/carter/MilkshakeGirlSong.ogg" volume="30" loop="true"/>-->
+  <tier type="kill" description="TIER 6/11&#13;Hunt down and kill Hounds of Jingoku." targetName="Hound of Jigoku,Mongrel of Jigoku" targetKills="6"/>
+  <!--<tier type="audio" stop="true" />-->
+  <tier type="looks" description="Rest looks" looksTarget="player" resetLooks="true" />
+  <tier type="dialog" description="TIER 7/11&#13;Carter continues recounting the dream.">
+    <dialog type="dialog" line="" duration="1" />
+    <dialog type="dialog" line="I struck down the last beast, then I was myself again." />
+    <dialog type="dialog" line="I was standing on a playground in front of a little boy." />
+    <dialog type="dialog" line="I know this boy. I've seen him in my visions, or whatever you wanna call them." />
+    <dialog type="dialog" line="He's, for lack of a better word, a friend." />
+  </tier>
+
+  <!--Tier 7-->
+  <tier type="location" description="TIER 7/11&#13;Find the little boy on the playground." playField="3070" x="813" y="78" z="180" distance="20" yDistance="3" />
+  <tier type="location" description="TIER 7/11&#13;Stand near the see-saw facing the little boy." playField="3070" x="810.75" y="78" z="180" distance="2" yDistance="1" waypointName="Carter"/>
+  <tier type="cinematic" description="Carter's Tokyo Dream." playField="3070" contAudio="true">
+    <cinematic type="fadeout" duration="3" />
+    <cinematic type="audio" url="http://www.mbs-intl.com/tsw/carter/playground.ogg" volume="40" muteMusic="true"/>
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="facenpc" name="Jung" />
+    <cinematic type="camera" duration="0" posX="828" posY="78.4" posZ="192" targetX="830" targetY="76.8" targetZ="194"/>
+    <cinematic type="camera" duration="20000" posX="827.2" posY="80" posZ="189.3" targetX="830" targetY="76.8" targetZ="194" ease="Regular.easeInOut"/>
+    <cinematic type="fadein" duration="5" />
+    <cinematic type="looks" description="Little Boy" looksTarget="Jung">
+      <looks rdbid="7509410" description="npc_bluemoutain_child_thomas_delapore" />
+    </cinematic>
+    <cinematic type="dialog" line="" duration="15" />
+    <cinematic type="looks" description="Apply Carter Looks" looksTarget="player">
+      <looks rdbid="6940248" description="npc_new-england_female_carter" />
+    </cinematic>
+    <cinematic type="animation" description="Animations" animTarget="Jung">
+      <!--<animation name="jung_tokyo_playfield_seesaw_idle" duration="1"/>-->
+      <animation name="cinematic_jung_m_story"  duration="1.4"/>
+      <animation name="cinematic_jung_m_story"/>
+    </cinematic>
+    <cinematic type="dialog" line="" duration="2" />
+    <cinematic type="camera" duration="0" posX="-99" targetX="813.35" targetY="76.8" targetZ="180.75"/>
+    <cinematic type="camera" duration="20000" posX="811.5" posY="77.5" posZ="180.75" targetX="813.35" targetY="76.8" targetZ="180.75" ease="Regular.easeOut"/>
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="dialog" line="Jung: Have you come again?"/>
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="dialog" line="I like it when you visit."/>
+    <cinematic type="dialog" line="You don't see me as the others do."/>
+    <cinematic type="dialog" line="" duration=".9" />
+    <cinematic type="dialog" line="You are not afraid."/>
+    <!--<cinematic type="dialog" line="" duration=".5" />-->
+    <cinematic type="dialog" line="Perhaps I should not be afraid."/>
+    <cinematic type="dialog" line="Perhaps I should not hide."/>
+    <cinematic type="dialog" line="" duration=".3" />
+    <cinematic type="looks" description="Apply Carter Looks" looksTarget="player">
+      <looks rdbid="6940248" description="npc_new-england_female_carter" />
+    </cinematic>
+    <!--<cinematic type="looks" description="Flicker Jung" looksTarget="Jung">
+      <looks rdbid="7998650" description="jung" />
+    </cinematic>
+    <cinematic type="dialog" line="" duration=".2" />
+    <cinematic type="looks" description="Flicker Little Boy" looksTarget="Jung">
+      <looks rdbid="7509410" description="npc_bluemoutain_child_thomas_delapore" />
+    </cinematic>
+    <cinematic type="dialog" line="" duration=".1" />-->
+    <!--<cinematic type="looks" description="Flicker Jung" looksTarget="Jung">
+      <looks rdbid="7998650" description="jung" />
+    </cinematic>
+    <cinematic type="dialog" line="" duration=".2" />
+    <cinematic type="looks" description="Flicker Little Boy" looksTarget="Jung">
+      <looks rdbid="7509410" description="npc_bluemoutain_child_thomas_delapore" />
+    </cinematic>
+    <cinematic type="dialog" line="" duration=".1" />-->
+    <cinematic type="looks" description="Jung" looksTarget="Jung">
+      <looks rdbid="7998650" description="jung" />
+    </cinematic>
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="dialog" line="Perhaps you are afraid now?"/>
+    <!--<cinematic type="dialog" line="" duration=".5" />-->
+    <cinematic type="camera" duration="0" posX="813.4" posY="77.5" posZ="180.6" targetX="-99"/>
+    <cinematic type="camera" duration="30000" posX="-99" targetX="-99"/>
+    <cinematic type="animation" description="Carter Animation" animTarget="player">
+      <animation name="expression_headshake_long"/>
+      <animation name="expression_additive_eyebrows_raised" duration=".1"/>
+      <animation name="expression_additive_smile_subtle"  duration="2.5"/>
+      <animation name="expression_additive_eyebrows_lowered" duration="1"/>
+      <animation name="normal_idle"/>
+    </cinematic>
+    <cinematic type="dialog" line="" duration="3" />
+    <cinematic type="camera" duration="0" posX="809" posY="78" posZ="182" targetX="813.35" targetY="76.8" targetZ="180.75"/>
+    <cinematic type="camera" duration="40000" posX="811.5" posY="77.5" posZ="180.75" targetX="813.35" targetY="76.8" targetZ="180.75" ease="Regular.easeInOut"/>
+    <cinematic type="dialog" line="" duration=".5" />
+    <cinematic type="dialog" line="Perhaps you should be."/>
+    <cinematic type="dialog" line="Dark days have descended upon us, and darker days are ahead still."/>
+    <cinematic type="dialog" line="Even I may yet succumb to the darkness and mindlessly..."/>
+    <cinematic type="dialog" line="– or worse, mindfully –"/>
+    <cinematic type="dialog" line="ravage those that cling to light." duration="3.5"/>
+    <cinematic type="dialog" line="" duration="1.5" />
+    <cinematic type="dialog" line="It's a sad state of affairs we find ourselves in."/>
+    <!--<cinematic type="camera" duration="0" posX="811.5" posY="77.5" posZ="180.75" targetX="813.35" targetY="76.8" targetZ="180.75"/>
+    <cinematic type="camera" duration="50000" posX="813.35" posY="76.8" posZ="180.75" targetX="813.35" targetY="76.8" targetZ="180.75"/>-->
+    <cinematic type="dialog" line="" duration=".6" />
+    <cinematic type="dialog" line="There is hope."/>
+    <cinematic type="dialog" line="Snow... mountains... a cave... a little girl?"/>
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="camera" duration="0" posX="815.5" posY="77.7" posZ="177.25" targetX="-99" />
+    <cinematic type="camera" duration="30000" posX="817.5" posY="78" posZ="173.5" targetX="-99" />
+    <cinematic type="dialog" line="" duration=".5" />
+    <cinematic type="dialog" line="&quot;Once more unto the breach...&quot;"/>
+    <!--<cinematic type="camera" duration="0" posX="814.5" posY="77" posZ="181.8" targetX="-99"/>-->
+    <!--<cinematic type="dialog" line="" duration="1" />-->
+    <cinematic type="dialog" line="Please do visit again."/>
+    <!--<cinematic type="dialog" line="" duration="2" />
+    <cinematic type="animation" description="Animations" animTarget="Jung">
+      <animation name="jung_tokyo_playfield_seesaw_idle"/>
+    </cinematic>-->
+    <cinematic type="dialog" line="" duration="3" />
+    <cinematic type="fadeout" duration="4"/>
+  </tier>
+  <tier type="animation" description="Reset Jung animation" animTarget="Jung">
+    <animation name="jung_tokyo_playfield_seesaw_idle"/>
+  </tier>
+
+  <!--Tier 8-->
+  <tier type="location" description="TIER 8/11&#13;Jung spoke of a cave in the snowy mountains. Find the next location in Carter's dream." playField="3140" x="1100" y="38" z="790" distance="10" yDistance="5" />
+  <tier type="cinematic" description="Carter's Breach Dream." playField="3140" contAudio="true">
+    <cinematic type="fadeout" duration="3" />
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="camera" duration="0" posX="1150" posY="160" posZ="700" targetX="1320" targetY="130" targetZ="1500"/>
+    <cinematic type="camera" duration="15000" posX="1151" posY="160" posZ="701" targetX="1320" targetY="130" targetZ="0"/>
+    <cinematic type="fadein" duration="5" />
+    <cinematic type="audio" url="http://www.mbs-intl.com/tsw/carter/breach1.ogg" volume="40" muteMusic="true"/>
+    <cinematic type="dialog" line="" duration="5" />
+    <cinematic type="dialog" line="Snow."/>
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="dialog" line="Mountains." />
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="dialog" line="It must have been beautiful." />
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="camera" duration="17000" posX="1200" posY="50" posZ="675" targetX="1320" targetY="50" targetZ="500" ease="Regular.easeInOut"/>
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="dialog" line="I wouldn't know." />
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="dialog" line="I was down below, deep in a chasm, shivering in the cold." />
+    <cinematic type="dialog" line="This was no ordinary cave." />
+    <cinematic type="dialog" line="It was like someone opened up the sky, and I could almost touch it." />
+    <cinematic type="looks" description="Apply Emma Looks" looksTarget="player">
+      <looks rdbid="6862249" description="Emma" />
+      <looks rdbid="7569906" description="Emma head" />
+    </cinematic>
+    <cinematic type="camera" duration="15000" posX="1088" posY="41" posZ="802" targetX="1200" targetY="50" targetZ="675" ease="Regular.easeInOut"/>
+    <cinematic type="dialog" line="Maybe I could touch it." />
+    <cinematic type="dialog" line="Yes, I had to touch it." />
+    <cinematic type="dialog" line="But first, something else had to be done." />
+    <cinematic type="dialog" line="Something else was more pressing." />
+    <cinematic type="dialog" line="I had to find..." />
+    <cinematic type="dialog" line="my teddy." />
+    <cinematic type="dialog" line="" duration="2" />
+    <cinematic type="fadeout" duration="4"/>
+  </tier>
+  <tier type="looks" description="Apply Emma Looks" looksTarget="player" delay="5000">
+    <looks rdbid="6862249" description="Emma" />
+    <looks rdbid="7569906" description="Emma head" />
+  </tier>
+  <tier type="location" description="TIER 8/11&#13;Venture forth into the breach." playField="3140" x="1225" y="32" z="665" distance="4" yDistance="1" waypointName="Breach" />
+  <tier type="cinematic" description="Carter's Breach Dream." playField="3140" contAudio="true" >
+    <cinematic type="fadeout" duration="3" />
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="facecoords" x="1260" z="615"/>
+    <cinematic type="camera" duration="0" posX="1240" posY="35" posZ="625" targetX="1260" targetY="45" targetZ="615"/>
+    <cinematic type="camera" duration="29000" posX="1224" posY="32" posZ="675" targetX="1260" targetY="50" targetZ="615" />
+    <cinematic type="fadein" duration="5" />
+    <cinematic type="audio" url="http://www.mbs-intl.com/tsw/carter/breach2.ogg" volume="40" muteMusic="true"/>
+    <cinematic type="dialog" line="" duration="3" />
+    <cinematic type="dialog" line="I stood on the ledge and peered into the opening." />
+    <cinematic type="dialog" line="It was like the universe, even time itself, was unfolded before my eyes." />
+    <cinematic type="dialog" line="Something had been breached." />
+    <!--<tier type="looks" description="Apply Emma Looks" looksTarget="player" invisible="true">
+      <looks rdbid="7656582" description="Young Emma" />
+    </tier>-->
+    <tier type="looks" description="Apply Emma Looks" looksTarget="player" delay="5000">
+      <looks rdbid="6862249" description="Emma" />
+      <looks rdbid="7569906" description="Emma head" />
+    </tier>
+    <cinematic type="dialog" line="The sky? The space-time continuum? Reality?" />
+    <cinematic type="dialog" line="I don't know what it was." />
+    <cinematic type="dialog" line="Somehow, I knew that I - the little girl - had caused all of this." />
+    <cinematic type="camera" duration="0" posX="1230" posY="45" posZ="675" targetX="1245" targetY="50" targetZ="650"/>
+    <cinematic type="camera" duration="15000" posX="1220" posY="45" posZ="670" targetX="1245" targetY="50" targetZ="650" />
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="dialog" line="A strange cube floated in the air." />
+    <cinematic type="dialog" line="I heard a voice come out of it." />
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="dialog" line="Voice: Little one..." />
+    <cinematic type="camera" duration="0" posX="1235" posY="35" posZ="660" targetX="-99"/>
+    <!--<cinematic type="camera" duration="0" posX="1229" posY="33" posZ="664" targetX="-99"/>-->
+    <!--<cinematic type="camera" duration="15000" posX="-99" targetX="-99"/>-->
+    <cinematic type="animation" description="Emma Animation" animTarget="player">
+      <animation name="normal_emote_look_up"/>
+    </cinematic>
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="dialog" line="Emma: Do you have my teddy?" />
+    <cinematic type="camera" duration="0" posX="1190" posY="50" posZ="645" targetX="1235" targetY="40" targetZ="655"/>
+    <cinematic type="camera" duration="20000" posX="1200" posY="50" posZ="645" targetX="1235" targetY="40" targetZ="655"/>
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="dialog" line="Voice: Little one, you have forgotten yourself." />
+    <cinematic type="dialog" line="You will remember." />
+    <cinematic type="dialog" line="You always do." />
+    <cinematic type="dialog" line="It will be too late." />
+    <cinematic type="dialog" line="We are waking." />
+    <cinematic type="dialog" line="You will not contain us this time." />
+    <cinematic type="dialog" line="This time, we shall be free." />
+    <cinematic type="dialog" line="" duration=".5" />
+    <cinematic type="camera" duration="0" posX="1229" posY="33" posZ="664" targetX="-99"/>
+    <cinematic type="camera" duration="30000" posX="-99" targetX="-99"/>
+    <cinematic type="dialog" line="" duration=".5" />
+    <tier type="looks" description="Emma to Carter Looks" looksTarget="player" delay="2400" >
+      <looks rdbid="6940248" description="npc_new-england_female_carter" />
+    </tier>
+    <cinematic type="animation" description="Emma to Carter Animation" animTarget="player">
+      <!--<animation name="normal_idle" duration="3"/>
+      <animation name="normal_emote_checkwatch_right_raisesleeve_upperbody" duration="3"/>-->
+      <animation name="combat_trinket_casting_special_attack_01" duration="2.3"/>
+      <animation name="combat_trinket_execute_special_attack_01" duration="1.2"/>
+      <animation name="normal_emote_wounded_standing"/>
+    </cinematic>
+    <cinematic type="dialog" line="" duration="4" />
+    <cinematic type="dialog" line="Just like that, she was gone, and I was back." />
+    <cinematic type="dialog" line="Standing on the ledge, I knew what I had to do next." />
+    <cinematic type="fadeout" duration="4"/>
+  </tier>
+  <tier type="looks" description="Reapply Carter Looks" looksTarget="player" delay="5000">
+    <looks rdbid="6940248" description="npc_new-england_female_carter" />
+  </tier>
+
+  <!--Tier 9-->
+  <tier type="location" description="TIER 9/11&#13;Continue the dream." playField="3140" x="1230" y="2" z="660" distance="30" yDistance="5" />
+  <tier type="cinematic" description="Carter dead in breach." playField="3140" contAudio="true" >
+    <cinematic type="fadeout" duration="2" />
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="camera" duration="0" posX="1235" posY="5" posZ="655" targetX="-99"/>
+    <cinematic type="camera" duration="45000" posX="-99" targetX="-99" />
+    <cinematic type="fadein" duration="5" />
+    <cinematic type="audio" url="http://www.mbs-intl.com/tsw/carter/carter_dead.ogg" volume="40" muteMusic="true"/>
+    <cinematic type="dialog" line="" duration="5" />
+    <cinematic type="dialog" line="I don't know why I jumped." />
+    <cinematic type="dialog" line="It just felt like the right thing to do." />
+    <cinematic type="dialog" line="You're supposed to wake up after a big fall like that, but I didn't." />
+    <cinematic type="dialog" line="I could see myself just lying there... lifeless." />
+    <cinematic type="dialog" line="I was dead..." duration="3"/>
+    <cinematic type="dialog" line="and then I wasn't." />
+    <cinematic type="dialog" line="" duration="3" />
+    <cinematic type="fadeout" duration="4"/>
+  </tier>
+  <tier type="looks" description="Reapply Carter Looks" looksTarget="player" delay="5000">
+    <looks rdbid="6940248" description="npc_new-england_female_carter" />
+  </tier>
+
+  <!--Tier 10-->
+  <tier type="location" description="TIER 10/11&#13;Come back to life." playField="3140" x="990" y="45" z="725" distance="200" yDistance="10" />
+  <tier type="location" description="TIER 10/11&#13;In her dream, Carter was resurrected at the Repentance Cavern Anima Well. Go there to continue the dream." playField="3140" x="941" y="40" z="556" distance="3" yDistance="1" waypointName="Anima Well"/>
+  <tier type="looks" description="Reset Looks" looksTarget="player" resetLooks="true" />
+  <tier type="cinematic" description="Carter revived." playField="3140" contAudio="true" >
+    <cinematic type="fadeout" duration="2" />
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="facecoords" x="956" z="554"/>
+    <!--<cinematic type="camera" duration="0" posX="-99" targetX="947" targetY="38" targetZ="558"/>-->
+    <cinematic type="camera" duration="0" posX="942.1" posY="38.6" posZ="551.3" targetX="942.4" targetY="38.5" targetZ="551.2"/>
+    <cinematic type="camera" duration="25000" posX="945.1" posY="40" posZ="556.47" targetX="942.4" targetY="38.5" targetZ="551.2" ease="Regular.easeIn"/>
+    <!--<cinematic type="camera" duration="20000" posX="-99" targetX="942.4" targetY="38.5" targetZ="551.2" ease="Regular.easeIn"/>-->
+    <cinematic type="fadein" duration="5" />
+    <cinematic type="audio" url="http://www.mbs-intl.com/tsw/carter/carter_revived.ogg" volume="40" muteMusic="true"/>
+    <cinematic type="dialog" line="" duration="5" />
+    <!--<cinematic type="camera" duration="1200" posX="-99" targetX="962" targetY="45" targetZ="574.5" ease="Regular.easeOut"/>
+    <cinematic type="dialog" line="" duration="2" />
+    <cinematic type="camera" duration="1200" posX="-99" targetX="956" targetY="43" targetZ="554" ease="Strong.easeOut"/>
+    <cinematic type="dialog" line="" duration="2" />
+    <cinematic type="camera" duration="1200" posX="-99" targetX="944" targetY="38" targetZ="550.6" ease="Regular.easeOut"/>
+    <cinematic type="dialog" line="" duration="2" />
+    <cinematic type="camera" duration="20000" posX="942" posY="38.9" posZ="552" targetX="942.2" targetY="38.8" targetZ="551.1"/>
+    <cinematic type="dialog" line="" duration="2" />-->
+    <cinematic type="dialog" line="When I revived, I wasn't myself anymore." />
+    <cinematic type="dialog" line="I didn't know who I was." />
+    <cinematic type="dialog" line="It was the weirdest feeling..." />
+    <cinematic type="animation" description="Stoic pose" animTarget="player">
+      <animation name="normal_emote_idlepose_arrogant"/>
+    </cinematic>
+    <cinematic type="camera" duration="50000" posX="945.1" posY="40" posZ="556.47" targetX="-99" ease="Strong.easeOut"/>
+    <cinematic type="dialog" line="I recognized the presence, but I couldn't place it." />
+    <cinematic type="dialog" line="Not until now."/>
+    <cinematic type="dialog" line="Now, I know." />
+    <cinematic type="dialog" line="" duration="3" />
+    <cinematic type="dialog" line="It was you." duration="3" />
+    <cinematic type="dialog" line="" duration="9" />
+    <cinematic type="dialog" line="For a while, I just stood there in my anonymity..." />
+    <cinematic type="dialog" line="basking in the light that surrounded me." />
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="camera" duration="20000" posX="-99" targetX="-99" ease="Regular.easeIn"/>
+    <cinematic type="animation" description="Crying" animTarget="player">
+      <animation name="normal_emote_cry" duration="3.4"/>
+      <animation name="human_feeling_sick_loop"/>
+    </cinematic>
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="dialog" line="Then, I started to cry." />
+    <cinematic type="dialog" line="" duration="6" />
+    <cinematic type="fadeout" duration="8"/>
+  </tier>
+
+  <!--Tier 11-->
+  <tier type="location" description="TIER 11/11&#13;Return to Carter at Innsmouth Academy." playField="3040" x="306" y="147" z="372" distance="2" yDistance="1" waypointName="Carter"/>
+  <tier type="cinematic" description="Listen to Carter." playField="3040" >
+    <cinematic type="fadeout" duration="3" />
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="animation" description="Reset Animation" animTarget="Carter">
+      <animation name="character_idle" />
+    </cinematic>
+    <cinematic type="animation" description="Reset Animation" animTarget="Hayden Montag">
+      <animation name="character_idle" />
+    </cinematic>
+    <cinematic type="animation" description="Reset Animation" animTarget="Annabel Usher">
+      <animation name="character_idle" />
+    </cinematic>
+    <cinematic type="animation" description="Minimal Player Animation" animTarget="player">
+      <animation name="normal_idle" />
+    </cinematic>
+    <cinematic type="facenpc" name="Carter"/>
+    <cinematic type="camera" duration="0" posX="303" posY="148" posZ="379" targetX="307.9" targetY="146.4" targetZ="371.5" />
+    <cinematic type="camera" duration="20000" posX="304" posY="147" posZ="375" targetX="307.9" targetY="146.4" targetZ="371.5" ease="Regular.easeIn" />
+    <cinematic type="fadein" duration="5" />
+    <cinematic type="audio" url="http://www.mbs-intl.com/tsw/carter/carter_end.ogg" volume="40" muteMusic="true"/>
+    <cinematic type="dialog" line="" duration="3" />
+    <cinematic type="animation" description="Animations" animTarget="Carter">
+      <animation name="expression_look_left" duration="3"/>
+    </cinematic>
+    <tier type="animation" description="Hayden Animation" animTarget="Hayden Montag">
+      <animation name="character_idle" duration="2" />
+      <animation name="normal_emote_look_backleft" duration="4" />
+      <animation name="character_idle" />
+    </tier>
+    <tier type="animation" description="Hayden Animation" animTarget="Annabel Usher">
+      <animation name="character_idle" duration="1.5"/>
+      <animation name="expression_look_left" />
+    </tier>
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="dialog" line="Talk about a weird dream, huh?" />
+    <cinematic type="animation" description="Animations" animTarget="Carter">
+      <animation name="cinematic_expression_handgesturestalkinglong2" duration="2"/>
+      <animation name="normal_emote_additive_eyes_left_long" duration="2"/>
+    </cinematic>
+    <cinematic type="dialog" line="One minute you're having a normal dream, sans pants..." />
+    <cinematic type="dialog" line="and the next you're in another world." />
+    <cinematic type="camera" duration="0" posX="305.5" posY="147" posZ="373.5" targetX="307.9" targetY="146.6" targetZ="371.5" />
+    <cinematic type="animation" description="Animations" animTarget="Carter">
+      <animation name="cinematic_expression_fingersonlipsbrief_considering" duration="2"/>
+      <animation name="expression_look_left" />
+    </cinematic>
+    <cinematic type="dialog" line="" duration="2" />
+    <cinematic type="dialog" line="You felt it too, didn't you? The dream?" />
+    <cinematic type="dialog" line="It's why you came here today." />
+    <cinematic type="camera" duration="0" posX="307" posY="146.5" posZ="372" targetX="-99" />
+    <cinematic type="animation" description="Animations" animTarget="player">
+      <animation name="cinematic_expression_fingersonlipsbrief_considering" duration="1.5"/>
+      <animation name="cinematic_human_generic_talking_gesture_head_nod" duration="2"/>
+      <animation name="character_idle" />
+    </cinematic>
+    <cinematic type="dialog" line="" duration="3.5" />
+    <!--<cinematic type="animation" description="Animations" animTarget="Hayden Montag">
+      <animation name="cinematic_expression_handgesturestalkinglong2" duration="1"/>
+      <animation name="expression_additive_eyes_eyedarts_long_both_sides" duration="6"/>
+    </cinematic>
+    <cinematic type="camera" duration="0" posX="307.5" posY="146.5" posZ="368.5" targetX="-99" />
+    <cinematic type="camera" duration="15000" posX="307" posY="146.5" posZ="368" targetX="-99" ease="Regular.easeInOut"/>
+    <cinematic type="animation" description="Animations" animTarget="Carter">
+      <animation name="expression_look_left" duration="8"/>
+      <animation name="normal_emote_look_left" duration="3"/>
+      <animation name="expression_look_left"/>
+    </cinematic>
+    <cinematic type="dialog" line="Montag: A shared dream can be an aphrodisiac for the body, soul, and mind." />
+    <cinematic type="dialog" line="Quite literally." />
+    <cinematic type="dialog" line="I once shared a dream with a woman and her husband, recently deceased..." />
+    <tier type="animation" description="Annabel Animation" animTarget="Annabel Usher">
+      <animation name="normal_emote_look_left" duration="3"/>
+      <animation name="expression_look_left" />
+    </tier>
+    <cinematic type="animation" description="Animations" animTarget="Carter">
+      <animation name="normal_emote_look_backleft"/>
+    </cinematic>
+    <cinematic type="animation" description="Animations" animTarget="Hayden Montag">
+      <animation name="character_idle"/>
+    </cinematic>
+    <cinematic type="camera" duration="0" posX="305.5" posY="147" posZ="368.8" targetX="307.9" targetY="146.6" targetZ="371.5" />
+    <cinematic type="dialog" line="Annabel: H.J.!" />
+    <cinematic type="dialog" line="Carter: Gross!" />-->
+    <cinematic type="animation" description="Animations" animTarget="Carter">
+      <animation name="expression_look_left" />
+    </cinematic>
+    <cinematic type="camera" duration="0" posX="304" posY="147" posZ="375" targetX="307.9" targetY="146.4" targetZ="371.5" />
+    <!--<cinematic type="camera" duration="0" posX="305.5" posY="147" posZ="373.5" targetX="307.9" targetY="146.6" targetZ="371.5" />-->
+    <cinematic type="dialog" line="" duration="1" />
+    <!--<cinematic type="dialog" line="Don't worry. I'm not about to start crushing on you or anything." />-->
+    <cinematic type="dialog" line="I'm glad." />
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="animation" description="Animations" animTarget="Carter">
+      <animation name="cinematic_expression_handgesturestalkinglong2" duration="2"/>
+      <animation name="normal_emote_additive_eyes_left_long" duration="2"/>
+    </cinematic>
+    <cinematic type="dialog" line="Listen... about the crying..." />
+    <cinematic type="dialog" line="It's just... It was something I hadn't felt in a long, long time." />
+    <cinematic type="animation" description="Animations" animTarget="Carter">
+      <animation name="expression_look_left" />
+    </cinematic>
+    <cinematic type="camera" duration="0" posX="305.5" posY="147" posZ="373.5" targetX="307.9" targetY="146.6" targetZ="371.5" />
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="dialog" line="Relief." />
+    <cinematic type="dialog" line="Something about your presence was calming." />
+    <cinematic type="dialog" line="I had no fear." />
+    <cinematic type="animation" description="Animations" animTarget="Carter">
+      <animation name="cinematic_expression_handgesturestalkinglong2" duration="2"/>
+      <animation name="normal_emote_additive_eyes_left_long" duration="2"/>
+    </cinematic>
+    <cinematic type="camera" duration="0" posX="304" posY="147" posZ="375" targetX="307.9" targetY="146.4" targetZ="371.5" />
+    <cinematic type="camera" duration="60000" posX="303" posY="148" posZ="379" targetX="307.9" targetY="146.4" targetZ="371.5" ease="Regular.easeIn" />
+    <cinematic type="dialog" line="I eventually stopped crying and slept soundly until morning." />
+    <cinematic type="dialog" line="No screams in the middle of the night, no nosebleeds, just a few hours of relief." />
+    <cinematic type="animation" description="Animations" animTarget="Carter">
+      <animation name="expression_look_left" />
+    </cinematic>
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="dialog" line="Thank you for that." />
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="dialog" line="Please do visit my dreams again." />
+    <cinematic type="dialog" line="" duration="5" />
+    <cinematic type="dialog" line="----------------------------------&#13;Being Carter&#13;----------------------------------" duration="5" />
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="dialog" line="----------------------------------&#13;Written &amp; Scripted&#13;by&#13;SuperJenius&#13;----------------------------------" duration="5" />
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="dialog" line="----------------------------------&#13;Untold Stories Mission System&#13;developed by&#13;SuperJenius&#13;----------------------------------" duration="5" />
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="dialog" line="----------------------------------&#13;Music from The Secret World Soundtrack&#13;composed by&#13;Marc Canham&#13;Simon Poole&#13;----------------------------------" duration="5" />
+    <cinematic type="dialog" line="" duration="1" />
+    <cinematic type="dialog" line="----------------------------------&#13;Thank you for playing!&#13;Please provide feedback in the SWL forums.&#13;----------------------------------" duration="5" />
+    <cinematic type="dialog" line="" duration="4" />
+    <cinematic type="fadeout" duration="5" />
+  </tier>
+  <tier type="animation" description="Reset Animation" animTarget="Carter">
+    <animation name="character_idle" />
+  </tier>
+  <tier type="animation" description="Reset Animation" animTarget="Hayden Montag">
+    <animation name="character_idle" />
+  </tier>
+  <tier type="animation" description="Reset Animation" animTarget="Annabel Usher">
+    <animation name="character_idle" />
+  </tier>
+</mission>
+
+Player Coordinates:
+Playfield: 3070
+X: 827.25537109375
+Y (height): 78.469657897949
+Z: 189.31411743164
+
+Player Coordinates:
+Playfield: 3070
+X: 824.30169677734
+Y (height): 78.295852661133
+Z: 185.46694946289
+
+Music:
+3002701-02
+4083030-31
+4483230
+4497124
+6541954
+6541951 - Romantic?
+6563698-99 - Bass
+6766939-42 - Opera
+6860828 - Main theme variation
+701056* - Sitar
+8168649 - Party
