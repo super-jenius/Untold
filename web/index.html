@@ -44,7 +44,12 @@
             <!--<a href="javascript:history.back()">Go Back</a>-->
 
             <ul>
-                 <li id="version33">
+                <li id="version40">
+                    <h3>Untold Stories is finally here for Secret World Legends!</h3>
+                    <b>Version 4.0</b> is now available for download using the Twitch App or from SecretUI. This update includes Various tweaks and fixes to get missions working in SWL.
+                    <h4>IMPORTANT: Version 4.0 and higher function only with Secret World Legends (SWL).  You can continue using version 3.3 in The Secret World (TSW).</h4>
+                </li>
+                 <li id="version33"  style="display: none;">
                     <b>Version 3.3</b> is now available for download using the Curse Client or from SecretUI. This is a <b>RECOMMENDED</b> update and adds the following features:
                     <ul>
                         <li>Added a configuration attribute to the Looks tier, which now allows head type, hair style, eye tint, and facial hair to be set.</li>
@@ -96,12 +101,13 @@
             <p>Added content does NOT require a new version of this MOD to be downloaded, unless you also see a new version announced above.</p>
             <p>
                 <ul>
-                    <li><b>Mar 4 2017:</b> New mission "Where Fools Fear to Tread Part 8" by Dorothy "Dots" Gale is now available (requires 3.0 or higher).</li>                   
-                    <li><b>Dec 20 2016:</b> New mission "Where Fools Fear to Tread Part 7" by Dorothy "Dots" Gale is now available (requires 3.0 or higher).</li>                   
-                    <li><b>Aug 27 2016:</b> New mission "Where Fools Fear to Tread Part 6" by Dorothy "Dots" Gale is now available (requires 3.0 or higher).</li>                   
+                    <li><b>May 26 2018:</b> Missions written by Super Jenius have been updated and released with version 4.0 for Secret World Legends. Other missions will be released as they are updated and tested.</li>
+                    <li><b>Mar 4 2017:</b> New mission "Where Fools Fear to Tread Part 8" by Dorothy "Dots" Gale is now available (requires 3.0 or higher).</li>
+                    <li><b>Dec 20 2016:</b> New mission "Where Fools Fear to Tread Part 7" by Dorothy "Dots" Gale is now available (requires 3.0 or higher).</li>
+                    <li><b>Aug 27 2016:</b> New mission "Where Fools Fear to Tread Part 6" by Dorothy "Dots" Gale is now available (requires 3.0 or higher).</li>
                     <li><b>Jun 10 2016:</b> "The Shadow Out of Time - Revisited" by Tremerion is now available.</li>
                     <li><b>May 31 2016:</b> New mission "Where Fools Fear to Tread Part 5" by Dorothy "Dots" Gale and Nekhebit is now available (requires 3.0 or higher). Part 1 as also been updated.</li>
-                    <li><b>Apr 24 2016:</b> New mission "Where Fools Fear to Tread Part 4" by Dorothy "Dots" Gale is now available (requires 3.0 or higher).</li>                   
+                    <li><b>Apr 24 2016:</b> New mission "Where Fools Fear to Tread Part 4" by Dorothy "Dots" Gale is now available (requires 3.0 or higher).</li>
                     <li><b>Apr 10 2016:</b> New mission "Where Fools Fear to Tread Part 3" by Dorothy "Dots" Gale is now available (requires 3.0 or higher).</li>
                     <li><b>Mar 29 2016:</b> New mission "Where Fools Fear to Tread Part 2" by Dorothy "Dots" Gale is now available (requires 3.0 or higher).</li>
                     <li><b>Feb 28 2016:</b> New mission "Where Fools Fear to Tread" by Dorothy "Dots" Gale is now available.</li>
@@ -199,8 +205,11 @@
 
         function checkVersion() {
             var version = qs["version"];
-            if (version != "3.3") {
+            if (version != "4.0") {
                 $("#newVersion").show();
+                if (version < "3.3") {
+                    $("#version33").show();
+                }
                 if (version < "3.2") {
                     $("#version32").show();
                 }
@@ -244,7 +253,16 @@
             // Make sure launched within game
             if (qs["statusXML"]) {
                 var missionList = new Array();
-                if (qs["version"] >= "3.0") {
+                if (qs["version"] >= "4.0") {
+                    // Secret World Legends: Version 4.0+ supports SWL only. TSW can still run older versions and missions.
+                    missionList.push(["Basic Training", "BasicTraining", "BasicTrainingSWL.xml", "Status", "No", "Super Jenius", "A simple mission for demonstrating and testing the basic features of the system."]);
+                    missionList.push(["A Personal Matter", "APersonalMatter", "APersonalMatter.xml", "Status", "Yes", "Super Jenius", "The Stationmaster has a personal request for you. This is an action mission with some light investigation elements."]);
+                    missionList.push(["The Scroll", "TheScroll", "TheScrollSWL.xml", "Status", "Yes", "Super Jenius", "A mysterious scroll has been discovered in the desert. This is a full investigation mission that will test your knowledge of The Secret World. Includes cinematics!"]);
+                    missionList.push(["Akma's Hand", "AkmasHand", "AkmasHandSWL.xml", "Status", "Yes", "Super Jenius", "Delve into the mysteries and political intrigue surrounding Akma's Hand."]);
+                    missionList.push(["Being Carter", "BeingCarter", "BeingCarterSWL.xml", "Status", "Yes", "Super Jenius", "You find yourself thinking about Carter. Pay her a visit at Innsmouth Academy. REQUIRES ACCESS TO TOKYO."]);
+                }
+                else if (qs["version"] >= "3.0") {
+                    // The Secret World
                     // Version 3.0 is a required update
                     missionList.push(["Basic Training", "BasicTraining", "BasicTraining.xml", "Status", "No", "Super Jenius", "A simple mission for demonstrating and testing the basic features of the system."]);
                     missionList.push(["Basic Training (German)", "BasicTrainingGerman", "BasicTrainingGerman.xml", "Status", "No", "Super Jenius", "A simple mission for demonstrating and testing the basic features of the system. This version will work with the German TSW client. However, mission text and dialog are still in English."]);

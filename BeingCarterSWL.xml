@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<mission title="Being Carter" debugMode="true" debugTier="25" >
+<mission title="Being Carter" debugMode="false" debugTier="0" >
   <!--Tier 1-->
   <tier type="location" description="TIER 1/11&#13;You find yourself thinking about Carter. Pay her a visit at Innsmouth Academy." playField="3040" x="306" y="147" z="372" distance="2" yDistance="1" waypointName="Carter" />
   <tier type="cinematic" description="Listen to Carter." playField="3040" >
